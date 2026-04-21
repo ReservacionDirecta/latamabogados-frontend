@@ -1,0 +1,408 @@
+/* Home.css — Estilos completos para todas las secciones de la página principal */
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Roboto:wght@400;500;700&display=swap');
+
+/* ── Utilidades ── */
+.home-page {
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+  color: #1d1d1b;
+  overflow-x: hidden;
+}
+
+.container-narrow {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container-wide {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn-maroon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #8e3d4a;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 20px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-maroon:hover {
+  background-color: #723240;
+}
+
+.btn-icon {
+  font-size: 14px;
+}
+
+.btn-center {
+  text-align: center;
+}
+
+.separator-grey {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 14px 0 18px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SECCIÓN: 40 Años de Experiencia
+   ═══════════════════════════════════════════════════════════════ */
+.section-experience {
+  background-color: #f2f2f2;
+  padding: 10px 0 52px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.experience-separator {
+  width: 100%;
+  border-top: 1px solid #ffffff;
+  margin-bottom: 20px;
+}
+
+.section-experience h2 {
+  font-size: clamp(24px, 3.5vw, 30px);
+  margin: 0 0 16px;
+}
+
+.section-experience p {
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SECCIÓN: Banner Maroon
+   ═══════════════════════════════════════════════════════════════ */
+.section-maroon-banner {
+  background-color: #8e3d4a;
+  padding: 32px 0;
+  text-align: center;
+}
+
+.section-maroon-banner h2 {
+  color: #ffffff;
+  font-size: clamp(20px, 3vw, 30px);
+  line-height: 1.4;
+  margin: 0 0 12px;
+}
+
+.arrow-down-icon {
+  display: flex;
+  justify-content: center;
+}
+
+.arrow-down-icon svg {
+  opacity: 0.8;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SECCIÓN: Service Cards (3 preguntas)
+   ═══════════════════════════════════════════════════════════════ */
+.section-service-cards {
+  padding: 40px 0 50px;
+  background-color: #ffffff;
+}
+
+.section-service-cards .container-wide {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.service-card {
+  text-align: center;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.service-card-icon {
+  margin-bottom: 10px;
+}
+
+.service-card-icon img {
+  max-height: 150px;
+  object-fit: contain;
+}
+
+.service-card h4 {
+  font-size: 20px;
+  color: #8e3d4a;
+  line-height: 1.5;
+  margin: 0 0 6px;
+}
+
+.service-card-sub {
+  font-size: 15px;
+  color: #555;
+  margin: 0 0 12px;
+}
+
+.service-card-cta {
+  margin-top: 8px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SECCIÓN: Cómo lo hacemos
+   ═══════════════════════════════════════════════════════════════ */
+.section-how-we-work {
+  background-color: #ffffff;
+}
+
+.how-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 360px;
+}
+
+.how-text {
+  background-color: #f2f2f2;
+  padding: 50px;
+}
+
+.how-text h3 {
+  font-size: clamp(28px, 4vw, 40px);
+  margin: 0 0 10px;
+}
+
+.how-text p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+  margin: 0 0 14px;
+}
+
+.how-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 360px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SECCIÓN: Dr. Marcus Ambrose
+   ═══════════════════════════════════════════════════════════════ */
+.section-dr-ambrose {
+  background-color: #1a1a1a;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  padding: 60px 0 50px;
+}
+
+.dr-title {
+  font-size: clamp(28px, 4vw, 40px);
+  margin: 0 0 40px;
+  padding-left: 80px;
+}
+
+.dr-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.dr-photo img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.dr-bio p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0 0 14px;
+}
+
+.dr-bio a {
+  color: #ffcc00;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.dr-bio a:hover {
+  text-decoration: underline;
+  color: #ffe066;
+}
+
+.social-resp-title {
+  color: #ffffff;
+  font-size: clamp(22px, 3vw, 30px);
+  text-align: center;
+  margin: 20px 0 12px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SECCIÓN: Botones de utilidad
+   ═══════════════════════════════════════════════════════════════ */
+.section-utility-buttons {
+  padding: 12px 0;
+  background-color: #ffffff;
+}
+
+.utility-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.utility-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #1d1d1b;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  min-height: 56px;
+}
+
+.utility-btn:hover {
+  background-color: #333;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SECCIÓN: CTA Agenda consulta
+   ═══════════════════════════════════════════════════════════════ */
+.section-cta-schedule {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 64px 0 32px;
+  position: relative;
+  text-align: center;
+}
+
+.cta-card {
+  position: relative;
+  background-color: #f4f4f4;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 50px 50px 30px;
+}
+
+.cta-card h3 {
+  font-size: clamp(24px, 3.5vw, 30px);
+  color: #000;
+  margin: 0 0 16px;
+}
+
+.cta-desc {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #000;
+  margin: 0 0 12px;
+  padding: 0 20px;
+}
+
+.cta-retention {
+  font-size: 15px;
+  color: #000;
+  margin: 0 0 20px;
+  padding: 0 20px;
+}
+
+.cta-btn-black {
+  display: block;
+  background-color: #1d1d1b;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  transition: background-color 0.2s;
+  text-align: center;
+}
+
+.cta-btn-black:hover {
+  background-color: #333;
+}
+
+.cta-disclaimer {
+  position: relative;
+  font-size: 14px;
+  color: #ffffff;
+  margin: 16px 0 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 992px) {
+  .dr-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .dr-title {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .dr-photo img {
+    max-width: 350px;
+  }
+
+  .how-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .how-image {
+    min-height: 250px;
+  }
+
+  .utility-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .utility-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .how-text {
+    padding: 30px 20px;
+  }
+
+  .cta-card {
+    padding: 30px 20px 24px;
+  }
+
+  .section-dr-ambrose {
+    padding: 40px 0 30px;
+  }
+
+  .dr-photo img {
+    max-width: 280px;
+  }
+}

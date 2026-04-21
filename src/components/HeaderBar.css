@@ -1,0 +1,197 @@
+/* HeaderBar.css — Réplica del header de Blocksy */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Antic+Didone:wght@400&family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Roboto:wght@400;500;700&display=swap');
+
+.ct-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: #fff;
+}
+
+/* ── TOP BAR ── */
+.ct-header-top {
+  border-bottom: 1px solid #eee;
+  padding: 6px 0;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.ct-header-top .ct-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ct-top-start .ct-social-box {
+  display: flex;
+  gap: 10px;
+}
+
+.ct-social-box a {
+  display: flex;
+  align-items: center;
+  color: #3A4F66;
+  transition: color 0.2s;
+}
+
+.ct-social-box a:hover {
+  color: #8e3d4a;
+}
+
+.ct-social-box svg {
+  fill: currentColor;
+}
+
+.ct-social-text {
+  font-family: 'Antic Didone', serif;
+  font-size: 15px;
+}
+
+.ct-social-text a {
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.ct-social-text a:hover {
+  color: #8e3d4a !important;
+}
+
+/* ── MAIN NAV ── */
+.ct-header-main {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.ct-header-main .ct-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo-container {
+  display: block;
+}
+
+.default-logo {
+  height: 40px;
+  width: auto;
+}
+
+.ct-main-end {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header-menu .menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 24px;
+}
+
+.ct-menu-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d1d1b;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+
+.ct-menu-link:hover,
+.menu li.current .ct-menu-link {
+  color: #8e3d4a;
+}
+
+.ct-button-ghost {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1d1d1b;
+  border: 1.5px solid #1d1d1b;
+  padding: 6px 14px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.ct-button-ghost:hover {
+  background: #1d1d1b;
+  color: #fff;
+}
+
+/* ── MOBILE ── */
+.ct-mobile-trigger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #1d1d1b;
+}
+
+.ct-mobile-trigger svg {
+  fill: currentColor;
+}
+
+.ct-mobile-menu-panel {
+  display: none;
+  background: #fff;
+  border-top: 1px solid #eee;
+  padding: 20px;
+}
+
+.ct-mobile-menu-panel nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ct-mobile-menu-panel nav li {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ct-mobile-menu-panel nav .ct-menu-link {
+  display: block;
+  padding: 12px 0;
+  font-size: 16px;
+}
+
+.ct-mobile-menu-panel .mobile-cta {
+  display: block;
+  text-align: center;
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .header-menu,
+  .ct-main-end > .ct-button-ghost {
+    display: none;
+  }
+
+  .ct-mobile-trigger {
+    display: block;
+  }
+
+  .ct-mobile-menu-panel {
+    display: block;
+  }
+
+  .ct-header-top {
+    display: none;
+  }
+
+  .default-logo {
+    height: 32px;
+  }
+}

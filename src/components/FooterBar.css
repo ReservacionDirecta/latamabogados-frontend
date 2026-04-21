@@ -1,0 +1,112 @@
+/* FooterBar.css — Réplica del footer Blocksy con fondo maroon */
+
+.ct-footer {
+  background-color: #8e3d4a;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.ct-footer .ct-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── TOP ROW ── */
+.ct-footer-top {
+  padding: 40px 0 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.ct-footer-top .ct-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.ct-footer-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.ct-footer-anti-spam {
+  max-width: 400px;
+  text-align: right;
+}
+
+.ct-footer-anti-spam p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.85);
+  margin: 0;
+}
+
+/* ── BOTTOM ROW ── */
+.ct-footer-bottom {
+  padding: 16px 0;
+}
+
+.ct-footer-bottom .ct-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.ct-footer-copy p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.ct-footer-legal p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.ct-footer-legal a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.ct-footer-legal a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.ct-footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.ct-footer-socials a {
+  color: rgba(255,255,255,0.85);
+  transition: color 0.2s;
+  display: flex;
+}
+
+.ct-footer-socials a:hover {
+  color: #fff;
+}
+
+.ct-footer-socials svg {
+  fill: currentColor;
+}
+
+@media (max-width: 768px) {
+  .ct-footer-top .ct-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ct-footer-anti-spam {
+    text-align: center;
+  }
+
+  .ct-footer-bottom .ct-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}

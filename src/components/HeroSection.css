@@ -1,0 +1,329 @@
+/* ═══════════════════════════════════════════════════════════════════
+   HeroSection.css
+   Réplica del Revolution Slider 6.6.14 – sección #inicio de Latam Abogados
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Roboto:wght@400;500;700&display=swap');
+
+/* ── Variables de color extraídas del sitio original ── */
+:root {
+  --latam-maroon:      rgba(142, 61, 74, 0.89);   /* "Latam" title */
+  --latam-maroon-solid: #8e3d4a;                   /* subtítulos */
+  --latam-navy:        rgba(30, 31, 51, 0.89);     /* "Abogados" title */
+  --latam-navy-solid:  #1e1f33;                    /* texto central */
+  --latam-gold:        #ffcc00;                    /* botón CTA */
+  --latam-black:       #000000;                    /* Dr. Ambrose name */
+  --latam-white:       #ffffff;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   CONTENEDOR PRINCIPAL
+   ══════════════════════════════════════════════════════════════════ */
+.hero-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   FONDO: VIDEO + IMAGEN (inkwell = blanco y negro)
+   ══════════════════════════════════════════════════════════════════ */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #111;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+/* Filtro inkwell: convierte el fondo a blanco y negro como en el slider original */
+.hero-bg-image,
+.hero-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) sepia(20%) brightness(1.1) contrast(1.2);
+  transition: filter 0.4s ease;
+}
+
+/* La imagen queda debajo como fallback */
+.hero-bg-image {
+  z-index: 1;
+}
+
+/* El video se pone encima y ocupa todo el espacio */
+.hero-bg-video {
+  z-index: 2;
+}
+
+/* Overlay semitransparente muy suave para mejorar legibilidad */
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   CONTENIDO SUPERPUESTO
+   Replica el sistema de capas absolutas del Revolution Slider
+   ══════════════════════════════════════════════════════════════════ */
+.hero-content {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  text-align: center;
+  gap: 16px;
+}
+
+/* ── "Latam Abogados" ─ dos colores en la misma línea ── */
+.hero-brand {
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0px;
+  margin-bottom: 4px;
+  animation: heroFadeIn 1s ease both;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero-brand-latam {
+  font-family: 'DM Serif Display', serif;
+  font-size: 89px;
+  line-height: 89px;
+  color: rgba(142, 61, 74, 0.89); 
+  letter-spacing: 0px;
+}
+
+.hero-brand-abogados {
+  font-family: 'DM Serif Display', serif;
+  font-size: 89px;
+  line-height: 89px;
+  color: rgba(30, 31, 51, 0.89);
+  letter-spacing: 0px;
+}
+
+.hero-main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 59px;
+  font-weight: 600;
+  color: rgb(30, 31, 51);
+  line-height: 1.1;
+  max-width: 1000px;
+  margin: 20px auto;
+  animation: heroFadeIn 1s ease 0.15s both;
+}
+
+.hero-services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px 0;
+  animation: heroFadeIn 1s ease 0.25s both;
+}
+
+.hero-service-card {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  transition: transform 0.3s ease;
+}
+
+.hero-service-card:hover {
+  transform: translateY(-5px);
+}
+
+.hero-service-icon {
+  font-size: 2rem;
+  color: var(--latam-maroon-solid);
+  margin-bottom: 12px;
+}
+
+.hero-service-text {
+  font-family: "Playfair Display", serif;
+  color: rgba(0, 0, 0, 0.90); /* Negro legal */
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 37px;
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.hero-authority-badge {
+  background: rgb(187 187 187 / 55%); /* Gris humo translúcido */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 50px;
+  animation: heroFadeIn 1s ease 0.45s both;
+  backdrop-filter: blur(8px);
+}
+
+.hero-experience-text {
+  font-family: 'Antic Didone', serif;
+  color: var(--latam-gold);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 8px 0 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0px 0px 10px rgba(32, 32, 32, 0.5);
+}
+
+/* ── Nombre del Doctor ── */
+.hero-doctor-name {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 50px;
+  font-weight: 400;
+  color: rgba(30, 31, 51, 0.89);
+  line-height: 1.2;
+  margin: 0;
+  animation: heroFadeIn 1s ease 0.35s both;
+}
+
+/* ── Subtítulo inferior ── */
+.hero-subtitle-bottom {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(0.9rem, 1.8vw, 1.9rem);
+  font-weight: 400;
+  color:rgb(142, 61, 74); /* Blanco suave */
+  line-height: 1.4;
+  max-width: 600px;
+  margin: 0 auto;
+  animation: heroFadeIn 1s ease 0.4s both;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ── Botón CTA Base ── */
+.hero-cta-btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 22px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1.2;
+  border-radius: 0px;
+  border: 0px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  animation: heroFadeIn 1s ease 0.5s both;
+}
+
+.hero-cta-btn:active {
+  transform: translateY(0);
+}
+
+.hero-cta-primary {
+  background-color: var(--latam-gold);
+  color: var(--latam-black);
+}
+
+.hero-cta-primary:hover {
+  background-color: var(--latam-white);
+  color: var(--latam-black);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.hero-cta-secondary {
+  background-color: var(--latam-maroon-solid);
+  color: var(--latam-white);
+}
+
+.hero-cta-secondary:hover {
+  background-color: #723240;
+  color: var(--latam-white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.hero-cta-outline {
+  background-color: rgba(0, 0, 0, 0.90);
+  color: var(--latam-gold);
+  border-color: var(--latam-gold);
+}
+
+.hero-cta-outline:hover {
+  background-color: var(--latam-gold);
+  color: var(--latam-black);
+  transform: translateY(-2px);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   ANIMACIONES
+   ══════════════════════════════════════════════════════════════════ */
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .hero-bg {
+    min-height: 500px;
+  }
+
+  .hero-content {
+    min-height: 500px;
+    padding: 40px 16px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-bg {
+    min-height: 560px;
+  }
+
+  .hero-content {
+    min-height: 560px;
+    padding: 40px 16px;
+    gap: 10px;
+  }
+
+  .hero-cta-btn {
+    margin-top: 6px;
+    padding: 10px 22px;
+    font-size: 0.8rem;
+  }
+}

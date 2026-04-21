@@ -1,0 +1,113 @@
+.about-hero {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  text-align: left;
+  margin-top: 40px;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 40px;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(47, 66, 88, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.about-photo-wrapper {
+  flex: 0 0 300px;
+}
+
+.about-photo {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(47, 66, 88, 0.15);
+  border: 8px solid white;
+}
+
+.about-intro-text {
+  flex: 1;
+}
+
+.about-secondary-text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ma-text-color);
+  margin-top: 20px;
+}
+
+.about-resources-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.resource-item {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  background: var(--ma-surface-2);
+  border-radius: 18px;
+  border: 1px solid rgba(47, 66, 88, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.resource-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(47, 66, 88, 0.08);
+}
+
+.resource-icon {
+  flex: 0 0 50px;
+  height: 50px;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ma-accent-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.resource-content h4 {
+  margin: 0 0 8px;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  color: var(--ma-title-color);
+  text-transform: uppercase;
+}
+
+.resource-content p {
+  margin: 0 0 12px;
+  font-size: 15px;
+  color: var(--ma-text-color);
+  line-height: 1.5;
+}
+
+.resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ma-accent-color);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: gap 0.2s;
+}
+
+.resource-link:hover {
+  gap: 10px;
+}
+
+@media (max-width: 900px) {
+  .about-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  
+  .about-photo-wrapper {
+    flex: 0 0 auto;
+    width: 250px;
+    margin-bottom: 20px;
+  }
+}

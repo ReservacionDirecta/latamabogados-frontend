@@ -1,0 +1,152 @@
+.page-wrapper {
+  min-height: calc(100vh - 200px);
+}
+
+.page-header {
+  position: relative;
+  padding: 80px 0;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  color: var(--text-white);
+}
+
+.page-header h1 {
+  position: relative;
+  z-index: 2;
+  color: var(--text-white);
+  font-size: 3rem;
+  margin: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 15, 43, 0.7); /* secondary color w/ opacity */
+  z-index: 1;
+}
+
+.py-5 {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+}
+
+.sidebar-img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.sidebar-box {
+  padding: 20px;
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+}
+
+.sidebar-box h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.sidebar-box ul {
+  padding-left: 20px;
+}
+
+.sidebar-box li {
+  margin-bottom: 10px;
+  list-style-type: square;
+  color: var(--text-light);
+}
+
+.content-main p {
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+}
+
+.content-main ul {
+  padding-left: 20px;
+}
+
+.content-main li {
+  margin-bottom: 10px;
+  list-style-type: disc;
+}
+
+/* Document List Styles */
+.publication-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.doc-link {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  color: var(--text);
+  transition: all var(--transition-speed) ease;
+  border-left: 4px solid var(--primary);
+}
+
+.doc-link:hover {
+  transform: translateX(5px);
+  background-color: var(--surface-alt);
+  color: var(--text);
+}
+
+.doc-icon {
+  color: var(--primary);
+  margin-right: 20px;
+}
+
+.doc-info {
+  flex: 1;
+}
+
+.doc-info h4 {
+  margin: 0 0 5px 0;
+  font-family: var(--font-sans);
+  color: var(--secondary);
+  font-size: 1.1rem;
+}
+
+.doc-info span {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.doc-action {
+  color: var(--text-light);
+  transition: color var(--transition-speed) ease;
+}
+
+.doc-link:hover .doc-action {
+  color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+}
