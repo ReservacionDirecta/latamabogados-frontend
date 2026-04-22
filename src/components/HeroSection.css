@@ -518,7 +518,7 @@
 @media (max-width: 480px) {
   .hero-brand-latam,
   .hero-brand-abogados {
-    font-size: clamp(32px, 20vw, 55px);
+    font-size: clamp(32px, 20vw, 45px);
   }
   
   .hero-main-title {
