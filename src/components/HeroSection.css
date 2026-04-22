@@ -132,7 +132,7 @@
     line-height: 1.2;
     letter-spacing: 0px;
     font-weight: 600;
-    font-size: clamp(28px, 5vw, 59px);
+    font-size: clamp(37px, 5vw, 59px);
     backdrop-filter: none;
     filter: none;
     transform-origin: 50% 50%;
@@ -184,12 +184,12 @@
     min-height: 0px;
     min-width: 0px;
     max-height: none;
-    max-width: none;
+    max-width: 169px;
     text-align: left;
     line-height: 39px;
     letter-spacing: 0px;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 18px;
     padding-left: 15px;
     padding-right: 15px;
     backdrop-filter: none;
