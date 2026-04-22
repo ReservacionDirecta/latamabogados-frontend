@@ -46,50 +46,38 @@ const HeroSection: React.FC<HeroSectionProps> = ({ customLabels }) => {
 
       {/* ── Contenido Vertical ── */}
       <div className="hero-content">
-        <div className="hero-brand">
+        {/* Main Brand Title */}
+        <div className="hero-brand-main">
           <span className="hero-brand-latam">Latam</span>
           <span className="hero-brand-abogados"> Abogados</span>
         </div>
 
-        <h2 className="hero-main-title">
-          Apoyamos a abogados latinoamericanos
+        {/* Support Heading */}
+        <h2 className="hero-support-heading">
+          Apoyamos a las barras y bufetes de abogados empresarios y profesionales
         </h2>
 
-        {/* ── Stack de Servicios ── */}
-        <div className="hero-services-grid">
-          {/* Item 1 */}
-          <div className="hero-service-card">
-            <p className="hero-service-text">
-              <strong>Aprenda inglés jurídico, conversacional y escritura profesional práctico</strong>
-            </p>
-            <a href="/agendar-clase-de-inges-profesional" className="hero-cta-btn hero-cta-primary">
-              {customLabels?.service1 || "LEER MÁS"}
-            </a>
+        {/* Dr. Marcus Ambrose Section */}
+        <div className="hero-dr-section">
+          <h3 className="hero-dr-name">Dr. Marcus Ambrose</h3>
+          <div className="hero-dr-titles">
+            <p className="hero-dr-subtitle">Doctorado en leyes internacionales y en EEUU.</p>
+            <p className="hero-dr-subtitle">Profesor de Inglés jurídico, conversacional y escritura profesional.</p>
           </div>
-
-          {/* Item 2 */}
-          <div className="hero-service-card">
-            <p className="hero-service-text">
-              Si usted tiene clientes, casos o asuntos relacionados en EE.UU, podemos ayudarles
-            </p>
-            <a href="/servicios" className="hero-cta-btn hero-cta-secondary">
-              {customLabels?.service2 || "LEER MÁS"}
+          
+          <div className="hero-main-cta">
+            <a href="/acerca-de" className="hero-cta-yellow">
+              {customLabels?.authority || "LEER MÁS"}
             </a>
           </div>
         </div>
 
-        {/* ── SECCIÓN DE AUTORIDAD ── */}
-        <div className="hero-authority-badge">
-          <div className="authority-info">
-            <p className="hero-doctor-name">Dr. Marcus Ambrose</p>
-            <p className="hero-subtitle-bottom">Doctorado en leyes en EE.UU y Profesor</p>
-            <p className="hero-experience-text">Más de 40 años de experiencia</p>
-          </div>
-          <div className="authority-action">
-            <a href="/acerca-de" className="hero-cta-btn hero-cta-outline">
-              {customLabels?.authority || "LEER MÁS"}
-            </a>
-          </div>
+        {/* Bottom Experience Section */}
+        <div className="hero-bottom-experience">
+          <h4 className="hero-exp-title">Más de 40 años de experiencia</h4>
+          <p className="hero-exp-detail">
+            Tenemos experiencia transnacional, sin límites geográficos, y contamos con amplia habilidad para respaldar a los abogados latinoamericanos trabajando estrechamente con sus clientes y buffetes internacionales en cuestiones relacionadas con los Estados Unidos.
+          </p>
         </div>
       </div>
     </section>
