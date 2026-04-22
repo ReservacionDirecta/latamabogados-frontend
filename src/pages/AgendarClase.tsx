@@ -15,13 +15,13 @@ const AgendarClase: React.FC = () => {
         <div className="container-narrow">
           <div className="ma-top">
             <div className="ma-photo">
-              <img src="/clase de ingles legal online.png" alt="Dr. Marcus Ambrose" />
+              <img src="/clase de ingles legal online.png" alt="Clase de Inglés Jurídico y Legal English Online - Dr. Marcus Ambrose" />
             </div>
 
-            <h2 className="ma-title">Aprenda inglés profesional con el Dr. Marcus Ambrose</h2>
+            <h2 className="ma-title">Especialista en Inglés Jurídico y Legal English</h2>
 
             <p className="ma-lead">
-              La habilidad de hablar y escribir inglés profesional se ha convertido en una herramienta indispensable para abogados latinoamericanos con clientes, asuntos y colegas internacionales. Aprenda con el Dr. Marcus Ambrose en sesiones diseñadas para un contexto jurídico real, profesional y global.
+              Domine el <strong>Inglés Jurídico</strong> y el <strong>Legal English</strong> profesional con el Dr. Marcus Ambrose. Una herramienta indispensable para abogados latinoamericanos con proyección internacional.
             </p>
           </div>
 

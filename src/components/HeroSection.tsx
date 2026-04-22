@@ -52,7 +52,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ customLabels }) => {
         </div>
 
         <h2 className="hero-main-title">
-          Apoyamos a abogados latinoamericanos
+          Especialista en Inglés Jurídico y Legal English
         </h2>
 
         {/* ── Stack de Servicios ── */}
@@ -60,7 +60,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ customLabels }) => {
           {/* Item 1 */}
           <div className="hero-service-card">
             <p className="hero-service-text">
-              <strong>Aprenda inglés jurídico, conversacional y escritura profesional práctico</strong>
+              <strong>Domine el Inglés Jurídico y Legal English práctico para el contexto global</strong>
             </p>
             <a href="/agendar-clase-de-inges-profesional" className="hero-cta-btn hero-cta-primary">
               {customLabels?.service1 || "LEER MÁS"}

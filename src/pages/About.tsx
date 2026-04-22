@@ -45,11 +45,11 @@ const About: React.FC = () => {
               
               <div className="about-intro-text">
                 <p className="ma-lead">
-                  Es un <strong>Abogado Doctorado Estadounidense</strong> de primer nivel con más de 40 años de experiencia internacional. 
+                  Es un <strong>Abogado Doctorado Estadounidense</strong> y especialista en <strong>Inglés Jurídico (Legal English)</strong> con más de 40 años de experiencia internacional. 
                   Cuenta con una Maestría en enseñanza de inglés jurídico, conversación y escritura profesional.
                 </p>
                 <p className="about-secondary-text">
-                  Asimismo, es reconocido como autor de publicaciones jurídicas académicas, profesor de derecho y especialista en la enseñanza de inglés para el contexto profesional legal global.
+                  Asimismo, es reconocido como autor de publicaciones jurídicas académicas, profesor de derecho y líder en la enseñanza de <strong>Legal English</strong> para el contexto profesional global.
                 </p>
               </div>
             </div>
