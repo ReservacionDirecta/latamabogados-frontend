@@ -15,7 +15,7 @@ const AgendarClase: React.FC = () => {
         <div className="container-narrow">
           <div className="ma-top">
             <div className="ma-photo">
-              <img src="/dr-marcus-ambrose-abogado-1.png" alt="Dr. Marcus Ambrose" />
+              <img src="/clase de ingles legal online.png" alt="Dr. Marcus Ambrose" />
             </div>
 
             <h2 className="ma-title">Aprenda inglés profesional con el Dr. Marcus Ambrose</h2>

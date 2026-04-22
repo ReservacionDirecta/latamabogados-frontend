@@ -272,13 +272,13 @@
 }
 
 .hero-cta-secondary {
-  background-color: #8e3d4a;
-  color: #fff;
+  background-color: #e6b800;
+  color: #0e0d0d;
   box-shadow: 0 4px 15px rgba(142, 61, 74, 0.2);
 }
 
 .hero-cta-secondary:hover {
-  background-color: #723240;
+  background-color: #ffcc00;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(142, 61, 74, 0.3);
 }

@@ -731,7 +731,7 @@ select, textarea, input[type=url], input[type=tel], input[type=text], input[type
   <div class="ma-wrap">
     <div class="ma-top">
       <div class="ma-photo">
-        <img decoding="async" src="https://navajowhite-echidna-977051.hostingersite.com/wp-content/uploads/2024/01/dr-marcus-ambrose-abogado-1.png" alt="Dr. Marcus Ambrose">
+        <img decoding="async" src="clase de ingles" alt="Dr. Marcus Ambrose">
       </div>
 
       <h2 class="ma-title">Aprenda inglés profesional con Dr. Marcus Ambrose</h2>
