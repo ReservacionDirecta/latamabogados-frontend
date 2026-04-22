@@ -53,6 +53,12 @@
   font-size: 20px;
 }
 
+@media (max-width: 768px) {
+  .ct-social-text {
+    display: none;
+  }
+}
+
 .ct-social-text a {
   text-decoration: none;
   transition: color 0.2s;

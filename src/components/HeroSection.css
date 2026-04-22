@@ -82,7 +82,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 180px 34px;
+  padding: 200px 34px;
   text-align: center;
   gap: 40px;
   animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
@@ -262,7 +262,7 @@
 }
 
 .hero-cta-secondary {
-  background-color: #ffffff;
+  background-color: #ffcc00;
   color: #1e1f33;
 }
 
@@ -344,6 +344,7 @@
   border: none;
   box-shadow: none;
   padding: px;
+  background-color: #8e3d4a !important;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -420,50 +421,62 @@
 
 @media (max-width: 768px) {
   .hero-content {
-    padding: 120px 15px;
+    padding: 100px 15px;
     min-height: auto;
-    gap: 25px;
+    gap: 30px;
   }
   
+  .hero-brand-latam,
+  .hero-brand-abogados {
+    font-size: clamp(42px, 12vw, 55px);
+  }
+
   .hero-main-title {
     width: 100%;
     padding: 0 10px;
-    font-size: clamp(28px, 8vw, 42px);
+    font-size: clamp(28px, 8vw, 40px);
     line-height: 1.2;
     margin: 0 auto;
   }
 
+  .hero-services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+    max-width: 100%;
+  }
+
   .hero-service-card {
-    padding: 25px 20px;
+    padding: 32px 20px;
+    gap: 16px;
   }
 
   .hero-service-text {
-    font-size: clamp(18px, 4.5vw, 22px);
+    font-size: clamp(20px, 6vw, 28px);
     line-height: 1.3;
   }
 
   .hero-authority-badge {
-    padding: 25px 15px;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
     width: 100%;
-    max-width: 100%;
-    gap: 20px;
-    border-radius: 12px;
+    max-width: 450px;
+    padding: 0;
+    overflow: hidden;
+    margin: 30px auto;
   }
 
   .authority-thumbnail {
-    flex: 0 0 120px;
-    width: 120px;
-    height: 120px;
-    margin: 0 auto;
+    width: 100%;
+    height: 350px;
+    flex: none;
   }
 
   .authority-main-content {
-    flex-direction: column;
+    padding: 32px 20px;
     text-align: center;
-    gap: 20px;
     width: 100%;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .authority-info {
@@ -471,7 +484,11 @@
   }
 
   .hero-doctor-name {
-    font-size: 26px;
+    font-size: 28px;
+  }
+
+  .hero-subtitle-bottom {
+    font-size: 16px;
   }
 
   .hero-experience-text {
@@ -486,10 +503,11 @@
     width: 100%;
     max-width: 100% !important;
     text-align: center;
-    padding: 12px 15px;
+    padding: 14px 20px;
     line-height: 1.2;
     height: auto;
     white-space: normal;
+    font-size: 18px;
   }
 }
 

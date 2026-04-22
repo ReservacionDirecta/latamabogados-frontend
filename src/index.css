@@ -10,21 +10,21 @@
   /* Golden Ratio (Phi) */
   --phi: 1.618;
   
-  /* Typography Scales (Phi-based & Fluid) */
-  --fs-base: 16px;
-  --fs-h6: clamp(20px, 4vw, 26px);
-  --fs-h5: clamp(28px, 6vw, 42px);
-  --fs-h4: clamp(38px, 8vw, 68px);
-  --fs-h3: clamp(50px, 10vw, 110px);
-  --fs-h2: clamp(80px, 15vw, 178px);
-  --fs-h1: clamp(120px, 20vw, 288px);
+  /* Typography Scales (Phi-based & Fluid - ACCESSIBILITY BOOST) */
+  --fs-base: 20px; /* Increased from 16px */
+  --fs-h6: clamp(24px, 5vw, 32px);
+  --fs-h5: clamp(32px, 7vw, 48px);
+  --fs-h4: clamp(48px, 9vw, 82px);
+  --fs-h3: clamp(65px, 12vw, 130px);
+  --fs-h2: clamp(100px, 18vw, 220px);
+  --fs-h1: clamp(150px, 25vw, 350px);
   
   /* Fluid Scales for Landing Pages */
-  --fs-hero-title: clamp(32px, 8vw, 65px);
-  --fs-hero-brand: clamp(48px, 12vw, 100px);
+  --fs-hero-title: clamp(42px, 10vw, 85px);
+  --fs-hero-brand: clamp(65px, 15vw, 140px);
   
   /* Spacing Scales (Phi-based & Fluid) */
-  --sp-base: clamp(12px, 2vw, 16px);
+  --sp-base: clamp(16px, 3vw, 24px); /* Increased base spacing */
   --sp-1: calc(var(--sp-base) / var(--phi));
   --sp-2: var(--sp-base);
   --sp-3: calc(var(--sp-2) * var(--phi));
@@ -60,14 +60,15 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   color: var(--latam-black);
   background-color: var(--latam-white);
-  line-height: 1.618; /* Golden line height */
+  line-height: 1.618; 
+  font-size: var(--fs-base); /* Larger global base */
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'DM Serif Display', serif;
   font-weight: 400;
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.05; /* Tighter for large fonts */
   color: var(--latam-black);
 }
 

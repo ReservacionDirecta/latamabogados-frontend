@@ -25,6 +25,7 @@ function App() {
         <Route path="/nuestra-conciencia-social" element={<SocialConscience />} />
         <Route path="/vcard" element={<Vcard />} />
         <Route path="/agendar-clase-de-inges-profesional" element={<AgendarClase />} />
+        <Route path="/agendar-consulta-legal" element={<AgendarConsulta />} />
         <Route path="/servicios" element={<AgendarConsulta />} />
         <Route path="/test-landing" element={<TestLanding />} />
       </Routes>

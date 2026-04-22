@@ -21,13 +21,13 @@ const AgendarConsulta: React.FC = () => {
         <div className="container-narrow">
           <div className="ma-top">
             <div className="ma-photo">
-              <img src="/Dr. Marcus Ambrose.png" alt="Dr. Marcus Ambrose - Asesoría Legal Internacional" />
+              <img src="/dr-marcus-ambrose-abogado-1.png" alt="Dr. Marcus Ambrose - Asesoría Legal Internacional" />
             </div>
 
             <h2 className="ma-title">Programar Consulta o <br /> Servicio Legal</h2>
 
             <p className="ma-lead">
-              Si usted esta buscando a consultar o contratar un abogado estadounidense, cuyas tarifas por hora son excesivamente altas, usted puede beneficiarse de honorarios legales muy accesibles de Latam Abogados.
+              Si usted está buscando consultar o contratar un abogado estadounidense, cuyas tarifas por hora son excesivamente altas, usted puede beneficiarse de honorarios legales muy accesibles de Latam Abogados.
             </p>
           </div>
 
@@ -70,7 +70,7 @@ const AgendarConsulta: React.FC = () => {
                   onClick={() => setIsModalOpen(true)}
                   className="ma-btn ma-btn-whatsapp"
                 >
-                  <i className="fab fa-whatsapp"></i> Programe su consulta ahora
+                  Programe su consulta ahora
                 </button>
               </div>
             </div>
