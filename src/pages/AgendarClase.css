@@ -48,7 +48,7 @@
 
 .ma-title {
   font-family: 'DM Serif Display', serif;
-  font-size: 89px;
+  font-size: clamp(48px, 10vw, 89px);
   line-height: 1.15;
   letter-spacing: .4px;
   color: var(--ma-title-color);

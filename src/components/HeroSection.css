@@ -320,10 +320,16 @@
     gap: 20px;
   }
   .hero-authority-badge {
-    padding: 30px 20px;
+    padding: 20px 15px;
     width: 100%;
     flex-direction: column; /* Stack vertically on mobile */
     text-align: center;
+    gap: 20px;
+  }
+  .authority-thumbnail {
+    flex: 0 0 100px;
+    width: 100px;
+    height: 100px;
   }
   .authority-main-content {
     flex-direction: column;

@@ -250,7 +250,8 @@
   gap: 8px;
   color: var(--ma-muted-color);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 15px;
+  padding: 8px 0; /* Larger touch target */
   font-weight: 600;
   transition: color 0.2s;
 }
@@ -268,6 +269,7 @@
   flex-direction: column;
   gap: 40px;
   margin-top: 30px;
+  padding: 0 5px;
 }
 
 .editorial-item {
