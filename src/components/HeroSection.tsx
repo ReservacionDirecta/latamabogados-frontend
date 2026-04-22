@@ -60,7 +60,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           {/* Item 1 */}
           <div className="hero-service-card">
             <p className="hero-service-text">
-              <strong>APRENDA INGLÉS JURÍDICO, CONVERSACIONAL Y ESCRITURA PROFESIONAL PRACTICO</strong>
+              <strong>Aprenda inglés jurídico, conversacional y escritura profesional práctico</strong>
             </p>
             <a href="/agendar-clase-de-inges-profesional" className="hero-cta-btn hero-cta-primary">
               LEER MÁS
@@ -70,7 +70,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           {/* Item 2 */}
           <div className="hero-service-card">
             <p className="hero-service-text">
-              SI USTED TIENE CLIENTES, CASOS O ASUNTOS RELACIONADOS EN EE.UU, PODEMOS AYUDARLES
+              Si usted tiene clientes, casos o asuntos relacionados en EE.UU., podemos ayudarles
             </p>
             <a href="/agendar-consulta-legal" className="hero-cta-btn hero-cta-secondary">
               LEER MÁS
