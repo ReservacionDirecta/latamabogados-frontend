@@ -23,7 +23,7 @@ const About: React.FC = () => {
           <div className="ma-top">
             <h2 className="ma-title">Sobre Marcus Ambrose</h2>
             <p className="ma-lead">
-              Marcus Ambrose ha tenido una vida colorida y experiencias extraordinarias que son difíciles de creer. 
+              El Doctor Marcus Ambrose ha tenido una vida colorida y experiencias extraordinarias que son difíciles de creer. 
             </p>
             
             <div className="about-hero">
