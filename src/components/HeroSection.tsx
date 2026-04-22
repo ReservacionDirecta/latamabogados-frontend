@@ -80,15 +80,21 @@ const HeroSection: React.FC<HeroSectionProps> = ({ customLabels }) => {
 
         {/* ── SECCIÓN DE AUTORIDAD ── */}
         <div className="hero-authority-badge">
-          <div className="authority-info">
-            <p className="hero-doctor-name">Dr. Marcus Ambrose</p>
-            <p className="hero-subtitle-bottom">Doctorado en leyes en EE.UU y Profesor</p>
-            <p className="hero-experience-text">Más de 40 años de experiencia</p>
+          <div className="authority-thumbnail">
+            <img src="/dr-marcus-ambrose-abogado-1.png" alt="Dr. Marcus Ambrose" />
           </div>
-          <div className="authority-action">
-            <a href="/acerca-de" className="hero-cta-btn hero-cta-outline">
-              {customLabels?.authority || "LEER MÁS"}
-            </a>
+          
+          <div className="authority-main-content">
+            <div className="authority-info">
+              <p className="hero-doctor-name">Dr. Marcus Ambrose</p>
+              <p className="hero-subtitle-bottom">Doctorado en leyes en EE.UU y Profesor</p>
+              <p className="hero-experience-text">Más de 40 años de experiencia</p>
+            </div>
+            <div className="authority-action">
+              <a href="/acerca-de" className="hero-cta-btn hero-cta-outline">
+                {customLabels?.authority || "LEER MÁS"}
+              </a>
+            </div>
           </div>
         </div>
       </div>
