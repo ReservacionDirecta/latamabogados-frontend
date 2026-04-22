@@ -18,7 +18,7 @@ const AgendarClase: React.FC = () => {
               <img src="/dr-marcus-ambrose-abogado-1.png" alt="Dr. Marcus Ambrose" />
             </div>
 
-            <h2 className="ma-title">Aprenda inglés profesional con el <br /> Dr. Marcus Ambrose</h2>
+            <h2 className="ma-title">Aprenda inglés profesional con el Dr. Marcus Ambrose</h2>
 
             <p className="ma-lead">
               La habilidad de hablar y escribir inglés profesional se ha convertido en una herramienta indispensable para abogados latinoamericanos con clientes, asuntos y colegas internacionales. Aprenda con el Dr. Marcus Ambrose en sesiones diseñadas para un contexto jurídico real, profesional y global.
@@ -60,6 +60,13 @@ const AgendarClase: React.FC = () => {
                   </span>
                   <span>Se pueden compartir horas programadas con otros miembros de su bufete.</span>
                 </li>
+
+                <li>
+                  <span className="ma-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  </span>
+                  <span>CLASES PARA HABLANTES DE INGLÉS: DESDE PRINCIPIANTES HASTA AVANZADO</span>
+                </li>
               </ul>
 
               <div className="ma-highlight">
@@ -77,6 +84,63 @@ const AgendarClase: React.FC = () => {
                 >
                   <i className="fab fa-whatsapp"></i> Programe clases ahora
                 </button>
+              </div>
+            </div>
+
+            <div className="ma-card ma-comparison-card">
+              <h3 className="ma-card-title">Por qué elegir Latam Abogados</h3>
+              <div className="ma-comparison-wrapper">
+                <table className="ma-comparison-table">
+                  <thead>
+                    <tr>
+                      <th>Característica</th>
+                      <th>Latam Abogados</th>
+                      <th>La Competencia</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Profesor Doctorado en Derecho</td>
+                      <td><span className="ma-check">✅</span> SI</td>
+                      <td><span className="ma-cross">❌</span> NO (Laico)</td>
+                    </tr>
+                    <tr>
+                      <td>40 años de experiencia legal internacional</td>
+                      <td><span className="ma-check">✅</span> SI</td>
+                      <td><span className="ma-cross">❌</span> NO</td>
+                    </tr>
+                    <tr>
+                      <td>Maestra en enseñanza de inglés</td>
+                      <td><span className="ma-check">✅</span> SI</td>
+                      <td><span className="ma-cross">❌</span> NO</td>
+                    </tr>
+                    <tr>
+                      <td>Clases hechas a medida</td>
+                      <td><span className="ma-check">✅</span> SI</td>
+                      <td><span className="ma-cross">❌</span> NO (Rígidas)</td>
+                    </tr>
+                    <tr>
+                      <td>Sesiones privadas y personalizadas</td>
+                      <td><span className="ma-check">✅</span> SI</td>
+                      <td><span className="ma-cross">❌</span> NO (Pre-grabadas)</td>
+                    </tr>
+                    <tr>
+                      <td>Enseñanza práctica y útil</td>
+                      <td><span className="ma-check">✅</span> SI</td>
+                      <td><span className="ma-cross">❌</span> NO (Teorética)</td>
+                    </tr>
+                    <tr>
+                      <td>Sesiones de 1 hora completa</td>
+                      <td><span className="ma-check">✅</span> SI</td>
+                      <td><span className="ma-cross">❌</span> NO (50 min)</td>
+                    </tr>
+                    <tr>
+                      <td>Modalidad exclusiva</td>
+                      <td><span className="ma-check">✅</span> Individual</td>
+                      <td><span className="ma-cross">❌</span> Grupal</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>

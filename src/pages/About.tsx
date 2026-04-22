@@ -13,7 +13,7 @@ const About: React.FC = () => {
       <main className="agendar-main">
         <div className="container-narrow">
           <div className="ma-top">
-            <h2 className="ma-title">Quién es el <br /> Dr. Marcus Ambrose</h2>
+            <h2 className="ma-title">Quién es el Dr. Marcus Ambrose</h2>
             
             <div className="about-hero">
               <div className="about-photo-wrapper">
