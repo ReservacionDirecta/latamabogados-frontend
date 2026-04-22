@@ -70,7 +70,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           {/* Item 2 */}
           <div className="hero-service-card">
             <p className="hero-service-text">
-              Si usted tiene clientes, casos o asuntos relacionados en EE.UU., podemos ayudarles
+              <strong>Si usted tiene clientes, casos o asuntos relacionados en EE.UU., podemos ayudarles</strong>
             </p>
             <a href="/agendar-consulta-legal" className="hero-cta-btn hero-cta-secondary">
               LEER MÁS
@@ -78,12 +78,22 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           </div>
         </div>
 
-        {/* ── SECCIÓN DE AUTORIDAD ── */}
+        {/* ── INDICADOR DE SCROLL PREMIUM ── */}
+        <div className="hero-scroll-indicator">
+          <div className="scroll-mouse">
+            <div className="scroll-wheel"></div>
+          </div>
+          <p>DESCUBRIR</p>
+        </div>
+
+        {/* ── Badge de Autoridad ── */}
         <div className="hero-authority-badge">
           <div className="authority-thumbnail">
-            <img src="/dr-marcus-ambrose-abogado-1.png" alt="Dr. Marcus Ambrose" />
+            <img 
+              src="/dr-marcus-ambrose-abogado-1.png" 
+              alt="Dr. Marcus Ambrose" 
+            />
           </div>
-          
           <div className="authority-main-content">
             <div className="authority-info">
               <p className="hero-doctor-name">Dr. Marcus Ambrose</p>
@@ -96,14 +106,6 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
               </a>
             </div>
           </div>
-        </div>
-
-        {/* ── INDICADOR DE SCROLL PREMIUM ── */}
-        <div className="hero-scroll-indicator">
-          <div className="scroll-mouse">
-            <div className="scroll-wheel"></div>
-          </div>
-          <p>DESCUBRIR</p>
         </div>
       </div>
     </section>

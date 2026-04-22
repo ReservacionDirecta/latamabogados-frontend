@@ -40,7 +40,7 @@
   overflow: hidden;
   background-color: #d6d6d6;
   z-index: 1;
-  opacity: 0.09;
+  opacity: 0.2;
 }
 
 .hero-bg-image,
@@ -74,16 +74,29 @@
    ══════════════════════════════════════════════════════════════════ */
 .hero-content {
   position: relative;
+  z-index: 5;
   width: 100%;
-  min-height: 85vh;
-  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 60px 24px;
+  padding: 180px 34px;
   text-align: center;
-  gap: 6px;
+  gap: 40px;
+  animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ── "Latam Abogados" ── */
@@ -101,7 +114,7 @@
 
 .hero-brand-latam {
   font-family: 'DM Serif Display', serif;
-  font-size: clamp(60px, 8vw, 89px);
+  font-size: clamp(65px, 10vw, 100px); /* Increased from 89px */
   line-height: 1;
   color: #8e3d4a; 
   letter-spacing: -1px;
@@ -109,7 +122,7 @@
 
 .hero-brand-abogados {
   font-family: 'DM Serif Display', serif;
-  font-size: clamp(60px, 8vw, 89px);
+  font-size: clamp(65px, 10vw, 100px); /* Increased from 89px */
   line-height: 1;
   color: #1e1f33; /* White for better contrast on dark video */
   letter-spacing: -1px;
@@ -132,25 +145,26 @@
     line-height: 1.2;
     letter-spacing: 0px;
     font-weight: 600;
-    font-size: clamp(37px, 5vw, 59px);
+    font-size: clamp(42px, 6vw, 72px); /* Increased from 59px */
     backdrop-filter: none;
     filter: none;
     transform-origin: 50% 50%;
-    opacity: 1;
+    opacity: 0;
     transform: translate(0px, 0px);
     visibility: visible;
     margin: 10px auto;
+    animation: fadeInUp 0.8s 0.2s ease-out forwards;
 }
 
 /* ── Servicios Grid ── */
 .hero-services-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
   width: 100%;
-  max-width: 900px;
-  margin: 20px 0;
-  animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+  max-width: 1100px;
+  opacity: 0;
+  animation: fadeInUp 0.8s 0.4s ease-out forwards;
 }
 
 .hero-service-card {
@@ -158,17 +172,36 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
+  border: 2px solid #8e3d4a; /* Red legal border */
+  border-radius: 6px;
+  padding: 40px 30px;
+  background-color: rgba(255, 255, 255, 0.05); /* Default subtle tint */
+}
+
+/* Second card variant: White background */
+.hero-service-card:last-child {
+  background-color: #ffffff;
+  border: none; /* Removed red border */
 }
 
 .hero-service-text {
   font-family: "Playfair Display", serif;
-  color: #1e1f33;
-  font-size: clamp(20px, 3vw, 38px);
+  font-size: clamp(24px, 3.5vw, 44px);
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.3;
   margin: 0;
-  max-width: 750px;
+  max-width: 850px;
+}
+
+/* Default card text color - Dark Navy/Black */
+.hero-service-card .hero-service-text {
+  color: rgb(30, 31, 51);
+}
+
+/* Second card text color - Red Maroon */
+.hero-service-card:last-child .hero-service-text {
+  color: #8e3d4a;
 }
 
 /* ── Botones CTA (LEER MÁS) ── */
@@ -184,12 +217,12 @@
     min-height: 0px;
     min-width: 0px;
     max-height: none;
-    max-width: 169px;
+    
     text-align: left;
     line-height: 39px;
     letter-spacing: 0px;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 22px; /* Increased from 18px */
     padding-left: 15px;
     padding-right: 15px;
     backdrop-filter: none;
@@ -201,7 +234,7 @@
     display: inline-block;
     border: none;
     cursor: pointer;
-    border-radius: 12px; 
+    border-radius: 6px; 
 }
 
 .hero-cta-btn:hover {
@@ -243,29 +276,29 @@
 /* ── Sección de Autoridad ── */
 .hero-authority-badge {
   background: rgba(30, 31, 51, 0.6); 
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  padding: 30px 40px;
+  border-radius: 6px;
+  padding: 0;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  max-width: 950px;
+  align-items: stretch;
+  gap: 0;
+  width: fit-content;
+  max-width: 1000px;
+  margin: 40px auto;
+  overflow: hidden;
 }
 
 /* ── Scroll Indicator ── */
 .hero-scroll-indicator {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   opacity: 0.8;
-  animation: revealUp 1s ease 1.5s both;
+  animation: revealUp 1s ease 1.2s both;
+  
+  z-index: 2;
 }
 
 .hero-scroll-indicator p {
@@ -304,13 +337,14 @@
 }
 
 .authority-thumbnail {
-  flex: 0 0 140px;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
+  flex: 0 0 160px; /* Fixed width, height will stretch */
+  width: 160px;
+  height: auto;
+  border-radius: 6px; /* Square edges to match the content box */
   overflow: hidden;
-  border: 4px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border: none;
+  box-shadow: none;
+  padding: px;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -326,29 +360,39 @@
 
 .authority-main-content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  gap: 30px;
-  text-align: left;
+  gap: 20px;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  animation: fadeInUp 0.8s 0.6s ease-out forwards;
+  background-color: #ffffff !important; /* White square background */
+  border: none;
+  padding: 30px 40px; /* Generous padding for height */
+  border-radius: 0; /* Square edge to join thumbnail */
+  text-align: center;
+  flex: 1;
 }
 
 .authority-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 6px;
 }
 
 .hero-doctor-name {
   font-family: 'DM Serif Display', serif;
-  font-size: clamp(28px, 3.5vw, 36px);
-  color: #ffffff;
+  font-size: clamp(32px, 4vw, 42px); /* Increased from 36px */
+  color: #000000; /* Black name */
   margin: 0;
 }
 
 .hero-subtitle-bottom {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(16px, 1.8vw, 20px);
-  color: #ffcc00;
+  font-size: clamp(18px, 2vw, 24px); /* Increased from 20px */
+  color: #8e3d4a; /* Red subtitle */
   margin: 0;
 }
 
@@ -356,36 +400,46 @@
   font-family: 'Roboto', sans-serif;
   background-color: #8e3d4a;
   color: #ffffff;
-  font-size: 13px;
+  font-size: 18px; /* Increased from 15px */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 6px 14px;
   border-radius: 6px;
-  margin-top: 10px;
+  margin: 10px auto 0;
   width: fit-content;
 }
 
 /* ── Responsive ── */
+@media (max-width: 992px) {
+  .hero-services-grid {
+    grid-template-columns: 1fr;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-content {
-    padding: 40px 15px;
+    padding: 120px 15px;
     min-height: auto;
-    gap: 15px;
+    gap: 25px;
   }
   
   .hero-main-title {
     width: 100%;
     padding: 0 10px;
-    line-height: 1.3;
+    font-size: clamp(28px, 8vw, 42px);
+    line-height: 1.2;
+    margin: 0 auto;
   }
 
-  .hero-services-grid {
-    gap: 25px;
+  .hero-service-card {
+    padding: 25px 20px;
   }
 
   .hero-service-text {
-    font-size: 20px;
+    font-size: clamp(18px, 4.5vw, 22px);
     line-height: 1.3;
   }
 
@@ -394,19 +448,23 @@
     flex-direction: column;
     text-align: center;
     width: 100%;
+    max-width: 100%;
     gap: 20px;
+    border-radius: 12px;
   }
 
   .authority-thumbnail {
     flex: 0 0 120px;
     width: 120px;
     height: 120px;
+    margin: 0 auto;
   }
 
   .authority-main-content {
     flex-direction: column;
     text-align: center;
-    gap: 15px;
+    gap: 20px;
+    width: 100%;
   }
 
   .authority-info {
@@ -422,19 +480,31 @@
   }
 
   .hero-scroll-indicator {
-    display: none; /* Hide on small mobile to save space */
+    display: none;
+  }
+
+  .hero-cta-btn {
+    width: 100%;
+    max-width: 100% !important;
+    text-align: center;
+    padding: 12px 15px;
+    line-height: 1.2;
+    height: auto;
+    white-space: normal;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-cta-btn {
-    width: 100%;
-    padding: 0 15px;
-    text-align: center;
-  }
-  
   .hero-brand-latam,
   .hero-brand-abogados {
-    font-size: clamp(40px, 12vw, 60px);
+    font-size: clamp(32px, 10vw, 48px);
+  }
+  
+  .hero-main-title {
+    font-size: 26px;
+  }
+
+  .hero-service-text {
+    font-size: 18px;
   }
 }

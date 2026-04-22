@@ -29,20 +29,6 @@ const HeaderBar: React.FC = () => {
 
   return (
     <header id="header" className={`ct-header ${mobileMenuOpen ? 'mobile-menu-open' : ''}`}>
-      {/* ── TOP BAR ── */}
-      <div className="ct-header-top">
-        <div className="ct-container">
-          <div className="ct-top-start">
-            
-          </div>
-          <div className="ct-top-end">
-            <div className="ct-social-text">
-              <span style={{ color: '#8e3d4a' }}><strong>Somos socialmente responsables.</strong></span>{' '}
-              <Link to="/nuestra-conciencia-social" style={{ color: '#000000', fontWeight: 'bold', textDecoration: 'none' }}>Ver más →</Link>
-            </div>
-          </div>
-        </div>
-      </div>
       {/* ── MAIN NAV BAR ── */}
       <div className="ct-header-main">
         <div className="ct-container">
@@ -56,94 +42,65 @@ const HeaderBar: React.FC = () => {
             </Link>
           </div>
           <div className="ct-main-end">
-            <nav className="header-menu" aria-label="Menú de cabecera">
-              <ul className="menu">
-                <li className={location.pathname === '/' ? 'current' : ''}>
-                  <Link to="/" className="ct-menu-link">INICIO</Link>
-                </li>
-                <li className={location.pathname === '/vcard' ? 'current' : ''}>
-                  <Link to="/vcard" className="ct-menu-link">VCARD</Link>
-                </li>
-                <li className={location.pathname === '/servicios' ? 'current' : ''}>
-                  <Link to="/servicios" className="ct-menu-link">SERVICIOS</Link>
-                </li>
-                <li className={location.pathname === '/contacto' ? 'current' : ''}>
-                  <Link to="/contacto" className="ct-menu-link">CONTACTO</Link>
-                </li>
-              </ul>
-            </nav>
-            <Link to="/agendar-clase-de-inges-profesional" className="ct-button-ghost" aria-label="Programar Clase de Ingles">
-              Programar Clase de Ingles
-            </Link>
-            {/* Mobile hamburger */}
-            <button
-              className="ct-mobile-trigger"
-              aria-label="Menú"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? (
-                <svg width="18" height="18" viewBox="0 0 15 15"><path d="M1 15a1 1 0 01-.71-.29 1 1 0 010-1.41l5.8-5.8-5.8-5.8A1 1 0 011.7.29l5.8 5.8 5.8-5.8a1 1 0 011.41 1.41l-5.8 5.8 5.8 5.8a1 1 0 01-1.41 1.41l-5.8-5.8-5.8 5.8A1 1 0 011 15z"/></svg>
-              ) : (
-                <svg width="18" height="14" viewBox="0 0 18 14"><rect y="0" width="18" height="1.7" rx="1"/><rect y="6.15" width="18" height="1.7" rx="1"/><rect y="12.3" width="18" height="1.7" rx="1"/></svg>
-              )}
-            </button>
+            <div className="ct-social-text">
+              <span style={{ color: 'rgb(30, 31, 51)', fontWeight: 'bold' }}>Somos socialmente responsables.</span>{' '}
+              <Link to="/nuestra-conciencia-social" style={{ color: '#8e3d4a', fontWeight: 'bold', textDecoration: 'none' }}>Ver más →</Link>
+            </div>
           </div>
         </div>
       </div>
 
       {/* ── MOBILE MENU PANEL ── */}
-      {mobileMenuOpen && (
-        <div className="ct-mobile-menu-panel">
-          <button 
-            className="ct-mobile-close" 
-            onClick={() => setMobileMenuOpen(false)}
-            aria-label="Cerrar menú"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-          </button>
+      <div className="ct-mobile-menu-panel">
+        <button 
+          className="ct-mobile-close" 
+          onClick={() => setMobileMenuOpen(false)}
+          aria-label="Cerrar menú"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
 
-          <nav className="mobile-nav">
-            <ul>
-              <li className={location.pathname === '/' ? 'current' : ''}>
-                <Link to="/">INICIO</Link>
-              </li>
-              <li className={location.pathname === '/vcard' ? 'current' : ''}>
-                <Link to="/vcard">Vcard</Link>
-              </li>
-              <li className={location.pathname === '/contacto' ? 'current' : ''}>
-                <Link to="/contacto">Contacto</Link>
-              </li>
-            </ul>
-          </nav>
+        <nav className="mobile-nav">
+          <ul>
+            <li className={location.pathname === '/' ? 'current' : ''}>
+              <Link to="/">INICIO</Link>
+            </li>
+            <li className={location.pathname === '/vcard' ? 'current' : ''}>
+              <Link to="/vcard">Vcard</Link>
+            </li>
+            <li className={location.pathname === '/contacto' ? 'current' : ''}>
+              <Link to="/contacto">Contacto</Link>
+            </li>
+          </ul>
+        </nav>
 
-          <div className="mobile-actions">
-            <Link to="/agendar-clase-de-inges-profesional" className="ct-button-ghost mobile-cta">
-              Agendar Clase de Ingles
-            </Link>
+        <div className="mobile-actions">
+          <Link to="/agendar-clase-de-inges-profesional" className="ct-button-ghost mobile-cta">
+            Agendar Clase de Ingles
+          </Link>
 
-            <div className="mobile-responsibility">
-              <span className="resp-text">Somos socialmente responsables.</span>{' '}
-              <Link to="/nuestra-conciencia-social" className="resp-link">Ver más →</Link>
-            </div>
+          <div className="mobile-responsibility">
+            <span className="resp-text">Somos socialmente responsables.</span>{' '}
+            <Link to="/nuestra-conciencia-social" className="resp-link">Ver más →</Link>
+          </div>
 
-            <div className="mobile-login-section">
-              <span className="login-label">INICIAR SESIÓN</span>
-              <div className="login-icon-box">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8e3d4a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-              </div>
-            </div>
-
-            <div className="mobile-socials">
-              <a href="https://www.facebook.com/latamabogados1/" target="_blank" rel="noopener noreferrer">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="#8e3d4a"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-              </a>
-              <a href="https://wa.link/up33uh" target="_blank" rel="noopener noreferrer">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="#8e3d4a"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-11.7 8.38 8.38 0 0 1 3.8.9L21 3z"></path></svg>
-              </a>
+          <div className="mobile-login-section">
+            <span className="login-label">INICIAR SESIÓN</span>
+            <div className="login-icon-box">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8e3d4a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             </div>
           </div>
+
+          <div className="mobile-socials">
+            <a href="https://www.facebook.com/latamabogados1/" target="_blank" rel="noopener noreferrer">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#8e3d4a"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://wa.link/up33uh" target="_blank" rel="noopener noreferrer">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#8e3d4a"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-11.7 8.38 8.38 0 0 1 3.8.9L21 3z"></path></svg>
+            </a>
+          </div>
         </div>
-      )}
+      </div>
     </header>
   );
 };
