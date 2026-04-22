@@ -33,7 +33,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           setHasPlayed(true);
         }
       },
-      { threshold: 0.8 } // Trigger when 80% visible
+      { threshold: 0.5 } // More sensitive: trigger at 50% visible
     );
 
     if (badgeRef.current) {
@@ -116,7 +116,10 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           <div className="authority-thumbnail">
             {isVideoPlaying ? (
               <video
-                ref={welcomeVideoRef}
+                ref={(el) => {
+                  welcomeVideoRef.current = el;
+                  if (el) el.play().catch(() => {});
+                }}
                 className="authority-welcome-video"
                 autoPlay
                 playsInline
