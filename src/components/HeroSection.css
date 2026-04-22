@@ -40,7 +40,7 @@
   overflow: hidden;
   background-color: #111;
   z-index: 1;
-  opacity: 0.2;
+  opacity: 0.1;
 }
 
 .hero-bg-image,
@@ -117,15 +117,28 @@
 
 /* ── Título Principal (Headline) ── */
 .hero-main-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(32px, 5vw, 54px);
-  font-weight: 600;
-  color: #1e1f33;
-  line-height: 1.2;
-  max-width: 900px;
-  margin: 10px auto 30px;
-  animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
-  letter-spacing: -0.5px;
+    z-index: 7;
+    font-family: "Playfair Display";
+    height: auto;
+    color: rgb(30, 31, 51);
+    text-decoration: none;
+    white-space: normal;
+    width: 861px;
+    min-height: 0px;
+    min-width: 0px;
+    max-height: none;
+    max-width: none;
+    text-align: center;
+    line-height: 41px;
+    letter-spacing: 0px;
+    font-weight: 600;
+    font-size: 41px;
+    backdrop-filter: none;
+    filter: none;
+    transform-origin: 50% 50%;
+    opacity: 1;
+    transform: translate(0px, 0px);
+    visibility: visible;
 }
 
 /* ── Servicios Grid ── */
