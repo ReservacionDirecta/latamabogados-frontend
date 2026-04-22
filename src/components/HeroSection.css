@@ -390,7 +390,7 @@
 
 .hero-doctor-name {
   font-family: 'DM Serif Display', serif;
-  font-size: clamp(32px, 4vw, 40px); /* Following the same 40px scale */
+  font-size: clamp(32px, 4vw, 60px); /* Following the same 40px scale */
   color: #000000;
   margin: 0;
 }
@@ -429,7 +429,7 @@
   .hero-content {
     padding: 100px 15px;
     min-height: auto;
-    gap: 30px;
+    gap: 20px;
   }
   
   .hero-brand-latam,
@@ -457,7 +457,7 @@
   }
 
   .hero-service-text {
-    font-size: clamp(20px, 6vw, 28px);
+    font-size: clamp(20px, 6vw, 39px);
     line-height: 1.3;
   }
 
@@ -490,7 +490,7 @@
   }
 
   .hero-doctor-name {
-    font-size: 28px;
+    font-size: 40px;
   }
 
   .hero-subtitle-bottom {
@@ -506,9 +506,7 @@
   }
 
   .hero-cta-btn {
-    width: 100%;
-    max-width: 100% !important;
-    text-align: center;
+        text-align: center;
     padding: 14px 20px;
     line-height: 1.2;
     height: auto;
@@ -520,14 +518,14 @@
 @media (max-width: 480px) {
   .hero-brand-latam,
   .hero-brand-abogados {
-    font-size: clamp(32px, 10vw, 48px);
+    font-size: clamp(32px, 20vw, 48px);
   }
   
   .hero-main-title {
-    font-size: 26px;
+    font-size: 36px;
   }
 
   .hero-service-text {
-    font-size: 18px;
+    font-size: 29px;
   }
 }
