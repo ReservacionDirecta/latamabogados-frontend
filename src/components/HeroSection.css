@@ -102,6 +102,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: 20px; /* Asegura espacio entre Latam y Abogados */
 }
 
 .hero-brand-latam {
