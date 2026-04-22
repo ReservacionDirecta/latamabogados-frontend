@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
-import { FileText, Award, Book, ExternalLink, Download, X } from 'lucide-react';
+import { FileText, Award, Book, ExternalLink, Download, X, ArrowLeft, Newspaper, Gavel } from 'lucide-react';
 import './AgendarClase.css'; // Reusing the high-quality layout system
 import './About.css';
 
@@ -14,8 +14,17 @@ const About: React.FC = () => {
       
       <main className="agendar-main">
         <div className="container-narrow">
+          <div className="ma-back-nav">
+            <a href="/#inicio" className="back-link">
+              <ArrowLeft size={16} /> Regresar al inicio
+            </a>
+          </div>
+
           <div className="ma-top">
-            <h2 className="ma-title">Quién es el Dr. Marcus Ambrose</h2>
+            <h2 className="ma-title">Sobre Marcus Ambrose</h2>
+            <p className="ma-lead">
+              Marcus Ambrose ha tenido una vida colorida y experiencias extraordinarias que son difíciles de creer. 
+            </p>
             
             <div className="about-hero">
               <div className="about-photo-wrapper">
@@ -47,10 +56,29 @@ const About: React.FC = () => {
           </div>
 
           <div className="ma-grid-single">
+            {/* Trayectoria Principal */}
             <div className="ma-card">
               <h3 className="ma-card-title">Trayectoria y Recursos</h3>
               
               <div className="about-resources-grid">
+                {/* CV y VCard */}
+                <div className="resource-item">
+                  <div className="resource-icon"><FileText size={24} /></div>
+                  <div className="resource-content">
+                    <h4>Perfil Profesional</h4>
+                    <p>Descargue el CV completo y la tarjeta de contacto del Dr. Ambrose.</p>
+                    <div className="resource-actions">
+                      <a href="/wp-content/uploads/2024/01/MA-CV-Webpage.pdf" target="_blank" rel="noopener noreferrer" className="resource-link">
+                        Descargar CV <Download size={14} />
+                      </a>
+                      <span style={{ margin: '0 8px', color: '#ccc' }}>|</span>
+                      <a href="/vcard" className="resource-link">
+                        Ver VCard <ExternalLink size={14} />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Publicaciones */}
                 <div className="resource-item">
                   <div className="resource-icon"><Book size={24} /></div>
@@ -75,12 +103,12 @@ const About: React.FC = () => {
                   </div>
                 </div>
 
-                {/* CV y Diplomado */}
+                {/* Diplomado */}
                 <div className="resource-item">
                   <div className="resource-icon"><Award size={24} /></div>
                   <div className="resource-content">
-                    <h4>CV y Diplomado</h4>
-                    <p>Descargue el historial profesional y certificaciones del Dr. Ambrose.</p>
+                    <h4>Certificaciones</h4>
+                    <p>Visualización del título de Juris Doctor obtenido en EE.UU.</p>
                     <div className="resource-actions">
                       <button 
                         onClick={() => setShowDiploma(true)}
@@ -89,12 +117,45 @@ const About: React.FC = () => {
                       >
                         Ver Diplomado <Award size={14} />
                       </button>
-                      <span style={{ margin: '0 8px', color: '#ccc' }}>|</span>
-                      <a href="/wp-content/uploads/2024/01/Ambrose-For-Judge-Letter.pdf" target="_blank" rel="noopener noreferrer" className="resource-link">
-                        Descargar CV <Download size={14} />
-                      </a>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Secciones de Noticias y Campaña */}
+            <div className="ma-card about-extra-card">
+              <h3 className="ma-card-title">Impacto y Liderazgo</h3>
+              
+              <div className="about-editorial-grid">
+                {/* Artículo de Periódico */}
+                <div className="editorial-item">
+                  <div className="editorial-header">
+                    <Newspaper size={28} />
+                    <h4>ARTÍCULO DE PERIÓDICO EN LAS NOTICIAS DE LA COMUNIDAD</h4>
+                  </div>
+                  <p>
+                    Lea acerca de cómo Marcus Ambrose, considerado por muchos como idealista y visionario, trató de reformar el sistema legal.
+                  </p>
+                  <a href="/wp-content/uploads/2024/01/Newspaper-Article.pdf" target="_blank" rel="noopener noreferrer" className="ma-btn ma-btn-outline">
+                    LEER ARTÍCULO <ExternalLink size={14} />
+                  </a>
+                </div>
+
+                <div className="ma-divider"></div>
+
+                {/* Campaña para Juez */}
+                <div className="editorial-item">
+                  <div className="editorial-header">
+                    <Gavel size={28} />
+                    <h4>AMBROSE PARA EL COMITÉ DE CAMPAÑA DE JUEZ</h4>
+                  </div>
+                  <p>
+                    Ambrose fue aclamado por los líderes políticos y cívicos en el estado de Florida, como el hombre que podría reformar el poder judicial y restaurar la profesión legal al estatus noble que una vez disfrutó.
+                  </p>
+                  <a href="/wp-content/uploads/2024/01/Ambrose-For-Judge-Letter.pdf" target="_blank" rel="noopener noreferrer" className="ma-btn ma-btn-outline">
+                    VER CARTA DE CAMPAÑA <ExternalLink size={14} />
+                  </a>
                 </div>
               </div>
 
