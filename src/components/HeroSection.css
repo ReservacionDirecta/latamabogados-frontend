@@ -82,9 +82,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 120px 34px;
+  padding: 200px 34px;
   text-align: center;
-  gap: 10px;
+  gap: 40px;
   animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
@@ -254,7 +254,6 @@
     background-color: rgb(255, 204, 0);
     color: rgb(0, 0, 0);
     border: none;
-    box-shadow: 0px 3px 0px rgb(255, 204, 0) !important;
 }
 
 .hero-cta-primary {
@@ -269,7 +268,7 @@
 
 .hero-cta-outline {
   background-color: transparent;
-  color: #1e1f33;
+  color: #ffcc00;
   border: 2px solid #ffcc00;
 }
 
@@ -282,9 +281,9 @@
   flex-direction: row;
   align-items: stretch;
   gap: 0;
-  width: 100%;
-  max-width: 1200px;
-  margin: var(--sp-5) auto;
+  width: fit-content;
+  max-width: 1000px;
+  margin: 40px auto;
   overflow: hidden;
 }
 
@@ -337,13 +336,14 @@
 }
 
 .authority-thumbnail {
-  flex: 0 0 350px; 
-  width: 350px;
+  flex: 0 0 160px; /* Fixed width, height will stretch */
+  width: 160px;
   height: auto;
-  border-radius: 6px; 
+  border-radius: 6px; /* Square edges to match the content box */
   overflow: hidden;
   border: none;
   box-shadow: none;
+  padding: px;
   background-color: #8e3d4a !important;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -352,37 +352,25 @@
   transform: scale(1.05) rotate(2deg);
 }
 
-.authority-thumbnail img,
-.authority-welcome-video {
+.authority-thumbnail img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-}
-
-.fade-in {
-  animation: fadeIn 0.8s ease-in forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }
 
 .authority-main-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: var(--sp-3);
+  gap: 20px;
   transition: all 0.4s ease;
   backdrop-filter: blur(10px);
   opacity: 0;
   animation: fadeInUp 0.8s 0.6s ease-out forwards;
-  background-color: #ffffff !important;
+  background-color: #ffffff !important; /* White square background */
   border: none;
-  padding: var(--sp-4) var(--sp-5); 
-  border-radius: 0;
+  padding: 30px 40px; /* Generous padding for height */
+  border-radius: 0; /* Square edge to join thumbnail */
   text-align: center;
   flex: 1;
 }
@@ -396,7 +384,7 @@
 
 .hero-doctor-name {
   font-family: 'DM Serif Display', serif;
-  font-size: var(--fs-h4);
+  font-size: clamp(32px, 4vw, 40px); /* Following the same 40px scale */
   color: #000000;
   margin: 0;
 }
@@ -435,7 +423,7 @@
   .hero-content {
     padding: 100px 15px;
     min-height: auto;
-    gap: 10px;
+    gap: 30px;
   }
   
   .hero-brand-latam,
