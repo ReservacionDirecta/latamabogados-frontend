@@ -52,7 +52,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
         </div>
 
         <h2 className="hero-main-title">
-          APOYAMOS ABOGADOS LATINOAMERICANOS
+          Apoyamos a abogados latinoamericanos
         </h2>
 
         {/* ── Stack de Servicios ── */}
@@ -86,9 +86,9 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           
           <div className="authority-main-content">
             <div className="authority-info">
-              <p className="hero-doctor-name">DR. MARCUS AMBROSE</p>
+              <p className="hero-doctor-name">Dr. Marcus Ambrose</p>
               <p className="hero-subtitle-bottom">DOCTORADO EN LEYES EN EE.UU Y PROFESOR</p>
-              <p className="hero-experience-text">MÁS QUE 40 ANOS DE EXPERIENCIA</p>
+              <p className="hero-experience-text">MÁS DE 40 AÑOS DE EXPERIENCIA</p>
             </div>
             <div className="authority-action">
               <a href="/acerca-de" className="hero-cta-btn hero-cta-outline">

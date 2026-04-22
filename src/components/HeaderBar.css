@@ -127,6 +127,7 @@
   padding: 6px 14px;
   text-decoration: none;
   transition: all 0.2s;
+  border-radius: 12px;
 }
 
 .ct-button-ghost:hover {

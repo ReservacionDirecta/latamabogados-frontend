@@ -38,9 +38,9 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: #111;
+  background-color: #d6d6d6;
   z-index: 1;
-  opacity: 0.1;
+  opacity: 0.09;
 }
 
 .hero-bg-image,
@@ -118,27 +118,28 @@
 /* ── Título Principal (Headline) ── */
 .hero-main-title {
     z-index: 7;
-    font-family: "Playfair Display";
+    font-family: "Playfair Display", serif;
     height: auto;
     color: rgb(30, 31, 51);
     text-decoration: none;
     white-space: normal;
-    width: 861px;
+    width: 100%;
+    max-width: 1080px;
     min-height: 0px;
     min-width: 0px;
     max-height: none;
-    max-width: none;
     text-align: center;
-    line-height: 41px;
+    line-height: 1.2;
     letter-spacing: 0px;
     font-weight: 600;
-    font-size: 41px;
+    font-size: clamp(28px, 5vw, 59px);
     backdrop-filter: none;
     filter: none;
     transform-origin: 50% 50%;
     opacity: 1;
     transform: translate(0px, 0px);
     visibility: visible;
+    margin: 10px auto;
 }
 
 /* ── Servicios Grid ── */
@@ -163,50 +164,64 @@
 .hero-service-text {
   font-family: "Playfair Display", serif;
   color: #1e1f33;
-  font-size: clamp(20px, 3vw, 28px);
+  font-size: clamp(20px, 3vw, 38px);
   font-weight: 400;
   line-height: 1.4;
   margin: 0;
   max-width: 750px;
 }
 
-/* ── Botones CTA ── */
+/* ── Botones CTA (LEER MÁS) ── */
 .hero-cta-btn {
-  display: inline-block;
-  padding: 14px 35px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  border: none;
+    z-index: 14;
+    background-color: rgb(255, 204, 0);
+    font-family: 'Roboto', sans-serif;
+    height: auto;
+    width: auto;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    white-space: nowrap;
+    min-height: 0px;
+    min-width: 0px;
+    max-height: none;
+    max-width: none;
+    text-align: left;
+    line-height: 39px;
+    letter-spacing: 0px;
+    font-weight: 500;
+    font-size: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    backdrop-filter: none;
+    filter: none;
+    transform-origin: 50% 50%;
+    opacity: 1;
+    transform: translate(0px, 0px);
+    visibility: visible;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px; 
 }
 
 .hero-cta-btn:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    filter: brightness(0.9);
 }
 
-.hero-cta-btn::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -60%;
-  width: 25%;
-  height: 200%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: rotate(30deg);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+.hero-cta-primary {
+    background-color: rgb(255, 204, 0);
+    color: rgb(0, 0, 0);
 }
 
-.hero-cta-btn:hover::after {
-  left: 130%;
+.hero-cta-secondary {
+    background-color: rgb(255, 204, 0);
+    color: rgb(0, 0, 0);
+}
+
+.hero-cta-outline {
+    background-color: rgb(255, 204, 0);
+    color: rgb(0, 0, 0);
+    border: none;
 }
 
 .hero-cta-primary {
@@ -229,7 +244,7 @@
 .hero-authority-badge {
   background: rgba(30, 31, 51, 0.6); 
   border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
+  border-radius: 12px;
   padding: 30px 40px;
   display: flex;
   flex-direction: row;
@@ -354,29 +369,72 @@
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .hero-content {
-    padding: 60px 20px;
+    padding: 40px 15px;
     min-height: auto;
+    gap: 15px;
   }
+  
+  .hero-main-title {
+    width: 100%;
+    padding: 0 10px;
+    line-height: 1.3;
+  }
+
+  .hero-services-grid {
+    gap: 25px;
+  }
+
+  .hero-service-text {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
   .hero-authority-badge {
-    padding: 25px 20px;
+    padding: 25px 15px;
     flex-direction: column;
     text-align: center;
+    width: 100%;
+    gap: 20px;
   }
+
   .authority-thumbnail {
-    flex: 0 0 110px;
-    width: 110px;
-    height: 110px;
+    flex: 0 0 120px;
+    width: 120px;
+    height: 120px;
   }
+
   .authority-main-content {
     flex-direction: column;
     text-align: center;
-    gap: 20px;
+    gap: 15px;
+  }
+
+  .authority-info {
+    align-items: center;
+  }
+
+  .hero-doctor-name {
+    font-size: 26px;
+  }
+
+  .hero-experience-text {
+    margin: 10px auto 0;
+  }
+
+  .hero-scroll-indicator {
+    display: none; /* Hide on small mobile to save space */
   }
 }
 
 @media (max-width: 480px) {
   .hero-cta-btn {
     width: 100%;
-    padding: 12px 20px;
+    padding: 0 15px;
+    text-align: center;
+  }
+  
+  .hero-brand-latam,
+  .hero-brand-abogados {
+    font-size: clamp(40px, 12vw, 60px);
   }
 }

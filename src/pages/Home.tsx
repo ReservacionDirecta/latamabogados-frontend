@@ -2,6 +2,7 @@ import React from 'react';
 import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
 import HeroSection from '../components/HeroSection';
+import UtilityGrid from '../components/UtilityGrid';
 import SEO from '../components/SEO';
 import './Home.css';
 
@@ -17,6 +18,7 @@ const Home: React.FC = () => {
       
       <main>
         <HeroSection />
+        <UtilityGrid />
       </main>
 
       <FooterBar />

@@ -18,7 +18,19 @@ const HeaderBar: React.FC = () => {
   return (
     <header id="header" className="ct-header">
       {/* ── TOP BAR ── */}
-      
+      <div className="ct-header-top">
+        <div className="ct-container">
+          <div className="ct-top-start">
+            
+          </div>
+          <div className="ct-top-end">
+            <div className="ct-social-text">
+              <span style={{ color: '#8e3d4a' }}><strong>Somos socialmente responsables.</strong></span>{' '}
+              <Link to="/nuestra-conciencia-social" style={{ color: '#000000', fontWeight: 'bold', textDecoration: 'none' }}>Ver más →</Link>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* ── MAIN NAV BAR ── */}
       <div className="ct-header-main">
         <div className="ct-container">
