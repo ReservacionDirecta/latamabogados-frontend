@@ -21,7 +21,7 @@ const AgendarConsulta: React.FC = () => {
         <div className="container-narrow">
           <div className="ma-top">
             <div className="ma-photo">
-              <img src="/dr-marcus-ambrose-abogado-1.png" alt="Dr. Marcus Ambrose - Asesoría Legal Internacional" />
+              <img src="/clase de ingles legal online.png" alt="Dr. Marcus Ambrose - Asesoría Legal Internacional" />
             </div>
 
             <h2 className="ma-title">Programar Consulta o <br /> Servicio Legal</h2>
