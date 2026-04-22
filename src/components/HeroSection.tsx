@@ -13,7 +13,7 @@ interface HeroSectionProps {
   };
 }
 
-const HeroSection: React.FC<HeroSectionProps> = ({ customLabels }) => {
+const HeroSection: React.FC<HeroSectionProps> = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
