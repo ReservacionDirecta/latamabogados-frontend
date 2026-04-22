@@ -3,12 +3,6 @@
   "build": {
     "builder": "NIXPACKS"
   },
-  "vars": {
-    "NIXPACKS_NODE_VERSION": "20"
-  },
-  "install": {
-    "cmds": ["npm install"]
-  },
   "deploy": {
     "startCommand": "npm run preview",
     "healthcheckPath": "/",
