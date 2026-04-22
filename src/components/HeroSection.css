@@ -292,18 +292,16 @@
 }
 
 @media (max-width: 480px) {
-    min-height: 560px;
-  }
-
   .hero-content {
-    min-height: 560px;
     padding: 40px 16px;
-    gap: 10px;
+    gap: 15px;
   }
-
+  .hero-brand {
+    gap: 5px;
+  }
   .hero-cta-btn {
-    margin-top: 6px;
-    padding: 10px 22px;
-    font-size: 0.8rem;
+    padding: 10px 20px;
+    font-size: 14px;
+    width: 100%;
   }
 }
