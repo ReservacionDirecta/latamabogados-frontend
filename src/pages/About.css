@@ -10,6 +10,7 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(47, 66, 88, 0.05);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .about-photo-wrapper {
@@ -270,6 +271,7 @@
   gap: 40px;
   margin-top: 30px;
   padding: 0 5px;
+  animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
 }
 
 .editorial-item {

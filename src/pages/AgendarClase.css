@@ -70,10 +70,7 @@
 }
 
 .ma-grid-single {
-  max-width: 1080px; /* Optimized for single card reading */
-  margin: 0 auto;
-  width: 100%;
-  animation: heroFadeIn 1s ease 0.2s both;
+  animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .ma-card {
@@ -132,9 +129,16 @@
   font-size: 17px;
   line-height: 1.7;
   padding: 14px 14px 14px 12px;
-  background: var(--ma-surface-2);
   border: 1px solid rgba(47,66,88,.07);
   border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ma-features li:hover {
+  background: white;
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(47, 66, 88, 0.05);
+  border-color: var(--ma-accent-color);
 }
 
 .ma-icon {

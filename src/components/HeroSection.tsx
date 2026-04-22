@@ -97,6 +97,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ customLabels }) => {
             </div>
           </div>
         </div>
+
+        {/* ── INDICADOR DE SCROLL PREMIUM ── */}
+        <div className="hero-scroll-indicator">
+          <div className="scroll-mouse">
+            <div className="scroll-wheel"></div>
+          </div>
+          <p>DESCUBRIR</p>
+        </div>
       </div>
     </section>
   );
