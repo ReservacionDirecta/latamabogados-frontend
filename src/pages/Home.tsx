@@ -10,7 +10,7 @@ const Home: React.FC = () => {
     <div className="home-page">
       <SEO 
         title="Inicio" 
-        description="Domine el Inglés Jurídico y Legal English práctico con el Dr. Marcus Ambrose. Más de 40 años de experiencia en leyes de EE.UU. y educación legal global."
+        description="APRENDA INGLÉS JURÍDICO, CONVERSACIONAL Y ESCRITURA PROFESIONAL PRACTICO"
         keywords="inglés jurídico, legal english, abogado estados unidos, derecho usa, marcus ambrose"
       />
       <HeaderBar />

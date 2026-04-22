@@ -52,7 +52,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ customLabels }) => {
         </div>
 
         <h2 className="hero-main-title">
-          Especialista en Inglés Jurídico y Legal English
+          APOYAMOS ABOGADOS LATINOAMERICANOS
         </h2>
 
         {/* ── Stack de Servicios ── */}
@@ -60,20 +60,20 @@ const HeroSection: React.FC<HeroSectionProps> = ({ customLabels }) => {
           {/* Item 1 */}
           <div className="hero-service-card">
             <p className="hero-service-text">
-              <strong>Domine el Inglés Jurídico y Legal English práctico para el contexto global</strong>
+              <strong>APRENDA INGLÉS JURÍDICO, CONVERSACIONAL Y ESCRITURA PROFESIONAL PRACTICO</strong>
             </p>
             <a href="/agendar-clase-de-inges-profesional" className="hero-cta-btn hero-cta-primary">
-              {customLabels?.service1 || "LEER MÁS"}
+              LEER MÁS
             </a>
           </div>
 
           {/* Item 2 */}
           <div className="hero-service-card">
             <p className="hero-service-text">
-              Si usted tiene clientes, casos o asuntos relacionados en EE.UU, podemos ayudarles
+              SI USTED TIENE CLIENTES, CASOS O ASUNTOS RELACIONADOS EN EE.UU, PODEMOS AYUDARLES
             </p>
-            <a href="/servicios" className="hero-cta-btn hero-cta-secondary">
-              {customLabels?.service2 || "LEER MÁS"}
+            <a href="/agendar-consulta-legal" className="hero-cta-btn hero-cta-secondary">
+              LEER MÁS
             </a>
           </div>
         </div>
@@ -86,13 +86,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ customLabels }) => {
           
           <div className="authority-main-content">
             <div className="authority-info">
-              <p className="hero-doctor-name">Dr. Marcus Ambrose</p>
-              <p className="hero-subtitle-bottom">Doctorado en leyes en EE.UU y Profesor</p>
-              <p className="hero-experience-text">Más de 40 años de experiencia</p>
+              <p className="hero-doctor-name">DR. MARCUS AMBROSE</p>
+              <p className="hero-subtitle-bottom">DOCTORADO EN LEYES EN EE.UU Y PROFESOR</p>
+              <p className="hero-experience-text">MÁS QUE 40 ANOS DE EXPERIENCIA</p>
             </div>
             <div className="authority-action">
               <a href="/acerca-de" className="hero-cta-btn hero-cta-outline">
-                {customLabels?.authority || "LEER MÁS"}
+                LEER MÁS
               </a>
             </div>
           </div>

@@ -24,10 +24,10 @@ const AgendarClase: React.FC = () => {
               <img src="/clase de ingles legal online.png" alt="Clase de Inglés Jurídico y Legal English Online - Dr. Marcus Ambrose" />
             </div>
 
-            <h2 className="ma-title">Especialista en Inglés Jurídico y Legal English</h2>
+            <h2 className="ma-title">APRENDA INGLÉS PROFESIONAL CON DR. MARCUS AMBROSE</h2>
 
             <p className="ma-lead">
-              Domine el <strong>Inglés Jurídico</strong> y el <strong>Legal English</strong> profesional con el Dr. Marcus Ambrose. Una herramienta indispensable para abogados latinoamericanos con proyección internacional.
+              LA HABILIDAD DE HABLAR E ESCRIBIR INGLÉS PROFESIONAL SE HA CONVERTIDO EN UNA HERRAMIENTA INDISPENSABLE PARA ABOGADOS LATINOAMERICANOS CON CLIENTES, ASUNTOS Y COLEGAS INTERNACIONALES
             </p>
           </div>
 
@@ -43,7 +43,7 @@ const AgendarClase: React.FC = () => {
                   <span className="ma-icon">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1a11 11 0 1 0 11 11A11 11 0 0 0 12 1Zm1 17.93V20a1 1 0 0 1-2 0v-1.06a4.5 4.5 0 0 1-3.5-4.38 1 1 0 0 1 2 0 2.5 2.5 0 0 0 5 0c0-1.38-1.1-1.88-3-2.43-2.08-.61-4.5-1.37-4.5-4.07A4.48 4.48 0 0 1 11 3.06V2a1 1 0 0 1 2 0v1.06a4.5 4.5 0 0 1 3.5 4.38 1 1 0 0 1-2 0 2.5 2.5 0 0 0-5 0c0 1.13.89 1.55 2.82 2.12 2.16.64 4.68 1.45 4.68 4.38A4.48 4.48 0 0 1 13 18.93Z"></path></svg>
                   </span>
-                  <span>Precio promocional: $50 USD por hora **</span>
+                  <span>Precio promocional: $850 MXN o $50 USD por hora **</span>
                 </li>
 
                 <li>
@@ -79,8 +79,8 @@ const AgendarClase: React.FC = () => {
                 Formación práctica, flexible y enfocada en la comunicación profesional para abogados y bufetes con proyección internacional.
               </div>
 
-              <div className="ma-footnote">
-                ** El precio promocional se mantiene vigente con paquetes de clases de 10-50 horas prepagados. Después, el costo aumentará.
+              <div className="ma-footnote" style={{ fontSize: '0.85em' }}>
+                ** EL PRECIO PROMOCIONAL SE MANTIENE VIGENTE CON PAQUETES DE CLASES DE 10-50 HORAS PREPAGADOS. DESPUES EL COSTO AUMENTARÁ. SE PUEDE COMPARTIR EL PAQUETE CON OTROS MIEMBROS DE SU BUFETE.
               </div>
 
               <div className="ma-actions">

@@ -27,10 +27,7 @@ const About: React.FC = () => {
           </div>
 
           <div className="ma-top">
-            <h2 className="ma-title">Sobre Marcus Ambrose</h2>
-            <p className="ma-lead">
-              El Doctor Marcus Ambrose ha tenido una vida colorida y experiencias extraordinarias que son difíciles de creer. 
-            </p>
+            <h2 className="ma-title">QUIEN ES DR. MARCUS AMBROSE</h2>
             
             <div className="about-hero">
               <div className="about-photo-wrapper">
@@ -51,11 +48,10 @@ const About: React.FC = () => {
               
               <div className="about-intro-text">
                 <p className="ma-lead">
-                  Es un <strong>Abogado Doctorado Estadounidense</strong> y especialista en <strong>Inglés Jurídico (Legal English)</strong> con más de 40 años de experiencia internacional. 
-                  Cuenta con una Maestría en enseñanza de inglés jurídico, conversación y escritura profesional.
+                  EL ES UN ABOGADO DOCTORADO ESTADOUNIDENSE DE PRIMER NIVEL CON MÁS QUE 40 ANOS DE EXPERIENCIA INTERNACIONAL QUE CUENTA CON UNA MAESTRÍA EN ENSEÑANZA DE INGLES JURÍDICO, CONVERSACIÓN Y ESCRITURA PROFESIONAL
                 </p>
                 <p className="about-secondary-text">
-                  Asimismo, es reconocido como autor de publicaciones jurídicas académicas, profesor de derecho y líder en la enseñanza de <strong>Legal English</strong> para el contexto profesional global.
+                  ASIMISMO EL ES RECONOCIDO COMO AUTOR DE PUBLICACIONES JURÍDICAS ACADÉMICAS Y PROFESOR DE DERECHO Y ENSEÑANZA DE INGLÉS PROFESIONAL.
                 </p>
               </div>
             </div>
@@ -67,31 +63,13 @@ const About: React.FC = () => {
               <h3 className="ma-card-title">Trayectoria y Recursos</h3>
               
               <div className="about-resources-grid">
-                {/* CV y VCard */}
-                <div className="resource-item">
-                  <div className="resource-icon"><FileText size={24} /></div>
-                  <div className="resource-content">
-                    <h4>Perfil Profesional</h4>
-                    <p>Descargue el CV completo y la tarjeta de contacto del Dr. Ambrose.</p>
-                    <div className="resource-actions">
-                      <a href="/wp-content/uploads/2024/01/MA-CV-Webpage.pdf" target="_blank" rel="noopener noreferrer" className="resource-link">
-                        Descargar CV <Download size={14} />
-                      </a>
-                      <span style={{ margin: '0 8px', color: '#ccc' }}>|</span>
-                      <a href="/vcard" className="resource-link">
-                        Ver VCard <ExternalLink size={14} />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
                 {/* Publicaciones */}
                 <div className="resource-item">
                   <div className="resource-icon"><Book size={24} /></div>
                   <div className="resource-content">
                     <h4>Publicaciones y Artículos</h4>
-                    <p>Explore su trayectoria profesional a través de sus publicaciones académicas.</p>
-                    <a href="/wp-content/uploads/2023/07/top-ten-tips.pdf" target="_blank" rel="noopener noreferrer" className="resource-link">
+                    <p>Lea sobre Dr. Marcus Ambrose y sus publicaciones y artículos de su trayectoria profesional.</p>
+                    <a href="/top-ten-tips.pdf" target="_blank" rel="noopener noreferrer" className="resource-link">
                       Ver publicaciones <ExternalLink size={14} />
                     </a>
                   </div>
@@ -102,24 +80,28 @@ const About: React.FC = () => {
                   <div className="resource-icon"><FileText size={24} /></div>
                   <div className="resource-content">
                     <h4>Ejemplos de Escritos</h4>
-                    <p>Conozca ejemplos de sus escritos legales realizados para colegas y clientes.</p>
+                    <p>Conozca ejemplos de sus escritos legales hecho por colegas clientes.</p>
                     <a href="/ejemplos-de-escritos-legales" className="resource-link">
                       Ver ejemplos <ExternalLink size={14} />
                     </a>
                   </div>
                 </div>
 
-                {/* Diplomado */}
+                {/* CV y Diplomado */}
                 <div className="resource-item">
                   <div className="resource-icon"><Award size={24} /></div>
                   <div className="resource-content">
-                    <h4>Certificaciones</h4>
-                    <p>Visualización del título de Juris Doctor obtenido en EE.UU.</p>
+                    <h4>CV y Diplomado</h4>
+                    <p>Descargue el CV y visualice el diplomado del Dr. Marcus Ambrose.</p>
                     <div className="resource-actions">
+                      <a href="/Marcus Ambrose CV.pdf" target="_blank" rel="noopener noreferrer" className="resource-link">
+                        Descargar CV <Download size={14} />
+                      </a>
+                      <span style={{ margin: '0 8px', color: '#ccc' }}>|</span>
                       <button 
                         onClick={() => setShowDiploma(true)}
                         className="resource-link"
-                        style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+                        style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
                       >
                         Ver Diplomado <Award size={14} />
                       </button>
@@ -143,7 +125,7 @@ const About: React.FC = () => {
                   <p>
                     Lea acerca de cómo Marcus Ambrose, considerado por muchos como idealista y visionario, trató de reformar el sistema legal.
                   </p>
-                  <a href="/wp-content/uploads/2024/01/Newspaper-Article.pdf" target="_blank" rel="noopener noreferrer" className="ma-btn ma-btn-outline">
+                  <a href="/Newspaper-Article.pdf" target="_blank" rel="noopener noreferrer" className="ma-btn ma-btn-outline">
                     LEER ARTÍCULO <ExternalLink size={14} />
                   </a>
                 </div>
@@ -159,7 +141,7 @@ const About: React.FC = () => {
                   <p>
                     Ambrose fue aclamado por los líderes políticos y cívicos en el estado de Florida, como el hombre que podría reformar el poder judicial y restaurar la profesión legal al estatus noble que una vez disfrutó.
                   </p>
-                  <a href="/wp-content/uploads/2024/01/Ambrose-For-Judge-Letter.pdf" target="_blank" rel="noopener noreferrer" className="ma-btn ma-btn-outline">
+                  <a href="/Ambrose-For-Judge-Letter.pdf" target="_blank" rel="noopener noreferrer" className="ma-btn ma-btn-outline">
                     VER CARTA DE CAMPAÑA <ExternalLink size={14} />
                   </a>
                 </div>

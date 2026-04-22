@@ -17,12 +17,6 @@ const FooterBar: React.FC = () => {
               alt="LatamAbogados.com"
             />
           </div>
-          <div className="ct-footer-anti-spam">
-            <p>
-              Nunca le enviaremos spam a su correo electrónico, y nunca
-              venderemos o comunicaremos su dirección de correo electrónico a los spammers.
-            </p>
-          </div>
         </div>
       </div>
 
