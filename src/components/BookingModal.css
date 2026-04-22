@@ -36,7 +36,7 @@
 }
 
 .modal-close:hover {
-  color: #9a4d5c;
+  color: #8e3d4a;
 }
 
 .modal-header {
@@ -90,8 +90,8 @@
 
 .form-group input:focus {
   outline: none;
-  border-color: #9a4d5c;
-  box-shadow: 0 0 0 4px rgba(154, 77, 92, 0.1);
+  border-color: #8e3d4a;
+  box-shadow: 0 0 0 4px rgba(142, 61, 74, 0.1);
 }
 
 .form-row {

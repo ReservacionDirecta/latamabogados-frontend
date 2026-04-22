@@ -1,8 +1,13 @@
-/* index.css — Global Reset + Base tokens para Latam Abogados */
+:root {
+  --latam-maroon: #8e3d4a;
+  --latam-maroon-solid: #8e3d4a;
+  --latam-navy: #1e1f33;
+  --latam-navy-solid: #1e1f33;
+  --latam-gold: #ffcc00;
+  --latam-white: #ffffff;
+}
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
