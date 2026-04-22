@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
-import { FileText, Award, Book, ExternalLink, Download } from 'lucide-react';
+import { FileText, Award, Book, ExternalLink, Download, X } from 'lucide-react';
 import './AgendarClase.css'; // Reusing the high-quality layout system
 import './About.css';
 
 const About: React.FC = () => {
+  const [showDiploma, setShowDiploma] = useState(false);
+
   return (
     <div className="agendar-page about-page">
       <HeaderBar />
@@ -17,11 +19,19 @@ const About: React.FC = () => {
             
             <div className="about-hero">
               <div className="about-photo-wrapper">
-                <img 
-                  src="/dr-marcus-ambrose-abogado-1.png" 
-                  alt="Dr. Marcus Ambrose" 
-                  className="about-photo"
-                />
+                <div className="photo-container">
+                  <img 
+                    src="/dr-marcus-ambrose-abogado-1.png" 
+                    alt="Dr. Marcus Ambrose" 
+                    className="about-photo"
+                  />
+                  <button 
+                    className="doctorate-tag"
+                    onClick={() => setShowDiploma(true)}
+                  >
+                    <Award size={14} /> Doctorado
+                  </button>
+                </div>
               </div>
               
               <div className="about-intro-text">
@@ -72,6 +82,14 @@ const About: React.FC = () => {
                     <h4>CV y Diplomado</h4>
                     <p>Descargue el historial profesional y certificaciones del Dr. Ambrose.</p>
                     <div className="resource-actions">
+                      <button 
+                        onClick={() => setShowDiploma(true)}
+                        className="resource-link"
+                        style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+                      >
+                        Ver Diplomado <Award size={14} />
+                      </button>
+                      <span style={{ margin: '0 8px', color: '#ccc' }}>|</span>
                       <a href="/wp-content/uploads/2024/01/Ambrose-For-Judge-Letter.pdf" target="_blank" rel="noopener noreferrer" className="resource-link">
                         Descargar CV <Download size={14} />
                       </a>
@@ -92,6 +110,23 @@ const About: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Modal del Diploma */}
+        {showDiploma && (
+          <div className="diploma-overlay" onClick={() => setShowDiploma(false)}>
+            <div className="diploma-modal" onClick={e => e.stopPropagation()}>
+              <button className="close-modal" onClick={() => setShowDiploma(false)}>
+                <X size={24} />
+              </button>
+              <div className="diploma-header">
+                <h3>Juris Doctor Diploma</h3>
+              </div>
+              <div className="diploma-body">
+                <img src="/diplom.jpeg" alt="Juris Doctor Diploma" />
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
       <FooterBar />

@@ -70,7 +70,7 @@
 }
 
 .ma-grid-single {
-  max-width: 780px; /* Optimized for single card reading */
+  max-width: 1080px; /* Optimized for single card reading */
   margin: 0 auto;
   width: 100%;
   animation: heroFadeIn 1s ease 0.2s both;
