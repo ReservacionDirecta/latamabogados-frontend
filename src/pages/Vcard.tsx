@@ -1,10 +1,16 @@
 import React from 'react';
 import { Globe, Mail, Phone, ArrowLeft } from 'lucide-react';
+import SEO from '../components/SEO';
 import './VCard.css';
 
 const Vcard: React.FC = () => {
   return (
     <div className="vcard-page animate-fade-in">
+      <SEO 
+        title="Tarjeta de Contacto Digital" 
+        description="Tarjeta de contacto digital del Dr. Marcus Ambrose. Especialista en Inmigración y Inglés Jurídico."
+        keywords="vcard, contacto marcus ambrose, abogado ee.uu contacto"
+      />
       <div className="vcard-container glass-panel">
         <div style={{ textAlign: 'left', marginBottom: '20px' }}>
           <a href="/#inicio" className="back-link">

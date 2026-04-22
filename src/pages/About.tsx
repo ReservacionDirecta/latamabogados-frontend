@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
+import SEO from '../components/SEO';
 import { FileText, Award, Book, ExternalLink, Download, X, ArrowLeft, Newspaper, Gavel } from 'lucide-react';
-import './AgendarClase.css'; // Reusing the high-quality layout system
+import './AgendarClase.css'; 
 import './About.css';
 
 const About: React.FC = () => {
@@ -10,6 +11,11 @@ const About: React.FC = () => {
 
   return (
     <div className="agendar-page about-page">
+      <SEO 
+        title="Sobre Marcus Ambrose" 
+        description="Conozca la trayectoria del Dr. Marcus Ambrose, Juris Doctor estadounidense y especialista en Inglés Jurídico con más de 40 años de experiencia internacional."
+        keywords="marcus ambrose, abogado ee.uu, juris doctor, inglés jurídico, legal english expert, profesor de derecho"
+      />
       <HeaderBar />
       
       <main className="agendar-main">

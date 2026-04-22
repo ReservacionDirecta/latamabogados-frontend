@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
 import BookingModal from '../components/BookingModal';
+import SEO from '../components/SEO';
 import './AgendarClase.css';
 
 const AgendarClase: React.FC = () => {
@@ -9,6 +10,11 @@ const AgendarClase: React.FC = () => {
 
   return (
     <div className="agendar-page">
+      <SEO 
+        title="Agendar Clase de Inglés Profesional" 
+        description="Reserve su clase personalizada de Inglés Jurídico y Legal English con el Dr. Marcus Ambrose. Formación práctica para abogados con proyección internacional."
+        keywords="clases inglés jurídico, legal english online, curso inglés para abogados, aprender inglés legal, dr marcus ambrose"
+      />
       <HeaderBar />
       
       <main className="agendar-main">

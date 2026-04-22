@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+# Latam Abogados - Frontend Premium
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es el frontend de **Latam Abogados**, una plataforma profesional diseñada para el Dr. Marcus Ambrose, especialista en **Inglés Jurídico (Legal English)** y leyes de EE.UU. El sitio ha sido migrado desde una base de WordPress a una arquitectura moderna en **React + Vite + TypeScript**.
 
-Currently, two official plugins are available:
+## 🚀 Características Principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Diseño Premium**: Interfaz sofisticada con animaciones sutiles, micro-interacciones y glassmorphism.
+- **Optimización SEO**: Sistema dinámico de metadatos optimizado para palabras clave de alta intención como *"Inglés Jurídico"* y *"Legal English"*.
+- **Arquitectura Moderna**: Componentes modulares, fluid typography (`clamp`) y responsive design robusto.
+- **Integración de Reservas**: Sistema de reserva de clases y consultas mediante modales interactivos y WhatsApp.
+- **Autoridad Profesional**: Secciones dedicadas a la trayectoria, diplomados y escritos legales del Dr. Ambrose.
 
-## React Compiler
+## 🛠️ Tecnologías
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Core**: React 19 + TypeScript
+- **Bundler**: Vite 6
+- **Estilos**: Vanilla CSS con Custom Properties (Variables)
+- **Iconos**: Lucide React
+- **Navegación**: React Router DOM 7
 
-## Expanding the ESLint configuration
+## 📂 Estructura del Proyecto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+latamabogados-frontend/
+├── src/
+│   ├── components/       # Componentes globales (Header, Footer, SEO, Modal)
+│   ├── pages/            # Páginas de la aplicación (Home, About, AgendarClase, etc.)
+│   ├── assets/           # Imágenes y recursos estáticos
+│   ├── index.css         # Estilos globales y variables de marca
+│   └── main.tsx          # Punto de entrada de la aplicación
+├── public/               # Activos públicos (Documentos PDF, Imágenes originales)
+└── ...
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎨 Paleta de Colores
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Latam Maroon**: `#8e3d4a` (Primario)
+- **Latam Navy**: `#1e1f33` (Secundario)
+- **Latam Gold**: `#ffcc00` (Acentos y CTAs)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🏁 Instalación y Desarrollo
+
+1. Instalar dependencias:
+   ```bash
+   npm install
+   ```
+2. Iniciar servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+3. Construir para producción:
+   ```bash
+   npm run build
+   ```
+
+---
+Desarrollado con enfoque en la excelencia legal y educativa.

@@ -2,20 +2,26 @@ import React, { useState } from 'react';
 import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
 import BookingModal from '../components/BookingModal';
-import './AgendarClase.css'; // Reusing the high-quality styles
+import SEO from '../components/SEO';
+import './AgendarClase.css'; 
 
 const AgendarConsulta: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className="agendar-page">
+      <SEO 
+        title="Agendar Consulta Legal" 
+        description="Programar una consulta legal con el Dr. Marcus Ambrose. Asesoría jurídica en EE.UU., procesos migratorios y servicios corporativos internacionales."
+        keywords="consulta legal abogado usa, servicios legales estados unidos, abrir cuenta bancaria usa, constituir empresa usa"
+      />
       <HeaderBar />
       
       <main className="agendar-main">
         <div className="container-narrow">
           <div className="ma-top">
             <div className="ma-photo">
-              <img src="/Dr. Marcus Ambrose.png" alt="Dr. Marcus Ambrose" />
+              <img src="/Dr. Marcus Ambrose.png" alt="Dr. Marcus Ambrose - Asesoría Legal Internacional" />
             </div>
 
             <h2 className="ma-title">Programar Consulta o <br /> Servicio Legal</h2>
