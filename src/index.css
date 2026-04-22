@@ -10,31 +10,44 @@
   /* Golden Ratio (Phi) */
   --phi: 1.618;
   
-  /* Typography Scales (Phi-based) */
+  /* Typography Scales (Phi-based & Fluid) */
   --fs-base: 16px;
-  --fs-h6: calc(var(--fs-base) * var(--phi));           /* ~26px */
-  --fs-h5: calc(var(--fs-h6) * var(--phi));           /* ~42px */
-  --fs-h4: calc(var(--fs-h5) * var(--phi));           /* ~68px */
-  --fs-h3: calc(var(--fs-h4) * var(--phi));           /* ~110px */
-  --fs-h2: calc(var(--fs-h3) * var(--phi));           /* ~178px */
-  --fs-h1: calc(var(--fs-h2) * var(--phi));           /* ~288px (used for massive brand titles) */
+  --fs-h6: clamp(20px, 4vw, 26px);
+  --fs-h5: clamp(28px, 6vw, 42px);
+  --fs-h4: clamp(38px, 8vw, 68px);
+  --fs-h3: clamp(50px, 10vw, 110px);
+  --fs-h2: clamp(80px, 15vw, 178px);
+  --fs-h1: clamp(120px, 20vw, 288px);
   
   /* Fluid Scales for Landing Pages */
-  --fs-hero-title: clamp(40px, 6vw, 65px);
-  --fs-hero-brand: clamp(62px, 10vw, 100px);
+  --fs-hero-title: clamp(32px, 8vw, 65px);
+  --fs-hero-brand: clamp(48px, 12vw, 100px);
   
-  /* Spacing Scales (Phi-based) */
-  --sp-base: 16px;
-  --sp-1: calc(var(--sp-base) / var(--phi));          /* ~10px */
-  --sp-2: var(--sp-base);                             /* 16px */
-  --sp-3: calc(var(--sp-2) * var(--phi));            /* ~26px */
-  --sp-4: calc(var(--sp-3) * var(--phi));            /* ~42px */
-  --sp-5: calc(var(--sp-4) * var(--phi));            /* ~68px */
-  --sp-6: calc(var(--sp-5) * var(--phi));            /* ~110px */
+  /* Spacing Scales (Phi-based & Fluid) */
+  --sp-base: clamp(12px, 2vw, 16px);
+  --sp-1: calc(var(--sp-base) / var(--phi));
+  --sp-2: var(--sp-base);
+  --sp-3: calc(var(--sp-2) * var(--phi));
+  --sp-4: calc(var(--sp-3) * var(--phi));
+  --sp-5: calc(var(--sp-4) * var(--phi));
+  --sp-6: calc(var(--sp-5) * var(--phi));
 }
 
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+.ct-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--sp-3);
+}
+
+@media (max-width: 768px) {
+  .ct-container {
+    padding: 0 var(--sp-2);
+  }
 }
 
 html, body {
