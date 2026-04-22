@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Heart } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import './Page.css';
 
 const SocialConscience: React.FC = () => {
@@ -13,17 +13,7 @@ const SocialConscience: React.FC = () => {
       </div>
 
       <div className="container py-5">
-        <div className="content-grid border-container">
-          <div className="content-sidebar">
-            <div className="sidebar-box glass-panel text-center">
-              <Heart size={48} color="#8e3d4a" style={{ margin: '0 auto 20px' }} />
-              <h3>Donación del 5%</h3>
-              <p style={{ color: 'var(--text-light)', fontSize: '0.9rem' }}>
-                Donaremos el 5% de las ganancias del bufete a organizaciones benéficas que usted elija.
-              </p>
-            </div>
-          </div>
-          
+        <div className="content-single border-container">
           <div className="content-main">
             <h2>Nuestra Responsabilidad Social</h2>
             <p>

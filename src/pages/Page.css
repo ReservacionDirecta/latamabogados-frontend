@@ -40,6 +40,11 @@
   gap: 40px;
 }
 
+.content-single {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .sidebar-img {
   width: 100%;
   border-radius: var(--radius-md);
