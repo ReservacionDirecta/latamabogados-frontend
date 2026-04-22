@@ -15,12 +15,37 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const welcomeVideoRef = useRef<HTMLVideoElement>(null);
+  const badgeRef = useRef<HTMLDivElement>(null);
+  const [isVideoPlaying, setIsVideoPlaying] = React.useState(false);
+  const [hasPlayed, setHasPlayed] = React.useState(false);
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.play().catch(() => {});
     }
-  }, []);
+
+    // Intersection Observer for scroll-triggered video
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasPlayed) {
+          setIsVideoPlaying(true);
+          setHasPlayed(true);
+        }
+      },
+      { threshold: 0.8 } // Trigger when 80% visible
+    );
+
+    if (badgeRef.current) {
+      observer.observe(badgeRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasPlayed]);
+
+  const handleVideoEnd = () => {
+    setIsVideoPlaying(false);
+  };
 
   return (
     <section id="inicio" className="hero-section">
@@ -87,12 +112,25 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
         </div>
 
         {/* ── Badge de Autoridad ── */}
-        <div className="hero-authority-badge">
+        <div className="hero-authority-badge" ref={badgeRef}>
           <div className="authority-thumbnail">
-            <img 
-              src="/dr-marcus-ambrose-abogado-1.png" 
-              alt="Dr. Marcus Ambrose" 
-            />
+            {isVideoPlaying ? (
+              <video
+                ref={welcomeVideoRef}
+                className="authority-welcome-video"
+                autoPlay
+                playsInline
+                onEnded={handleVideoEnd}
+              >
+                <source src="/dr. marcus video intro.mp4" type="video/mp4" />
+              </video>
+            ) : (
+              <img 
+                src="/dr-marcus-ambrose-abogado-1.png" 
+                alt="Dr. Marcus Ambrose" 
+                className="fade-in"
+              />
+            )}
           </div>
           <div className="authority-main-content">
             <div className="authority-info">

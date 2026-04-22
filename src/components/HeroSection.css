@@ -352,10 +352,21 @@
   transform: scale(1.05) rotate(2deg);
 }
 
-.authority-thumbnail img {
+.authority-thumbnail img,
+.authority-welcome-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .authority-main-content {
