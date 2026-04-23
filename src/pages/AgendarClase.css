@@ -43,12 +43,12 @@
 
 .ma-title {
   font-family: 'DM Serif Display', serif;
-  font-size: clamp(40px, 7vw, 88px);
+  font-size: clamp(38px, 7vw, 88px);
   line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--latam-black);
   margin-bottom: var(--sp-3);
-  padding-top: 50px;
+  
 }
 
 .ma-lead-bottom {
@@ -102,10 +102,10 @@
 
 .ma-intro {
   color: var(--latam-black);
-  font-size: 18px;
+  font-size: 17px;
   line-height: var(--phi);
   margin: 0 0 var(--sp-3);
-  text-align: center;
+  text-align: justify;
 }
 
 .ma-features {
@@ -225,7 +225,7 @@
   }
   
   .ma-card-title {
-    font-size: 24px;
+    font-size: 32px;
   }
   
   .ma-btn {
@@ -316,4 +316,75 @@
     padding: 14px 10px;
     font-size: 14px;
   }
+}
+
+/* Economic Options Styles */
+.ma-economic-card {
+  border-top: 4px solid var(--latam-maroon);
+}
+
+.ma-economic-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.ma-economic-item {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+  transition: transform 0.3s ease;
+}
+
+.ma-economic-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--latam-maroon);
+}
+
+.ma-economic-header {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ma-economic-price {
+  font-family: 'DM Serif Display', serif;
+  font-size: 32px;
+  color: var(--latam-maroon);
+}
+
+.ma-economic-price small {
+  font-size: 14px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.ma-economic-header h4 {
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  color: var(--latam-black);
+}
+
+@media (max-width: 768px) {
+  .ma-economic-options-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Price Highlighting */
+.ma-price-tag {
+  background-color: rgba(142, 61, 74, 0.1);
+  color: var(--latam-maroon);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 800;
+  border: 1px solid rgba(142, 61, 74, 0.2);
+  display: inline-block;
+  margin: 0 2px;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1em;
 }
