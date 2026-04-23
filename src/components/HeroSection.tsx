@@ -36,7 +36,8 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
         <img
           className="hero-bg-image"
           src="/wp-content/uploads/hero-bg.png"
-          alt="Latam Abogados Background"
+          alt="Latam Abogados"
+          fetchpriority="high"
           style={{ transform: `translateY(${offset * 0.4}px) scale(1.1)` }}
         />
       </div>
@@ -89,6 +90,9 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
             <img 
               src="/dr-marcus-ambrose-abogado-1.png" 
               alt="Dr. Marcus Ambrose" 
+              loading="lazy"
+              width="80"
+              height="80"
             />
           </div>
           <div className="authority-main-content">

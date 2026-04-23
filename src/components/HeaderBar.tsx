@@ -41,6 +41,8 @@ const HeaderBar: React.FC = () => {
                 src="/wp-content/uploads/2024/01/latam-abogados-marcus-ambrose-5.png"
                 alt="LATAM ABOGADOS"
                 className="default-logo"
+                width="289"
+                height="40"
               />
             </Link>
             {location.pathname !== '/' && (

@@ -18,6 +18,7 @@ const FooterBar: React.FC = () => {
             <img
               src="/wp-content/uploads/2024/01/logo-footer-1-1.png"
               alt="LatamAbogados.com"
+              loading="lazy"
             />
           </div>
         </div>
