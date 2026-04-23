@@ -37,7 +37,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           className="hero-bg-image"
           src="/wp-content/uploads/hero-bg.png"
           alt="Latam Abogados"
-          fetchpriority="high"
+          fetchPriority="high"
           style={{ transform: `translateY(${offset * 0.4}px) scale(1.1)` }}
         />
       </div>

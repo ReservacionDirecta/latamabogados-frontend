@@ -22,7 +22,7 @@
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  marginBottom: 20px;
+  margin-bottom: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   border: 5px solid white;
 }
