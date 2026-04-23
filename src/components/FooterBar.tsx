@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowUp } from 'lucide-react';
 import './FooterBar.css';
 
 /**
@@ -30,6 +31,15 @@ const FooterBar: React.FC = () => {
             <p>
               Avisos legales: - <a href="/aviso-de-privacidad">Aviso de Privacidad</a> - <a href="/politica-de-cookies">Cookie</a>
             </p>
+          </div>
+          <div className="ct-footer-back-to-top">
+            <button 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="ma-btn-black"
+              style={{ padding: '8px 16px', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '6px' }}
+            >
+              <ArrowUp size={14} /> REGRESAR AL INICIO
+            </button>
           </div>
           
         </div>

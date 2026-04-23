@@ -29,7 +29,7 @@
 
 .about-secondary-text {
   font-family: 'Roboto', sans-serif;
-  font-size: 23px;
+  font-size: 22px;
   line-height: var(--phi);
   color: var(--latam-black);
   margin-top: 30px;
@@ -472,13 +472,22 @@
 .ma-title {
   text-align: center;
   width: 100%;
-  padding-top: 20px;
+  padding-top: 122px;
 }
 
 .ma-lead {
-  font-size: 23px;
+  font-size: 22px;
   line-height: var(--phi);
   color: var(--latam-black);
+  text-align: justify;
+}
+
+.about-intro-text {
+  text-align: justify;
+}
+
+.about-secondary-text {
+  text-align: justify;
 }
 
 /* New Button Row Styles */
