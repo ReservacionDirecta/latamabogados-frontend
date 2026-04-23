@@ -1,5 +1,5 @@
 import React from 'react';
-import { Book, Download, ArrowLeft, ExternalLink, Newspaper, Gavel, FileText, Users, Shield, Zap, Film } from 'lucide-react';
+import { Download, ArrowLeft, ExternalLink, Newspaper, Gavel, Users, Shield, Zap, Film } from 'lucide-react';
 import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
 import SEO from '../components/SEO';

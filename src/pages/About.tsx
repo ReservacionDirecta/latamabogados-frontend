@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
 import SEO from '../components/SEO';
-import { FileText, Award, Book, ExternalLink, Download, X, ArrowLeft, Newspaper, Gavel } from 'lucide-react';
+import { Book, Download, X } from 'lucide-react';
 import './AgendarClase.css'; 
 import './About.css';
 

@@ -472,6 +472,7 @@
 .ma-title {
   text-align: center;
   width: 100%;
+  padding-top: 20px;
 }
 
 .ma-lead {
@@ -523,64 +524,5 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-  }
-}
-
-/* VCard Card Styles */
-.vcard-card {
-  margin-top: 40px;
-  background: #ffffff;
-  border: 1px solid rgba(30, 31, 51, 0.1);
-  border-radius: 8px;
-  padding: 30px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-}
-
-.vcard-content {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.vcard-qr-wrapper {
-  flex: 0 0 150px;
-  background: #f8f9fa;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #eee;
-}
-
-.vcard-qr {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.vcard-info {
-  flex: 1;
-}
-
-.vcard-title {
-  font-family: 'DM Serif Display', serif;
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: var(--latam-black);
-}
-
-.vcard-text {
-  font-size: 15px;
-  color: #666;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-
-@media (max-width: 600px) {
-  .vcard-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .vcard-qr-wrapper {
-    margin: 0 auto;
   }
 }
