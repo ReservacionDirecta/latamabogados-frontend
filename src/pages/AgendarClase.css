@@ -6,28 +6,33 @@
 
 .agendar-main {
   flex: 1;
-  padding: var(--sp-6) 20px;
+  padding: var(--sp-6) 10
+  px;
   background-color: var(--latam-gray-light);
 }
 
-.ma-top {
-  text-align: center;
-  margin-bottom: 34px; /* WP value */
+.ma-top-horizontal {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  padding-top: 150px;
+  margin-bottom: 50px;
   animation: heroFadeIn 1s ease both;
+  text-align: left;
+}
+
+.ma-header-content {
+  flex: 1;
 }
 
 .ma-photo {
-  width: 250px; /* WP value */
+  flex: 0 0 350px; /* Vertical photo on the left */
   height: auto;
-  margin: 0 auto 24px; /* WP value */
-  border-radius: 22px; /* Matching ma-radius for realism */
+  border-radius: 12px;
   overflow: hidden;
-  background: #dfe4e8; /* WP background */
-  border: 8px solid rgba(255,255,255,.58); /* WP border */
-  box-shadow: 
-    0 14px 34px rgba(47, 66, 88, 0.15), /* WP shadow base */
-    0 4px 6px -1px rgba(0, 0, 0, 0.1), 
-    0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Realistic additions */
+  background: #dfe4e8;
+  border: 6px solid white;
+  box-shadow: 0 15px 35px rgba(47, 66, 88, 0.15);
 }
 
 .ma-photo img {
@@ -38,19 +43,18 @@
 
 .ma-title {
   font-family: 'DM Serif Display', serif;
-  font-size: var(--fs-h3);
-  line-height: 1.1;
-  letter-spacing: -0.015em;
+  font-size: clamp(40px, 7vw, 88px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
   color: var(--latam-black);
   margin-bottom: var(--sp-3);
 }
 
 .ma-lead {
-  max-width: 860px;
-  margin: 0 auto;
   color: var(--latam-black);
-  font-size: clamp(20px, 2.5vw, 28px);
+  font-size: clamp(18px, 2vw, 24px);
   line-height: var(--phi);
+  margin: 0;
 }
 
 .container-narrow {
@@ -197,9 +201,23 @@
   font-size: 20px;
 }
 
+@media (max-width: 900px) {
+  .ma-top-horizontal {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--sp-4);
+  }
+
+  .ma-photo {
+    flex: 0 0 auto;
+    width: 280px;
+  }
+}
+
 @media (max-width: 600px) {
   .ma-card {
-    padding: 24px;
+    padding: 10px;
+    padding-top: 25px;
   }
   
   .ma-card-title {

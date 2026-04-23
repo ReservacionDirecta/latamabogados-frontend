@@ -14,37 +14,32 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const [offset, setOffset] = React.useState(0);
 
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {});
-    }
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setOffset(window.pageYOffset);
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
     <section id="inicio" className="hero-section">
-      {/* ── Fondo: video + imagen grisada ── */}
+      {/* ── Fondo: imagen grisada ── */}
       <div className="hero-bg">
         <img
           className="hero-bg-image"
-          src="/wp-content/uploads/revslider/inicio/latam-abogados-marcus-ambrose_1.jpeg"
-          alt="Latam Abogados"
+          src="/wp-content/uploads/hero-bg.png"
+          alt="Latam Abogados Background"
+          style={{ transform: `translateY(${offset * 0.4}px) scale(1.1)` }}
         />
-        <video
-          ref={videoRef}
-          className="hero-bg-video"
-          autoPlay muted loop playsInline preload="auto"
-        >
-          <source
-            src="/wp-content/uploads/revslider/inicio/latam-abogados-marcus-ambrose.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <div className="hero-bg-overlay" />
       </div>
 
-      {/* ── Contenido Vertical ── */}
+      {/* ── Contenido Vertical Principal ── */}
       <div className="hero-content">
         <div className="hero-brand">
           <span className="hero-brand-latam">Latam</span>
@@ -70,7 +65,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           {/* Item 2 */}
           <div className="hero-service-card">
             <p className="hero-service-text">
-              <strong>Si usted tiene clientes, casos o asuntos relacionados en EE.UU., podemos ayudarles</strong>
+              <strong>Si usted tiene clientes, casos o asuntos relacionados en EE.UU, podemos ayudarles</strong>
             </p>
             <a href="/agendar-consulta-legal" className="hero-cta-btn hero-cta-secondary">
               LEER MÁS
@@ -86,7 +81,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           <p>DESCUBRIR</p>
         </div>
 
-        {/* ── Badge de Autoridad ── */}
+        {/* ── Badge de Autoridad (Reintegrado) ── */}
         <div className="hero-authority-badge">
           <div className="authority-thumbnail">
             <img 
@@ -101,7 +96,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
               <p className="hero-experience-text">MÁS DE 40 AÑOS DE EXPERIENCIA</p>
             </div>
             <div className="authority-action">
-              <a href="/acerca-de" className="hero-cta-btn hero-cta-outline">
+              <a href="/acerca-de" className="hero-cta-btn hero-cta-secondary">
                 LEER MÁS
               </a>
             </div>

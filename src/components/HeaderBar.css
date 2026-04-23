@@ -96,6 +96,23 @@
   width: auto;
 }
 
+.ct-back-to-home {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 20px;
+  color: #1e1f33;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+}
+
+.ct-back-to-home:hover {
+  color: #8e3d4a;
+  transform: translateX(-3px);
+}
+
 .ct-main-end {
   display: flex;
   align-items: center;
@@ -230,6 +247,19 @@
   font-family: 'Playfair Display', serif;
   font-size: 18px;
   line-height: 1.4;
+}
+
+.ma-lead-bottom {
+  max-width: 950px;
+  margin: var(--sp-5) auto; /* Separation from hero */
+  color: var(--latam-black);
+  font-size: clamp(22px, 3vw, 32px);
+  line-height: var(--phi);
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  border-top: 1px solid rgba(142, 61, 74, 0.1);
+  padding-top: var(--sp-4);
 }
 
 .resp-text {

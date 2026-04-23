@@ -8,6 +8,7 @@ import './About.css';
 
 const About: React.FC = () => {
   const [showDiploma, setShowDiploma] = useState(false);
+  const [showVideo, setShowVideo] = useState(true); // Autoplay on enter
 
   return (
     <div className="agendar-page about-page">
@@ -87,7 +88,32 @@ const About: React.FC = () => {
                   </div>
                 </div>
 
-                {/* CV y Diplomado */}
+                {/* Trayectoria en Video */}
+                <div className="resource-item video-resource">
+                  <div className="resource-video-thumbnail" onClick={() => setShowVideo(true)}>
+                    <img 
+                      src="https://img.youtube.com/vi/d4AZZDYBYcw/maxresdefault.jpg" 
+                      alt="Marcus Ambrose Trayectoria" 
+                    />
+                    <div className="video-play-overlay">
+                      <div className="play-circle">
+                        <div className="play-triangle"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="resource-content">
+                    <h4>Trayectoria en Video</h4>
+                    <p>Visualice un breve resumen de la destacada trayectoria internacional del Dr. Marcus Ambrose.</p>
+                    <button 
+                      onClick={() => setShowVideo(true)}
+                      className="hero-cta-btn hero-cta-outline"
+                      style={{ marginTop: '10px', fontSize: '14px', padding: '12px 24px' }}
+                    >
+                      VER VIDEO <ExternalLink size={14} />
+                    </button>
+                  </div>
+                </div>
+
                 <div className="resource-item">
                   <div className="resource-icon"><Award size={24} /></div>
                   <div className="resource-content">
@@ -125,7 +151,7 @@ const About: React.FC = () => {
                   <p>
                     Lea acerca de cómo Marcus Ambrose, considerado por muchos como idealista y visionario, trató de reformar el sistema legal.
                   </p>
-                  <a href="/Newspaper-Article.pdf" target="_blank" rel="noopener noreferrer" className="ma-btn ma-btn-outline">
+                  <a href="/Newspaper-Article.pdf" target="_blank" rel="noopener noreferrer" className="hero-cta-btn hero-cta-outline" style={{ fontSize: '14px', padding: '12px 24px' }}>
                     LEER ARTÍCULO <ExternalLink size={14} />
                   </a>
                 </div>
@@ -141,7 +167,7 @@ const About: React.FC = () => {
                   <p>
                     Ambrose fue aclamado por los líderes políticos y cívicos en el estado de Florida, como el hombre que podría reformar el poder judicial y restaurar la profesión legal al estatus noble que una vez disfrutó.
                   </p>
-                  <a href="/Ambrose-For-Judge-Letter.pdf" target="_blank" rel="noopener noreferrer" className="ma-btn ma-btn-outline">
+                  <a href="/Ambrose-For-Judge-Letter.pdf" target="_blank" rel="noopener noreferrer" className="hero-cta-btn hero-cta-outline" style={{ fontSize: '14px', padding: '12px 24px' }}>
                     VER CARTA DE CAMPAÑA <ExternalLink size={14} />
                   </a>
                 </div>
@@ -152,7 +178,7 @@ const About: React.FC = () => {
                 <p style={{ fontSize: '16px', color: 'var(--ma-text-color)', marginBottom: '20px' }}>
                   Comprometidos con el desarrollo legal y social en Latinoamérica.
                 </p>
-                <a href="/nuestra-conciencia-social" className="ma-btn ma-btn-whatsapp" style={{ maxWidth: '200px', margin: '0 auto', backgroundColor: 'var(--ma-accent-color)' }}>
+                <a href="/nuestra-conciencia-social" className="ma-btn ma-btn-whatsapp" style={{ maxWidth: '200px', margin: '0 auto', backgroundColor: '#ffcc00', color: '#000000', fontWeight: 'bold' }}>
                   VER MÁS
                 </a>
               </div>
@@ -172,6 +198,26 @@ const About: React.FC = () => {
               </div>
               <div className="diploma-body">
                 <img src="/diplom.jpeg" alt="Juris Doctor Diploma" />
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Modal de Video YouTube */}
+        {showVideo && (
+          <div className="video-overlay" onClick={() => setShowVideo(false)}>
+            <div className="video-modal" onClick={e => e.stopPropagation()}>
+              <button className="close-modal" onClick={() => setShowVideo(false)}>
+                <X size={24} />
+              </button>
+              <div className="video-container-iframe">
+                <iframe 
+                  src="https://www.youtube.com/embed/d4AZZDYBYcw?autoplay=1&controls=1&rel=0" 
+                  title="Marcus Ambrose Video" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </div>
