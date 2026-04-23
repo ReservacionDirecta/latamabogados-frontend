@@ -1,7 +1,7 @@
 .about-hero {
   display: flex;
   align-items: center;
-  gap: var(--sp-4);
+  gap: var(--sp-5);
   text-align: left;
   margin-top: var(--sp-5);
   background: var(--latam-white);
@@ -29,10 +29,10 @@
 
 .about-secondary-text {
   font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+  font-size: 23px;
   line-height: var(--phi);
   color: var(--latam-black);
-  margin-top: var(--sp-3);
+  margin-top: 30px;
 }
 
 .about-resources-grid {
@@ -204,7 +204,7 @@
   position: absolute;
   bottom: 15px;
   right: -10px;
-  background: var(--ma-accent-color);
+  background: var(--latam-maroon);
   color: white;
   padding: 8px 16px;
   border-radius: 50px;
@@ -467,4 +467,120 @@
   width: 100%;
   height: 100%;
   border: none;
+}
+
+.ma-title {
+  text-align: center;
+  width: 100%;
+}
+
+.ma-lead {
+  font-size: 23px;
+  line-height: var(--phi);
+  color: var(--latam-black);
+}
+
+/* New Button Row Styles */
+.about-buttons-row {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.ma-btn-black {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 16px 24px;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.ma-btn-black:hover {
+  background-color: var(--latam-maroon);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.ma-btn-black i, .ma-btn-black svg {
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .about-buttons-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+/* VCard Card Styles */
+.vcard-card {
+  margin-top: 40px;
+  background: #ffffff;
+  border: 1px solid rgba(30, 31, 51, 0.1);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.vcard-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.vcard-qr-wrapper {
+  flex: 0 0 150px;
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.vcard-qr {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.vcard-info {
+  flex: 1;
+}
+
+.vcard-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--latam-black);
+}
+
+.vcard-text {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .vcard-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .vcard-qr-wrapper {
+    margin: 0 auto;
+  }
 }

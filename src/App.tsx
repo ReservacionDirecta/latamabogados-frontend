@@ -7,6 +7,7 @@ import SocialConscience from './pages/SocialConscience';
 import Vcard from './pages/Vcard';
 import AgendarClase from './pages/AgendarClase';
 import AgendarConsulta from './pages/AgendarConsulta';
+import ArticlesPublications from './pages/ArticlesPublications';
 import TestLanding from './pages/TestLanding';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/agendar-clase-de-inges-profesional" element={<AgendarClase />} />
         <Route path="/agendar-consulta-legal" element={<AgendarConsulta />} />
         <Route path="/servicios" element={<AgendarConsulta />} />
+        <Route path="/articulos-y-publicaciones" element={<ArticlesPublications />} />
         <Route path="/test-landing" element={<TestLanding />} />
       </Routes>
     </BrowserRouter>

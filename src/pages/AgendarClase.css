@@ -48,13 +48,16 @@
   letter-spacing: -0.02em;
   color: var(--latam-black);
   margin-bottom: var(--sp-3);
+  padding-top: 50px;
 }
 
-.ma-lead {
+.ma-lead-bottom {
   color: var(--latam-black);
   font-size: clamp(18px, 2vw, 24px);
   line-height: var(--phi);
-  margin: 0;
+  margin-bottom: 50px;
+  text-align: justify;
+  font-family: 'Playfair Display', serif;
 }
 
 .container-narrow {
@@ -185,8 +188,8 @@
 }
 
 .ma-btn-whatsapp {
-  background-color: var(--latam-maroon);
-  color: #ffffff !important;
+  background-color: rgb(0, 218, 0);
+  color: #000000 !important;
   box-shadow: 0 10px 24px rgba(142, 61, 74, 0.2);
   border-radius: 6px;
 }
@@ -206,6 +209,7 @@
     flex-direction: column;
     text-align: center;
     gap: var(--sp-4);
+    padding-top: 150px;
   }
 
   .ma-photo {

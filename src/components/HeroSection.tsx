@@ -65,7 +65,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           {/* Item 2 */}
           <div className="hero-service-card">
             <p className="hero-service-text">
-              <strong>Si usted tiene clientes, casos o asuntos relacionados en EE.UU, podemos ayudarles</strong>
+              <strong>Si usted tiene clientes, casos o asuntos relacionados en EE.UU. podemos ayudarles</strong>
             </p>
             <a href="/agendar-consulta-legal" className="hero-cta-btn hero-cta-secondary">
               LEER MÁS
