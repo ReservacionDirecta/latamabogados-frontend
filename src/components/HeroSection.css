@@ -117,18 +117,18 @@
 
 .hero-brand-latam {
   font-family: 'DM Serif Display', serif;
-  font-size: clamp(62px, 10vw, 100px); /* Base: 62px * 1.618 ≈ 100px */
+  font-size: clamp(70px, 15vw, 130px);
   line-height: 1.1;
   color: #8e3d4a; 
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
 }
 
 .hero-brand-abogados {
   font-family: 'DM Serif Display', serif;
-  font-size: clamp(62px, 10vw, 100px);
+  font-size: clamp(70px, 15vw, 130px);
   line-height: 1.1;
   color: #1e1f33; 
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
 }
 
 /* ── Título Principal (Headline) ── */
@@ -140,20 +140,21 @@
     text-decoration: none;
     white-space: normal;
     width: 100%;
-    max-width: 1080px;
+    max-width: 1100px;
     min-height: 0px;
     min-width: 0px;
     max-height: none;
     text-align: center;
-    font-size: clamp(40px, 6vw, 65px); /* 100 / 1.618 ≈ 62, 65 is close to golden scale */
-    line-height: 1.25;
+    font-size: clamp(40px, 7vw, 75px);
+    font-weight: 700;
+    line-height: 1.2;
     backdrop-filter: none;
     filter: none;
     transform-origin: 50% 50%;
     opacity: 0;
     transform: translate(0px, 0px);
     visibility: visible;
-    margin: 10px auto;
+    margin: 20px auto;
     animation: fadeInUp 0.8s 0.2s ease-out forwards;
 }
 
@@ -161,9 +162,9 @@
 .hero-services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  gap: 50px;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
   opacity: 0;
   animation: fadeInUp 0.8s 0.4s ease-out forwards;
 }
@@ -173,10 +174,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 32px; /* 20 * 1.618 ≈ 32 */
+  gap: 32px;
   border: 2px solid #8e3d4a;
   border-radius: 6px;
-  padding: 48px 30px; /* 30 * 1.618 ≈ 48 */
+  padding: 45px 30px;
   background-color: rgba(255, 255, 255, 0.05);
 }
 
@@ -186,10 +187,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 32px; /* 20 * 1.618 ≈ 32 */
+  gap: 32px;
   border: 2px solid #8e3d4a;
   border-radius: 6px;
-  padding: 48px 30px; /* 30 * 1.618 ≈ 48 */
+  padding: 45px 30px;
   background-color: rgba(255, 255, 255, 0.05);
 }
 
@@ -290,9 +291,9 @@
   flex-direction: row;
   align-items: stretch;
   gap: 0;
-  width: fit-content;
-  max-width: 1000px;
-  margin: 40px auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto;
   overflow: hidden;
 }
 
@@ -345,14 +346,13 @@
 }
 
 .authority-thumbnail {
-  flex: 0 0 160px; /* Fixed width, height will stretch */
-  width: 160px;
+  flex: 0 0 350px;
+  width: 350px;
   height: auto;
-  border-radius: 6px; /* Square edges to match the content box */
+  border-radius: 6px;
   overflow: hidden;
   border: none;
   box-shadow: none;
-  padding: px;
   background-color: #8e3d4a !important;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -393,7 +393,7 @@
 
 .hero-doctor-name {
   font-family: 'DM Serif Display', serif;
-  font-size: clamp(32px, 4vw, 60px); /* Following the same 40px scale */
+  font-size: clamp(40px, 6vw, 75px);
   color: #000000;
   margin: 0;
 }
@@ -456,7 +456,7 @@
   }
 
   .hero-service-card {
-    padding: 32px 20px;
+    padding: 25px 25px;
     gap: 16px;
   }
 
@@ -494,11 +494,11 @@
   }
 
   .hero-doctor-name {
-    font-size: 38px;
+    font-size: 36px;
   }
 
   .hero-subtitle-bottom {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .hero-experience-text {
