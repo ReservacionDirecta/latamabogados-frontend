@@ -9,7 +9,6 @@ import './About.css';
 
 const About: React.FC = () => {
   const { t } = useTranslation();
-  const [showDiploma, setShowDiploma] = useState(false);
   const [showVideo, setShowVideo] = useState(false); // Disabled autoplay on enter
   const [showQR, setShowQR] = useState(false);
 
@@ -59,7 +58,7 @@ const About: React.FC = () => {
               
               <div className="about-buttons-row">
                 <a 
-                  href="/Marcus Ambrose CV.pdf" 
+                  href="/Marcus Ambrose CV + Diploma.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="ma-btn-black"
@@ -99,23 +98,6 @@ const About: React.FC = () => {
             {/* Secciones de Noticias y Campaña */}
           </div>
         </div>
-
-        {/* Modal del Diploma */}
-        {showDiploma && (
-          <div className="diploma-overlay" onClick={() => setShowDiploma(false)}>
-            <div className="diploma-modal" onClick={e => e.stopPropagation()}>
-              <button className="close-modal" onClick={() => setShowDiploma(false)}>
-                <X size={24} />
-              </button>
-              <div className="diploma-header">
-                <h3>Juris Doctor Diploma</h3>
-              </div>
-              <div className="diploma-body">
-                <img src="/diplom.jpeg" alt="Juris Doctor Diploma" />
-              </div>
-            </div>
-          </div>
-        )}
 
         {/* Modal de Video YouTube */}
         {showVideo && (
