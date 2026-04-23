@@ -28,7 +28,7 @@ const FooterBar: React.FC = () => {
           </div>
           <div className="ct-footer-legal">
             <p>
-              Avisos legales: - <a href="#">Aviso de Privacidad</a> - <a href="#">Cookie</a>
+              Avisos legales: - <a href="/aviso-de-privacidad">Aviso de Privacidad</a> - <a href="/politica-de-cookies">Cookie</a>
             </p>
           </div>
           

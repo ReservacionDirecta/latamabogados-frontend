@@ -8,6 +8,8 @@ import Vcard from './pages/Vcard';
 import AgendarClase from './pages/AgendarClase';
 import AgendarConsulta from './pages/AgendarConsulta';
 import ArticlesPublications from './pages/ArticlesPublications';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import CookiesPolicy from './pages/CookiesPolicy';
 import TestLanding from './pages/TestLanding';
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
         <Route path="/agendar-consulta-legal" element={<AgendarConsulta />} />
         <Route path="/servicios" element={<AgendarConsulta />} />
         <Route path="/articulos-y-publicaciones" element={<ArticlesPublications />} />
+        <Route path="/aviso-de-privacidad" element={<PrivacyPolicy />} />
+        <Route path="/politica-de-cookies" element={<CookiesPolicy />} />
         <Route path="/test-landing" element={<TestLanding />} />
       </Routes>
     </BrowserRouter>
