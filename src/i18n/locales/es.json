@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "classes": "Agendar Clase",
+    "consultation": "Agendar Consulta",
+    "see_more": "Ver más"
+  },
+  "social": {
+    "responsible": "Somos socialmente responsables."
+  },
+  "hero": {
+    "title": "Abogado Dr. Marcus Ambrose",
+    "subtitle": "Especialista en Inmigración y Inglés Jurídico con 40 años de experiencia.",
+    "cta": "Programar Consulta",
+    "main_title": "Apoyamos a abogados latinoamericanos",
+    "service1_text": "Aprenda inglés jurídico, conversacional y escritura profesional práctico",
+    "service2_text": "Si usted tiene clientes, casos o asuntos relacionados en EE.UU. podemos ayudarles",
+    "read_more": "LEER MÁS",
+    "discover": "DESCUBRIR",
+    "authority_subtitle": "DOCTORADO EN LEYES EN EE.UU Y PROFESOR",
+    "experience_text": "MÁS DE 40 AÑOS DE EXPERIENCIA"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "legal_notices": "Avisos legales",
+    "privacy": "Aviso de Privacidad",
+    "cookies": "Cookie"
+  }
+}

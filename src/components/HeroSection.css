@@ -180,10 +180,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 32px;
+  gap: 20px;
   border: 2px solid #8e3d4a;
   border-radius: 6px;
-  padding: 45px 30px;
+  padding: 25 px;
   background-color: rgba(255, 255, 255, 0.05);
 }
 
@@ -451,7 +451,7 @@
   }
 
   .hero-service-card {
-    padding: 25px 25px;
+    padding: 25px;
     gap: 16px;
   }
 
@@ -517,11 +517,11 @@
 @media (max-width: 480px) {
   .hero-brand-latam,
   .hero-brand-abogados {
-    font-size: clamp(32px, 20vw, 45px);
+    font-size: clamp(32px, 20vw, 44px);
   }
   
   .hero-main-title {
-    font-size: 33px;
+    font-size: 30px;
   }
 
   .hero-service-text {

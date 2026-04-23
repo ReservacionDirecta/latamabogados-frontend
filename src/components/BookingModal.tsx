@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Calendar, Clock, Globe, User, Briefcase } from 'lucide-react';
+import { trackEvent, trackConversion } from '../utils/analytics';
 import './BookingModal.css';
 
 interface BookingModalProps {
@@ -27,6 +28,8 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    trackEvent('booking_submit', { booking_type: type });
+
     const phoneNumber = "5219671234787";
     const introText = type === 'clase' 
       ? "Hola Dr. Marcus, me gustaría agendar una clase de inglés profesional."
@@ -44,6 +47,9 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
     
+    trackEvent('whatsapp_redirect', { type: type });
+    trackConversion(type === 'clase' ? 'booking_class_success' : 'booking_consultation_success');
+
     window.open(whatsappUrl, '_blank');
     onClose();
   };

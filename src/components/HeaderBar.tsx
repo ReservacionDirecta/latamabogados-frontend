@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 import './HeaderBar.css';
 
 /**
@@ -8,6 +10,7 @@ import './HeaderBar.css';
  * Main bar: Logo + nav links + CTA button
  */
 const HeaderBar: React.FC = () => {
+  const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -48,9 +51,12 @@ const HeaderBar: React.FC = () => {
             )}
           </div>
           <div className="ct-main-end">
+            <div style={{ marginRight: '20px' }}>
+              <LanguageSwitcher />
+            </div>
             <div className="ct-social-text">
-              <span style={{ color: 'rgb(30, 31, 51)', fontWeight: 'bold' }}>Somos socialmente responsables.</span>{' '}
-              <Link to="/nuestra-conciencia-social" style={{ color: '#8e3d4a', fontWeight: 'bold', textDecoration: 'none' }}>Ver más →</Link>
+              <span style={{ color: 'rgb(30, 31, 51)', fontWeight: 'bold' }}>{t('social.responsible')}</span>{' '}
+              <Link to="/nuestra-conciencia-social" style={{ color: '#8e3d4a', fontWeight: 'bold', textDecoration: 'none' }}>{t('nav.see_more')} →</Link>
             </div>
           </div>
         </div>
@@ -69,20 +75,20 @@ const HeaderBar: React.FC = () => {
         <nav className="mobile-nav">
           <ul>
             <li className={location.pathname === '/' ? 'current' : ''}>
-              <Link to="/">INICIO</Link>
+              <Link to="/">{t('nav.home').toUpperCase()}</Link>
             </li>
             <li className={location.pathname === '/vcard' ? 'current' : ''}>
-              <Link to="/vcard">Vcard</Link>
+              <Link to="/vcard">VCARD</Link>
             </li>
             <li className={location.pathname === '/contacto' ? 'current' : ''}>
-              <Link to="/contacto">Contacto</Link>
+              <Link to="/contacto">{t('nav.contact').toUpperCase()}</Link>
             </li>
           </ul>
         </nav>
 
         <div className="mobile-actions">
           <Link to="/agendar-clase-de-inges-profesional" className="ct-button-ghost mobile-cta">
-            Agendar Clase de Ingles
+            {t('nav.classes')}
           </Link>
 
           <div className="mobile-responsibility">

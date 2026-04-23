@@ -3,6 +3,7 @@ import { Send, MapPin, Phone, Mail, ArrowLeft } from 'lucide-react';
 import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
 import SEO from '../components/SEO';
+import { trackEvent, trackConversion } from '../utils/analytics';
 import './AgendarClase.css'; 
 import './About.css';
 
@@ -26,11 +27,16 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
+    trackEvent('form_start', { form_id: 'contact_form' });
+
     // Simulating API call
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitSuccess(true);
       setFormData({ name: '', email: '', phone: '', message: '' });
+      
+      trackEvent('form_submission', { form_id: 'contact_form' });
+      trackConversion('contact_success');
     }, 1500);
   };
 
@@ -76,7 +82,15 @@ const Contact: React.FC = () => {
                       <span className="ma-icon"><Phone size={20} /></span>
                       <div>
                         <strong>WhatsApp / Teléfono</strong><br/>
-                        <a href="https://wa.me/5219671234787" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ma-accent-color)', textDecoration: 'none' }}>+52 1 967 123 4787</a>
+                        <a 
+                          href="https://wa.me/5219671234787" 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          style={{ color: 'var(--ma-accent-color)', textDecoration: 'none' }}
+                          onClick={() => trackEvent('whatsapp_click', { location: 'contact_page' })}
+                        >
+                          +52 1 967 123 4787
+                        </a>
                       </div>
                     </li>
                     <li style={{ alignItems: 'flex-start' }}>

@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "classes": "Book Class",
+    "consultation": "Book Consultation",
+    "see_more": "See more"
+  },
+  "social": {
+    "responsible": "We are socially responsible."
+  },
+  "hero": {
+    "title": "Dr. Marcus Ambrose - Attorney at Law",
+    "subtitle": "Immigration Specialist & Legal English Expert with 40 years of experience.",
+    "cta": "Schedule Consultation",
+    "main_title": "Supporting Latin American Attorneys",
+    "service1_text": "Learn practical legal English, conversational skills, and professional writing",
+    "service2_text": "If you have clients, cases, or related matters in the U.S., we can help",
+    "read_more": "READ MORE",
+    "discover": "DISCOVER",
+    "authority_subtitle": "U.S. JURIS DOCTOR & PROFESSOR",
+    "experience_text": "OVER 40 YEARS OF EXPERIENCE"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "legal_notices": "Legal notices",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookies"
+  }
+}

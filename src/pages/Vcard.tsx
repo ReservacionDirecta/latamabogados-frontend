@@ -1,6 +1,7 @@
 import React from 'react';
 import { Globe, Mail, Phone, ArrowLeft } from 'lucide-react';
 import SEO from '../components/SEO';
+import { trackEvent } from '../utils/analytics';
 import './VCard.css';
 
 const Vcard: React.FC = () => {
@@ -39,7 +40,13 @@ const Vcard: React.FC = () => {
           <a href="mailto:consulta@latamabogados.com" className="vcard-btn vcard-btn-primary">
             <Mail size={20} /> Correo Electrónico
           </a>
-          <a href="https://wa.me/5219671234787?text=Hola%20Dr.%20Marcus%2C%20me%20gustar%C3%ADa%20ponerme%20en%20contacto%20con%20usted%20desde%20su%20vCard." target="_blank" rel="noopener noreferrer" className="vcard-btn vcard-btn-whatsapp">
+          <a 
+            href="https://wa.me/5219671234787?text=Hola%20Dr.%20Marcus%2C%20me%20gustar%C3%ADa%20ponerme%20en%20contacto%20con%20usted%20desde%20su%20vCard." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="vcard-btn vcard-btn-whatsapp"
+            onClick={() => trackEvent('whatsapp_click', { location: 'vcard_page' })}
+          >
             <Phone size={20} /> WhatsApp
           </a>
         </div>

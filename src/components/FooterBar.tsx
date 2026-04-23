@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import './FooterBar.css';
 
 /**
@@ -7,6 +8,7 @@ import './FooterBar.css';
  * Fondo maroon, logo blanco, anti-spam, copyright, links legales, social
  */
 const FooterBar: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <footer id="footer-bar" className="ct-footer">
       {/* ── TOP ROW ── */}
@@ -25,11 +27,11 @@ const FooterBar: React.FC = () => {
       <div className="ct-footer-bottom">
         <div className="ct-container">
           <div className="ct-footer-copy">
-            <p>Latam Abogados. Todos los derechos reservados <b>© {new Date().getFullYear()}</b></p>
+            <p>Latam Abogados. {t('footer.rights')} <b>© {new Date().getFullYear()}</b></p>
           </div>
           <div className="ct-footer-legal">
             <p>
-              Avisos legales: - <a href="/aviso-de-privacidad">Aviso de Privacidad</a> - <a href="/politica-de-cookies">Cookie</a>
+              {t('footer.legal_notices')}: - <a href="/aviso-de-privacidad">{t('footer.privacy')}</a> - <a href="/politica-de-cookies">{t('footer.cookies')}</a>
             </p>
           </div>
           <div className="ct-footer-back-to-top">
@@ -38,7 +40,7 @@ const FooterBar: React.FC = () => {
               className="ma-btn-black"
               style={{ padding: '8px 16px', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '6px' }}
             >
-              <ArrowUp size={14} /> REGRESAR AL INICIO
+              <ArrowUp size={14} /> {t('nav.home').toUpperCase()}
             </button>
           </div>
           

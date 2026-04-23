@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './HeroSection.css';
 
 /**
@@ -14,6 +15,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = () => {
+  const { t } = useTranslation();
   const [offset, setOffset] = React.useState(0);
 
   React.useEffect(() => {
@@ -47,7 +49,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
         </div>
 
         <h2 className="hero-main-title">
-          Apoyamos a abogados latinoamericanos
+          {t('hero.main_title')}
         </h2>
 
         {/* ── Stack de Servicios ── */}
@@ -55,20 +57,20 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           {/* Item 1 */}
           <div className="hero-service-card">
             <p className="hero-service-text">
-              <strong>Aprenda inglés jurídico, conversacional y escritura profesional práctico</strong>
+              <strong>{t('hero.service1_text')}</strong>
             </p>
             <a href="/agendar-clase-de-inges-profesional" className="hero-cta-btn hero-cta-primary">
-              LEER MÁS
+              {t('hero.read_more')}
             </a>
           </div>
 
           {/* Item 2 */}
           <div className="hero-service-card">
             <p className="hero-service-text">
-              <strong>Si usted tiene clientes, casos o asuntos relacionados en EE.UU. podemos ayudarles</strong>
+              <strong>{t('hero.service2_text')}</strong>
             </p>
             <a href="/agendar-consulta-legal" className="hero-cta-btn hero-cta-secondary">
-              LEER MÁS
+              {t('hero.read_more')}
             </a>
           </div>
         </div>
@@ -78,7 +80,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           <div className="scroll-mouse">
             <div className="scroll-wheel"></div>
           </div>
-          <p>DESCUBRIR</p>
+          <p>{t('hero.discover')}</p>
         </div>
 
         {/* ── Badge de Autoridad (Reintegrado) ── */}
@@ -92,12 +94,12 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           <div className="authority-main-content">
             <div className="authority-info">
               <p className="hero-doctor-name">Dr. Marcus Ambrose</p>
-              <p className="hero-subtitle-bottom">DOCTORADO EN LEYES EN EE.UU Y PROFESOR</p>
-              <p className="hero-experience-text">MÁS DE 40 AÑOS DE EXPERIENCIA</p>
+              <p className="hero-subtitle-bottom">{t('hero.authority_subtitle')}</p>
+              <p className="hero-experience-text">{t('hero.experience_text')}</p>
             </div>
             <div className="authority-action">
               <a href="/acerca-de" className="hero-cta-btn hero-cta-secondary">
-                LEER MÁS
+                {t('hero.read_more')}
               </a>
             </div>
           </div>

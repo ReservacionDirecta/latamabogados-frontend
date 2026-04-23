@@ -1,4 +1,6 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { trackPageView } from './utils/analytics';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -12,9 +14,21 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import CookiesPolicy from './pages/CookiesPolicy';
 import TestLanding from './pages/TestLanding';
 
+// Helper component to track page views
+const PageTracker = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    trackPageView(location.pathname);
+  }, [location]);
+
+  return null;
+};
+
 function App() {
   return (
     <BrowserRouter>
+      <PageTracker />
       {/* 
         El Layout global se quitó porque la migración 1:1 de WordPress incrusta el 
         header y footer originales en cada página como lo hacía WPBakery.
