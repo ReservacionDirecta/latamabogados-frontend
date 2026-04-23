@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Globe, Mail, Phone, ArrowLeft } from 'lucide-react';
+import { Globe, Mail, Phone, ArrowLeft, Download } from 'lucide-react';
 import SEO from '../components/SEO';
 import { trackEvent } from '../utils/analytics';
 import './VCard.css';
@@ -40,6 +40,9 @@ const Vcard: React.FC = () => {
           </a>
           <a href="mailto:consulta@latamabogados.com" className="vcard-btn vcard-btn-primary">
             <Mail size={20} /> {t('contact.email_label')}
+          </a>
+          <a href="/marcus-ambrose.vcf" download className="vcard-btn vcard-btn-primary" onClick={() => trackEvent('vcard_download')}>
+            <Download size={20} /> {t('vcard.save_cta')}
           </a>
           <a 
             href="https://wa.me/5219671234787?text=Hola%20Dr.%20Marcus%2C%20me%20gustar%C3%ADa%20ponerme%20en%20contacto%20con%20usted%20desde%20su%20vCard." 
