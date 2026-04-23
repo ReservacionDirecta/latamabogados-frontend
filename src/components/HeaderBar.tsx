@@ -48,7 +48,7 @@ const HeaderBar: React.FC = () => {
             {location.pathname !== '/' && (
               <Link to="/" className="ct-back-to-home">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px' }}><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-                VOLVER AL INICIO
+                {t('contact.back_to_start').toUpperCase()}
               </Link>
             )}
           </div>
@@ -99,7 +99,7 @@ const HeaderBar: React.FC = () => {
           </div>
 
           <div className="mobile-login-section">
-            <span className="login-label">INICIAR SESIÓN</span>
+            <span className="login-label">{t('nav.login').toUpperCase()}</span>
             <div className="login-icon-box">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8e3d4a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             </div>

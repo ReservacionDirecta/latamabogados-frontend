@@ -157,3 +157,17 @@ button {
   transform: translateY(-8px) scale(1.01);
   box-shadow: 0 25px 50px rgba(0, 15, 43, 0.12);
 }
+.lang-btn {
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.lang-btn:hover {
+  background: rgba(142, 61, 74, 0.1) !important;
+  color: var(--latam-maroon) !important;
+}
+
+.lang-btn.active {
+  color: var(--latam-maroon) !important;
+  font-weight: 700 !important;
+}

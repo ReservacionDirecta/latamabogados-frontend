@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Send, MapPin, Phone, Mail, ArrowLeft } from 'lucide-react';
 import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
@@ -8,6 +9,7 @@ import './AgendarClase.css';
 import './About.css';
 
 const Contact: React.FC = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -43,8 +45,8 @@ const Contact: React.FC = () => {
   return (
     <div className="agendar-page about-page">
       <SEO 
-        title="Contacto" 
-        description="Póngase en contacto con el Dr. Marcus Ambrose para consultas legales o información sobre clases de Inglés Jurídico."
+        title={t('contact.title')} 
+        description={t('contact.lead')}
         keywords="contacto abogado, marcus ambrose, consulta legal, bufete internacional"
       />
       <HeaderBar />
@@ -53,14 +55,14 @@ const Contact: React.FC = () => {
         <div className="container-narrow">
           <div className="ma-back-nav">
             <a href="/#inicio" className="back-link">
-              <ArrowLeft size={16} /> Regresar al inicio
+              <ArrowLeft size={16} /> {t('contact.back_to_start')}
             </a>
           </div>
 
           <div className="ma-top">
-            <h2 className="ma-title">Contacto</h2>
+            <h2 className="ma-title">{t('contact.title')}</h2>
             <p className="ma-lead">
-              Ponte en contacto con el Dr. Ambrose para solicitar información sobre cómo podemos ayudarte con tu situación legal o proceso migratorio hacia EE.UU.
+              {t('contact.lead')}
             </p>
           </div>
 
@@ -69,19 +71,19 @@ const Contact: React.FC = () => {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px' }} className="contact-grid-mobile">
                 {/* Info Column */}
                 <div>
-                  <h3 className="ma-card-title">Información Directa</h3>
+                  <h3 className="ma-card-title">{t('contact.direct_info')}</h3>
                   <ul className="ma-features" style={{ marginTop: '20px' }}>
                     <li style={{ alignItems: 'flex-start' }}>
                       <span className="ma-icon"><Mail size={20} /></span>
                       <div>
-                        <strong>Correo</strong><br/>
+                        <strong>{t('contact.email_label')}</strong><br/>
                         <a href="mailto:consulta@latamabogados.com" style={{ color: 'var(--ma-accent-color)', textDecoration: 'none' }}>consulta@latamabogados.com</a>
                       </div>
                     </li>
                     <li style={{ alignItems: 'flex-start' }}>
                       <span className="ma-icon"><Phone size={20} /></span>
                       <div>
-                        <strong>WhatsApp / Teléfono</strong><br/>
+                        <strong>{t('contact.whatsapp_label')}</strong><br/>
                         <a 
                           href="https://wa.me/5219671234787" 
                           target="_blank" 
@@ -96,8 +98,8 @@ const Contact: React.FC = () => {
                     <li style={{ alignItems: 'flex-start' }}>
                       <span className="ma-icon"><MapPin size={20} /></span>
                       <div>
-                        <strong>Modalidad</strong><br/>
-                        <span>Atención Internacional (Virtual)</span>
+                        <strong>{t('contact.modality_label')}</strong><br/>
+                        <span>{t('contact.virtual_attention')}</span>
                       </div>
                     </li>
                   </ul>
@@ -105,12 +107,12 @@ const Contact: React.FC = () => {
 
                 {/* Form Column */}
                 <div>
-                  <h3 className="ma-card-title">Envíanos un mensaje</h3>
+                  <h3 className="ma-card-title">{t('contact.send_message')}</h3>
                   {submitSuccess ? (
                     <div className="ma-highlight" style={{ backgroundColor: '#e8f5e9', color: '#2e7d32' }}>
-                      <h4 style={{ marginBottom: '10px' }}>¡Mensaje Enviado!</h4>
-                      <p>Gracias por contactarnos. Le responderemos a la brevedad.</p>
-                      <button className="ma-btn ma-btn-outline" style={{ marginTop: '15px' }} onClick={() => setSubmitSuccess(false)}>Enviar otro</button>
+                      <h4 style={{ marginBottom: '10px' }}>{t('contact.success_title')}</h4>
+                      <p>{t('contact.success_text')}</p>
+                      <button className="ma-btn ma-btn-outline" style={{ marginTop: '15px' }} onClick={() => setSubmitSuccess(false)}>{t('contact.send_another')}</button>
                     </div>
                   ) : (
                     <form className="ma-form" onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
@@ -118,7 +120,7 @@ const Contact: React.FC = () => {
                         <input 
                           type="text" 
                           name="name" 
-                          placeholder="Nombre completo *" 
+                          placeholder={t('contact.name_placeholder')} 
                           required 
                           value={formData.name}
                           onChange={handleInputChange}
@@ -129,7 +131,7 @@ const Contact: React.FC = () => {
                         <input 
                           type="email" 
                           name="email" 
-                          placeholder="Correo electrónico *" 
+                          placeholder={t('contact.email_placeholder')} 
                           required 
                           value={formData.email}
                           onChange={handleInputChange}
@@ -139,7 +141,7 @@ const Contact: React.FC = () => {
                       <div style={{ marginBottom: '15px' }}>
                         <textarea 
                           name="message" 
-                          placeholder="Tu consulta *" 
+                          placeholder={t('contact.message_placeholder')} 
                           rows={4} 
                           required 
                           value={formData.message}
@@ -148,7 +150,7 @@ const Contact: React.FC = () => {
                         ></textarea>
                       </div>
                       <button type="submit" className="ma-btn ma-btn-whatsapp" disabled={isSubmitting} style={{ width: '100%', backgroundColor: 'var(--ma-accent-color)' }}>
-                        {isSubmitting ? 'Enviando...' : <><Send size={18} /> Enviar Mensaje</>}
+                        {isSubmitting ? t('contact.submitting') : <><Send size={18} /> {t('contact.send_btn')}</>}
                       </button>
                     </form>
                   )}

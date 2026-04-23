@@ -9,13 +9,13 @@
   padding: var(--sp-6) 10
   px;
   background-color: var(--latam-gray-light);
+  padding-top: 120px;
 }
 
 .ma-top-horizontal {
   display: flex;
   align-items: center;
   gap: var(--sp-5);
-  padding-top: 150px;
   margin-bottom: 50px;
   animation: heroFadeIn 1s ease both;
   text-align: left;
@@ -43,7 +43,7 @@
 
 .ma-title {
   font-family: 'DM Serif Display', serif;
-  font-size: clamp(38px, 7vw, 88px);
+  font-size: clamp(37px, 7vw, 88px);
   line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--latam-black);
@@ -209,7 +209,6 @@
     flex-direction: column;
     text-align: center;
     gap: var(--sp-4);
-    padding-top: 150px;
   }
 
   .ma-photo {

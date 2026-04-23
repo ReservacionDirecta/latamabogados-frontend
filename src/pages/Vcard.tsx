@@ -1,21 +1,22 @@
-import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Globe, Mail, Phone, ArrowLeft } from 'lucide-react';
 import SEO from '../components/SEO';
 import { trackEvent } from '../utils/analytics';
 import './VCard.css';
 
 const Vcard: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <div className="vcard-page animate-fade-in">
       <SEO 
-        title="Tarjeta de Contacto Digital" 
-        description="Tarjeta de contacto digital del Dr. Marcus Ambrose. Especialista en Inmigración y Inglés Jurídico."
+        title={t('vcard.title')} 
+        description={`${t('vcard.subtitle')}. ${t('vcard.role')}.`}
         keywords="vcard, contacto marcus ambrose, abogado ee.uu contacto"
       />
       <div className="vcard-container glass-panel">
         <div style={{ textAlign: 'left', marginBottom: '20px' }}>
           <a href="/#inicio" className="back-link">
-            <ArrowLeft size={16} /> Regresar
+            <ArrowLeft size={16} /> {t('contact.back_to_start')}
           </a>
         </div>
 
@@ -25,20 +26,20 @@ const Vcard: React.FC = () => {
           className="vcard-photo"
         />
         
-        <h1 className="vcard-name">Dr. Marcus Ambrose</h1>
+        <h1 className="vcard-name">{t('vcard.subtitle')}</h1>
         <h2 className="vcard-tagline">
-          Especialista en procesos de inmigración de los EE.UU.
+          {t('vcard.role')}
         </h2>
         
         <div className="vcard-divider"></div>
-        <p className="vcard-label">Datos de contacto</p>
+        <p className="vcard-label">{t('contact.direct_info')}</p>
 
         <div className="vcard-actions">
           <a href="https://www.latamabogados.com/" className="vcard-btn vcard-btn-primary">
-            <Globe size={20} /> Sitio Web
+            <Globe size={20} /> {t('nav.home')}
           </a>
           <a href="mailto:consulta@latamabogados.com" className="vcard-btn vcard-btn-primary">
-            <Mail size={20} /> Correo Electrónico
+            <Mail size={20} /> {t('contact.email_label')}
           </a>
           <a 
             href="https://wa.me/5219671234787?text=Hola%20Dr.%20Marcus%2C%20me%20gustar%C3%ADa%20ponerme%20en%20contacto%20con%20usted%20desde%20su%20vCard." 

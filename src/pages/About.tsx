@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
 import SEO from '../components/SEO';
@@ -7,6 +8,7 @@ import './AgendarClase.css';
 import './About.css';
 
 const About: React.FC = () => {
+  const { t } = useTranslation();
   const [showDiploma, setShowDiploma] = useState(false);
   const [showVideo, setShowVideo] = useState(false); // Disabled autoplay on enter
   const [showQR, setShowQR] = useState(false);
@@ -14,8 +16,8 @@ const About: React.FC = () => {
   return (
     <div className="agendar-page about-page">
       <SEO 
-        title="Sobre Marcus Ambrose" 
-        description="Conozca la trayectoria del Dr. Marcus Ambrose, Juris Doctor estadounidense y especialista en Inglés Jurídico con más de 40 años de experiencia internacional."
+        title={t('about.title')} 
+        description={t('about.lead')}
         keywords="marcus ambrose, abogado ee.uu, juris doctor, inglés jurídico, legal english expert, profesor de derecho"
       />
       <HeaderBar />
@@ -24,7 +26,7 @@ const About: React.FC = () => {
         <div className="container-narrow">
 
           <div className="ma-top">
-            <h2 className="ma-title">QUIEN ES <br /> DR. MARCUS AMBROSE</h2>
+            <h2 className="ma-title">{t('about.title')}</h2>
             
             <div className="about-hero">
               <div className="about-photo-wrapper">
@@ -41,10 +43,10 @@ const About: React.FC = () => {
               <div className="about-intro-text">
                 
                 <p className="ma-lead">
-                  EL ES UN ABOGADO DOCTORADO ESTADOUNIDENSE DE PRIMER NIVEL CON MÁS QUE 40 AÑOS DE EXPERIENCIA INTERNACIONAL QUE CUENTA CON UNA MAESTRÍA EN ENSEÑANZA DE INGLES JURÍDICO, CONVERSACIÓN Y ESCRITURAS LEGALES.
+                  {t('about.lead')}
                 </p>
                 <p className="about-secondary-text">
-                  ASIMISMO EL ES RECONOCIDO COMO AUTOR DE PUBLICACIONES JURÍDICAS ACADÉMICAS Y PROFESOR DE DERECHO Y ENSEÑANZA DE INGLÉS PROFESIONAL.
+                  {t('about.secondary_text')}
                 </p>
               </div>
             </div>
@@ -53,7 +55,7 @@ const About: React.FC = () => {
           <div className="ma-grid-single">
             {/* Trayectoria Principal */}
             <div className="ma-card">
-              <h3 className="ma-card-title">Trayectoria PROFESIONAL</h3>
+              <h3 className="ma-card-title">{t('about.professional_trajectory')}</h3>
               
               <div className="about-buttons-row">
                 <a 
@@ -62,14 +64,14 @@ const About: React.FC = () => {
                   rel="noopener noreferrer" 
                   className="ma-btn-black"
                 >
-                  <Download size={20} /> DESCARGAR EL CV DEL DR. MARCUS AMBROSE
+                  <Download size={20} /> {t('about.download_cv')}
                 </a>
 
                 <a 
                   href="/articulos-y-publicaciones" 
                   className="ma-btn-black"
                 >
-                  <Book size={20} /> LEER SOBRE EL DR. AMBROSE Y SUS PUBLICACIONES
+                  <Book size={20} /> {t('about.read_publications')}
                 </a>
               </div>
 
@@ -80,14 +82,14 @@ const About: React.FC = () => {
                     <img src="/qr-vcard.png" alt="QR VCard Dr. Marcus Ambrose" className="vcard-qr" />
                   </div>
                   <div className="vcard-info">
-                    <h4 className="vcard-title">TARJETA DE CONTACTO DIGITAL</h4>
-                    <p className="vcard-text">Escanee el código QR o haga clic abajo para guardar el contacto del Dr. Marcus Ambrose en su dispositivo.</p>
+                    <h4 className="vcard-title">{t('about.digital_contact')}</h4>
+                    <p className="vcard-text">{t('about.digital_contact_text')}</p>
                     <a 
                       href="/marcus-ambrose.vcf" 
                       className="ma-btn-black"
                       style={{ marginTop: '15px' }}
                     >
-                      <Download size={20} /> DESCARGAR VCARD
+                      <Download size={20} /> {t('about.download_vcard')}
                     </a>
                   </div>
                 </div>
@@ -143,7 +145,7 @@ const About: React.FC = () => {
               </button>
               <div style={{ textAlign: 'center' }}>
                 <img src="/qr-vcard.png" alt="QR Large" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                <p style={{ marginTop: '15px', fontWeight: 'bold', color: 'var(--latam-black)' }}>ESCANEÉ PARA GUARDAR CONTACTO</p>
+                <p style={{ marginTop: '15px', fontWeight: 'bold', color: 'var(--latam-black)' }}>{t('about.scan_save')}</p>
               </div>
             </div>
           </div>
