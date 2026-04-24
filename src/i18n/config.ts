@@ -7,7 +7,6 @@ import enTranslation from './locales/en.json';
 import ptTranslation from './locales/pt.json';
 
 i18n
-  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources: {
@@ -15,6 +14,7 @@ i18n
       en: { translation: enTranslation },
       pt: { translation: ptTranslation }
     },
+    lng: 'es',
     fallbackLng: 'es',
     interpolation: {
       escapeValue: false

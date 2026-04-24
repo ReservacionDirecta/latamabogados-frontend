@@ -19,7 +19,7 @@ const LanguageSwitcher: React.FC = () => {
   return (
     <div className="language-switcher" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
       <Globe size={16} style={{ color: 'var(--ma-accent-color)' }} />
-      <div style={{ display: 'flex', gap: '4px' }}>
+      <div style={{ display: 'flex', gap: '12px' }}>
         {languages.map((lang) => (
           <button
             key={lang.code}
