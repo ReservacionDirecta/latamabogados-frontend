@@ -208,12 +208,55 @@
   .ma-top-horizontal {
     flex-direction: column;
     text-align: center;
-    gap: var(--sp-4);
+    gap: 30px;
+  }
+
+  .ma-header-content {
+    order: 2;
   }
 
   .ma-photo {
     flex: 0 0 auto;
-    width: 280px;
+    width: 260px;
+    margin: 0 auto;
+    order: 1;
+  }
+
+  .ma-title {
+    font-size: 42px;
+    text-align: center;
+  }
+
+  .ma-lead-bottom {
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .agendar-main {
+    padding-top: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .ma-card {
+    padding: 20px 15px;
+  }
+
+  .ma-features li {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .ma-btn {
+    width: 100%;
+  }
+
+  .ma-budget-cta {
+    padding: 25px 15px;
+    text-align: center;
   }
 }
 
@@ -261,7 +304,6 @@
   border-collapse: collapse;
   text-align: left;
   font-size: 16px;
-  min-width: 600px;
 }
 
 .ma-comparison-table th,
@@ -283,7 +325,7 @@
 .ma-comparison-table td:first-child {
   font-weight: 500;
   color: var(--ma-title-color);
-  width: 40%;
+  width: 100%;
 }
 
 .ma-comparison-table td:nth-child(2) {
@@ -298,22 +340,60 @@
   text-align: center;
 }
 
-.ma-check {
-  font-size: 20px;
-  margin-right: 4px;
-}
-
-.ma-cross {
-  font-size: 16px;
-  margin-right: 4px;
-  opacity: 0.7;
-}
-
-@media (max-width: 768px) {
-  .ma-comparison-table th,
-  .ma-comparison-table td {
-    padding: 14px 10px;
-    font-size: 14px;
+@media (max-width: 600px) {
+  .ma-comparison-table, 
+  .ma-comparison-table thead, 
+  .ma-comparison-table tbody, 
+  .ma-comparison-table th, 
+  .ma-comparison-table td, 
+  .ma-comparison-table tr { 
+    display: block; 
+  }
+  
+  .ma-comparison-table thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  .ma-comparison-table tr {
+    border: 1px solid #eee;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background: white;
+  }
+  
+  .ma-comparison-table td { 
+    border: none;
+    border-bottom: 1px solid #eee; 
+    position: relative;
+    padding-left: 50%; 
+    text-align: right !important;
+    font-size: 13px;
+    min-height: 45px;
+  }
+  
+  .ma-comparison-table td:before { 
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+    transform: translateY(-50%);
+    color: var(--latam-black);
+  }
+  
+  .ma-comparison-table td:nth-of-type(1) { background: #f9f9f9; text-align: left !important; padding-left: 15px; font-weight: bold; font-size: 14px; }
+  .ma-comparison-table td:nth-of-type(1):before { content: ""; }
+  
+  .ma-comparison-table td:nth-of-type(2):before { content: "LATAM:"; }
+  .ma-comparison-table td:nth-of-type(3):before { content: "COMPETENCIA:"; }
+  
+  .ma-comparison-table td:nth-child(2) {
+    background: rgba(154, 77, 92, 0.05);
   }
 }
 

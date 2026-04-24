@@ -53,13 +53,22 @@ const HeaderBar: React.FC = () => {
             )}
           </div>
           <div className="ct-main-end">
-            <div style={{ marginRight: '20px' }}>
+            <div style={{ marginRight: '20px' }} className="desktop-lang">
               <LanguageSwitcher />
             </div>
             <div className="ct-social-text">
               <span style={{ color: 'rgb(30, 31, 51)', fontWeight: 'bold' }}>{t('social.responsible')}</span>{' '}
               <Link to="/nuestra-conciencia-social" style={{ color: '#8e3d4a', fontWeight: 'bold', textDecoration: 'none' }}>{t('nav.see_more')} →</Link>
             </div>
+            
+            {/* Burger Menu Trigger */}
+            <button 
+              className="ct-mobile-trigger" 
+              onClick={() => setMobileMenuOpen(true)}
+              aria-label="Menu"
+            >
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
           </div>
         </div>
       </div>

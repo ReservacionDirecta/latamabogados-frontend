@@ -304,18 +304,24 @@
   margin-top: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .header-menu,
-  .ct-main-end > .ct-button-ghost {
+  .ct-main-end > .ct-social-text,
+  .ct-main-end > .desktop-lang {
     display: none;
   }
 
   .ct-mobile-trigger {
     display: block;
+    background: none;
+    border: none;
+    padding: 10px;
+    color: #1d1d1b;
+    cursor: pointer;
   }
 
-  .ct-header-top {
-    display: none;
+  .ct-header-main {
+    padding: 15px 0;
   }
 
   .default-logo {
