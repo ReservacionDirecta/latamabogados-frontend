@@ -16,7 +16,7 @@
   display: flex;
   align-items: center;
   gap: var(--sp-5);
-  margin-bottom: 50px;
+  margin-bottom: 0px;
   animation: heroFadeIn 1s ease both;
   text-align: left;
 }
@@ -55,7 +55,7 @@
   color: var(--latam-black);
   font-size: clamp(18px, 2vw, 24px);
   line-height: var(--phi);
-  margin-bottom: 50px;
+  margin-bottom: 0px;
   text-align: justify;
   font-family: 'Playfair Display', serif;
 }
@@ -217,20 +217,21 @@
   }
 }
 
-@media (max-width: 600px) {
-  .ma-card {
-    padding: 10px;
-    padding-top: 25px;
-  }
-  
-  .ma-card-title {
-    font-size: 32px;
-  }
-  
-  .ma-btn {
-    width: 100%;
-    padding: 14px 20px;
-  }
+/* Budget CTA */
+.ma-budget-cta {
+  animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.2s;
+}
+
+.ma-budget-cta button {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+  transition: all 0.2s ease !important;
+}
+
+.ma-budget-cta button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15) !important;
+  background-color: #f7ca00 !important;
 }
 
 @keyframes heroFadeIn {
