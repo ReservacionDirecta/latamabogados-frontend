@@ -96,7 +96,7 @@ const AgendarClase: React.FC = () => {
             </div>
 
             <div className="ma-card">
-              <h3 className="ma-card-title">{t('agendar_clase.individual_title')}</h3>
+              <h3 className="ma-card-title" dangerouslySetInnerHTML={{ __html: t('agendar_clase.individual_title') }} />
               <p className="ma-intro">
                 {t('agendar_clase.individual_intro')}
               </p>
@@ -106,7 +106,15 @@ const AgendarClase: React.FC = () => {
                   <span className="ma-icon">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1a11 11 0 1 0 11 11A11 11 0 0 0 12 1Zm1 17.93V20a1 1 0 0 1-2 0v-1.06a4.5 4.5 0 0 1-3.5-4.38 1 1 0 0 1 2 0 2.5 2.5 0 0 0 5 0c0-1.38-1.1-1.88-3-2.43-2.08-.61-4.5-1.37-4.5-4.07A4.48 4.48 0 0 1 11 3.06V2a1 1 0 0 1 2 0v1.06a4.5 4.5 0 0 1 3.5 4.38 1 1 0 0 1-2 0 2.5 2.5 0 0 0-5 0c0 1.13.89 1.55 2.82 2.12 2.16.64 4.68 1.45 4.68 4.38A4.48 4.48 0 0 1 13 18.93Z"></path></svg>
                   </span>
-                  <span dangerouslySetInnerHTML={{ __html: t('agendar_clase.price_promo') }} />
+                  <span>
+                    <span dangerouslySetInnerHTML={{ __html: t('agendar_clase.price_promo') }} />{' '}
+                    <button 
+                      onClick={() => setIsGroupModalOpen(true)}
+                      style={{ background: 'none', border: 'none', color: 'var(--latam-maroon)', fontWeight: 'bold', textDecoration: 'underline', cursor: 'pointer', padding: 0, fontSize: '0.9em', marginLeft: '5px' }}
+                    >
+                      {t('agendar_clase.budget_cta')}
+                    </button>
+                  </span>
                 </li>
 
                 <li>
@@ -153,17 +161,7 @@ const AgendarClase: React.FC = () => {
             </div>
           </div>
 
-            <div className="ma-budget-cta" style={{ marginTop: '30px', textAlign: 'center', padding: '20px', background: 'white', borderRadius: '12px', border: '1px solid #eee', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', flexWrap: 'wrap' }}>
-              <span style={{ fontSize: '1.05rem', color: 'var(--latam-black)' }}>{t('agendar_clase.budget_prompt')}</span>
-              <button 
-                onClick={() => setIsGroupModalOpen(true)}
-                className="ma-btn ma-btn-whatsapp"
-                style={{ background: '#f8d210', color: '#000', fontWeight: 'bold', fontSize: '0.85rem', padding: '10px 20px', borderRadius: '4px', textTransform: 'uppercase' }}
-              >
-                {t('agendar_clase.budget_cta')}
-              </button>
-            </div>
-        </div>
+          </div>
       </main>
 
       <BookingModal 
