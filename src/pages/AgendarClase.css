@@ -74,7 +74,7 @@
   border: 1px solid rgba(30, 31, 51, 0.08);
   border-radius: 6px;
   box-shadow: 0 12px 34px rgba(0,0,0,0.05);
-  padding: var(--sp-4);
+  padding: 20px;
   position: relative;
   overflow: hidden;
 }
@@ -243,7 +243,7 @@
 
 /* Comparison Table Styles */
 .ma-comparison-card {
-  margin-top: 40px;
+  
   background: var(--ma-surface);
   border: 1px solid var(--ma-line-color);
 }
