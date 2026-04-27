@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { X, RotateCcw, Play } from 'lucide-react';
+import { X, RotateCcw, Play, Volume2, VolumeX } from 'lucide-react';
 import './WelcomeVideo.css';
 
 interface WelcomeVideoProps {
@@ -10,6 +10,7 @@ interface WelcomeVideoProps {
 
 const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, onClose, onReady }) => {
   const [needsInteraction, setNeedsInteraction] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -49,7 +50,16 @@ const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, onClose, onReady
   const handleManualPlay = () => {
     if (videoRef.current) {
       videoRef.current.play();
+      setIsMuted(false);
       setNeedsInteraction(false);
+    }
+  };
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      const newMuted = !isMuted;
+      videoRef.current.muted = newMuted;
+      setIsMuted(newMuted);
     }
   };
 
@@ -66,6 +76,8 @@ const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, onClose, onReady
           ref={videoRef}
           className="welcome-video-player"
           playsInline
+          muted={isMuted}
+          autoPlay
           src="/0427.mp4"
           onCanPlayThrough={() => onReady && onReady()}
           onEnded={() => setNeedsInteraction(true)}
@@ -76,7 +88,7 @@ const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, onClose, onReady
             <div className="play-icon-large">
               <Play size={40} fill="white" />
             </div>
-            <span>Haga clic para reproducir</span>
+            <span>Haga clic para reproducir con sonido</span>
           </div>
         )}
 
@@ -87,6 +99,13 @@ const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, onClose, onReady
             title="Cerrar"
           >
             <X size={24} />
+          </button>
+          <button 
+            className="video-control-btn volume" 
+            onClick={toggleMute}
+            title={isMuted ? "Activar Sonido" : "Silenciar"}
+          >
+            {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
           </button>
           <button 
             className="video-control-btn repeat" 
