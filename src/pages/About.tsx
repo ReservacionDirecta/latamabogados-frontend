@@ -121,14 +121,11 @@ const About: React.FC = () => {
         {/* Modal QR Enlarged */}
         {showQR && (
           <div className="video-overlay" onClick={() => setShowQR(false)}>
-            <div className="video-modal" style={{ maxWidth: '400px', background: 'white', padding: '20px', borderRadius: '12px' }} onClick={e => e.stopPropagation()}>
+            <div className="video-modal qr-expanded-modal" onClick={e => e.stopPropagation()}>
               <button className="close-modal" onClick={() => setShowQR(false)}>
                 <X size={24} />
               </button>
-              <div style={{ textAlign: 'center' }}>
-                <img src="/qr-vcard.png" alt="QR Large" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                <p style={{ marginTop: '15px', fontWeight: 'bold', color: 'var(--latam-black)' }}>{t('about.scan_save')}</p>
-              </div>
+              <img src="/qr-vcard.png" alt="QR Large" className="qr-expanded-img" />
             </div>
           </div>
         )}

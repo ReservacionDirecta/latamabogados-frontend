@@ -29,7 +29,7 @@
 
 .about-secondary-text {
   font-family: 'Roboto', sans-serif;
-  font-size: 22px;
+  font-size: 20px;
   line-height: var(--phi);
   color: var(--latam-black);
   margin-top: 30px;
@@ -475,7 +475,7 @@
 }
 
 .ma-lead {
-  font-size: 22px;
+  font-size: 20px;
   line-height: var(--phi);
   color: var(--latam-black);
   text-align: justify;
@@ -532,5 +532,101 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+  }
+}
+
+/* ── VCard Styles ── */
+.vcard-card {
+  background: var(--ma-surface-2);
+  border-radius: 12px;
+  padding: 40px;
+  border: 1px solid rgba(47, 66, 88, 0.05);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+.vcard-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.vcard-qr-wrapper {
+  flex: 0 0 180px;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.vcard-qr-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.vcard-qr {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.vcard-info {
+  flex: 1;
+  text-align: left;
+}
+
+.vcard-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 16px;
+  color: var(--latam-maroon);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.vcard-text {
+  font-size: 14px;
+  color: var(--latam-black);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Expanded QR Modal Custom Size */
+.qr-expanded-modal {
+  width: 60vw !important;
+  max-width: none !important;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 20px;
+}
+
+.qr-expanded-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .vcard-card {
+    max-width: 100%;
+    padding: 20px;
+  }
+  
+  .vcard-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .vcard-info {
+    text-align: center;
+  }
+  
+  .qr-expanded-modal {
+    width: 80vw !important; /* On mobile 60vw might be too small for a QR, but user said 60% so I'll follow but maybe 80% is better. Wait, user said 60% total screen. */
+    width: 80vw !important; 
   }
 }

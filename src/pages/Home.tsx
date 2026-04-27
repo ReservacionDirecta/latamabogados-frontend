@@ -10,17 +10,18 @@ import './Home.css';
 const Home: React.FC = () => {
   const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(true);
+  const [isVideoReady, setIsVideoReady] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
 
   const handleVideoReady = () => {
-    // Automatically hide loading and show video when it's ready to play
-    setIsLoading(false);
-    setShowVideo(true);
-  };
-
-  const handleManualEnter = () => {
-    setIsLoading(false);
-    setShowVideo(true);
+    // Start exit animation
+    setIsVideoReady(true);
+    
+    // Wait for animation to finish before unmounting
+    setTimeout(() => {
+      setIsLoading(false);
+      setShowVideo(true);
+    }, 800);
   };
 
   return (
@@ -31,10 +32,11 @@ const Home: React.FC = () => {
         keywords="inglés jurídico, legal english, abogado estados unidos, derecho usa, marcus ambrose"
       />
       
-      {isLoading && <LoadingScreen onEnter={handleManualEnter} />}
+      {isLoading && <LoadingScreen isReady={isVideoReady} />}
       
       <WelcomeVideo 
         isVisible={showVideo || isLoading} // Keep it rendered to pre-load
+        isActive={showVideo}
         onClose={() => setShowVideo(false)} 
         onReady={handleVideoReady}
       />

@@ -4,17 +4,18 @@ import './WelcomeVideo.css';
 
 interface WelcomeVideoProps {
   isVisible: boolean;
+  isActive: boolean;
   onClose: () => void;
   onReady?: () => void;
 }
 
-const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, onClose, onReady }) => {
+const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, isActive, onClose, onReady }) => {
   const [needsInteraction, setNeedsInteraction] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (isVisible && videoRef.current) {
+    if (isActive && videoRef.current) {
       // Set volume to 60%
       videoRef.current.volume = 0.6;
       
@@ -39,7 +40,7 @@ const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, onClose, onReady
       }, 100);
       return () => clearTimeout(timer);
     }
-  }, [isVisible]);
+  }, [isActive]);
 
   const handleClose = () => {
     if (videoRef.current) {

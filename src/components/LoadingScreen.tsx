@@ -2,28 +2,17 @@ import React, { useState, useEffect } from 'react';
 import './LoadingScreen.css';
 
 interface LoadingScreenProps {
-  onEnter: () => void;
+  isReady: boolean;
 }
 
-const LoadingScreen: React.FC<LoadingScreenProps> = ({ onEnter }) => {
+const LoadingScreen: React.FC<LoadingScreenProps> = ({ isReady }) => {
   const [isExiting, setIsExiting] = useState(false);
-  const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
-    // Show the button as a fallback if the video takes more than 5 seconds
-    const timer = setTimeout(() => {
-      setShowButton(true);
-    }, 5000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  const handleEnter = () => {
-    setIsExiting(true);
-    setTimeout(() => {
-      onEnter();
-    }, 800);
-  };
+    if (isReady) {
+      setIsExiting(true);
+    }
+  }, [isReady]);
 
   return (
     <div className={`loading-screen ${isExiting ? 'fade-out' : ''}`}>
@@ -33,15 +22,14 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onEnter }) => {
         <p className="loading-subtitle pulse-text">Dr. Marcus Ambrose</p>
       </div>
 
-      {showButton ? (
-        <button className="loading-enter-btn" onClick={handleEnter}>
-          Ingresar al Sitio
-        </button>
-      ) : (
-        <div className="loading-status-text">Cargando experiencia...</div>
-      )}
+      <div className="loading-status">
+        <div className="loading-spinner"></div>
+        <p className="loading-status-text">Cargando experiencia jurídica...</p>
+      </div>
 
-      <div className="loading-progress-bar" style={{ width: '100%' }}></div>
+      <div className="loading-footer">
+        <p>Optimizado para una experiencia premium</p>
+      </div>
     </div>
   );
 };
