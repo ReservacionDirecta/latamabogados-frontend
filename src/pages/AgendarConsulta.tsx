@@ -15,7 +15,7 @@ const AgendarConsulta: React.FC = () => {
       <SEO 
         title={t('agendar_consulta.title')} 
         description={t('agendar_consulta.lead')}
-        keywords="consulta legal abogado usa, servicios legales estados unidos, abrir cuenta bancaria usa, constituir empresa usa"
+        keywords="consulta legal abogado usa, servicios legales estados unidos, asesoría legal internacional, procesos legales usa"
       />
       <HeaderBar />
       
@@ -55,13 +55,6 @@ const AgendarConsulta: React.FC = () => {
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2a1 1 0 0 0-2 0v2H8V2a1 1 0 0 0-2 0v2H5a3 3 0 0 0-3 3v11a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm1 14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V10h16Zm0-10H4V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1Z"></path></svg>
                   </span>
                   <span dangerouslySetInnerHTML={{ __html: t('agendar_consulta.service_project') }} />
-                </li>
-
-                <li>
-                  <span className="ma-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
-                  </span>
-                  <span dangerouslySetInnerHTML={{ __html: t('agendar_consulta.service_corp') }} />
                 </li>
               </ul>
 

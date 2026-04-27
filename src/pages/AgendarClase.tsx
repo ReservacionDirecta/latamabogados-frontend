@@ -43,7 +43,7 @@ const AgendarClase: React.FC = () => {
               <h3 className="ma-card-title">CLASES INDIVIDUALES EN GOOGLE MEET CON EL <br /> DR. MARCUS AMBROSE</h3>
               <div className="ma-card-body">
                 <p className="ma-card-intro">
-                  El curso nuestro es único en el mercado y está diseñado para abogados, estudiantes de abogacía y los que piensan tomar cursos de abogacía en inglés.
+                  El curso nuestro es único en el mercado <span className="ma-price-tag">$50 USD</span> y está diseñado para abogados, estudiantes de abogacía y los que piensan tomar cursos de abogacía en inglés.
                 </p>
                 <div className="ma-highlight-box">
                   <p>

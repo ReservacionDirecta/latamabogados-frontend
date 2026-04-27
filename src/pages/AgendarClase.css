@@ -546,3 +546,17 @@
     font-size: 17px;
   }
 }
+
+/* Price Highlighting */
+.ma-price-tag {
+  background-color: rgba(142, 61, 74, 0.1);
+  color: var(--latam-maroon);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 800;
+  border: 1px solid rgba(142, 61, 74, 0.2);
+  display: inline-block;
+  margin: 0 2px;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1em;
+}
