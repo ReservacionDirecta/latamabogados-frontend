@@ -14,14 +14,12 @@ const Home: React.FC = () => {
   const [showVideo, setShowVideo] = useState(false);
 
   const handleVideoReady = () => {
-    // Start exit animation
     setIsVideoReady(true);
-    
-    // Wait for animation to finish before unmounting
-    setTimeout(() => {
-      setIsLoading(false);
-      setShowVideo(true);
-    }, 800);
+  };
+
+  const handleManualEnter = () => {
+    setIsLoading(false);
+    setShowVideo(true);
   };
 
   return (
@@ -32,7 +30,12 @@ const Home: React.FC = () => {
         keywords="inglés jurídico, legal english, abogado estados unidos, derecho usa, marcus ambrose"
       />
       
-      {isLoading && <LoadingScreen isReady={isVideoReady} />}
+      {isLoading && (
+        <LoadingScreen 
+          onEnter={handleManualEnter} 
+          isReady={isVideoReady} 
+        />
+      )}
       
       <WelcomeVideo 
         isVisible={showVideo || isLoading} // Keep it rendered to pre-load
