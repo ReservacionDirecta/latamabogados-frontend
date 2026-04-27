@@ -30,6 +30,11 @@ const SocialConscience: React.FC = () => {
             <p className="ma-lead">
               {t('social_conscience.lead')}
             </p>
+            <div className="ma-highlight-box" style={{ marginTop: '20px', textAlign: 'center', borderLeft: 'none', borderBottom: '4px solid var(--latam-maroon)', borderRadius: '8px' }}>
+               <p style={{ fontWeight: 'bold', fontSize: '1.1em' }}>
+                 {t('social_conscience.donation_commitment')}
+               </p>
+            </div>
           </div>
 
           <div className="ma-grid-single">

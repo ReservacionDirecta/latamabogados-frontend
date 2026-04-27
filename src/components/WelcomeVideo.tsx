@@ -10,11 +10,14 @@ interface WelcomeVideoProps {
 
 const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, onClose, onReady }) => {
   const [needsInteraction, setNeedsInteraction] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     if (isVisible && videoRef.current) {
+      // Set volume to 60%
+      videoRef.current.volume = 0.6;
+      
       // Small delay to ensure the overlay is rendered
       const timer = setTimeout(() => {
         if (videoRef.current) {
@@ -22,8 +25,14 @@ const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, onClose, onReady
 
           if (playPromise !== undefined) {
             playPromise.catch((error) => {
-              console.log("Autoplay blocked:", error);
-              setNeedsInteraction(true);
+              console.log("Autoplay with audio blocked:", error);
+              // Fallback: Try to play muted first, or show interaction prompt
+              videoRef.current!.muted = true;
+              setIsMuted(true);
+              
+              videoRef.current!.play().catch(() => {
+                setNeedsInteraction(true);
+              });
             });
           }
         }
