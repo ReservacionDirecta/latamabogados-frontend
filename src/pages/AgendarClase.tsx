@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { BookOpen, FileText, Search, Users, Settings, Award } from 'lucide-react';
 import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
 import BookingModal from '../components/BookingModal';
@@ -38,60 +39,47 @@ const AgendarClase: React.FC = () => {
           </p>
 
           <div className="ma-grid-single">
-            <div className="ma-card ma-comparison-card" style={{ marginBottom: '50px' }}>
-              <h3 className="ma-card-title" dangerouslySetInnerHTML={{ __html: t('agendar_clase.why_choose') }} />
-              <div className="ma-comparison-wrapper">
-                <table className="ma-comparison-table">
-                  <thead>
-                    <tr>
-                      <th>{t('agendar_clase.table_feature')}</th>
-                      <th>{t('agendar_clase.table_latam')}</th>
-                      <th>{t('agendar_clase.table_competence')}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>{t('agendar_clase.feature1')}</td>
-                      <td><span className="ma-check">✅</span> SI</td>
-                      <td><span className="ma-cross">❌</span> NO</td>
-                    </tr>
-                    <tr>
-                      <td>{t('agendar_clase.feature2')}</td>
-                      <td><span className="ma-check">✅</span> SI</td>
-                      <td><span className="ma-cross">❌</span> NO</td>
-                    </tr>
-                    <tr>
-                      <td>{t('agendar_clase.feature3')}</td>
-                      <td><span className="ma-check">✅</span> SI</td>
-                      <td><span className="ma-cross">❌</span> NO</td>
-                    </tr>
-                    <tr>
-                      <td>{t('agendar_clase.feature4')}</td>
-                      <td><span className="ma-check">✅</span> SI</td>
-                      <td><span className="ma-cross">❌</span> NO</td>
-                    </tr>
-                    <tr>
-                      <td>{t('agendar_clase.feature5')}</td>
-                      <td><span className="ma-check">✅</span> SI</td>
-                      <td><span className="ma-cross">❌</span> NO</td>
-                    </tr>
-                    <tr>
-                      <td>{t('agendar_clase.feature6')}</td>
-                      <td><span className="ma-check">✅</span> SI</td>
-                      <td><span className="ma-cross">❌</span> NO</td>
-                    </tr>
-                    <tr>
-                      <td>{t('agendar_clase.feature7')}</td>
-                      <td><span className="ma-check">✅</span> SI</td>
-                      <td><span className="ma-cross">❌</span> NO</td>
-                    </tr>
-                    <tr>
-                      <td>{t('agendar_clase.feature8')}</td>
-                      <td><span className="ma-check">✅</span> INDIVIDUAL</td>
-                      <td><span className="ma-cross">❌</span> NO</td>
-                    </tr>
-                  </tbody>
-                </table>
+            <div className="ma-card ma-details-card" style={{ marginBottom: '50px' }}>
+              <h3 className="ma-card-title">CLASES INDIVIDUALES EN GOOGLE MEET CON EL <br /> DR. MARCUS AMBROSE</h3>
+              <div className="ma-card-body">
+                <p className="ma-card-intro">
+                  El curso nuestro es único en el mercado y está diseñado para abogados, estudiantes de abogacía y los que piensan tomar cursos de abogacía en inglés.
+                </p>
+                <div className="ma-highlight-box">
+                  <p>
+                    Inglés jurídico con Dr. Marcus Ambrose mejorará su capacidad de conversar en inglés a un nivel profesional y <strong>MUCHO MÁS</strong>.
+                  </p>
+                </div>
+                
+                <div className="ma-objectives-section">
+                  <h4 className="objectives-title">OBJETIVOS DEL CURSO</h4>
+                  <div className="ma-objectives-grid">
+                    <div className="objective-item">
+                      <div className="objective-icon"><BookOpen size={24} /></div>
+                      <p>Ampliar el vocabulario jurídico relevante para diversas ramas del derecho, para ejercer eficazmente en entornos legales angloparlantes.</p>
+                    </div>
+                    <div className="objective-item">
+                      <div className="objective-icon"><FileText size={24} /></div>
+                      <p>Desarrollar la capacidad de redactar y comprender documentos legales, casos y códigos en inglés.</p>
+                    </div>
+                    <div className="objective-item">
+                      <div className="objective-icon"><Search size={24} /></div>
+                      <p>Cómo realizar investigaciones y redacción jurídica en línea (legal research and writing).</p>
+                    </div>
+                    <div className="objective-item">
+                      <div className="objective-icon"><Users size={24} /></div>
+                      <p>Los módulos hacen hincapié a aplicar los conocimientos teóricos a situaciones prácticas mediante ejercicios guiados y juegos de rol.</p>
+                    </div>
+                    <div className="objective-item">
+                      <div className="objective-icon"><Settings size={24} /></div>
+                      <p>El currículo se trata de diversos especialidades de abogacía o diseñamos el currículum a su práctica actual.</p>
+                    </div>
+                    <div className="objective-item">
+                      <div className="objective-icon"><Award size={24} /></div>
+                      <p>Los participantes adquirirán la confianza necesaria para desenvolverse con eficacia en inglés jurídico <strong>ÉLITE</strong>.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 

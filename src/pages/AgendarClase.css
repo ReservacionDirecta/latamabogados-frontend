@@ -102,7 +102,7 @@
 
 .ma-intro {
   color: var(--latam-black);
-  font-size: 17px;
+  font-size: 14px;
   line-height: var(--phi);
   margin: 0 0 var(--sp-3);
   text-align: justify;
@@ -223,12 +223,12 @@
   }
 
   .ma-title {
-    font-size: 36px;
+    font-size: 30px;
     text-align: center;
   }
 
   .ma-lead-bottom {
-    font-size: 17px;
+    font-size: 14px;
     text-align: justify;
     padding: 20px;
   }
@@ -454,16 +454,95 @@
   }
 }
 
-/* Price Highlighting */
-.ma-price-tag {
-  background-color: rgba(142, 61, 74, 0.1);
-  color: var(--latam-maroon);
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-weight: 800;
-  border: 1px solid rgba(142, 61, 74, 0.2);
-  display: inline-block;
-  margin: 0 2px;
+/* Details Card & Objectives Grid */
+.ma-details-card {
+  border-top: 5px solid var(--latam-maroon);
+}
+
+.ma-card-intro {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--latam-black);
+  margin-bottom: 24px;
+  text-align: center;
+  font-style: italic;
+}
+
+.ma-highlight-box {
+  background: rgba(142, 61, 74, 0.05);
+  border-left: 4px solid var(--latam-maroon);
+  padding: 20px;
+  margin-bottom: 35px;
+  border-radius: 0 8px 8px 0;
+}
+
+.ma-highlight-box p {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--latam-black);
+}
+
+.objectives-title {
   font-family: 'DM Serif Display', serif;
-  font-size: 1.1em;
+  font-size: 22px;
+  color: var(--latam-maroon);
+  margin-bottom: 25px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.ma-objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.objective-item {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid rgba(30, 31, 51, 0.05);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.objective-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  border-color: var(--latam-maroon);
+}
+
+.objective-icon {
+  color: var(--latam-maroon);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(142, 61, 74, 0.1);
+  border-radius: 50%;
+}
+
+.objective-item p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--latam-black);
+}
+
+@media (max-width: 600px) {
+  .ma-objectives-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ma-card-intro {
+    font-size: 16px;
+  }
+  
+  .ma-highlight-box p {
+    font-size: 17px;
+  }
 }
