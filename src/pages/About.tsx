@@ -4,12 +4,14 @@ import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
 import SEO from '../components/SEO';
 import { Book, Download, X } from 'lucide-react';
+import WelcomeVideo from '../components/WelcomeVideo';
 import './AgendarClase.css'; 
 import './About.css';
 
 const About: React.FC = () => {
   const { t } = useTranslation();
-  const [showVideo, setShowVideo] = useState(false); // Disabled autoplay on enter
+  const [showYouTube, setShowYouTube] = useState(false);
+  const [showWelcomeVideo, setShowWelcomeVideo] = useState(false);
   const [showQR, setShowQR] = useState(false);
 
   return (
@@ -35,7 +37,12 @@ const About: React.FC = () => {
                     alt="Dr. Marcus Ambrose" 
                     className="about-photo"
                   />
-                  
+                  <div style={{ position: 'absolute', bottom: '15px', right: '15px' }}>
+                    <button onClick={() => setShowWelcomeVideo(true)} className="hero-btn-intro" style={{ background: 'white' }}>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                      VER INTRO
+                    </button>
+                  </div>
                 </div>
               </div>
               
@@ -99,11 +106,17 @@ const About: React.FC = () => {
           </div>
         </div>
 
+        <WelcomeVideo 
+          isVisible={showWelcomeVideo}
+          isActive={showWelcomeVideo}
+          onClose={() => setShowWelcomeVideo(false)} 
+        />
+
         {/* Modal de Video YouTube */}
-        {showVideo && (
-          <div className="video-overlay" onClick={() => setShowVideo(false)}>
+        {showYouTube && (
+          <div className="video-overlay" onClick={() => setShowYouTube(false)}>
             <div className="video-modal" onClick={e => e.stopPropagation()}>
-              <button className="close-modal" onClick={() => setShowVideo(false)}>
+              <button className="close-modal" onClick={() => setShowYouTube(false)}>
                 <X size={24} />
               </button>
               <div className="video-container-iframe">
