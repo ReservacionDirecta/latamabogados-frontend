@@ -1,0 +1,93 @@
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--latam-navy);
+  z-index: 11000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.loading-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-brand {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: revealUp 1s ease forwards;
+}
+
+.loading-brand-latam {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(48px, 10vw, 80px);
+  color: white;
+  display: block;
+  line-height: 1;
+}
+
+.loading-brand-abogados {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(32px, 8vw, 60px);
+  color: var(--latam-maroon);
+  display: block;
+  line-height: 1;
+}
+
+.loading-enter-btn {
+  background: transparent;
+  border: 1px solid var(--latam-gold);
+  color: var(--latam-gold);
+  padding: 16px 48px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  animation: revealUp 1s ease 0.5s both;
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-enter-btn:hover {
+  background: var(--latam-gold);
+  color: var(--latam-navy);
+  box-shadow: 0 0 30px rgba(255, 204, 0, 0.3);
+}
+
+.loading-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--latam-maroon);
+  width: 0;
+  transition: width 0.5s ease;
+}
+
+.loading-subtitle {
+  margin-top: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  opacity: 0.6;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+@keyframes pulse-gold {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.pulse-text {
+  animation: pulse-gold 2s infinite ease-in-out;
+}

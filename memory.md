@@ -12,6 +12,7 @@ Latam Abogados es la evolución digital del bufete y plataforma educativa del Dr
 
 ## 📂 Inventario de Activos Clave
 - **Imágenes**: `/dr-marcus-ambrose-abogado-1.png` (Principal), `/diplom.jpeg` (Prueba de autoridad).
+- **Video**: `/0427.mp4` (Video de bienvenida vertical).
 - **Documentos**: CV, Escritos Legales (Appellant Brief), y publicaciones en el Miami Herald localizados en `/public/`.
 
 ## 🚀 Próximos Pasos (Roadmap)

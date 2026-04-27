@@ -250,7 +250,6 @@
 }
 
 .ma-lead-bottom {
-  max-width: 950px;
   margin: 0px; /* Separation from hero */
   color: var(--latam-black);
   font-size: clamp(22px, 3vw, 32px);

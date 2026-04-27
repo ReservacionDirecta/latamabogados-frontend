@@ -1,0 +1,113 @@
+.welcome-video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 16, 26, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.welcome-video-container {
+  position: relative;
+  width: 100%;
+  max-width: 450px; /* Adjust based on typical vertical video width */
+  aspect-ratio: 9 / 16;
+  max-height: 90vh;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #000;
+}
+
+.welcome-video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.welcome-video-controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 10;
+}
+
+.video-control-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.video-control-btn:hover {
+  background: var(--latam-maroon);
+  border-color: var(--latam-maroon);
+  transform: scale(1.1);
+}
+
+.video-control-btn.close:hover {
+  background: #ff4d4d;
+  border-color: #ff4d4d;
+}
+
+/* Interaction Prompt if Autoplay Fails */
+.video-interaction-prompt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  gap: 15px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.play-icon-large {
+  background: var(--latam-maroon);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 30px rgba(142, 61, 74, 0.5);
+  animation: pulse-maroon 2s infinite;
+}
+
+@keyframes pulse-maroon {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(142, 61, 74, 0.4); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 20px rgba(142, 61, 74, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(142, 61, 74, 0); }
+}
+
+@media (max-width: 480px) {
+  .welcome-video-container {
+    max-width: 100%;
+    max-height: 85vh;
+  }
+}
