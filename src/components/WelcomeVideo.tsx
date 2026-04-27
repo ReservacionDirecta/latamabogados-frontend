@@ -5,9 +5,10 @@ import './WelcomeVideo.css';
 interface WelcomeVideoProps {
   isVisible: boolean;
   onClose: () => void;
+  onReady?: () => void;
 }
 
-const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, onClose }) => {
+const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, onClose, onReady }) => {
   const [needsInteraction, setNeedsInteraction] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -52,16 +53,21 @@ const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, onClose }) => {
     }
   };
 
-  if (!isVisible) return null;
+  // If not visible and no onReady provided, we don't need to render anything
+  if (!isVisible && !onReady) return null;
 
   return (
-    <div className="welcome-video-overlay animate-reveal-in">
+    <div 
+      className={`welcome-video-overlay animate-reveal-in ${!isVisible ? 'preload-hidden' : ''}`}
+      style={!isVisible ? { opacity: 0, pointerEvents: 'none', visibility: 'hidden' } : {}}
+    >
       <div className="welcome-video-container">
         <video
           ref={videoRef}
           className="welcome-video-player"
           playsInline
           src="/0427.mp4"
+          onCanPlayThrough={() => onReady && onReady()}
           onEnded={() => setNeedsInteraction(true)}
         />
 

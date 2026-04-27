@@ -12,9 +12,15 @@ const Home: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showVideo, setShowVideo] = useState(false);
 
-  const handleLoadingComplete = () => {
+  const handleVideoReady = () => {
+    // Automatically hide loading and show video when it's ready to play
     setIsLoading(false);
-    setShowVideo(true); // Trigger video after interaction
+    setShowVideo(true);
+  };
+
+  const handleManualEnter = () => {
+    setIsLoading(false);
+    setShowVideo(true);
   };
 
   return (
@@ -25,11 +31,12 @@ const Home: React.FC = () => {
         keywords="inglés jurídico, legal english, abogado estados unidos, derecho usa, marcus ambrose"
       />
       
-      {isLoading && <LoadingScreen onEnter={handleLoadingComplete} />}
+      {isLoading && <LoadingScreen onEnter={handleManualEnter} />}
       
       <WelcomeVideo 
-        isVisible={showVideo} 
+        isVisible={showVideo || isLoading} // Keep it rendered to pre-load
         onClose={() => setShowVideo(false)} 
+        onReady={handleVideoReady}
       />
       
       <HeaderBar />

@@ -17,8 +17,8 @@ Este archivo documenta las intervenciones técnicas realizadas por el asistente 
 - **Performance**: Optimización de la carga de imágenes y reducción de redundancias en el CSS.
 
 ### 4. Animaciones y UX
-- **Pantalla de Carga (LoadingScreen)**: Creación de una experiencia de entrada premium con marca animada y botón de ingreso para habilitar el autoplay de video con sonido.
-- **Video de Bienvenida**: Implementación del componente `WelcomeVideo` orquestado con el LoadingScreen para una reproducción automática inmediata tras la interacción del usuario.
+- **Flujo de Entrada Automatizado**: Sincronización del `LoadingScreen` con el estado de carga del `WelcomeVideo`. El sitio ahora detecta cuándo el video está listo para reproducirse y retira la pantalla de carga automáticamente.
+- **Pantalla de Carga (LoadingScreen)**: Experiencia premium con fallback inteligente (botón de ingreso manual tras 5 segundos) para garantizar la accesibilidad.
 - **Micro-interacciones**: Adición de efectos `hover`, animaciones de entrada `revealUp` y pulsaciones rítmicas en botones críticos (WhatsApp).
 - **Responsive Audit**: Corrección de layouts en dispositivos móviles, asegurando que las tablas y cuadrículas se adapten fluidamente.
 

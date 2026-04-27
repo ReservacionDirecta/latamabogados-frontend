@@ -82,6 +82,15 @@
   text-transform: uppercase;
 }
 
+.loading-status-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: var(--latam-gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: pulse-gold 2s infinite ease-in-out;
+}
+
 @keyframes pulse-gold {
   0% { opacity: 0.5; }
   50% { opacity: 1; }

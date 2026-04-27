@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './LoadingScreen.css';
 
 interface LoadingScreenProps {
@@ -7,10 +7,19 @@ interface LoadingScreenProps {
 
 const LoadingScreen: React.FC<LoadingScreenProps> = ({ onEnter }) => {
   const [isExiting, setIsExiting] = useState(false);
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    // Show the button as a fallback if the video takes more than 5 seconds
+    const timer = setTimeout(() => {
+      setShowButton(true);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleEnter = () => {
     setIsExiting(true);
-    // Delay the actual removal to allow for fade-out animation
     setTimeout(() => {
       onEnter();
     }, 800);
@@ -24,9 +33,13 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onEnter }) => {
         <p className="loading-subtitle pulse-text">Dr. Marcus Ambrose</p>
       </div>
 
-      <button className="loading-enter-btn" onClick={handleEnter}>
-        Ingresar al Sitio
-      </button>
+      {showButton ? (
+        <button className="loading-enter-btn" onClick={handleEnter}>
+          Ingresar al Sitio
+        </button>
+      ) : (
+        <div className="loading-status-text">Cargando experiencia...</div>
+      )}
 
       <div className="loading-progress-bar" style={{ width: '100%' }}></div>
     </div>
