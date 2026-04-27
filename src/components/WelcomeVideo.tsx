@@ -18,6 +18,10 @@ const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, isActive, onClos
     if (isActive && videoRef.current) {
       // Set volume to 60%
       videoRef.current.volume = 0.6;
+      videoRef.current.currentTime = 0;
+      videoRef.current.muted = false;
+      setIsMuted(false);
+      setNeedsInteraction(false);
       
       // Small delay to ensure the overlay is rendered
       const timer = setTimeout(() => {
@@ -90,7 +94,7 @@ const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, isActive, onClos
           autoPlay
           src="/0427.mp4"
           onCanPlayThrough={() => onReady && onReady()}
-          onEnded={() => setNeedsInteraction(true)}
+          onEnded={handleClose}
         />
 
         {needsInteraction && (

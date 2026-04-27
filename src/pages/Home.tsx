@@ -44,7 +44,7 @@ const Home: React.FC = () => {
       <HeaderBar />
       
       <main>
-        <HeroSection />
+        <HeroSection onOpenVideo={() => setShowVideo(true)} />
       </main>
     </div>
   );

@@ -7,6 +7,7 @@ import './HeroSection.css';
  * + la banda inferior "Más de 40 años de experiencia"
  */
 interface HeroSectionProps {
+  onOpenVideo?: () => void;
   customLabels?: {
     service1?: string;
     service2?: string;
@@ -14,7 +15,7 @@ interface HeroSectionProps {
   };
 }
 
-const HeroSection: React.FC<HeroSectionProps> = () => {
+const HeroSection: React.FC<HeroSectionProps> = ({ onOpenVideo }) => {
   const { t } = useTranslation();
   const [offset, setOffset] = React.useState(0);
 
@@ -102,6 +103,10 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
               <p className="hero-experience-text">{t('hero.experience_text')}</p>
             </div>
             <div className="authority-action">
+              <button onClick={onOpenVideo} className="hero-btn-intro">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                VER INTRO
+              </button>
               <a href="/acerca-de" className="hero-cta-btn hero-cta-secondary">
                 {t('hero.read_more')}
               </a>
