@@ -11,6 +11,7 @@ interface WelcomeVideoProps {
 
 const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, isActive, onClose, onReady }) => {
   const [needsInteraction, setNeedsInteraction] = useState(false);
+  const [showUnmutePrompt, setShowUnmutePrompt] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -22,6 +23,7 @@ const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, isActive, onClos
       videoRef.current.muted = false;
       setIsMuted(false);
       setNeedsInteraction(false);
+      setShowUnmutePrompt(false);
       
       // Small delay to ensure the overlay is rendered
       const timer = setTimeout(() => {
@@ -31,9 +33,10 @@ const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, isActive, onClos
           if (playPromise !== undefined) {
             playPromise.catch((error) => {
               console.log("Autoplay with audio blocked:", error);
-              // Fallback: Try to play muted first, or show interaction prompt
+              // Fallback: Try to play muted first, but show a prompt to unmute
               videoRef.current!.muted = true;
               setIsMuted(true);
+              setShowUnmutePrompt(true);
               
               videoRef.current!.play().catch(() => {
                 setNeedsInteraction(true);
@@ -69,11 +72,24 @@ const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, isActive, onClos
     }
   };
 
+  const handleUnmutePrompt = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = false;
+      setIsMuted(false);
+      setShowUnmutePrompt(false);
+      // Ensure it's playing
+      videoRef.current.play().catch(e => console.log("Play failed after unmute", e));
+    }
+  };
+
   const toggleMute = () => {
     if (videoRef.current) {
       const newMuted = !isMuted;
       videoRef.current.muted = newMuted;
       setIsMuted(newMuted);
+      if (!newMuted) {
+        setShowUnmutePrompt(false);
+      }
     }
   };
 
@@ -102,7 +118,16 @@ const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, isActive, onClos
             <div className="play-icon-large">
               <Play size={40} fill="white" />
             </div>
-            <span>Haga clic para reproducir con sonido</span>
+            <span>Toca para reproducir</span>
+          </div>
+        )}
+
+        {showUnmutePrompt && !needsInteraction && (
+          <div className="video-interaction-prompt unmute-prompt" onClick={handleUnmutePrompt}>
+            <div className="play-icon-large pulse-animation">
+              <Volume2 size={40} color="white" />
+            </div>
+            <span>Toca para activar el sonido</span>
           </div>
         )}
 

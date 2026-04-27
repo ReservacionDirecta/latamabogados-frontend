@@ -87,6 +87,12 @@
   z-index: 5;
 }
 
+.unmute-prompt {
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+  justify-content: flex-end;
+  padding-bottom: 60px;
+}
+
 .play-icon-large {
   background: var(--latam-maroon);
   width: 80px;
