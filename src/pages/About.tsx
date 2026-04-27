@@ -27,7 +27,7 @@ const About: React.FC = () => {
         <div className="container-narrow">
 
           <div className="ma-top">
-            <h2 className="ma-title">{t('about.title')}</h2>
+            <h2 className="ma-title" dangerouslySetInnerHTML={{ __html: t('about.title') }}></h2>
             
             <div className="about-hero">
               <div className="about-photo-wrapper">
