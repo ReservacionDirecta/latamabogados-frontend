@@ -26,7 +26,6 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  overscroll-behavior-y: none;
 }
 
 .hero-bg {
