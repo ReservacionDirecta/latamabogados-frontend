@@ -14,6 +14,14 @@ const About: React.FC = () => {
   const [showWelcomeVideo, setShowWelcomeVideo] = useState(false);
   const [showQR, setShowQR] = useState(false);
 
+  React.useEffect(() => {
+    // Show welcome video automatically on About page
+    const timer = setTimeout(() => {
+      setShowWelcomeVideo(true);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="agendar-page about-page">
       <SEO 
