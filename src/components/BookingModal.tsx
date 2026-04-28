@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Calendar, Globe, User, Briefcase } from 'lucide-react';
+import { X, Calendar, Clock, Globe, User, Briefcase } from 'lucide-react';
 import { trackEvent, trackConversion } from '../utils/analytics';
 import './BookingModal.css';
 
@@ -12,9 +12,12 @@ interface BookingModalProps {
 const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) => {
   const [formData, setFormData] = useState({
     name: '',
+    phone: '',
     country: '',
     specialty: '',
+    website: '',
     date: '',
+    time: '',
   });
 
   if (!isOpen) return null;
@@ -35,12 +38,23 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
       : "Hola Dr. Marcus, me gustaría agendar una consulta legal.";
     
     // Constructing the message with clear line breaks
-    const message = `${introText}\n\n` +
+    let message = `${introText}\n\n` +
       `*Mis datos:*\n` +
       `• Nombre: ${formData.name}\n` +
+      `• Teléfono: ${formData.phone}\n` +
       `• País: ${formData.country}\n` +
-      `• Especialidad: ${formData.specialty}\n` +
-      `• Fecha sugerida: ${formData.date}`;
+      `• Especialidad: ${formData.specialty}\n`;
+    
+    if (formData.website) {
+      message += `• Web: ${formData.website}\n`;
+    }
+
+    const dateLabel = type === 'clase' ? "Fecha aprox. de comenzar" : "Fecha sugerida";
+    message += `• ${dateLabel}: ${formData.date}\n`;
+    
+    if (type === 'consulta' && formData.time) {
+      message += `• Horario sugerido: ${formData.time}`;
+    }
     
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
@@ -68,7 +82,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
 
         <form onSubmit={handleSubmit} className="booking-form">
           <div className="form-group">
-            <label><User size={18} /> Nombre Completo</label>
+            <label><User size={18} /> Nombre Completo *</label>
             <input 
               type="text" 
               name="name" 
@@ -81,7 +95,18 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
 
           <div className="form-row">
             <div className="form-group">
-              <label><Globe size={18} /> País</label>
+              <label><Globe size={18} /> Teléfono *</label>
+              <input 
+                type="tel" 
+                name="phone" 
+                required 
+                placeholder="Ej. +52 1 234..."
+                value={formData.phone}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label><Globe size={18} /> País *</label>
               <input 
                 type="text" 
                 name="country" 
@@ -91,8 +116,11 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
                 onChange={handleChange}
               />
             </div>
+          </div>
+
+          <div className="form-row">
             <div className="form-group">
-              <label><Briefcase size={18} /> Especialidad</label>
+              <label><Briefcase size={18} /> Especialidad *</label>
               <input 
                 type="text" 
                 name="specialty" 
@@ -102,17 +130,41 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
                 onChange={handleChange}
               />
             </div>
+            <div className="form-group">
+              <label><Globe size={18} /> Página Web (Opcional)</label>
+              <input 
+                type="text" 
+                name="website" 
+                placeholder="Ej. www.bufete.com"
+                value={formData.website}
+                onChange={handleChange}
+              />
+            </div>
           </div>
 
-          <div className="form-group">
-            <label><Calendar size={18} /> Fecha sugerida</label>
-            <input 
-              type="date" 
-              name="date" 
-              required 
-              value={formData.date}
-              onChange={handleChange}
-            />
+          <div className={type === 'clase' ? 'form-group' : 'form-row'}>
+            <div className="form-group">
+              <label><Calendar size={18} /> {type === 'clase' ? 'Fecha aproximada de comenzar *' : 'Fecha sugerida *'}</label>
+              <input 
+                type="date" 
+                name="date" 
+                required 
+                value={formData.date}
+                onChange={handleChange}
+              />
+            </div>
+            {type === 'consulta' && (
+              <div className="form-group">
+                <label><Clock size={18} /> Horario sugerido *</label>
+                <input 
+                  type="time" 
+                  name="time" 
+                  required 
+                  value={formData.time}
+                  onChange={handleChange}
+                />
+              </div>
+            )}
           </div>
 
           <button type="submit" className="modal-submit-btn">

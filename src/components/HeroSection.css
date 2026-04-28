@@ -411,6 +411,7 @@
   font-size: clamp(18px, 2vw, 25px); /* 40 / 1.618 ≈ 25 */
   color: #8e3d4a;
   margin: 0;
+  font-weight: 700;
 }
 
 .hero-experience-text {

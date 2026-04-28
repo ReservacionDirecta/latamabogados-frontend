@@ -13,7 +13,7 @@
 }
 
 .about-photo-wrapper {
-  flex: 0 0 300px;
+  flex: 0 0 240px;
 }
 
 .about-photo {
@@ -475,18 +475,24 @@
 }
 
 .ma-lead {
-  font-size: 12px;
+  font-size: 15px;
   line-height: var(--phi);
   color: var(--latam-black);
   text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .about-intro-text {
   text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .about-secondary-text {
   text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 /* New Button Row Styles */

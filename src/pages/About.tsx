@@ -29,7 +29,7 @@ const About: React.FC = () => {
           <div className="ma-top">
             <h2 className="ma-title" dangerouslySetInnerHTML={{ __html: t('about.title') }}></h2>
             
-            <div className="about-hero">
+            <div className="about-hero" id="bio">
               <div className="about-photo-wrapper">
                 <div className="photo-container">
                   <img 

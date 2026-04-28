@@ -84,9 +84,6 @@ const AgendarClase: React.FC = () => {
 
             <div className="ma-card">
               <h3 className="ma-card-title" dangerouslySetInnerHTML={{ __html: t('agendar_clase.individual_title') }} />
-              <p className="ma-intro">
-                {t('agendar_clase.individual_intro')}
-              </p>
 
               <ul className="ma-features">
                 <li>

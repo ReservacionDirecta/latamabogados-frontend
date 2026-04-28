@@ -57,6 +57,8 @@
   line-height: var(--phi);
   margin-bottom: 0px;
   text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
   font-family: 'Playfair Display', serif;
 }
 
@@ -106,6 +108,8 @@
   line-height: var(--phi);
   margin: 0 0 var(--sp-3);
   text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .ma-features {
