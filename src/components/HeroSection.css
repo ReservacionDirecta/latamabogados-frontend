@@ -302,17 +302,19 @@
 /* ── Sección de Autoridad ── */
 .hero-authority-badge {
   background: #ffffff; 
-  border-radius: 6px;
-  padding: 0;
+  border-radius: 12px;
+  padding: 40px;
   display: flex;
-  flex-direction: row;
-  align-items: stretch;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 0;
-  width: 100%;
-  max-width: 1200px;
+  width: 90%;
+  max-width: 900px;
   margin: 60px auto; 
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
 /* ── Scroll Indicator ── */
@@ -363,44 +365,20 @@
   100% { transform: translate(-50%, 15px); opacity: 0; }
 }
 
-.authority-thumbnail {
-  flex: 0 0 350px;
-  width: 350px;
-  height: auto;
-  border-radius: 6px;
-  overflow: hidden;
-  border: none;
-  box-shadow: none;
-  background-color: #8e3d4a !important;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-authority-badge:hover .authority-thumbnail {
-  transform: scale(1.05) rotate(0deg);
-}
-
-.authority-thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+/* Thumbnail removed as per user request */
 
 .authority-main-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Centering vertically */
+  justify-content: center;
   gap: 40px;
   transition: all 0.4s ease;
-  backdrop-filter: blur(10px);
   opacity: 0;
   animation: fadeInUp 0.8s 0.6s ease-out forwards;
-  background-color: #ffffff !important; /* White square background */
-  border: none;
-  padding: 30px 40px; /* Generous padding for height */
-  border-radius: 0; /* Square edge to join thumbnail */
+  background-color: transparent !important;
   text-align: center;
-  flex: 1;
+  width: 100%;
 }
 
 .authority-info {
@@ -493,27 +471,14 @@
   }
 
   .hero-authority-badge {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 450px;
-    padding: 0;
-    overflow: hidden;
-    margin: 30px auto;
-  }
-
-  .authority-thumbnail {
-    width: 100%;
-    height: 350px;
-    flex: none;
+    padding: 30px 20px;
+    margin: 40px auto;
+    width: 95%;
   }
 
   .authority-main-content {
-    padding: 32px 20px;
-    text-align: center;
-    width: 100%;
-    flex-direction: column;
-    gap: 20px;
+    padding: 0;
+    gap: 30px;
   }
 
   .authority-info {

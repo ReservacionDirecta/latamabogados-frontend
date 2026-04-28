@@ -53,7 +53,32 @@ const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, isActive, onClos
           });
         }
       }, 150);
-      return () => clearTimeout(timer);
+
+      // 2026 Strategy: Unlock audio on any global interaction
+      const unlockAudio = () => {
+        if (videoRef.current && videoRef.current.muted) {
+          videoRef.current.muted = false;
+          setIsMuted(false);
+          // Force play again just in case
+          videoRef.current.play().catch(() => {});
+          
+          // Cleanup listeners after first interaction
+          window.removeEventListener('click', unlockAudio);
+          window.removeEventListener('touchstart', unlockAudio);
+          window.removeEventListener('scroll', unlockAudio);
+        }
+      };
+
+      window.addEventListener('click', unlockAudio);
+      window.addEventListener('touchstart', unlockAudio);
+      window.addEventListener('scroll', unlockAudio);
+
+      return () => {
+        clearTimeout(timer);
+        window.removeEventListener('click', unlockAudio);
+        window.removeEventListener('touchstart', unlockAudio);
+        window.removeEventListener('scroll', unlockAudio);
+      };
     }
   }, [isActive]);
 

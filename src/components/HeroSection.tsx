@@ -87,15 +87,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOpenVideo }) => {
 
         {/* ── Badge de Autoridad (Reintegrado) ── */}
         <div className="hero-authority-badge">
-          <div className="authority-thumbnail">
-            <img 
-              src="/dr-marcus-ambrose-abogado-1.png" 
-              alt="Dr. Marcus Ambrose" 
-              loading="lazy"
-              width="80"
-              height="80"
-            />
-          </div>
           <div className="authority-main-content">
             <div className="authority-info">
               <p className="hero-doctor-name">Dr. Marcus Ambrose</p>
