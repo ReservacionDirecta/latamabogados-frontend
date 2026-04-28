@@ -29,7 +29,7 @@
 
 .about-secondary-text {
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   line-height: var(--phi);
   color: var(--latam-black);
   margin-top: 30px;
@@ -475,7 +475,7 @@
 }
 
 .ma-lead {
-  font-size: 20px;
+  font-size: 18px;
   line-height: var(--phi);
   color: var(--latam-black);
   text-align: justify;
@@ -613,20 +613,43 @@
 @media (max-width: 768px) {
   .vcard-card {
     max-width: 100%;
-    padding: 20px;
+    padding: 15px;
   }
   
   .vcard-content {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    text-align: left;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .vcard-qr-wrapper {
+    flex: 0 0 90px;
+    padding: 8px;
+    border-radius: 8px;
   }
   
   .vcard-info {
-    text-align: center;
+    text-align: left;
+  }
+
+  .vcard-title {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .vcard-text {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .vcard-info .ma-btn-black {
+    padding: 10px 14px;
+    font-size: 12px;
+    margin-top: 10px !important;
   }
   
   .qr-expanded-modal {
-    width: 80vw !important; /* On mobile 60vw might be too small for a QR, but user said 60% so I'll follow but maybe 80% is better. Wait, user said 60% total screen. */
     width: 80vw !important; 
   }
 }
