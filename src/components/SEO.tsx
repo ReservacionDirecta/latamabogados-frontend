@@ -8,9 +8,13 @@ interface SEOProps {
 
 const SEO: React.FC<SEOProps> = ({ title, description, keywords }) => {
   useEffect(() => {
+    // Helper to strip HTML tags
+    const stripHtml = (html: string) => html.replace(/<[^>]*>?/gm, '');
+
     // Update Document Title
     const baseTitle = "Latam Abogados | Dr. Marcus Ambrose";
-    document.title = `${title} | ${baseTitle}`;
+    const cleanTitle = stripHtml(title);
+    document.title = `${cleanTitle} | ${baseTitle}`;
 
     // Update Meta Description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -19,7 +23,8 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords }) => {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', description || "Especialista en Inglés Jurídico y Legal English práctico. Más de 40 años de experiencia en leyes de EE.UU.");
+    const rawDesc = description || "Especialista en Inglés Jurídico y Legal English práctico. Más de 40 años de experiencia en leyes de EE.UU.";
+    metaDescription.setAttribute('content', stripHtml(rawDesc));
 
     // Update Meta Keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
