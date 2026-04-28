@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Calendar, Clock, Globe, User, Briefcase } from 'lucide-react';
+import { X, Calendar, Globe, User, Briefcase } from 'lucide-react';
 import { trackEvent, trackConversion } from '../utils/analytics';
 import './BookingModal.css';
 
@@ -15,7 +15,6 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
     country: '',
     specialty: '',
     date: '',
-    time: '',
   });
 
   if (!isOpen) return null;
@@ -41,8 +40,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
       `• Nombre: ${formData.name}\n` +
       `• País: ${formData.country}\n` +
       `• Especialidad: ${formData.specialty}\n` +
-      `• Fecha sugerida: ${formData.date}\n` +
-      `• Horario sugerido: ${formData.time}`;
+      `• Fecha sugerida: ${formData.date}`;
     
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
@@ -106,27 +104,15 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
             </div>
           </div>
 
-          <div className="form-row">
-            <div className="form-group">
-              <label><Calendar size={18} /> Fecha sugerida</label>
-              <input 
-                type="date" 
-                name="date" 
-                required 
-                value={formData.date}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <label><Clock size={18} /> Horario sugerido</label>
-              <input 
-                type="time" 
-                name="time" 
-                required 
-                value={formData.time}
-                onChange={handleChange}
-              />
-            </div>
+          <div className="form-group">
+            <label><Calendar size={18} /> Fecha sugerida</label>
+            <input 
+              type="date" 
+              name="date" 
+              required 
+              value={formData.date}
+              onChange={handleChange}
+            />
           </div>
 
           <button type="submit" className="modal-submit-btn">

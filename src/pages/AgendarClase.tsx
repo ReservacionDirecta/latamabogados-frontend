@@ -26,7 +26,7 @@ const AgendarClase: React.FC = () => {
         <div className="container-narrow">
           <div className="ma-top-horizontal">
             <div className="ma-photo">
-              <img src="/clase de ingles legal online.png" alt="Clase de Inglés Jurídico y Legal English Online - Dr. Marcus Ambrose" />
+              <img src="/googlemeetclass.jpeg" alt="Clase de Inglés Jurídico y Legal English Online - Dr. Marcus Ambrose" />
             </div>
 
             <div className="ma-header-content">
@@ -40,7 +40,6 @@ const AgendarClase: React.FC = () => {
 
           <div className="ma-grid-single">
             <div className="ma-card ma-details-card" style={{ marginBottom: '50px' }}>
-              <h3 className="ma-card-title">CLASES INDIVIDUALES EN GOOGLE MEET CON EL <br /> DR. MARCUS AMBROSE</h3>
               <div className="ma-card-body">
                 <p className="ma-card-intro">
                   El curso nuestro es único en el mercado <span className="ma-price-tag">$50 USD</span> y está diseñado para abogados, estudiantes de abogacía y los que piensan tomar cursos de abogacía en inglés.
