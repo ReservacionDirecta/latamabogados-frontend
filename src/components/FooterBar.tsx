@@ -44,7 +44,13 @@ const FooterBar: React.FC = () => {
               <ArrowUp size={14} /> {t('nav.home').toUpperCase()}
             </button>
           </div>
-          
+        </div>
+      </div>
+
+      {/* ── CREDITS BAR ── */}
+      <div className="ct-footer-credits">
+        <div className="ct-container">
+          <p>Hecho por <a href="https://chamba.digital" target="_blank" rel="noopener noreferrer">chamba.digital</a></p>
         </div>
       </div>
     </footer>

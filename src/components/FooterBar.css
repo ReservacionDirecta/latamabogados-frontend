@@ -110,3 +110,29 @@
     text-align: center;
   }
 }
+
+.ct-footer-credits {
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 8px 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ct-footer-credits p {
+  margin: 0;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.ct-footer-credits a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.ct-footer-credits a:hover {
+  color: #fff;
+}
