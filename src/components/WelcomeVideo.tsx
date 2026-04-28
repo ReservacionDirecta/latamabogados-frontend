@@ -116,7 +116,6 @@ const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, isActive, onClos
             className="welcome-video-player"
             playsInline
             muted={isMuted}
-            autoPlay
             preload="auto"
             src={videoBlobUrl}
             onEnded={handleClose}
