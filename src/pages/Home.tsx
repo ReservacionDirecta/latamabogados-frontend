@@ -4,6 +4,7 @@ import HeaderBar from '../components/HeaderBar';
 import HeroSection from '../components/HeroSection';
 import WelcomeVideo from '../components/WelcomeVideo';
 import SEO from '../components/SEO';
+import FooterBar from '../components/FooterBar';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -26,9 +27,11 @@ const Home: React.FC = () => {
       
       <HeaderBar />
       
-      <main>
+      <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <HeroSection onOpenVideo={() => setShowVideo(true)} />
       </main>
+
+      <FooterBar />
     </div>
   );
 };

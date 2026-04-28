@@ -26,6 +26,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  overscroll-behavior-y: none;
 }
 
 .hero-bg {
@@ -42,13 +43,16 @@
 
 .hero-bg-image {
   position: absolute;
-  top: -10%; /* Room for parallax */
+  top: -10%; 
   left: 0;
   width: 100%;
-  height: 120%; /* Taller for parallax */
+  height: 140%; /* More bottom buffer for upward parallax */
   object-fit: cover;
   z-index: 1;
-  transition: opacity 0.4s ease; /* Transition only for opacity, not transform */
+  pointer-events: none;
+  will-change: transform;
+  transform-origin: center center;
+  transition: opacity 0.4s ease; 
 }
 
 .hero-bg-video {
