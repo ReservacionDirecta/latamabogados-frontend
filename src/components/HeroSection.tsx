@@ -46,7 +46,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOpenVideo }) => {
           src="/wp-content/uploads/hero-bg.png"
           alt="Latam Abogados"
           fetchPriority="high"
-          style={{ transform: `translateY(${-offset * 0.2}px) scale(1.1)` }}
+          style={{ transform: offset !== 0 ? `translateY(${-offset * 0.2}px) scale(1.05)` : 'scale(1)' }}
         />
       </div>
 

@@ -13,6 +13,7 @@ import ArticlesPublications from './pages/ArticlesPublications';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import CookiesPolicy from './pages/CookiesPolicy';
 import TestLanding from './pages/TestLanding';
+import Landing2 from './pages/Landing2';
 
 // Helper component to track page views
 const PageTracker = () => {
@@ -48,6 +49,7 @@ function App() {
         <Route path="/aviso-de-privacidad" element={<PrivacyPolicy />} />
         <Route path="/politica-de-cookies" element={<CookiesPolicy />} />
         <Route path="/test-landing" element={<TestLanding />} />
+        <Route path="/landing2" element={<Landing2 />} />
       </Routes>
     </BrowserRouter>
   );

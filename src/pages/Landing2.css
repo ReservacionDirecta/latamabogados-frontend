@@ -1,0 +1,117 @@
+.landing2-page {
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing2-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Reducción drástica de tamaños para que quepa en una pantalla */
+
+.landing2-page .hero-section {
+  height: 100vh;
+  min-height: 100vh;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.landing2-page .hero-bg {
+  opacity: 0.6 !important; /* Más visible */
+  background-color: #ffffff;
+}
+
+.landing2-page .hero-bg-image {
+  transform: none !important; /* No zoom, no parallax en landing2 */
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.landing2-page .hero-content {
+  padding-top: 80px !important; /* Espacio para el HeaderBar */
+  padding-bottom: 20px !important;
+  gap: 15px !important;
+  max-width: 1300px;
+  height: 100%;
+  justify-content: center;
+}
+
+.landing2-page .hero-brand {
+  margin-bottom: 0 !important;
+}
+
+.landing2-page .hero-brand-latam,
+.landing2-page .hero-brand-abogados {
+  font-size: clamp(45px, 9vw, 85px) !important;
+}
+
+.landing2-page .hero-main-title {
+  font-size: clamp(26px, 4.5vw, 48px) !important;
+  margin: 10px auto 20px !important;
+  max-width: 900px !important;
+}
+
+.landing2-page .hero-services-grid {
+  gap: 30px !important;
+  margin-top: 0 !important;
+  max-width: 1100px !important;
+}
+
+.landing2-page .hero-service-card {
+  padding: 20px !important;
+  gap: 15px !important;
+  background-color: rgba(255, 255, 255, 0.8) !important; /* Más legible contra fondo */
+  backdrop-filter: blur(5px);
+}
+
+.landing2-page .hero-service-text {
+  font-size: clamp(20px, 2.5vw, 28px) !important;
+}
+
+.landing2-page .hero-authority-badge {
+  margin: 30px auto 0 !important;
+  padding: 20px 40px !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.landing2-page .hero-doctor-name {
+  font-size: clamp(24px, 4vw, 36px) !important;
+}
+
+.landing2-page .hero-subtitle-bottom {
+  font-size: clamp(14px, 1.5vw, 18px) !important;
+}
+
+.landing2-page .hero-experience-text {
+  font-size: 9px !important;
+  padding: 4px 10px !important;
+  margin-top: 5px !important;
+}
+
+.landing2-page .authority-main-content {
+  gap: 20px !important;
+}
+
+.landing2-page .hero-scroll-indicator {
+  display: none !important; /* No hay scroll, no se necesita */
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-height: 700px) {
+    .landing2-page .hero-main-title {
+        display: none; /* Ocultar el subtítulo largo para priorizar botones y Dr. Ambrose */
+    }
+    .landing2-page .hero-authority-badge {
+        padding: 10px !important;
+    }
+}
