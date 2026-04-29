@@ -23,17 +23,16 @@ const AgendarConsulta: React.FC = () => {
         <div className="container-narrow">
           <div className="ma-top-horizontal">
             <div className="ma-photo">
-              <img src="/Dr. Marcus Ambrose.png" alt="Dr. Marcus Ambrose - Asesoría Legal Internacional" />
+              <img src="/consultas.png" alt="Dr. Marcus Ambrose - Asesoría Legal Internacional" />
             </div>
 
             <div className="ma-header-content">
-              <h2 className="ma-title">{t('agendar_consulta.title')}</h2>
+              <h2 className="ma-title" dangerouslySetInnerHTML={{ __html: t('agendar_consulta.title') }} />
+              <p className="ma-lead-inline">
+                {t('agendar_consulta.lead')}
+              </p>
             </div>
           </div>
-
-          <p className="ma-lead-bottom">
-            {t('agendar_consulta.lead')}
-          </p>
 
           <div className="ma-grid-single">
             <div className="ma-card">

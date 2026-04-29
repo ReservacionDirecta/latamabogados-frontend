@@ -84,7 +84,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
         <form onSubmit={handleSubmit} className="booking-form">
           <div className="form-row">
             <div className="form-group">
-              <label><User size={18} /> Nombre Completo *</label>
+              <label><User size={18} /> Nombre Completo <span className="label-required">Obligatorio</span></label>
               <input 
                 type="text" 
                 name="name" 
@@ -95,7 +95,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
               />
             </div>
             <div className="form-group">
-              <label><Mail size={18} /> Correo Electrónico *</label>
+              <label><Mail size={18} /> Correo Electrónico <span className="label-required">Obligatorio</span></label>
               <input 
                 type="email" 
                 name="email" 
@@ -109,7 +109,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
 
           <div className="form-row">
             <div className="form-group">
-              <label><Globe size={18} /> Teléfono *</label>
+              <label><Globe size={18} /> Teléfono <span className="label-required">Obligatorio</span></label>
               <input 
                 type="tel" 
                 name="phone" 
@@ -133,7 +133,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
 
           <div className="form-row">
             <div className="form-group">
-              <label><Globe size={18} /> Ciudad *</label>
+              <label><Globe size={18} /> Ciudad <span className="label-required">Obligatorio</span></label>
               <input 
                 type="text" 
                 name="city" 
@@ -144,7 +144,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
               />
             </div>
             <div className="form-group">
-              <label><Globe size={18} /> País *</label>
+              <label><Globe size={18} /> País <span className="label-required">Obligatorio</span></label>
               <input 
                 type="text" 
                 name="country" 
@@ -169,7 +169,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
 
           <div className={type === 'clase' ? 'form-group' : 'form-row'}>
             <div className="form-group">
-              <label><Calendar size={18} /> {type === 'clase' ? 'Fecha aproximada de comenzar *' : 'Fecha sugerida *'}</label>
+              <label><Calendar size={18} /> {type === 'clase' ? 'Fecha aproximada de comenzar' : 'Fecha sugerida'} <span className="label-required">Obligatorio</span></label>
               <input 
                 type="date" 
                 name="date" 
@@ -180,7 +180,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
             </div>
             {type === 'consulta' && (
               <div className="form-group">
-                <label><Clock size={18} /> Horario sugerido *</label>
+                <label><Clock size={18} /> Horario sugerido <span className="label-required">Obligatorio</span></label>
                 <input 
                   type="time" 
                   name="time" 
@@ -193,7 +193,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
           </div>
 
           <p className="form-note" style={{ fontSize: '0.8rem', color: '#666', marginTop: '10px' }}>
-            * Campos obligatorios
+            <span className="label-required">Obligatorio</span> Campos obligatorios
           </p>
 
           <button type="submit" className="modal-submit-btn">

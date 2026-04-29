@@ -55,7 +55,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
 
           <div className="ma-economic-footer" style={{ padding: '30px', background: 'rgba(142, 61, 74, 0.05)', borderRadius: '12px', border: '1px dashed var(--latam-maroon)' }}>
             <p style={{ fontWeight: 'bold', marginBottom: '20px', fontSize: '0.9rem', textAlign: 'center' }}>
-              INSCRÍBASE PARA RECIBIR LA INVITACIÓN AL PRÓXIMO PROGRAMA GRUPAL:
+              INSCRÍBASE PARA RECIBIR LA INVITACIÓN AL <br /> PRÓXIMO PROGRAMA GRUPAL:
             </p>
             
             {/* Mailchimp Embedded Form */}
@@ -68,7 +68,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
               <input type="hidden" name="tags" value="10768030" />
               <div style={{ display: 'grid', gap: '15px' }}>
                 <div className="form-group">
-                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Correo Electrónico <span style={{ color: '#8e3d4a' }}>*</span></label>
+                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Correo Electrónico <span className="label-required">Obligatorio</span></label>
                   <input 
                     type="email" 
                     name="EMAIL" 
@@ -80,7 +80,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Nombre <span style={{ color: '#8e3d4a' }}>*</span></label>
+                    <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Nombre <span className="label-required">Obligatorio</span></label>
                     <input 
                       type="text" 
                       name="FNAME" 
@@ -90,7 +90,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
                     />
                   </div>
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Apellido <span style={{ color: '#8e3d4a' }}>*</span></label>
+                    <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Apellido <span className="label-required">Obligatorio</span></label>
                     <input 
                       type="text" 
                       name="LNAME" 
@@ -102,7 +102,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
                 </div>
 
                 <div className="form-group">
-                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Teléfono <span style={{ color: '#8e3d4a' }}>*</span></label>
+                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Teléfono <span className="label-required">Obligatorio</span></label>
                   <input 
                     type="tel" 
                     name="PHONE" 
@@ -114,7 +114,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Ciudad <span style={{ color: '#8e3d4a' }}>*</span></label>
+                    <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Ciudad <span className="label-required">Obligatorio</span></label>
                     <input 
                       type="text" 
                       name="CITY" 
@@ -124,7 +124,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
                     />
                   </div>
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>País <span style={{ color: '#8e3d4a' }}>*</span></label>
+                    <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>País <span className="label-required">Obligatorio</span></label>
                     <input 
                       type="text" 
                       name="COUNTRY" 
@@ -133,6 +133,16 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
                       style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
                     />
                   </div>
+                </div>
+
+                <div className="form-group">
+                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Página Web (Opcional)</label>
+                  <input 
+                    type="url" 
+                    name="WEBSITE" 
+                    placeholder="https://susitio.com" 
+                    style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
+                  />
                 </div>
 
                 <div className="form-group">
@@ -145,15 +155,6 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
                   />
                 </div>
 
-                <div className="form-group">
-                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Tipo de Clase de Interés <span style={{ color: '#8e3d4a' }}>*</span></label>
-                  <select name="INTEREST" required style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd', background: 'white' }}>
-                    <option value="">Seleccione una opción</option>
-                    <option value="Clase Grupal">Clase Grupal (Entre semana)</option>
-                    <option value="Curso Sabatino">Curso Sabatino (Intensivo)</option>
-                    <option value="Ambas">Ambas opciones</option>
-                  </select>
-                </div>
 
                 {/* Hidden field for Mailchimp bot protection */}
                 <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">

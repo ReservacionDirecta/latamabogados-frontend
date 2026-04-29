@@ -34,11 +34,11 @@
   z-index: 1;
   background: transparent;
   border: none;
-  padding: 4px 14px;
+  padding: 6px 18px;
   font-family: 'Roboto', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   cursor: pointer;
   border-radius: 999px;
   color: #1e1f33;

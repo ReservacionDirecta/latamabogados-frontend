@@ -17,6 +17,25 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({ onOpenVideo }) => {
   const { t } = useTranslation();
+  const [offset, setOffset] = React.useState(0);
+
+  React.useEffect(() => {
+    let requestRunning = false;
+    const handleScroll = () => {
+      if (!requestRunning) {
+        window.requestAnimationFrame(() => {
+          setOffset(window.pageYOffset);
+          requestRunning = false;
+        });
+        requestRunning = true;
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <section id="inicio" className="hero-section">
@@ -29,6 +48,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOpenVideo }) => {
             src="/wp-content/uploads/hero-bg.png"
             alt="Latam Abogados"
             fetchPriority="high"
+            style={{ transform: `translateY(${-offset * 0.15}px)` }}
           />
         </picture>
       </div>

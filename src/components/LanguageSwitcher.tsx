@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import './LanguageSwitcher.css';
 
 const languages = [
-  { code: 'es', label: 'ES' },
-  { code: 'pt', label: 'PT' },
+  { code: 'es', label: 'Español' },
+  { code: 'pt', label: 'Português' },
 ];
 
 const LanguageSwitcher: React.FC = () => {

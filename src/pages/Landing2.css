@@ -1,6 +1,7 @@
 .landing2-page {
   overflow: hidden;
   height: 100vh;
+  height: 100svh; /* Altura exacta en móviles (ignora barras del navegador) */
   display: flex;
   flex-direction: column;
 }
@@ -10,24 +11,14 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-}
-
-/* Reducción drástica de tamaños para que quepa en una pantalla */
-
-.landing2-page .hero-section {
-  height: 100vh;
-  min-height: 100vh;
-  padding: 0 !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+  height: 100%;
 }
 
 .landing2-page .hero-bg {
-  opacity: 0.6 !important; /* Más visible */
+  opacity: 0.6 !important;
   background-color: #ffffff;
+  height: 100% !important;
+  min-height: 100% !important;
 }
 
 .landing2-page .hero-bg-image {
@@ -138,7 +129,9 @@
 
     .landing2-page .hero-section {
         height: 100vh;
-        padding: 40px 15px 10px !important; /* Menos padding superior */
+        height: 100svh;
+        min-height: 100svh;
+        padding: 40px 15px 10px !important;
     }
 
     .landing2-page .hero-content {
