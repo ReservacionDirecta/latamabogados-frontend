@@ -43,12 +43,12 @@
 
 .landing2-page .hero-brand-latam,
 .landing2-page .hero-brand-abogados {
-  font-size: clamp(45px, 9vw, 85px) !important;
+  font-size: clamp(45px, 9vw, 120px) !important;
 }
 
 .landing2-page .hero-main-title {
   font-size: clamp(26px, 4.5vw, 48px) !important;
-  margin: 10px auto 20px !important;
+  margin: 10px auto 30px !important;
   max-width: 900px !important;
 }
 
@@ -161,7 +161,7 @@
 
     .landing2-page .hero-main-title {
         font-size: clamp(24px, 6vw, 32px) !important;
-        margin: 0 auto !important;
+        margin: 5px 10px 25px !important;
         line-height: 1.2 !important;
         max-width: 90% !important;
         text-align: center;
