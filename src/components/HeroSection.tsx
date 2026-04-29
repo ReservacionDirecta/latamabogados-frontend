@@ -41,13 +41,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOpenVideo }) => {
     <section id="inicio" className="hero-section">
       {/* ── Fondo: imagen grisada ── */}
       <div className="hero-bg">
-        <img
-          className="hero-bg-image"
-          src="/wp-content/uploads/hero-bg.png"
-          alt="Latam Abogados"
-          fetchPriority="high"
-          style={{ transform: offset !== 0 ? `translateY(${-offset * 0.2}px) scale(1.05)` : 'scale(1)' }}
-        />
+        <picture>
+          <source media="(max-width: 768px)" srcSet="/bg-image-movil.png" />
+          <img
+            className="hero-bg-image"
+            src="/wp-content/uploads/hero-bg.png"
+            alt="Latam Abogados"
+            fetchPriority="high"
+            style={{ transform: offset !== 0 ? `translateY(${-offset * 0.2}px) scale(1.05)` : 'scale(1)' }}
+          />
+        </picture>
       </div>
 
       {/* ── Contenido Vertical Principal ── */}
