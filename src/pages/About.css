@@ -269,10 +269,26 @@
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: transform 0.2s;
+  z-index: 2200;
 }
 
 .close-modal:hover {
   transform: scale(1.1);
+}
+
+.qr-expanded-modal {
+  height: 45vh !important;
+  width: auto !important;
+  max-width: none !important;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  position: relative; /* Ensure stacking context */
+  overflow: visible !important; /* Allow close button to float outside */
 }
 
 .diploma-header {
@@ -600,7 +616,8 @@
 
 /* Expanded QR Modal Custom Size */
 .qr-expanded-modal {
-  width: 60vw !important;
+  height: 45vh !important;
+  width: auto !important;
   max-width: none !important;
   aspect-ratio: 1;
   display: flex;
@@ -608,6 +625,9 @@
   justify-content: center;
   background: white;
   border-radius: 20px;
+  overflow: visible !important;
+  padding: 20px;
+  position: relative;
 }
 
 .qr-expanded-img {

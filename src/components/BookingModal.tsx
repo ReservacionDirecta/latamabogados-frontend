@@ -13,9 +13,9 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    city: '',
     country: '',
     specialty: '',
-    website: '',
     date: '',
     time: '',
   });
@@ -42,13 +42,10 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
       `*Mis datos:*\n` +
       `• Nombre: ${formData.name}\n` +
       `• Teléfono: ${formData.phone}\n` +
+      `• Ciudad: ${formData.city}\n` +
       `• País: ${formData.country}\n` +
       `• Especialidad: ${formData.specialty}\n`;
     
-    if (formData.website) {
-      message += `• Web: ${formData.website}\n`;
-    }
-
     const dateLabel = type === 'clase' ? "Fecha aprox. de comenzar" : "Fecha sugerida";
     message += `• ${dateLabel}: ${formData.date}\n`;
     
@@ -106,19 +103,30 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
               />
             </div>
             <div className="form-group">
-              <label><Globe size={18} /> País *</label>
+              <label><Globe size={18} /> Ciudad *</label>
               <input 
                 type="text" 
-                name="country" 
+                name="city" 
                 required 
-                placeholder="Ej. México"
-                value={formData.country}
+                placeholder="Ej. Bogotá"
+                value={formData.city}
                 onChange={handleChange}
               />
             </div>
           </div>
 
           <div className="form-row">
+            <div className="form-group">
+              <label><Globe size={18} /> País *</label>
+              <input 
+                type="text" 
+                name="country" 
+                required 
+                placeholder="Ej. Colombia"
+                value={formData.country}
+                onChange={handleChange}
+              />
+            </div>
             <div className="form-group">
               <label><Briefcase size={18} /> Especialidad *</label>
               <input 
@@ -130,17 +138,8 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
                 onChange={handleChange}
               />
             </div>
-            <div className="form-group">
-              <label><Globe size={18} /> Página Web (Opcional)</label>
-              <input 
-                type="text" 
-                name="website" 
-                placeholder="Ej. www.bufete.com"
-                value={formData.website}
-                onChange={handleChange}
-              />
-            </div>
           </div>
+
 
           <div className={type === 'clase' ? 'form-group' : 'form-row'}>
             <div className="form-group">
