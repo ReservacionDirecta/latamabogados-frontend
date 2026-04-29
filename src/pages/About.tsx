@@ -54,6 +54,7 @@ const About: React.FC = () => {
                 <p className="about-secondary-text">
                   {t('about.secondary_text')}
                 </p>
+
               </div>
             </div>
           </div>

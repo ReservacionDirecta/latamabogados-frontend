@@ -31,14 +31,14 @@ const AgendarClase: React.FC = () => {
 
             <div className="ma-header-content">
               <h2 className="ma-title" dangerouslySetInnerHTML={{ __html: t('agendar_clase.title') }} />
+              <p className="ma-lead-inline">
+                {t('agendar_clase.lead')}
+              </p>
             </div>
           </div>
 
-          <p className="ma-lead-bottom">
-            {t('agendar_clase.lead')}
-          </p>
-
           <div className="ma-grid-single">
+
             <div className="ma-card ma-details-card" style={{ marginBottom: '50px' }}>
               <div className="ma-card-body">
                 
@@ -141,7 +141,7 @@ const AgendarClase: React.FC = () => {
               <div className="ma-economic-footer">
                 <p className="capture-title">INSCRÍBASE PARA RECIBIR LA INVITACIÓN AL PRÓXIMO PROGRAMA GRUPAL:</p>
                 <form 
-                  action="https://hostingersite.us22.list-manage.com/subscribe/post?u=56094605988597099f66878b1&amp;id=9876543210" 
+                  action="https://digital.us3.list-manage.com/subscribe/post?u=f3fa97557584c7cc93a85c09c&amp;id=0bacb30ae9&amp;f_id=0060c7e5f0" 
                   method="post" 
                   target="_blank" 
                   className="ma-mailchimp-form"
@@ -181,12 +181,22 @@ const AgendarClase: React.FC = () => {
 
                     <div className="form-group full-width">
                       <label>Especialidad <span>*</span></label>
-                      <input placeholder="Ej. Abogado Corporativo" required type="text" name="SPECIALTY" />
+                      <input placeholder="Ej. Abogado Corporativo" required type="text" name="SPECIALITY" />
+                    </div>
+
+                    <div className="form-group full-width">
+                      <label>Tipo de Clase de Interés <span>*</span></label>
+                      <select name="INTEREST" required className="ma-select">
+                        <option value="">Seleccione una opción</option>
+                        <option value="Clase Grupal">Clase Grupal (Entre semana)</option>
+                        <option value="Curso Sabatino">Curso Sabatino (Intensivo)</option>
+                        <option value="Ambas">Ambas opciones</option>
+                      </select>
                     </div>
 
                     {/* Honeypot field for anti-spam */}
                     <div aria-hidden="true" style={{ position: 'absolute', left: '-5000px' }}>
-                      <input tabIndex={-1} type="text" value="" name="b_56094605988597099f66878b1_9876543210" readOnly />
+                      <input tabIndex={-1} type="text" value="" name="b_f3fa97557584c7cc93a85c09c_0bacb30ae9" readOnly />
                     </div>
 
                     <button type="submit" className="ma-btn-black">

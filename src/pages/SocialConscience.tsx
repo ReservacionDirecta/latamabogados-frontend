@@ -27,17 +27,17 @@ const SocialConscience: React.FC = () => {
               {t('social_conscience.lead')}
             </p>
             <div className="ma-highlight-box" style={{ marginTop: '20px', textAlign: 'center', borderLeft: 'none', borderBottom: '4px solid var(--latam-maroon)', borderRadius: '8px' }}>
-               <p style={{ fontWeight: 'bold', fontSize: '1.2em', maxWidth: '800px', margin: '0 auto' }}>
-                 En Latam Abogados, el 5% de nuestros ingresos netos se destina directamente a diversas <br /> organizaciones de beneficencia y causas humanitarias.
-               </p>
+                <p style={{ fontWeight: 'bold', fontSize: '1.4em', maxWidth: '900px', margin: '0 auto', lineHeight: '1.4' }}>
+                  En <span style={{ fontSize: '1.1em' }}>Latam Abogados</span>, el 5% de nuestros ingresos netos se destina directamente a diversas organizaciones de beneficencia y causas humanitarias.
+                </p>
             </div>
           </div>
 
           <div className="ma-grid-single">
             <div className="ma-card">
               <h3 className="ma-card-title">{t('social_conscience.humanitarian_title')}</h3>
-              <p className="ma-intro" style={{ fontSize: '1.3rem', lineHeight: '1.6' }}>
-                {t('social_conscience.humanitarian_intro')}
+              <p className="ma-intro" style={{ fontSize: '1.5rem', lineHeight: '1.6' }}>
+                A lo largo de su carrera, el <span style={{ fontSize: '1.1em' }}>Dr. Marcus Ambrose</span> ha liderado y participado en causas humanitarias y defensas pro-bono contra la injusticia.
               </p>
 
               <div className="about-resources-grid">

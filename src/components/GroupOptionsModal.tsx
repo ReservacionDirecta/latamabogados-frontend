@@ -60,11 +60,12 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
             
             {/* Mailchimp Embedded Form */}
             <form 
-              action="https://hostingersite.us22.list-manage.com/subscribe/post?u=56094605988597099f66878b1&amp;id=9876543210" 
+              action="https://digital.us3.list-manage.com/subscribe/post?u=f3fa97557584c7cc93a85c09c&amp;id=0bacb30ae9&amp;f_id=0060c7e5f0" 
               method="post" 
               target="_blank" 
               className="ma-mailchimp-form"
             >
+              <input type="hidden" name="tags" value="10768030" />
               <div style={{ display: 'grid', gap: '15px' }}>
                 <div className="form-group">
                   <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Correo Electrónico <span style={{ color: '#8e3d4a' }}>*</span></label>
@@ -135,25 +136,35 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
                 </div>
 
                 <div className="form-group">
-                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Especialidad <span style={{ color: '#8e3d4a' }}>*</span></label>
+                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Especialidad (Opcional)</label>
                   <input 
                     type="text" 
-                    name="SPECIALTY" 
+                    name="SPECIALITY" 
                     placeholder="Ej. Abogado Corporativo" 
-                    required 
                     style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
                   />
                 </div>
+
+                <div className="form-group">
+                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Tipo de Clase de Interés <span style={{ color: '#8e3d4a' }}>*</span></label>
+                  <select name="INTEREST" required style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd', background: 'white' }}>
+                    <option value="">Seleccione una opción</option>
+                    <option value="Clase Grupal">Clase Grupal (Entre semana)</option>
+                    <option value="Curso Sabatino">Curso Sabatino (Intensivo)</option>
+                    <option value="Ambas">Ambas opciones</option>
+                  </select>
+                </div>
+
                 {/* Hidden field for Mailchimp bot protection */}
                 <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
-                  <input type="text" name="b_56094605988597099f66878b1_9876543210" tabIndex={-1} value="" />
+                  <input type="text" name="b_f3fa97557584c7cc93a85c09c_0bacb30ae9" tabIndex={-1} value="" readOnly />
                 </div>
                 <button 
                   type="submit" 
                   className="ma-btn-black"
                   style={{ width: '100%', padding: '14px', fontSize: '0.9rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}
                 >
-                  SOLICITAR INSCRIPCIÓN <Send size={18} />
+                  SOLICITAR INCRIPCIÓN <Send size={18} />
                 </button>
               </div>
             </form>
