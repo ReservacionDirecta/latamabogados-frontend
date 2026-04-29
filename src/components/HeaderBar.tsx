@@ -33,10 +33,9 @@ const HeaderBar: React.FC = () => {
                 className="default-logo"
               />
             </Link>
-          </div>
-
-          <div className="header-lang-container">
-            <LanguageSwitcher />
+            <div className="header-lang-container">
+              <LanguageSwitcher />
+            </div>
           </div>
           
           <div className="ct-main-end">
