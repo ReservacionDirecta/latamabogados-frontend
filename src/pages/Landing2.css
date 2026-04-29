@@ -133,7 +133,7 @@
     .landing2-page .hero-section {
         height: auto;
         min-height: 100svh;
-        padding: 70px 15px 30px !important;
+        padding: 45px 15px 30px !important;
         display: flex;
         flex-direction: column;
     }
@@ -155,7 +155,7 @@
 
     .landing2-page .hero-brand-latam,
     .landing2-page .hero-brand-abogados {
-        font-size: clamp(26px, 8vw, 38px) !important;
+        font-size: clamp(26px, 9vw, 38px) !important;
         white-space: nowrap;
     }
 
@@ -196,7 +196,6 @@
 
     .landing2-page .hero-authority-badge {
         padding: 20px !important;
-        margin: 20px auto 0 !important;
         width: 95% !important;
         max-width: 380px !important;
         background: rgba(255, 255, 255, 0.95) !important;
@@ -213,7 +212,6 @@
 
     .landing2-page .authority-action {
         gap: 10px !important;
-        margin-top: 15px;
         flex-direction: row !important;
         flex-wrap: nowrap !important; /* Forzar una sola línea */
         justify-content: center;
