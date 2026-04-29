@@ -10,6 +10,21 @@ const Landing2: React.FC = () => {
   const { t } = useTranslation();
   const [showVideo, setShowVideo] = useState(false);
 
+  // Bloquear scroll solo en esta página
+  React.useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+    document.body.style.height = '100%';
+
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
+    };
+  }, []);
+
   return (
     <div className="landing2-page">
       <SEO 

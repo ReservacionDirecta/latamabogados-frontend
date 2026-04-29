@@ -54,9 +54,7 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
-  overflow: hidden !important; /* LOCK GLOBAL SCROLL */
-  position: fixed; /* PREVENT ELASTIC SCROLL */
+  min-height: 100vh;
   font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
