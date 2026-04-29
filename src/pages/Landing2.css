@@ -248,7 +248,7 @@
 @media (max-height: 700px) {
     .landing2-page .hero-main-title {
         font-size: 28px !important;
-        margin: 15px auto !important;
+        margin: 5px 10px 15px auto !important;
     }
     .landing2-page .hero-authority-badge {
         padding: 10px !important;
