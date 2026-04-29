@@ -42,7 +42,7 @@ const LegalWritings: React.FC = () => {
                   <div className="resource-content">
                     <h4>{t('articles.appellant_brief_title')}</h4>
                     <p>{t('articles.appellant_brief_text')}</p>
-                    <a href="/APPELLANTa__S_OPENING_BRIEF.pdf" target="_blank" rel="noopener noreferrer" className="resource-link">
+                    <a href="/wp-content/uploads/2024/01/APPELLANTa__S_OPENING_BRIEF.pdf" target="_blank" rel="noopener noreferrer" className="resource-link">
                       {t('legal_writings_page.download_pdf')} <Download size={14} />
                     </a>
                   </div>
@@ -53,7 +53,7 @@ const LegalWritings: React.FC = () => {
                   <div className="resource-content">
                     <h4>{t('articles.combined_brief_title')}</h4>
                     <p>{t('articles.combined_brief_text')}</p>
-                    <a href="/COMBINED-BRIEF.pdf" target="_blank" rel="noopener noreferrer" className="resource-link">
+                    <a href="/wp-content/uploads/2024/01/COMBINED-BRIEF.pdf" target="_blank" rel="noopener noreferrer" className="resource-link">
                       {t('legal_writings_page.download_pdf')} <Download size={14} />
                     </a>
                   </div>

@@ -42,7 +42,7 @@ const AgendarClase: React.FC = () => {
             <div className="ma-card ma-details-card" style={{ marginBottom: '50px' }}>
               <div className="ma-card-body">
                 <p className="ma-card-intro">
-                  El curso nuestro es único en el mercado <span className="ma-price-tag">$50 USD</span> y está diseñado para abogados, estudiantes de abogacía y los que piensan tomar cursos de abogacía en inglés.
+                  El curso nuestro es único en el mercado y está diseñado para abogados, estudiantes de abogacía y los que piensan tomar cursos de abogacía en inglés.
                 </p>
                 <div className="ma-highlight-box">
                   <p>
