@@ -442,7 +442,8 @@
 
 @media (max-width: 768px) {
   .hero-content {
-    padding-top: 60px;
+    margin-top: 30px;
+    padding-top:80px;
     padding-bottom: 25px;
     min-height: auto;
     gap: 10px;
