@@ -32,7 +32,7 @@ const FooterBar: React.FC = () => {
           </div>
           <div className="ct-footer-legal">
             <p>
-              {t('footer.legal_notices')}: - <a href="/aviso-de-privacidad">{t('footer.privacy')}</a> - <a href="/politica-de-cookies">{t('footer.cookies')}</a>
+              {t('footer.legal_notices')}: - <a href="/aviso-de-privacidad">{t('footer.privacy')}</a> - <a href="/politica-de-cookies">{t('footer.cookies')}</a> - <a href="/nuestra-conciencia-social">Socialmente Responsables</a>
             </p>
           </div>
           <div className="ct-footer-back-to-top">

@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Download, ArrowLeft, ExternalLink, Newspaper, Gavel, Users, Shield, Zap, Film } from 'lucide-react';
+import { Download, ArrowLeft, ExternalLink, Film } from 'lucide-react';
 import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
 import SEO from '../components/SEO';
@@ -32,9 +32,7 @@ const ArticlesPublications: React.FC = () => {
           <div className="ma-grid-single">
             {/* 1. Trayectoria y Noticias */}
             <div className="ma-card" style={{ marginBottom: '40px' }}>
-              <h2 className="ma-card-title" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <Newspaper size={24} /> {t('articles.trajectory_news')}
-              </h2>
+              <h2 className="ma-card-title">{t('articles.trajectory_news')}</h2>
               <div className="about-resources-grid">
                 <div className="resource-item">
                   <div className="resource-content">
@@ -59,9 +57,7 @@ const ArticlesPublications: React.FC = () => {
 
             {/* 2. Compromiso Social y Humanitario */}
             <div className="ma-card" style={{ marginBottom: '40px' }}>
-              <h2 className="ma-card-title" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <Users size={24} /> {t('articles.social_commitment')}
-              </h2>
+              <h2 className="ma-card-title">{t('articles.social_commitment')}</h2>
               <div className="about-resources-grid">
                 <div className="resource-item">
                   <div className="resource-content">
@@ -86,9 +82,7 @@ const ArticlesPublications: React.FC = () => {
 
             {/* 3. Lucha por la Justicia y Ética */}
             <div className="ma-card" style={{ marginBottom: '40px' }}>
-              <h2 className="ma-card-title" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <Shield size={24} /> {t('articles.justice_ethics')}
-              </h2>
+              <h2 className="ma-card-title">{t('articles.justice_ethics')}</h2>
               <div className="about-resources-grid">
                 <div className="resource-item">
                   <div className="resource-content">
@@ -113,9 +107,7 @@ const ArticlesPublications: React.FC = () => {
 
             {/* 4. Comunicación y Persuasión */}
             <div className="ma-card" style={{ marginBottom: '40px' }}>
-              <h2 className="ma-card-title" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <Zap size={24} /> {t('articles.communication_persuasion')}
-              </h2>
+              <h2 className="ma-card-title">{t('articles.communication_persuasion')}</h2>
               <div className="about-resources-grid">
                 <div className="resource-item">
                   <div className="resource-content">
@@ -131,9 +123,7 @@ const ArticlesPublications: React.FC = () => {
 
             {/* 5. Industrias Creativas y Entretenimiento */}
             <div className="ma-card" style={{ marginBottom: '40px' }}>
-              <h2 className="ma-card-title" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <Film size={24} /> {t('articles.creative_industries')}
-              </h2>
+              <h2 className="ma-card-title">{t('articles.creative_industries')}</h2>
               <div className="about-resources-grid">
                 <div className="resource-item">
                   <div className="resource-content">
@@ -167,9 +157,7 @@ const ArticlesPublications: React.FC = () => {
 
             {/* 6. Ejemplos de Escritos Legales */}
             <div className="ma-card">
-              <h2 className="ma-card-title" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <Gavel size={24} /> {t('articles.legal_writings')}
-              </h2>
+              <h2 className="ma-card-title">{t('articles.legal_writings')}</h2>
               <div className="about-resources-grid">
                 <div className="resource-item">
                   <div className="resource-content">
