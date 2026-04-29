@@ -54,13 +54,15 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
+  overflow: hidden !important; /* LOCK GLOBAL SCROLL */
+  position: fixed; /* PREVENT ELASTIC SCROLL */
   font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--latam-black);
   background-color: var(--latam-white);
-  line-height: 1.618; /* Golden line height */
+  line-height: 1.618;
 }
 
 h1, h2, h3, h4, h5, h6 {

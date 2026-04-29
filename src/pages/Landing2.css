@@ -1,9 +1,7 @@
 .landing2-page {
-  overflow-x: hidden;
-  overflow-y: auto;
-  height: auto;
-  min-height: 100vh;
-  min-height: 100svh; /* Altura mínima exacta en móviles */
+  overflow: hidden !important;
+  height: 100vh;
+  height: 100svh;
   display: flex;
   flex-direction: column;
 }
@@ -12,8 +10,8 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  height: auto;
+  overflow: hidden !important;
+  height: 100%;
 }
 
 .landing2-page .hero-bg {
@@ -125,9 +123,9 @@
 /* Tablet Portrait o Móviles grandes */
 @media (max-width: 768px) {
     .landing2-page {
-        overflow-y: auto;
-        height: auto;
-        min-height: 100svh;
+        overflow: hidden !important;
+        height: 100vh;
+        height: 100svh;
     }
 
     .landing2-page .hero-section {
@@ -139,9 +137,11 @@
     }
 
     .landing2-page .hero-content {
-        padding-top: 20px !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
         height: auto;
         justify-content: flex-start;
+        gap: 15px !important;
     }
 
     .landing2-page .hero-brand {
@@ -155,7 +155,7 @@
 
     .landing2-page .hero-brand-latam,
     .landing2-page .hero-brand-abogados {
-        font-size: clamp(26px, 9vw, 38px) !important;
+        font-size: clamp(26px, 13vw, 48px) !important;
         white-space: nowrap;
     }
 
@@ -168,30 +168,34 @@
     }
 
     .landing2-page .hero-services-grid {
-        grid-template-columns: 1fr !important;
-        gap: 15px !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* Dos columnas */
+        gap: 10px !important;
         width: 100%;
-        max-width: 360px !important;
+        max-width: 500px !important; /* Un poco más ancho para acomodar 2 */
         margin: 0 auto !important;
     }
 
     .landing2-page .hero-service-card {
-        padding: 15px 20px !important;
-        gap: 12px !important;
+        padding: 10px 12px !important; /* Padding más compacto */
+        gap: 8px !important;
         width: 100% !important;
         border-width: 1px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Botón siempre abajo */
     }
 
     .landing2-page .hero-service-text {
-        font-size: 18px !important;
-        line-height: 1.2 !important;
+        font-size: 13px !important; /* Texto más pequeño para que quepa */
+        line-height: 1.3 !important;
+        margin-bottom: 5px !important;
     }
 
     .landing2-page .hero-cta-btn {
-        width: auto !important;
-        min-width: 140px;
-        font-size: 14px !important;
-        padding: 12px 20px !important;
+        width: 100% !important; /* El botón ocupa el ancho de la columnita */
+        min-width: 0 !important;
+        font-size: 11px !important;
+        padding: 8px 5px !important;
     }
 
     .landing2-page .hero-authority-badge {
@@ -236,15 +240,15 @@
     }
     .landing2-page .hero-brand-latam,
     .landing2-page .hero-brand-abogados {
-        font-size: 28px !important;
+        font-size: 42px !important;
     }
 }
 
 /* Ajustes para pantallas con poca altura (Landscape de móviles o iPads antiguos) */
 @media (max-height: 700px) {
     .landing2-page .hero-main-title {
-        font-size: 20px !important;
-        margin: 5px auto !important;
+        font-size: 28px !important;
+        margin: 15px auto !important;
     }
     .landing2-page .hero-authority-badge {
         padding: 10px !important;
