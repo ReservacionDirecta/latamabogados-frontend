@@ -1,46 +1,41 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Globe } from 'lucide-react';
+import './LanguageSwitcher.css';
+
+const languages = [
+  { code: 'es', label: 'ES' },
+  { code: 'pt', label: 'PT' },
+];
 
 const LanguageSwitcher: React.FC = () => {
   const { i18n } = useTranslation();
 
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-    document.documentElement.lang = lng;
+  const activeIndex = languages.findIndex(l => l.code === i18n.language) ?? 0;
+
+  const changeLanguage = (code: string) => {
+    i18n.changeLanguage(code);
+    document.documentElement.lang = code;
   };
 
-  const languages = [
-    { code: 'es', name: 'ES', label: 'Español' },
-    { code: 'en', name: 'EN', label: 'English' },
-    { code: 'pt', name: 'PT', label: 'Português' }
-  ];
-
   return (
-    <div className="language-switcher" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-      <Globe size={16} style={{ color: 'var(--ma-accent-color)' }} />
-      <div style={{ display: 'flex', gap: '12px' }}>
-        {languages.map((lang) => (
-          <button
-            key={lang.code}
-            onClick={() => changeLanguage(lang.code)}
-            className={`lang-btn ${i18n.language === lang.code ? 'active' : ''}`}
-            style={{
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              padding: '2px 4px',
-              fontSize: '0.85rem',
-              fontWeight: i18n.language === lang.code ? '700' : '400',
-              color: i18n.language === lang.code ? 'var(--ma-accent-color)' : 'inherit',
-              transition: 'all 0.2s ease'
-            }}
-            title={lang.label}
-          >
-            {lang.name}
-          </button>
-        ))}
-      </div>
+    <div className="ls-pill" role="group" aria-label="Idioma">
+      {/* Sliding highlight */}
+      <span
+        className="ls-slider"
+        style={{ transform: `translateX(${activeIndex * 100}%)` }}
+        aria-hidden="true"
+      />
+      {languages.map((lang) => (
+        <button
+          key={lang.code}
+          className={`ls-btn ${i18n.language === lang.code ? 'ls-active' : ''}`}
+          onClick={() => changeLanguage(lang.code)}
+          title={lang.code === 'es' ? 'Español' : 'Português'}
+          aria-pressed={i18n.language === lang.code}
+        >
+          {lang.label}
+        </button>
+      ))}
     </div>
   );
 };

@@ -67,27 +67,79 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
             >
               <div style={{ display: 'grid', gap: '15px' }}>
                 <div className="form-group">
+                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Correo Electrónico <span style={{ color: '#8e3d4a' }}>*</span></label>
                   <input 
                     type="email" 
                     name="EMAIL" 
                     className="required email" 
-                    placeholder="Correo Electrónico" 
+                    placeholder="nombre@correo.com" 
                     required 
                     style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
                   />
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Nombre <span style={{ color: '#8e3d4a' }}>*</span></label>
+                    <input 
+                      type="text" 
+                      name="FNAME" 
+                      placeholder="Juan" 
+                      required 
+                      style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
+                    />
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Apellido <span style={{ color: '#8e3d4a' }}>*</span></label>
+                    <input 
+                      type="text" 
+                      name="LNAME" 
+                      placeholder="Pérez" 
+                      required 
+                      style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
+                    />
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Teléfono <span style={{ color: '#8e3d4a' }}>*</span></label>
                   <input 
-                    type="text" 
-                    name="FNAME" 
-                    placeholder="Nombre" 
+                    type="tel" 
+                    name="PHONE" 
+                    placeholder="Ej. +52 1 234..." 
                     required 
                     style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
                   />
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Ciudad <span style={{ color: '#8e3d4a' }}>*</span></label>
+                    <input 
+                      type="text" 
+                      name="CITY" 
+                      placeholder="Ej. Bogotá" 
+                      required 
+                      style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
+                    />
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>País <span style={{ color: '#8e3d4a' }}>*</span></label>
+                    <input 
+                      type="text" 
+                      name="COUNTRY" 
+                      placeholder="Ej. Colombia" 
+                      required 
+                      style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
+                    />
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Especialidad <span style={{ color: '#8e3d4a' }}>*</span></label>
                   <input 
                     type="text" 
-                    name="LNAME" 
-                    placeholder="Apellido" 
+                    name="SPECIALTY" 
+                    placeholder="Ej. Abogado Corporativo" 
                     required 
                     style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
                   />

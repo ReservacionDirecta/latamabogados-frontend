@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Calendar, Clock, Globe, User, Briefcase } from 'lucide-react';
+import { X, Calendar, Clock, Globe, User, Briefcase, Mail, ExternalLink } from 'lucide-react';
 import { trackEvent, trackConversion } from '../utils/analytics';
 import './BookingModal.css';
 
@@ -13,6 +13,8 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    email: '',
+    website: '',
     city: '',
     country: '',
     specialty: '',
@@ -42,9 +44,11 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
       `*Mis datos:*\n` +
       `• Nombre: ${formData.name}\n` +
       `• Teléfono: ${formData.phone}\n` +
+      `• Correo: ${formData.email}\n` +
+      (formData.website ? `• Web: ${formData.website}\n` : '') +
       `• Ciudad: ${formData.city}\n` +
       `• País: ${formData.country}\n` +
-      `• Especialidad: ${formData.specialty}\n`;
+      (formData.specialty ? `• Especialidad: ${formData.specialty}\n` : '');
     
     const dateLabel = type === 'clase' ? "Fecha aprox. de comenzar" : "Fecha sugerida";
     message += `• ${dateLabel}: ${formData.date}\n`;
@@ -78,16 +82,29 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
         </div>
 
         <form onSubmit={handleSubmit} className="booking-form">
-          <div className="form-group">
-            <label><User size={18} /> Nombre Completo *</label>
-            <input 
-              type="text" 
-              name="name" 
-              required 
-              placeholder="Ej. Abogado Juan Pérez"
-              value={formData.name}
-              onChange={handleChange}
-            />
+          <div className="form-row">
+            <div className="form-group">
+              <label><User size={18} /> Nombre Completo *</label>
+              <input 
+                type="text" 
+                name="name" 
+                required 
+                placeholder="Ej. Abogado Juan Pérez"
+                value={formData.name}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label><Mail size={18} /> Correo Electrónico *</label>
+              <input 
+                type="email" 
+                name="email" 
+                required 
+                placeholder="nombre@ejemplo.com"
+                value={formData.email}
+                onChange={handleChange}
+              />
+            </div>
           </div>
 
           <div className="form-row">
@@ -103,6 +120,19 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
               />
             </div>
             <div className="form-group">
+              <label><ExternalLink size={18} /> Página Web (Opcional)</label>
+              <input 
+                type="url" 
+                name="website" 
+                placeholder="https://susitio.com"
+                value={formData.website}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+
+          <div className="form-row">
+            <div className="form-group">
               <label><Globe size={18} /> Ciudad *</label>
               <input 
                 type="text" 
@@ -113,9 +143,6 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
                 onChange={handleChange}
               />
             </div>
-          </div>
-
-          <div className="form-row">
             <div className="form-group">
               <label><Globe size={18} /> País *</label>
               <input 
@@ -127,19 +154,18 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
                 onChange={handleChange}
               />
             </div>
-            <div className="form-group">
-              <label><Briefcase size={18} /> Especialidad *</label>
-              <input 
-                type="text" 
-                name="specialty" 
-                required 
-                placeholder="Ej. Corporativo"
-                value={formData.specialty}
-                onChange={handleChange}
-              />
-            </div>
           </div>
 
+          <div className="form-group">
+            <label><Briefcase size={18} /> Especialidad (Opcional)</label>
+            <input 
+              type="text" 
+              name="specialty" 
+              placeholder="Ej. Derecho Corporativo"
+              value={formData.specialty}
+              onChange={handleChange}
+            />
+          </div>
 
           <div className={type === 'clase' ? 'form-group' : 'form-row'}>
             <div className="form-group">
@@ -165,6 +191,10 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
               </div>
             )}
           </div>
+
+          <p className="form-note" style={{ fontSize: '0.8rem', color: '#666', marginTop: '10px' }}>
+            * Campos obligatorios
+          </p>
 
           <button type="submit" className="modal-submit-btn">
             <i className="fab fa-whatsapp"></i> Enviar por WhatsApp

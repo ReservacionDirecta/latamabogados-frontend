@@ -23,12 +23,12 @@ const SocialConscience: React.FC = () => {
 
           <div className="ma-top">
             <h2 className="ma-title">{t('social_conscience.title')}</h2>
-            <p className="ma-lead">
+            <p className="ma-lead" style={{ fontSize: '1.4rem', lineHeight: '1.6' }}>
               {t('social_conscience.lead')}
             </p>
             <div className="ma-highlight-box" style={{ marginTop: '20px', textAlign: 'center', borderLeft: 'none', borderBottom: '4px solid var(--latam-maroon)', borderRadius: '8px' }}>
-               <p style={{ fontWeight: 'bold', fontSize: '1.1em' }}>
-                 {t('social_conscience.donation_commitment')}
+               <p style={{ fontWeight: 'bold', fontSize: '1.2em', maxWidth: '800px', margin: '0 auto' }}>
+                 En Latam Abogados, el 5% de nuestros ingresos netos se destina directamente a diversas <br /> organizaciones de beneficencia y causas humanitarias.
                </p>
             </div>
           </div>
@@ -36,7 +36,7 @@ const SocialConscience: React.FC = () => {
           <div className="ma-grid-single">
             <div className="ma-card">
               <h3 className="ma-card-title">{t('social_conscience.humanitarian_title')}</h3>
-              <p className="ma-intro">
+              <p className="ma-intro" style={{ fontSize: '1.3rem', lineHeight: '1.6' }}>
                 {t('social_conscience.humanitarian_intro')}
               </p>
 

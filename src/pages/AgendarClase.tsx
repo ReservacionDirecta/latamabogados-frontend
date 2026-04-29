@@ -41,14 +41,6 @@ const AgendarClase: React.FC = () => {
           <div className="ma-grid-single">
             <div className="ma-card ma-details-card" style={{ marginBottom: '50px' }}>
               <div className="ma-card-body">
-                <p className="ma-card-intro">
-                  El curso nuestro es único en el mercado y está diseñado para abogados, estudiantes de abogacía y los que piensan tomar cursos de abogacía en inglés.
-                </p>
-                <div className="ma-highlight-box">
-                  <p>
-                    Inglés jurídico con Dr. Marcus Ambrose mejorará su capacidad de conversar en inglés a un nivel profesional y <strong>MUCHO MÁS</strong>.
-                  </p>
-                </div>
                 
                 <div className="ma-objectives-section">
                   <h4 className="objectives-title">OBJETIVOS DEL CURSO</h4>

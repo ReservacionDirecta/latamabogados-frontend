@@ -497,6 +497,7 @@
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
+  text-transform: uppercase;
 }
 
 .about-intro-text {
