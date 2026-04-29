@@ -1,7 +1,9 @@
 .landing2-page {
-  overflow: hidden;
-  height: 100vh;
-  height: 100svh; /* Altura exacta en móviles (ignora barras del navegador) */
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: auto;
+  min-height: 100vh;
+  min-height: 100svh; /* Altura mínima exacta en móviles */
   display: flex;
   flex-direction: column;
 }
@@ -10,8 +12,8 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  height: 100%;
+  overflow-y: auto;
+  height: auto;
 }
 
 .landing2-page .hero-bg {

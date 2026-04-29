@@ -23,11 +23,11 @@
 .hero-section {
   position: relative;
   width: 100%;
-  height: 100vh;
-  height: 100svh;
+  height: auto;
   min-height: 100vh;
   min-height: 100svh;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
 }
