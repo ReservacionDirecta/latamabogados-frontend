@@ -135,6 +135,71 @@ const AgendarClase: React.FC = () => {
                 </button>
               </div>
             </div>
+
+            {/* --- SECCIÓN DE CAPTACIÓN DE LEADS (MAILCHIMP) --- */}
+            <div className="ma-lead-capture-container">
+              <div className="ma-economic-footer">
+                <p className="capture-title">INSCRÍBASE PARA RECIBIR LA INVITACIÓN AL PRÓXIMO PROGRAMA GRUPAL:</p>
+                <form 
+                  action="https://hostingersite.us22.list-manage.com/subscribe/post?u=56094605988597099f66878b1&amp;id=9876543210" 
+                  method="post" 
+                  target="_blank" 
+                  className="ma-mailchimp-form"
+                >
+                  <div className="form-grid">
+                    <div className="form-group full-width">
+                      <label>Correo Electrónico <span>*</span></label>
+                      <input className="required email" placeholder="nombre@correo.com" required type="email" name="EMAIL" />
+                    </div>
+                    
+                    <div className="form-row">
+                      <div className="form-group">
+                        <label>Nombre <span>*</span></label>
+                        <input placeholder="Juan" required type="text" name="FNAME" />
+                      </div>
+                      <div className="form-group">
+                        <label>Apellido <span>*</span></label>
+                        <input placeholder="Pérez" required type="text" name="LNAME" />
+                      </div>
+                    </div>
+
+                    <div className="form-group full-width">
+                      <label>Teléfono <span>*</span></label>
+                      <input placeholder="Ej. +52 1 234..." required type="tel" name="PHONE" />
+                    </div>
+
+                    <div className="form-row">
+                      <div className="form-group">
+                        <label>Ciudad <span>*</span></label>
+                        <input placeholder="Ej. Bogotá" required type="text" name="CITY" />
+                      </div>
+                      <div className="form-group">
+                        <label>País <span>*</span></label>
+                        <input placeholder="Ej. Colombia" required type="text" name="COUNTRY" />
+                      </div>
+                    </div>
+
+                    <div className="form-group full-width">
+                      <label>Especialidad <span>*</span></label>
+                      <input placeholder="Ej. Abogado Corporativo" required type="text" name="SPECIALTY" />
+                    </div>
+
+                    {/* Honeypot field for anti-spam */}
+                    <div aria-hidden="true" style={{ position: 'absolute', left: '-5000px' }}>
+                      <input tabIndex={-1} type="text" value="" name="b_56094605988597099f66878b1_9876543210" readOnly />
+                    </div>
+
+                    <button type="submit" className="ma-btn-black">
+                      SOLICITAR INSCRIPCIÓN 
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-send" aria-hidden="true">
+                        <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path>
+                        <path d="m21.854 2.147-10.94 10.939"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
 
           </div>

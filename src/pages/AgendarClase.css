@@ -563,3 +563,110 @@
   font-family: 'DM Serif Display', serif;
   font-size: 1.1em;
 }
+
+/* Mailchimp Lead Capture */
+.ma-lead-capture-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.ma-economic-footer {
+  padding: 40px;
+  background: rgba(142, 61, 74, 0.03);
+  border-radius: 16px;
+  border: 2px dashed var(--latam-maroon);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.capture-title {
+  font-weight: 800;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--latam-black);
+  letter-spacing: 0.5px;
+}
+
+.ma-mailchimp-form .form-grid {
+  display: grid;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ma-mailchimp-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.ma-mailchimp-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.ma-mailchimp-form label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.ma-mailchimp-form label span {
+  color: var(--latam-maroon);
+}
+
+.ma-mailchimp-form input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.ma-mailchimp-form input:focus {
+  outline: none;
+  border-color: var(--latam-maroon);
+  box-shadow: 0 0 0 3px rgba(142, 61, 74, 0.1);
+}
+
+.ma-btn-black {
+  width: 100%;
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  background: var(--latam-black);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ma-btn-black:hover {
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 600px) {
+  .ma-economic-footer {
+    padding: 25px 20px;
+  }
+  
+  .ma-mailchimp-form .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
