@@ -31,26 +31,24 @@ const HeaderBar: React.FC = () => {
                 src="/wp-content/uploads/2024/01/latam-abogados-marcus-ambrose-5.png"
                 alt="LATAM ABOGADOS"
                 className="default-logo"
-                width="289"
-                height="40"
               />
             </Link>
+          </div>
+
+          <div className="header-lang-container">
+            <LanguageSwitcher />
+          </div>
+          
+          <div className="ct-main-end">
             {location.pathname !== '/' && (
               <div 
                 role="button"
                 onClick={handleBack} 
                 className="ct-back-to-home"
-                style={{ cursor: 'pointer' }}
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px' }}><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-                {t('contact.back_to_start').toUpperCase()}
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
               </div>
             )}
-          </div>
-          <div className="ct-main-end">
-            <div className="header-lang-container">
-              <LanguageSwitcher />
-            </div>
             <div className="ct-social-text">
               <span style={{ color: 'rgb(30, 31, 51)', fontWeight: 'bold' }}>{t('social.responsible')}</span>{' '}
               <Link to="/nuestra-conciencia-social" style={{ color: '#8e3d4a', fontWeight: 'bold', textDecoration: 'none' }}>{t('nav.see_more')} →</Link>
