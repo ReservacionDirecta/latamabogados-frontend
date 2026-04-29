@@ -69,6 +69,18 @@
   border-color: #ff4d4d;
 }
 
+/* Buffering spinner overlay */
+.video-buffering-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 6;
+  pointer-events: none;
+}
+
 /* Interaction Prompt if Autoplay Fails */
 .video-interaction-prompt {
   position: absolute;
@@ -133,9 +145,30 @@
   to { transform: rotate(360deg); }
 }
 
+@media (max-width: 768px) {
+  .welcome-video-container {
+    max-width: 100%;
+    max-height: 88vh;
+    border-radius: 16px;
+  }
+
+  /* Larger touch targets on mobile */
+  .video-control-btn {
+    width: 52px;
+    height: 52px;
+  }
+
+  .welcome-video-controls {
+    top: 12px;
+    right: 12px;
+    gap: 10px;
+  }
+}
+
 @media (max-width: 480px) {
   .welcome-video-container {
     max-width: 100%;
     max-height: 85vh;
+    border-radius: 12px;
   }
 }

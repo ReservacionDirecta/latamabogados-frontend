@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { ExternalLink, ArrowLeft } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
 import SEO from '../components/SEO';
@@ -19,11 +19,7 @@ const SocialConscience: React.FC = () => {
       
       <main className="agendar-main">
         <div className="container-narrow">
-          <div className="ma-back-nav">
-            <a href="/acerca-de" className="back-link">
-              <ArrowLeft size={16} /> {t('articles.back_to_about')}
-            </a>
-          </div>
+          
 
           <div className="ma-top">
             <h2 className="ma-title">{t('social_conscience.title')}</h2>
@@ -45,7 +41,7 @@ const SocialConscience: React.FC = () => {
               </p>
 
               <div className="about-resources-grid">
-                <a href="/Cuba.pdf" target="_blank" rel="noopener noreferrer" className="resource-item">
+                <a href="/wp-content/uploads/2024/01/Cuba.pdf" target="_blank" rel="noopener noreferrer" className="resource-item">
                   <div className="resource-icon"><ExternalLink size={24} /></div>
                   <div className="resource-content">
                     <h4>{t('social_conscience.cuba_title')}</h4>
@@ -53,7 +49,7 @@ const SocialConscience: React.FC = () => {
                   </div>
                 </a>
                 
-                <a href="/Unknown.pdf" target="_blank" rel="noopener noreferrer" className="resource-item">
+                <a href="/wp-content/uploads/2024/01/Unknown.pdf" target="_blank" rel="noopener noreferrer" className="resource-item">
                   <div className="resource-icon"><ExternalLink size={24} /></div>
                   <div className="resource-content">
                     <h4>{t('social_conscience.miami_herald_title')}</h4>
@@ -61,7 +57,7 @@ const SocialConscience: React.FC = () => {
                   </div>
                 </a>
                 
-                <a href="/Press-Release.pdf" target="_blank" rel="noopener noreferrer" className="resource-item">
+                <a href="/wp-content/uploads/2024/01/Press-Release.pdf" target="_blank" rel="noopener noreferrer" className="resource-item">
                   <div className="resource-icon"><ExternalLink size={24} /></div>
                   <div className="resource-content">
                     <h4>{t('social_conscience.labor_justice_title')}</h4>

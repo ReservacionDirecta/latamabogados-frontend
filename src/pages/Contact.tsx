@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Send, MapPin, Phone, Mail, ArrowLeft } from 'lucide-react';
+import { Send, MapPin, Phone, Mail } from 'lucide-react';
 import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
 import SEO from '../components/SEO';
@@ -53,11 +53,7 @@ const Contact: React.FC = () => {
       
       <main className="agendar-main">
         <div className="container-narrow">
-          <div className="ma-back-nav">
-            <a href="/#inicio" className="back-link">
-              <ArrowLeft size={16} /> {t('contact.back_to_start')}
-            </a>
-          </div>
+          
 
           <div className="ma-top">
             <h2 className="ma-title">{t('contact.title')}</h2>

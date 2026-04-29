@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Download, ArrowLeft } from 'lucide-react';
+import { Download } from 'lucide-react';
 import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
 import SEO from '../components/SEO';
@@ -19,11 +19,7 @@ const LegalWritings: React.FC = () => {
       
       <main className="agendar-main">
         <div className="container-narrow">
-          <div className="ma-back-nav">
-            <a href="/acerca-de" className="back-link">
-              <ArrowLeft size={16} /> {t('articles.back_to_about')}
-            </a>
-          </div>
+          
 
           <div className="ma-top">
             <h2 className="ma-title">{t('legal_writings_page.title')}</h2>

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { X, RotateCcw, Volume2, VolumeX } from 'lucide-react';
+import { X, RotateCcw, Volume2, VolumeX, Play } from 'lucide-react';
 import './WelcomeVideo.css';
 
 interface WelcomeVideoProps {
@@ -10,77 +10,84 @@ interface WelcomeVideoProps {
 }
 
 const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, isActive, onClose, onReady }) => {
-  const [isMuted, setIsMuted] = useState(false);
-  const [videoBlobUrl, setVideoBlobUrl] = useState<string | null>(null);
+  const [isMuted, setIsMuted] = useState(true); // start muted for autoplay policy
+  const [isBuffering, setIsBuffering] = useState(true);
+  const [needsInteraction, setNeedsInteraction] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Buffer optimization: Pre-fetch video file
+  // Signal ready as soon as component mounts — no pre-fetch blocking
   useEffect(() => {
-    const fetchVideo = async () => {
-      try {
-        const response = await fetch('/0427.mp4');
-        const blob = await response.blob();
-        const url = URL.createObjectURL(blob);
-        setVideoBlobUrl(url);
-        if (onReady) onReady();
-      } catch (error) {
-        console.error("Video buffering failed, falling back to direct source", error);
-        setVideoBlobUrl('/0427.mp4');
-        if (onReady) onReady();
-      }
+    if (onReady) onReady();
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleCanPlay = () => {
+      setIsBuffering(false);
     };
 
-    fetchVideo();
+    const handleWaiting = () => {
+      setIsBuffering(true);
+    };
+
+    const handlePlaying = () => {
+      setIsBuffering(false);
+    };
+
+    video.addEventListener('canplay', handleCanPlay);
+    video.addEventListener('waiting', handleWaiting);
+    video.addEventListener('playing', handlePlaying);
+
     return () => {
-      if (videoBlobUrl) URL.revokeObjectURL(videoBlobUrl);
+      video.removeEventListener('canplay', handleCanPlay);
+      video.removeEventListener('waiting', handleWaiting);
+      video.removeEventListener('playing', handlePlaying);
     };
   }, []);
 
   useEffect(() => {
-    if (isActive && videoRef.current) {
-      videoRef.current.volume = 0.6;
-      videoRef.current.currentTime = 0;
-      videoRef.current.muted = false;
-      setIsMuted(false);
-      
-      const timer = setTimeout(() => {
-        if (videoRef.current) {
-          videoRef.current.play().catch((error) => {
-            console.log("Autoplay unmuted failed, playing muted as fallback:", error);
-            videoRef.current!.muted = true;
-            setIsMuted(true);
-            videoRef.current!.play().catch(e => console.error("Video blocked completely:", e));
-          });
-        }
-      }, 150);
+    const video = videoRef.current;
+    if (!video || !isActive) return;
 
-      // 2026 Strategy: Unlock audio on any global interaction
-      const unlockAudio = () => {
-        if (videoRef.current && videoRef.current.muted) {
-          videoRef.current.muted = false;
-          setIsMuted(false);
-          // Force play again just in case
-          videoRef.current.play().catch(() => {});
-          
-          // Cleanup listeners after first interaction
-          window.removeEventListener('click', unlockAudio);
-          window.removeEventListener('touchstart', unlockAudio);
-          window.removeEventListener('scroll', unlockAudio);
-        }
-      };
+    video.currentTime = 0;
+    video.muted = true; // Always start muted to pass mobile autoplay policies
+    setIsMuted(true);
+    setNeedsInteraction(false);
 
-      window.addEventListener('click', unlockAudio);
-      window.addEventListener('touchstart', unlockAudio);
-      window.addEventListener('scroll', unlockAudio);
-
-      return () => {
-        clearTimeout(timer);
-        window.removeEventListener('click', unlockAudio);
-        window.removeEventListener('touchstart', unlockAudio);
-        window.removeEventListener('scroll', unlockAudio);
-      };
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          // Playing successfully — try to unmute after brief delay
+          setTimeout(() => {
+            if (video) {
+              video.muted = false;
+              setIsMuted(false);
+            }
+          }, 300);
+        })
+        .catch(() => {
+          // Mobile blocked even muted play — show tap-to-play overlay
+          setNeedsInteraction(true);
+        });
     }
   }, [isActive]);
+
+  const handleTapToPlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = false;
+    setIsMuted(false);
+    setNeedsInteraction(false);
+    video.play().catch(() => {
+      // Still blocked: play muted
+      video.muted = true;
+      setIsMuted(true);
+      video.play().catch(() => {});
+    });
+  };
 
   const handleClose = () => {
     if (videoRef.current) {
@@ -105,44 +112,59 @@ const WelcomeVideo: React.FC<WelcomeVideoProps> = ({ isVisible, isActive, onClos
   };
 
   return (
-    <div 
+    <div
       className={`welcome-video-overlay animate-reveal-in ${!isVisible ? 'preload-hidden' : ''}`}
       style={!isVisible ? { opacity: 0, pointerEvents: 'none', visibility: 'hidden' } : {}}
     >
       <div className="welcome-video-container">
-        {videoBlobUrl ? (
-          <video
-            ref={videoRef}
-            className="welcome-video-player"
-            playsInline
-            muted={isMuted}
-            preload="auto"
-            src={videoBlobUrl}
-            onEnded={handleClose}
-          />
-        ) : (
-          <div className="video-loading-placeholder">
-            <div className="ma-spinner"></div>
+        {/* Native streaming — no blob fetch, browser handles adaptive buffering */}
+        <video
+          ref={videoRef}
+          className="welcome-video-player"
+          playsInline          // Required for iOS inline playback
+          muted={isMuted}
+          preload="metadata"   // Load only metadata first; streaming starts on play()
+          src="/0427.mp4"
+          onEnded={handleClose}
+          webkit-playsinline="true" // Legacy iOS Safari support
+        />
+
+        {/* Buffering spinner overlay */}
+        {isBuffering && isActive && !needsInteraction && (
+          <div className="video-buffering-overlay">
+            <div className="ma-spinner" />
+          </div>
+        )}
+
+        {/* Tap-to-play overlay for blocked mobile autoplay */}
+        {needsInteraction && (
+          <div className="video-interaction-prompt" onClick={handleTapToPlay}>
+            <div className="play-icon-large">
+              <Play size={32} color="white" fill="white" />
+            </div>
+            <p style={{ color: 'white', fontSize: '14px', marginTop: '12px', letterSpacing: '1px' }}>
+              TAP PARA REPRODUCIR
+            </p>
           </div>
         )}
 
         <div className="welcome-video-controls">
-          <button 
-            className="video-control-btn close" 
+          <button
+            className="video-control-btn close"
             onClick={handleClose}
             title="Cerrar"
           >
             <X size={24} />
           </button>
-          <button 
-            className="video-control-btn volume" 
+          <button
+            className="video-control-btn volume"
             onClick={toggleMute}
             title={isMuted ? "Activar Sonido" : "Silenciar"}
           >
             {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
           </button>
-          <button 
-            className="video-control-btn repeat" 
+          <button
+            className="video-control-btn repeat"
             onClick={handleRepeat}
             title="Repetir"
           >

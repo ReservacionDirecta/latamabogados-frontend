@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Download, ArrowLeft, ExternalLink, Film } from 'lucide-react';
+import { Download, ExternalLink, Film } from 'lucide-react';
 import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
 import SEO from '../components/SEO';
@@ -19,11 +19,7 @@ const ArticlesPublications: React.FC = () => {
       
       <main className="agendar-main">
         <div className="container-narrow">
-          <div className="ma-back-nav" style={{ marginBottom: '30px' }}>
-            <a href="/acerca-de" className="back-link" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--latam-black)', textDecoration: 'none', fontWeight: 'bold' }}>
-              <ArrowLeft size={18} /> {t('articles.back_to_about')}
-            </a>
-          </div>
+          
 
           <div className="ma-top">
             <h1 className="ma-title">{t('articles.title')}</h1>
