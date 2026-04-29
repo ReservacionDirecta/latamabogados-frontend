@@ -36,7 +36,7 @@ function App() {
         Si se quisiera globalizar, se debe extraer el header de wp_body.html
       */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Landing2 />} />
         <Route path="/acerca-de" element={<About />} />
         <Route path="/contacto" element={<Contact />} />
         <Route path="/ejemplos-de-escritos-legales" element={<LegalWritings />} />
@@ -49,7 +49,7 @@ function App() {
         <Route path="/aviso-de-privacidad" element={<PrivacyPolicy />} />
         <Route path="/politica-de-cookies" element={<CookiesPolicy />} />
         <Route path="/test-landing" element={<TestLanding />} />
-        <Route path="/landing2" element={<Landing2 />} />
+        <Route path="/landing2" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );
