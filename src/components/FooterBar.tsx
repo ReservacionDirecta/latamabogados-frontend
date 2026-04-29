@@ -28,7 +28,7 @@ const FooterBar: React.FC = () => {
       <div className="ct-footer-bottom">
         <div className="ct-container">
           <div className="ct-footer-copy">
-            <p>Latam Abogados. {t('footer.rights')} <b>© {new Date().getFullYear()}</b></p>
+            <p>Latam Abogados.<br /> {t('footer.rights')} <b>© {new Date().getFullYear()}</b></p>
           </div>
           <div className="ct-footer-legal">
             <p>

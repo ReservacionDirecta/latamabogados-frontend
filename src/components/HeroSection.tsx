@@ -55,19 +55,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOpenVideo }) => {
 
       {/* ── Contenido Vertical Principal ── */}
       <div className="hero-content">
-        <div className="hero-brand">
+        <div className="hero-brand animate-reveal-in">
           <span className="hero-brand-latam">Latam</span>
           <span className="hero-brand-abogados"> Abogados</span>
         </div>
 
-        <h2 className="hero-main-title">
+        <h2 className="hero-main-title animate-reveal-up delay-100">
           {t('hero.main_title')}
         </h2>
 
         {/* ── Stack de Servicios ── */}
         <div className="hero-services-grid">
           {/* Item 1 */}
-          <div className="hero-service-card">
+          <div className="hero-service-card animate-reveal-up delay-200">
             <p className="hero-service-text">
               <strong>{t('hero.service1_text')}</strong>
             </p>
@@ -77,7 +77,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOpenVideo }) => {
           </div>
 
           {/* Item 2 */}
-          <div className="hero-service-card">
+          <div className="hero-service-card animate-reveal-up delay-300">
             <p className="hero-service-text">
               <strong>{t('hero.service2_text')}</strong>
             </p>
@@ -88,7 +88,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOpenVideo }) => {
         </div>
 
         {/* ── INDICADOR DE SCROLL PREMIUM ── */}
-        <div className="hero-scroll-indicator">
+        <div className="hero-scroll-indicator animate-fade-in delay-500">
           <div className="scroll-mouse">
             <div className="scroll-wheel"></div>
           </div>
@@ -96,7 +96,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOpenVideo }) => {
         </div>
 
         {/* ── Badge de Autoridad (Reintegrado) ── */}
-        <div className="hero-authority-badge">
+        <div className="hero-authority-badge animate-reveal-up delay-400">
           <div className="authority-main-content">
             <div className="authority-info">
               <p className="hero-doctor-name">Dr. Marcus Ambrose</p>
