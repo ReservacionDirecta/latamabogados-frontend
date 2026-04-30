@@ -60,112 +60,73 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
             
             {/* Mailchimp Embedded Form */}
             <form 
-              action="https://digital.us3.list-manage.com/subscribe/post?u=f3fa97557584c7cc93a85c09c&amp;id=0bacb30ae9&amp;f_id=0060c7e5f0" 
+              action="https://latamabogados.us7.list-manage.com/subscribe/post?u=8f6aaf5ffbb8909d045957127&amp;id=fc7032e051&amp;f_id=00faa6e0f0" 
               method="post" 
               target="_blank" 
               className="ma-mailchimp-form"
             >
-              <input type="hidden" name="tags" value="10768030" />
-              <div style={{ display: 'grid', gap: '15px' }}>
+              <div style={{ display: 'grid', gap: '12px' }}>
                 <div className="form-group">
-                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Correo Electrónico <span className="label-required">Obligatorio</span></label>
+                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', marginBottom: '4px', color: '#1e1f33', textTransform: 'uppercase' }}>Correo Electrónico <span style={{ color: 'var(--latam-maroon)' }}>*</span></label>
                   <input 
                     type="email" 
                     name="EMAIL" 
                     className="required email" 
-                    placeholder="nombre@correo.com" 
+                    placeholder="nombre@ejemplo.com" 
                     required 
-                    style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
-                  />
-                </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-                  <div>
-                    <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Nombre <span className="label-required">Obligatorio</span></label>
-                    <input 
-                      type="text" 
-                      name="FNAME" 
-                      placeholder="Juan" 
-                      required 
-                      style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
-                    />
-                  </div>
-                  <div>
-                    <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Apellido <span className="label-required">Obligatorio</span></label>
-                    <input 
-                      type="text" 
-                      name="LNAME" 
-                      placeholder="Pérez" 
-                      required 
-                      style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
-                    />
-                  </div>
-                </div>
-
-                <div className="form-group">
-                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Teléfono <span className="label-required">Obligatorio</span></label>
-                  <input 
-                    type="tel" 
-                    name="PHONE" 
-                    placeholder="Ej. +52 1 234..." 
-                    required 
-                    style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
+                    style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1.5px solid #eee', fontSize: '0.9rem' }}
                   />
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Ciudad <span className="label-required">Obligatorio</span></label>
-                    <input 
-                      type="text" 
-                      name="CITY" 
-                      placeholder="Ej. Bogotá" 
-                      required 
-                      style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
-                    />
+                    <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', marginBottom: '4px', color: '#1e1f33', textTransform: 'uppercase' }}>Nombre <span style={{ color: 'var(--latam-maroon)' }}>*</span></label>
+                    <input type="text" name="FNAME" placeholder="Juan" required style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1.5px solid #eee', fontSize: '0.9rem' }} />
                   </div>
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>País <span className="label-required">Obligatorio</span></label>
-                    <input 
-                      type="text" 
-                      name="COUNTRY" 
-                      placeholder="Ej. Colombia" 
-                      required 
-                      style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
-                    />
+                    <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', marginBottom: '4px', color: '#1e1f33', textTransform: 'uppercase' }}>Apellidos <span style={{ color: 'var(--latam-maroon)' }}>*</span></label>
+                    <input type="text" name="LNAME" placeholder="Pérez" required style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1.5px solid #eee', fontSize: '0.9rem' }} />
                   </div>
                 </div>
 
                 <div className="form-group">
-                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Página Web (Opcional)</label>
-                  <input 
-                    type="url" 
-                    name="WEBSITE" 
-                    placeholder="https://susitio.com" 
-                    style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
-                  />
+                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', marginBottom: '4px', color: '#1e1f33', textTransform: 'uppercase' }}>Número de teléfono <span style={{ color: 'var(--latam-maroon)' }}>*</span></label>
+                  <input type="tel" name="PHONE" placeholder="+52 1..." required style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1.5px solid #eee', fontSize: '0.9rem' }} />
                 </div>
 
-                <div className="form-group">
-                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', marginBottom: '4px', color: '#555' }}>Especialidad (Opcional)</label>
-                  <input 
-                    type="text" 
-                    name="SPECIALITY" 
-                    placeholder="Ej. Abogado Corporativo" 
-                    style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
-                  />
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', marginBottom: '4px', color: '#1e1f33', textTransform: 'uppercase' }}>Ciudad</label>
+                    <input type="text" name="CITY" placeholder="Ej. Bogotá" style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1.5px solid #eee', fontSize: '0.9rem' }} />
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', marginBottom: '4px', color: '#1e1f33', textTransform: 'uppercase' }}>País</label>
+                    <input type="text" name="COUNTRY" placeholder="Ej. Colombia" style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1.5px solid #eee', fontSize: '0.9rem' }} />
+                  </div>
                 </div>
 
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', marginBottom: '4px', color: '#1e1f33', textTransform: 'uppercase' }}>Especialidad</label>
+                    <input type="text" name="SPEC" placeholder="Ej. Civil" style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1.5px solid #eee', fontSize: '0.9rem' }} />
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', marginBottom: '4px', color: '#1e1f33', textTransform: 'uppercase' }}>Página Web</label>
+                    <input type="text" name="WEB" placeholder="https://..." style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1.5px solid #eee', fontSize: '0.9rem' }} />
+                  </div>
+                </div>
 
                 {/* Hidden field for Mailchimp bot protection */}
                 <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
-                  <input type="text" name="b_f3fa97557584c7cc93a85c09c_0bacb30ae9" tabIndex={-1} value="" readOnly />
+                  <input type="text" name="b_8f6aaf5ffbb8909d045957127_fc7032e051" tabIndex={-1} value="" readOnly />
                 </div>
+
                 <button 
                   type="submit" 
                   className="ma-btn-black"
-                  style={{ width: '100%', padding: '14px', fontSize: '0.9rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}
+                  style={{ width: '100%', padding: '14px', fontSize: '0.95rem', fontWeight: '700', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginTop: '10px', borderRadius: '8px', backgroundColor: '#1e1f33', color: 'white', border: 'none' }}
                 >
-                  SOLICITAR INCRIPCIÓN <Send size={18} />
+                  SOLICITAR INSCRIPCIÓN <Send size={18} />
                 </button>
               </div>
             </form>
