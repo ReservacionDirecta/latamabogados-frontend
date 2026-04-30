@@ -53,70 +53,61 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
             </li>
           </ul>
 
-          <div className="ma-economic-footer" style={{ padding: '30px', background: 'rgba(142, 61, 74, 0.05)', borderRadius: '12px', border: '1px dashed var(--latam-maroon)' }}>
-            <p style={{ fontWeight: 'bold', marginBottom: '20px', fontSize: '0.9rem', textAlign: 'center' }}>
-              INSCRÍBASE PARA RECIBIR LA INVITACIÓN AL <br /> PRÓXIMO PROGRAMA GRUPAL:
+          <div className="ma-economic-footer" style={{ padding: '25px', background: 'rgba(142, 61, 74, 0.03)', borderRadius: '16px', border: '1px solid rgba(142, 61, 74, 0.1)' }}>
+            <p style={{ fontWeight: '800', marginBottom: '15px', fontSize: '0.85rem', textAlign: 'center', color: '#1e1f33', letterSpacing: '0.05em' }}>
+              SOLICITE SU INSCRIPCIÓN AL PRÓXIMO CICLO:
             </p>
             
-            {/* Mailchimp Embedded Form */}
             <form 
               action="https://latamabogados.us7.list-manage.com/subscribe/post?u=8f6aaf5ffbb8909d045957127&amp;id=fc7032e051&amp;f_id=00faa6e0f0" 
               method="post" 
               target="_blank" 
               className="ma-mailchimp-form"
             >
-              <div style={{ display: 'grid', gap: '12px' }}>
+              <div style={{ display: 'grid', gap: '10px' }}>
                 <div className="form-group">
-                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', marginBottom: '4px', color: '#1e1f33', textTransform: 'uppercase' }}>Correo Electrónico <span style={{ color: 'var(--latam-maroon)' }}>*</span></label>
-                  <input 
-                    type="email" 
-                    name="EMAIL" 
-                    className="required email" 
-                    placeholder="nombre@ejemplo.com" 
-                    required 
-                    style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1.5px solid #eee', fontSize: '0.9rem' }}
-                  />
+                  <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: '800', marginBottom: '3px', color: '#1e1f33', opacity: 0.8 }}>CORREO ELECTRÓNICO <span style={{ color: 'var(--latam-maroon)' }}>*</span></label>
+                  <input type="email" name="EMAIL" placeholder="ejemplo@correo.com" required style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1.5px solid #eee', fontSize: '0.85rem', outline: 'none' }} />
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-                  <div>
-                    <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', marginBottom: '4px', color: '#1e1f33', textTransform: 'uppercase' }}>Nombre <span style={{ color: 'var(--latam-maroon)' }}>*</span></label>
-                    <input type="text" name="FNAME" placeholder="Juan" required style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1.5px solid #eee', fontSize: '0.9rem' }} />
+                  <div className="form-group">
+                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: '800', marginBottom: '3px', color: '#1e1f33', opacity: 0.8 }}>NOMBRE <span style={{ color: 'var(--latam-maroon)' }}>*</span></label>
+                    <input type="text" name="FNAME" placeholder="Juan" required style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1.5px solid #eee', fontSize: '0.85rem', outline: 'none' }} />
                   </div>
-                  <div>
-                    <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', marginBottom: '4px', color: '#1e1f33', textTransform: 'uppercase' }}>Apellidos <span style={{ color: 'var(--latam-maroon)' }}>*</span></label>
-                    <input type="text" name="LNAME" placeholder="Pérez" required style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1.5px solid #eee', fontSize: '0.9rem' }} />
+                  <div className="form-group">
+                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: '800', marginBottom: '3px', color: '#1e1f33', opacity: 0.8 }}>APELLIDOS <span style={{ color: 'var(--latam-maroon)' }}>*</span></label>
+                    <input type="text" name="LNAME" placeholder="Pérez" required style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1.5px solid #eee', fontSize: '0.85rem', outline: 'none' }} />
                   </div>
                 </div>
 
                 <div className="form-group">
-                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', marginBottom: '4px', color: '#1e1f33', textTransform: 'uppercase' }}>Número de teléfono <span style={{ color: 'var(--latam-maroon)' }}>*</span></label>
-                  <input type="tel" name="PHONE" placeholder="+52 1..." required style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1.5px solid #eee', fontSize: '0.9rem' }} />
+                  <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: '800', marginBottom: '3px', color: '#1e1f33', opacity: 0.8 }}>NÚMERO DE TELÉFONO <span style={{ color: 'var(--latam-maroon)' }}>*</span></label>
+                  <input type="tel" name="PHONE" placeholder="+52 1..." required style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1.5px solid #eee', fontSize: '0.85rem', outline: 'none' }} />
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-                  <div>
-                    <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', marginBottom: '4px', color: '#1e1f33', textTransform: 'uppercase' }}>Ciudad</label>
-                    <input type="text" name="CITY" placeholder="Ej. Bogotá" style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1.5px solid #eee', fontSize: '0.9rem' }} />
+                  <div className="form-group">
+                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: '800', marginBottom: '3px', color: '#1e1f33', opacity: 0.8 }}>CIUDAD</label>
+                    <input type="text" name="CITY" placeholder="Ej. Bogotá" style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1.5px solid #eee', fontSize: '0.85rem', outline: 'none' }} />
                   </div>
-                  <div>
-                    <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', marginBottom: '4px', color: '#1e1f33', textTransform: 'uppercase' }}>País</label>
-                    <input type="text" name="COUNTRY" placeholder="Ej. Colombia" style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1.5px solid #eee', fontSize: '0.9rem' }} />
+                  <div className="form-group">
+                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: '800', marginBottom: '3px', color: '#1e1f33', opacity: 0.8 }}>PAÍS</label>
+                    <input type="text" name="COUNTRY" placeholder="Ej. Colombia" style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1.5px solid #eee', fontSize: '0.85rem', outline: 'none' }} />
                   </div>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-                  <div>
-                    <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', marginBottom: '4px', color: '#1e1f33', textTransform: 'uppercase' }}>Especialidad</label>
-                    <input type="text" name="SPEC" placeholder="Ej. Civil" style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1.5px solid #eee', fontSize: '0.9rem' }} />
+                  <div className="form-group">
+                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: '800', marginBottom: '3px', color: '#1e1f33', opacity: 0.8 }}>ESPECIALIDAD</label>
+                    <input type="text" name="SPEC" placeholder="Ej. Civil" style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1.5px solid #eee', fontSize: '0.85rem', outline: 'none' }} />
                   </div>
-                  <div>
-                    <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', marginBottom: '4px', color: '#1e1f33', textTransform: 'uppercase' }}>Página Web</label>
-                    <input type="text" name="WEB" placeholder="https://..." style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1.5px solid #eee', fontSize: '0.9rem' }} />
+                  <div className="form-group">
+                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: '800', marginBottom: '3px', color: '#1e1f33', opacity: 0.8 }}>PÁGINA WEB</label>
+                    <input type="text" name="WEB" placeholder="https://..." style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1.5px solid #eee', fontSize: '0.85rem', outline: 'none' }} />
                   </div>
                 </div>
 
-                {/* Hidden field for Mailchimp bot protection */}
                 <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
                   <input type="text" name="b_8f6aaf5ffbb8909d045957127_fc7032e051" tabIndex={-1} value="" readOnly />
                 </div>
@@ -124,9 +115,26 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
                 <button 
                   type="submit" 
                   className="ma-btn-black"
-                  style={{ width: '100%', padding: '14px', fontSize: '0.95rem', fontWeight: '700', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginTop: '10px', borderRadius: '8px', backgroundColor: '#1e1f33', color: 'white', border: 'none' }}
+                  style={{ 
+                    width: '100%', 
+                    padding: '12px', 
+                    fontSize: '0.9rem', 
+                    fontWeight: '800', 
+                    cursor: 'pointer', 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justify-content: 'center', 
+                    gap: '10px', 
+                    marginTop: '10px', 
+                    borderRadius: '12px', 
+                    backgroundColor: '#1e1f33', 
+                    color: 'white', 
+                    border: 'none',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 4px 12px rgba(30, 31, 51, 0.15)'
+                  }}
                 >
-                  SOLICITAR INSCRIPCIÓN <Send size={18} />
+                  ENVIAR SOLICITUD <Send size={18} />
                 </button>
               </div>
             </form>
