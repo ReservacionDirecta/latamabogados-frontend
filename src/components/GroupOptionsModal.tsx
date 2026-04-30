@@ -123,7 +123,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
                     cursor: 'pointer', 
                     display: 'flex', 
                     alignItems: 'center', 
-                    justify-content: 'center', 
+                    justifyContent: 'center', 
                     gap: '10px', 
                     marginTop: '10px', 
                     borderRadius: '12px', 
