@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { trackPageView } from './utils/analytics';
-import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import LegalWritings from './pages/LegalWritings';
@@ -12,7 +11,6 @@ import AgendarConsulta from './pages/AgendarConsulta';
 import ArticlesPublications from './pages/ArticlesPublications';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import CookiesPolicy from './pages/CookiesPolicy';
-import TestLanding from './pages/TestLanding';
 import Landing2 from './pages/Landing2';
 
 // Helper component to track page views
@@ -30,11 +28,6 @@ function App() {
   return (
     <BrowserRouter>
       <PageTracker />
-      {/* 
-        El Layout global se quitó porque la migración 1:1 de WordPress incrusta el 
-        header y footer originales en cada página como lo hacía WPBakery.
-        Si se quisiera globalizar, se debe extraer el header de wp_body.html
-      */}
       <Routes>
         <Route path="/" element={<Landing2 />} />
         <Route path="/acerca-de" element={<About />} />
@@ -48,8 +41,6 @@ function App() {
         <Route path="/articulos-y-publicaciones" element={<ArticlesPublications />} />
         <Route path="/aviso-de-privacidad" element={<PrivacyPolicy />} />
         <Route path="/politica-de-cookies" element={<CookiesPolicy />} />
-        <Route path="/test-landing" element={<TestLanding />} />
-        <Route path="/landing2" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );
