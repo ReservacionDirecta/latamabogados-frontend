@@ -47,14 +47,14 @@
 }
 
 .landing2-page .hero-main-title {
-  font-size: clamp(26px, 4.5vw, 48px) !important;
-  margin: 10px auto 30px !important;
+  font-size: clamp(26px, 4.5vw, 70px) !important;
+  margin: 10px auto 40px !important;
   max-width: 900px !important;
 }
 
 .landing2-page .hero-services-grid {
   gap: 30px !important;
-  margin-top: 0 !important;
+  margin-top: 20 !important;
   max-width: 1100px !important;
 }
 
@@ -248,7 +248,7 @@
 @media (max-height: 700px) {
     .landing2-page .hero-main-title {
         font-size: 28px !important;
-        margin: 5px 10px 15px auto !important;
+        margin: 5px 10px 25px auto !important;
     }
     .landing2-page .hero-authority-badge {
         padding: 10px !important;
