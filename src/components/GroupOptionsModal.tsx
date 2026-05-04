@@ -24,46 +24,79 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    // Extract the field name from fields[name] format
     const fieldName = name.match(/\[(.*?)\]/)?.[1] || name;
     setFormData(prev => ({ ...prev, [fieldName]: value }));
   };
 
-  // We use the MailerLite Form Action URL which handles CORS and security properly 
-  // without exposing the secret API key in the frontend.
+  // Helper to hash data using SHA-256 for Meta CAPI compliance
+  const sha256 = async (message: string) => {
+    if (!message) return null;
+    const msgBuffer = new TextEncoder().encode(message.trim().toLowerCase());
+    const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  };
+
   const MAILERLITE_ACTION_URL = 'https://assets.mailerlite.com/jsonp/2310556/forms/186565633275594594/subscribe';
+  const FACEBOOK_ACCESS_TOKEN = 'EAASzhKZCH3lEBRa2aXWTH2wxri9HtZCIEfkcRoPopwBxvpQwTf8bUkiGEDC1BTvcZA2Ei1al8d8iQGcNSuByOiDOLVkzbS49FOpQZCu2QdawBvaDzI1JvZAddW7gwcarjyaeIzSumibBRDBjYbqHRVO5ldUtW5BrgQmVNj7ti8JXcpZA5K4ixnQzbNy9bNbk9iBwZDZD';
+  const PIXEL_ID = '4357457554583645';
 
   const handleSubmit = async (e: React.FormEvent) => {
-    // Note: If the MailerLite Universal Script is working correctly, 
-    // it may intercept this form automatically if we use their specific classes.
-    // Here we implement a manual fetch to the JSONP endpoint for maximum control.
     e.preventDefault();
     setStatus('loading');
 
-    const params = new URLSearchParams();
-    params.append('fields[email]', formData.email);
-    params.append('fields[name]', formData.name);
-    params.append('fields[last_name]', formData.last_name);
-    params.append('fields[phone]', formData.phone);
-    params.append('fields[city]', formData.city);
-    params.append('fields[country]', formData.country);
-    params.append('fields[specialty]', formData.specialty);
-    params.append('fields[website]', formData.website);
-    params.append('groups[]', '186565645473678409');
-    params.append('ajax', '1');
+    // 1. MailerLite Submission
+    const mlParams = new URLSearchParams();
+    mlParams.append('fields[email]', formData.email);
+    mlParams.append('fields[name]', formData.name);
+    mlParams.append('fields[last_name]', formData.last_name);
+    mlParams.append('fields[phone]', formData.phone);
+    mlParams.append('fields[city]', formData.city);
+    mlParams.append('fields[country]', formData.country);
+    mlParams.append('fields[specialty]', formData.specialty);
+    mlParams.append('fields[website]', formData.website);
+    mlParams.append('groups[]', '186565645473678409');
+    mlParams.append('ajax', '1');
 
     try {
-      // Using no-cors or JSONP approach via form submission to a hidden iframe 
-      // or simple fetch if the endpoint supports it.
-      // For MailerLite JSONP, we can use a standard form submit if we don't mind a redirect,
-      // but for SPA we prefer this:
-      const response = await fetch(MAILERLITE_ACTION_URL, {
+      // Parallel submission: MailerLite + Facebook Pixel + Facebook CAPI
+      const mlRequest = fetch(MAILERLITE_ACTION_URL, { method: 'POST', body: mlParams, mode: 'no-cors' });
+      
+      // Facebook Pixel (Browser-side)
+      if (window.fbq) {
+        window.fbq('track', 'Lead', {
+          content_name: 'Inscripción Clases Grupales',
+          value: 25.00,
+          currency: 'USD'
+        });
+      }
+
+      // Facebook CAPI (Server-side simulation from Frontend)
+      const hashedEmail = await sha256(formData.email);
+      const hashedPhone = await sha256(formData.phone);
+      
+      const capiRequest = fetch(`https://graph.facebook.com/v17.0/${PIXEL_ID}/events?access_token=${FACEBOOK_ACCESS_TOKEN}`, {
         method: 'POST',
-        body: params,
-        mode: 'no-cors' // This avoids CORS preflight but we won't see the response body
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          data: [{
+            event_name: 'Lead',
+            event_time: Math.floor(Date.now() / 1000),
+            action_source: 'website',
+            user_data: {
+              em: [hashedEmail],
+              ph: hashedPhone ? [hashedPhone] : []
+            },
+            custom_data: {
+              currency: 'USD',
+              value: '25.00'
+            }
+          }]
+        })
       });
 
-      // Since mode is 'no-cors', we assume success if no error is thrown
+      await Promise.allSettled([mlRequest, capiRequest]);
+
       setStatus('success');
       setTimeout(() => {
         onClose();
