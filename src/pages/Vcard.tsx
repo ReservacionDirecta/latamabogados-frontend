@@ -21,9 +21,9 @@ const Vcard: React.FC = () => {
         </div>
 
         <img 
-          src="/wp-content/uploads/2024/01/ambrose-marcus-abogado-1.jpg" 
-          alt="Dr. Marcus Ambrose" 
-          className="vcard-photo"
+          src="/wp-content/uploads/2024/01/latam-abogados-marcus-ambrose-5.png" 
+          alt="Latam Abogados" 
+          className="vcard-logo-contact"
         />
         
         <h1 className="vcard-name">{t('vcard.subtitle')}</h1>

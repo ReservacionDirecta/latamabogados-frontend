@@ -87,6 +87,11 @@ const About: React.FC = () => {
                 <div className="vcard-content">
                   <div className="vcard-qr-wrapper" onClick={() => setShowQR(true)} style={{ cursor: 'pointer' }}>
                     <img src="/qr-vcard.png" alt="QR VCard Dr. Marcus Ambrose" className="vcard-qr" />
+                    <img 
+                      src="/wp-content/uploads/2024/01/latam-abogados-marcus-ambrose-5.png" 
+                      alt="Latam Abogados Logo" 
+                      style={{ width: '100%', marginTop: '10px', opacity: 0.8 }}
+                    />
                   </div>
                   <div className="vcard-info">
                     <h4 className="vcard-title">{t('about.digital_contact')}</h4>
