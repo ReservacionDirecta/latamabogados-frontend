@@ -140,7 +140,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
                     </span>
                     <div>
                       <span><strong>CLASES CON SUS COLEGAS:</strong> <span className="ma-price-tag">$25 USD</span> POR HORA A CADA PARTICIPANTE. SESIONES DISEÑADAS PARA BUFETES O GRUPOS CON INVERSIÓN COMPARTIDA.</span>
-                      <p style={{ fontSize: '0.85rem', marginTop: '8px', color: '#666', fontStyle: 'italic' }}>
+                      <p style={{ fontSize: '0.85rem', marginTop: '8px', color: '#666' }}>
                         Nota: Se requiere un mínimo de 3 participantes por sesión.
                       </p>
                     </div>
@@ -154,7 +154,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
                     </span>
                     <div>
                       <span><strong>CURSOS SABATINOS:</strong> <span className="ma-price-tag">$25 USD</span> POR HORA. PROGRAMAS EN LÍNEA. CUPOS LIMITADOS.</span>
-                      <p style={{ marginTop: '8px', color: '#666', fontStyle: 'italic' }}>
+                      <p style={{ marginTop: '8px', color: '#666' }}>
                         NOTA: Debe inscribirse en la lista de espera para recibir la invitación cuando el próximo ciclo esté por comenzar.
                       </p>
                     </div>
