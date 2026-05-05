@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import { X, Send, CheckCircle } from 'lucide-react';
 import './BookingModal.css';
 
+declare global {
+  interface Window {
+    fbq: any;
+  }
+}
+
 interface GroupOptionsModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -38,7 +44,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
   };
 
   const MAILERLITE_ACTION_URL = 'https://assets.mailerlite.com/jsonp/2310556/forms/186565633275594594/subscribe';
-  const FACEBOOK_ACCESS_TOKEN = 'EAASzhKZCH3lEBRa2aXWTH2wxri9HtZCIEfkcRoPopwBxvpQwTf8bUkiGEDC1BTvcZA2Ei1al8d8iQGcNSuByOiDOLVkzbS49FOpQZCu2QdawBvaDzI1JvZAddW7gwcarjyaeIzSumibBRDBjYbqHRVO5ldUtW5BrgQmVNj7ti8JXcpZA5K4ixnQzbNy9bNbk9iBwZDZD';
+  const FACEBOOK_ACCESS_TOKEN = 'EAASzhKZCH3lEBRcwPlDUOP9NHzQxBMU5MDcyzK0fZA0QvDQcvaMfjTZB4sxs9SClpXhd1yhzyJUonIZBxAGUuAHnasx5nsbgZCoIdsbsVWbzCEYEZCYJWZCWDuqmzNwfLdySqZCvITzUe7nLZBuK6IbATm13G1eURHyt4u4xPoPw7STizGsYutNldjMbVjJj2sv6jFwZDZD';
   const PIXEL_ID = '4357457554583645';
 
   const handleSubmit = async (e: React.FormEvent) => {
