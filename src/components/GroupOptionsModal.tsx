@@ -126,7 +126,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
         
         <div className="modal-header">
           <h2 className="modal-title">MODALIDADES DE COLABORACIÓN GRUPAL</h2>
-          <p className="modal-subtitle">Formatos dinámicos diseñados para optimizar recursos y fomentar el aprendizaje colectivo.</p>
+          <p className="modal-subtitle">Formatos dinámicos diseñados para optimizar recursos y <br /> fomentar el aprendizaje colectivo.</p>
         </div>
 
         <div className="ma-modal-body" style={{ padding: '20px 0' }}>
