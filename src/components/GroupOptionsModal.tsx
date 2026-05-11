@@ -138,15 +138,17 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
             </div>
           ) : (
             <>
-              <ul className="ma-features" style={{ marginBottom: '30px' }}>
-                <li style={{ marginBottom: '20px' }}>
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                    <span className="ma-icon" style={{ flexShrink: 0, marginTop: '2px' }}>
-                      <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm-8 0a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm8 2c-2.67 0-8 1.34-8 4v2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2c0-2.66-5.33-4-8-4ZM8 13c-.29 0-.62.01-.97.04A5.94 5.94 0 0 1 10 17v2H1a1 1 0 0 1-1-1v-1c0-2.66 5.33-4 8-4Z"></path></svg>
+              <ul className="ma-features" style={{ marginBottom: '30px', textAlign: 'justify', textJustify: 'inter-word' }}>
+                <li style={{ marginBottom: '24px' }}>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                    <span className="ma-icon" style={{ flexShrink: 0, marginTop: '4px', color: 'var(--latam-maroon)' }}>
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M16 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm-8 0a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm8 2c-2.67 0-8 1.34-8 4v2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2c0-2.66-5.33-4-8-4ZM8 13c-.29 0-.62.01-.97.04A5.94 5.94 0 0 1 10 17v2H1a1 1 0 0 1-1-1v-1c0-2.66 5.33-4 8-4Z"></path></svg>
                     </span>
                     <div>
-                      <span><strong>CLASES CON SUS COLEGAS:</strong> <span className="ma-price-tag">$25 USD</span> POR HORA A CADA PARTICIPANTE. SESIONES DISEÑADAS PARA BUFETES O GRUPOS CON INVERSIÓN COMPARTIDA.</span>
-                      <p style={{ fontSize: '0.85rem', marginTop: '8px', color: '#666' }}>
+                      <span style={{ fontSize: '0.95rem', fontWeight: '500', lineHeight: '1.4', display: 'block', textTransform: 'uppercase' }}>
+                        <strong style={{ fontWeight: '800', color: '#1e1f33' }}>CLASES CON SUS COLEGAS:</strong> <span className="ma-price-tag">$25 USD</span> POR HORA A CADA PARTICIPANTE. SESIONES DISEÑADAS PARA BUFETES O GRUPOS CON INVERSIÓN COMPARTIDA.
+                      </span>
+                      <p style={{ fontSize: '0.8rem', marginTop: '6px', color: '#777', fontWeight: '600', textTransform: 'uppercase' }}>
                         Nota: Se requiere un mínimo de 3 participantes por sesión.
                       </p>
                     </div>
@@ -154,14 +156,16 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
                 </li>
 
                 <li style={{ marginBottom: '20px' }}>
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                    <span className="ma-icon" style={{ flexShrink: 0, marginTop: '2px' }}>
-                      <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M19 4h-1V2a1 1 0 0 0-2 0v2H8V2a1 1 0 0 0-2 0v2H5a3 3 0 0 0-3 3v11a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm1 14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V10h16Zm0-10H4V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1Z"></path></svg>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                    <span className="ma-icon" style={{ flexShrink: 0, marginTop: '4px', color: 'var(--latam-maroon)' }}>
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M19 4h-1V2a1 1 0 0 0-2 0v2H8V2a1 1 0 0 0-2 0v2H5a3 3 0 0 0-3 3v11a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm1 14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V10h16Zm0-10H4V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1Z"></path></svg>
                     </span>
                     <div>
-                      <span><strong>CURSOS SABATINOS:</strong> <span className="ma-price-tag">$25 USD</span> POR HORA. PROGRAMAS EN LÍNEA. CUPOS LIMITADOS.</span>
-                      <p style={{ marginTop: '8px', color: '#666' }}>
-                        NOTA: Debe inscribirse en la lista de espera para recibir la invitación cuando el próximo ciclo esté por comenzar.
+                      <span style={{ fontSize: '0.95rem', fontWeight: '500', lineHeight: '1.4', display: 'block', textTransform: 'uppercase' }}>
+                        <strong style={{ fontWeight: '800', color: '#1e1f33' }}>CURSOS SABATINOS:</strong> <span className="ma-price-tag">$25 USD</span> POR HORA. PROGRAMAS EN LÍNEA. CUPOS LIMITADOS.
+                      </span>
+                      <p style={{ fontSize: '0.8rem', marginTop: '6px', color: '#777', fontWeight: '600', textTransform: 'uppercase' }}>
+                        NOTA: Debe inscribirse en la lista de espera para recibir noticias de promociones y contenido gratuito, así como la invitación cuando el próximo ciclo esté por comenzar. 🎁
                       </p>
                     </div>
                   </div>
