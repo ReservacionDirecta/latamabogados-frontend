@@ -100,6 +100,9 @@ const AgendarClase: React.FC = () => {
                     >
                       {t('agendar_clase.budget_cta')}
                     </button>
+                    <span style={{ fontWeight: '600', color: 'var(--latam-maroon)', marginLeft: '4px' }}>
+                      {t('agendar_clase.budget_gift')}
+                    </span>
                   </span>
                 </li>
 
