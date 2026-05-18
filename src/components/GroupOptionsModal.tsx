@@ -104,13 +104,6 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
       await Promise.allSettled([mlRequest, capiRequest]);
 
       setStatus('success');
-      setTimeout(() => {
-        onClose();
-        setStatus('idle');
-        setFormData({
-          email: '', name: '', last_name: '', phone: '', city: '', country: '', specialty: '', website: ''
-        });
-      }, 3000);
     } catch (error) {
       console.error('Error submitting form:', error);
       setStatus('error');
@@ -134,7 +127,54 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
             <div style={{ textAlign: 'center', padding: '40px 20px' }}>
               <CheckCircle size={60} color="#10B981" style={{ marginBottom: '20px' }} />
               <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '10px' }}>¡SOLICITUD ENVIADA!</h3>
-              <p style={{ color: '#666' }}>Hemos recibido tus datos correctamente. Te contactaremos pronto.</p>
+              <p style={{ color: '#666', marginBottom: '25px' }}>Hemos recibido tus datos correctamente. Te contactaremos pronto.</p>
+              
+              <div style={{ padding: '20px', background: '#f8f9fa', borderRadius: '12px', marginBottom: '25px', border: '1px solid #eee' }}>
+                <h4 style={{ fontWeight: '800', fontSize: '1.1rem', color: '#1e1f33', marginBottom: '10px' }}>🎁 Tu Regalo Especial</h4>
+                <p style={{ fontSize: '0.9rem', color: '#555', marginBottom: '15px' }}>Como agradecimiento por tu interés, puedes descargar nuestra guía gratuita.</p>
+                <a 
+                  href="/Common Law vs Civil Law - Dr. Marcus Ambrose - es.pdf" 
+                  download
+                  className="ma-btn-black"
+                  style={{ 
+                    display: 'inline-flex', 
+                    alignItems: 'center',
+                    gap: '8px',
+                    padding: '12px 24px', 
+                    fontSize: '0.9rem', 
+                    fontWeight: '800', 
+                    borderRadius: '8px', 
+                    backgroundColor: 'var(--latam-maroon)', 
+                    color: 'white', 
+                    textDecoration: 'none',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 4px 12px rgba(142, 61, 74, 0.2)'
+                  }}
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  DESCARGAR PDF
+                </a>
+              </div>
+
+              <button 
+                onClick={() => {
+                  onClose();
+                  setStatus('idle');
+                  setFormData({
+                    email: '', name: '', last_name: '', phone: '', city: '', country: '', specialty: '', website: ''
+                  });
+                }}
+                style={{ 
+                  background: 'none', 
+                  border: 'none', 
+                  color: '#666', 
+                  textDecoration: 'underline', 
+                  cursor: 'pointer',
+                  fontWeight: '600'
+                }}
+              >
+                Cerrar ventana
+              </button>
             </div>
           ) : (
             <>

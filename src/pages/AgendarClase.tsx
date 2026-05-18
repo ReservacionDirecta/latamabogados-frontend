@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 import { BookOpen, FileText, Search, Users, Settings, Award } from 'lucide-react';
 import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
@@ -10,8 +11,17 @@ import './AgendarClase.css';
 
 const AgendarClase: React.FC = () => {
   const { t } = useTranslation();
+  const location = useLocation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isGroupModalOpen, setIsGroupModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (location.state && (location.state as any).openGroupModal) {
+      setIsGroupModalOpen(true);
+      // Clean up state so refreshing doesn't re-open it
+      window.history.replaceState({}, document.title);
+    }
+  }, [location]);
 
   return (
     <div className="agendar-page">

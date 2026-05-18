@@ -21,6 +21,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
     date: '',
     time: '',
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   if (!isOpen) return null;
 
@@ -64,7 +65,12 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
     trackConversion(type === 'clase' ? 'booking_class_success' : 'booking_consultation_success');
 
     window.open(whatsappUrl, '_blank');
-    onClose();
+    
+    if (type === 'clase') {
+      setIsSubmitted(true);
+    } else {
+      onClose();
+    }
   };
 
   return (
@@ -76,11 +82,65 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
         
         <div className="modal-header">
           <h2 className="modal-title">
-            {type === 'clase' ? 'Programar Clase de Inglés' : 'Programar Consulta Legal'}
+            {type === 'clase' && isSubmitted ? '¡REGISTRO COMPLETADO!' : type === 'clase' ? 'Programar Clase de Inglés' : 'Programar Consulta Legal'}
           </h2>
-          <p className="modal-subtitle">Por favor, completa tus datos para coordinar vía WhatsApp.</p>
+          <p className="modal-subtitle">
+            {type === 'clase' && isSubmitted 
+              ? 'Te hemos redirigido a WhatsApp para continuar.' 
+              : 'Por favor, completa tus datos para coordinar vía WhatsApp.'}
+          </p>
         </div>
 
+        {isSubmitted && type === 'clase' ? (
+          <div style={{ padding: '20px 0', textAlign: 'center' }}>
+            <div style={{ padding: '20px', background: '#f8f9fa', borderRadius: '12px', marginBottom: '25px', border: '1px solid #eee' }}>
+              <h4 style={{ fontWeight: '800', fontSize: '1.1rem', color: '#1e1f33', marginBottom: '10px' }}>🎁 Tu Regalo Especial</h4>
+              <p style={{ fontSize: '0.9rem', color: '#555', marginBottom: '15px' }}>Como agradecimiento por tu interés, puedes descargar nuestra guía gratuita.</p>
+              <a 
+                href="/Common Law vs Civil Law - Dr. Marcus Ambrose - es.pdf" 
+                download
+                className="ma-btn-black"
+                style={{ 
+                  display: 'inline-flex', 
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '12px 24px', 
+                  fontSize: '0.9rem', 
+                  fontWeight: '800', 
+                  borderRadius: '8px', 
+                  backgroundColor: 'var(--latam-maroon)', 
+                  color: 'white', 
+                  textDecoration: 'none',
+                  transition: 'all 0.2s ease',
+                  boxShadow: '0 4px 12px rgba(142, 61, 74, 0.2)'
+                }}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                DESCARGAR PDF
+              </a>
+            </div>
+
+            <button 
+              onClick={() => {
+                onClose();
+                setIsSubmitted(false);
+                setFormData({
+                  name: '', phone: '', email: '', website: '', city: '', country: '', specialty: '', date: '', time: ''
+                });
+              }}
+              style={{ 
+                background: 'none', 
+                border: 'none', 
+                color: '#666', 
+                textDecoration: 'underline', 
+                cursor: 'pointer',
+                fontWeight: '600'
+              }}
+            >
+              Cerrar ventana
+            </button>
+          </div>
+        ) : (
         <form onSubmit={handleSubmit} className="booking-form">
           <div className="form-row">
             <div className="form-group">
@@ -200,6 +260,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
             <i className="fab fa-whatsapp"></i> Enviar por WhatsApp
           </button>
         </form>
+        )}
       </div>
     </div>
   );

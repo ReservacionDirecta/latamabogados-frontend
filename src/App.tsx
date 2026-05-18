@@ -12,6 +12,7 @@ import ArticlesPublications from './pages/ArticlesPublications';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import CookiesPolicy from './pages/CookiesPolicy';
 import Landing2 from './pages/Landing2';
+import FloatingBanner from './components/FloatingBanner';
 
 // Helper component to track page views
 const PageTracker = () => {
@@ -28,6 +29,7 @@ function App() {
   return (
     <BrowserRouter>
       <PageTracker />
+      <FloatingBanner />
       <Routes>
         <Route path="/" element={<Landing2 />} />
         <Route path="/acerca-de" element={<About />} />
