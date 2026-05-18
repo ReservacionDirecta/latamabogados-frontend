@@ -205,7 +205,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
                         <strong style={{ fontWeight: '800', color: '#1e1f33' }}>CURSOS SABATINOS:</strong> <span className="ma-price-tag">$25 USD</span> POR HORA. PROGRAMAS EN LÍNEA. CUPOS LIMITADOS.
                       </span>
                       <p style={{ fontSize: '0.8rem', marginTop: '6px', color: '#777', fontWeight: '600', textTransform: 'uppercase' }}>
-                        NOTA: Debe inscribirse en la lista de espera para recibir noticias de promociones y contenido gratuito, así como la invitación cuando el próximo ciclo esté por comenzar. 🎁
+                        NOTA: Para recibir promociones, contenido gratuito y la invitación al próximo ciclo antes de que inicie, debes inscribirte en la lista de espera. 🎁
                       </p>
                     </div>
                   </div>
