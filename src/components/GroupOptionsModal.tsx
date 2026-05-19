@@ -214,7 +214,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
 
               <div className="ma-economic-footer" style={{ padding: '25px', background: 'rgba(142, 61, 74, 0.03)', borderRadius: '16px', border: '1px solid rgba(142, 61, 74, 0.1)' }}>
                 <p style={{ fontWeight: '800', marginBottom: '15px', fontSize: '0.85rem', textAlign: 'center', color: '#1e1f33', letterSpacing: '0.05em' }}>
-                  SOLICITE SU INSCRIPCIÓN AL PRÓXIMO CICLO:
+                  SOLICITE SU INSCRIPCIÓN AL PRÓXIMO CICLO Y OBTENGA SU:
                 </p>
                 
                 <form onSubmit={handleSubmit} className="ma-mailchimp-form">
@@ -294,6 +294,21 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({ isOpen, onClose }
                     >
                       {status === 'loading' ? 'ENVIANDO...' : 'ENVIAR SOLICITUD'} <Send size={18} />
                     </button>
+
+                    <p style={{ 
+                      fontSize: '0.75rem', 
+                      color: '#777', 
+                      textAlign: 'center', 
+                      marginTop: '12px', 
+                      marginBottom: '0px',
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center', 
+                      gap: '5px',
+                      fontWeight: '500'
+                    }}>
+                      <span>🔒</span> Jamás compartiremos sus datos
+                    </p>
                   </div>
                 </form>
               </div>

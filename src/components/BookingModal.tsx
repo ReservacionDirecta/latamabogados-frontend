@@ -259,6 +259,21 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
           <button type="submit" className="modal-submit-btn">
             <i className="fab fa-whatsapp"></i> Enviar por WhatsApp
           </button>
+
+          <p style={{ 
+            fontSize: '0.75rem', 
+            color: '#777', 
+            textAlign: 'center', 
+            marginTop: '12px', 
+            marginBottom: '0px',
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            gap: '5px',
+            fontWeight: '500'
+          }}>
+            <span>🔒</span> Jamás compartiremos sus datos
+          </p>
         </form>
         )}
       </div>
