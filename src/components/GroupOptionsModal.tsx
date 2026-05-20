@@ -24,8 +24,8 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
     phone: "",
     city: "",
     country: "",
-    specialty: "",
-    website: "",
+    especialidad: "",
+    pagina_web: "",
   });
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
@@ -66,10 +66,11 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
     mlParams.append("fields[phone]", formData.phone);
     mlParams.append("fields[city]", formData.city);
     mlParams.append("fields[country]", formData.country);
-    mlParams.append("fields[specialty]", formData.specialty);
-    mlParams.append("fields[website]", formData.website);
-    mlParams.append("groups[]", "186565645473678409");
+    mlParams.append("fields[especialidad]", formData.especialidad);
+    mlParams.append("fields[pagina_web]", formData.pagina_web);
     mlParams.append("ajax", "1");
+    mlParams.append("ml-submit", "1");
+    mlParams.append("anticsrf", "true");
 
     try {
       // Parallel submission: MailerLite + Facebook Pixel + Facebook CAPI
@@ -243,8 +244,8 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
                     phone: "",
                     city: "",
                     country: "",
-                    specialty: "",
-                    website: "",
+                    especialidad: "",
+                    pagina_web: "",
                   });
                 }}
                 style={{
@@ -639,8 +640,8 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
                         </label>
                         <input
                           type="text"
-                          name="fields[specialty]"
-                          value={formData.specialty}
+                          name="fields[especialidad]"
+                          value={formData.especialidad}
                           onChange={handleInputChange}
                           placeholder="Ej. Civil"
                           style={{
@@ -668,8 +669,8 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
                         </label>
                         <input
                           type="text"
-                          name="fields[website]"
-                          value={formData.website}
+                          name="fields[pagina_web]"
+                          value={formData.pagina_web}
                           onChange={handleInputChange}
                           placeholder="https://..."
                           style={{
