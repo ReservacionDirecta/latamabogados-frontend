@@ -516,7 +516,7 @@
 
 .objectives-title {
     font-family: "DM Serif Display", serif;
-    font-size: 22px;
+    font-size: 40px;
     color: var(--latam-maroon);
     margin-bottom: 25px;
     text-align: center;
@@ -748,13 +748,13 @@
     color: white;
     border-radius: 50%;
     font-weight: 800;
-    font-size: 19.2px;
+    font-size: 25px;
     box-shadow: 0 4px 10px rgba(142, 61, 74, 0.2);
 }
 
 .ma-benefits-list p {
     margin: 0;
-    font-size: 19.2px;
+    font-size: 25px;
     line-height: 1.5;
     color: var(--latam-black);
     font-weight: 600;
