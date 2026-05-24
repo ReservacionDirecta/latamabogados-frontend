@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { X, CheckCircle } from "lucide-react";
 import "./BookingModal.css";
+import "./FreeMaterialModal.css";
 
 interface FreeMaterialModalProps {
   isOpen: boolean;
@@ -124,355 +125,371 @@ const FreeMaterialModal: React.FC<FreeMaterialModalProps> = ({
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div
-        className="modal-content glass-panel animate-slide-up"
+        className="modal-content glass-panel animate-slide-up free-modal-content"
         onClick={(e) => e.stopPropagation()}
-        style={{ maxWidth: "550px" }}
       >
-        <button className="modal-close" onClick={onClose} aria-label="Cerrar modal">
+        <button 
+          className="modal-close" 
+          onClick={onClose} 
+          aria-label="Cerrar modal"
+          style={{ zIndex: 10 }}
+        >
           <X size={24} />
         </button>
 
-        <div className="modal-header">
-          <h2 className="modal-title" style={{ fontFamily: "Georgia, serif", fontSize: "24px", color: "#1e1f33" }}>
-            Descarga Gratis: "LA VERDADERA DIFERENCIA"
-          </h2>
-          <p className="modal-subtitle" style={{ fontSize: "0.9rem", color: "#555", marginTop: "8px", lineHeight: "1.4" }}>
-            Un ensayo práctico y sin rodeos sobre <strong>Common Law vs. Civil Law</strong>. Descubra cómo encaja el sistema anglosajón para convertirse en un mejor abogado. Escrito por el <strong>Dr. Marcus Ambrose</strong>.
-          </p>
+        <div className="free-modal-left">
+          <img
+            src="/y CIVIL LAW.png"
+            alt="Common Law vs Civil Law cover"
+            className="free-modal-cover-img"
+          />
         </div>
 
-        <div className="ma-modal-body" style={{ padding: "10px 0" }}>
-          {status === "success" ? (
-            <div style={{ textAlign: "center", padding: "30px 10px" }}>
-              <CheckCircle
-                size={60}
-                color="#10B981"
-                style={{ marginBottom: "20px" }}
-              />
-              <h3
-                style={{
-                  fontSize: "1.4rem",
-                  fontWeight: "800",
-                  color: "#1e1f33",
-                  marginBottom: "10px",
-                  textTransform: "uppercase",
-                }}
-              >
-                ¡Registro Completado, Colega!
-              </h3>
-              <p style={{ color: "#555", fontSize: "0.95rem", marginBottom: "25px", lineHeight: "1.4" }}>
-                Hemos registrado tus datos correctamente. Haz clic en el botón de abajo para descargar tu ensayo de inmediato.
-              </p>
+        <div className="free-modal-right">
+          <div className="modal-header" style={{ marginBottom: "20px", textAlign: "left" }}>
+            <h2 className="modal-title" style={{ fontFamily: "Georgia, serif", fontSize: "22px", color: "#1e1f33", textAlign: "left", marginBottom: "8px", textTransform: "none" }}>
+              Descarga Gratis: "LA VERDADERA DIFERENCIA"
+            </h2>
+            <p className="modal-subtitle" style={{ fontSize: "0.85rem", color: "#555", marginTop: "0", lineHeight: "1.4", textAlign: "left" }}>
+              Un ensayo práctico y sin rodeos sobre <strong>Common Law vs. Civil Law</strong>. Descubra cómo encaja el sistema anglosajón para convertirse en un mejor abogado. Escrito por el <strong>Dr. Marcus Ambrose</strong>.
+            </p>
+          </div>
 
-              <div
-                style={{
-                  padding: "20px",
-                  background: "#f8f9fa",
-                  borderRadius: "12px",
-                  marginBottom: "25px",
-                  border: "1px solid #eee",
-                }}
-              >
-                <h4
+          <div className="ma-modal-body" style={{ padding: "0" }}>
+            {status === "success" ? (
+              <div style={{ textAlign: "center", padding: "10px 10px 20px" }}>
+                <CheckCircle
+                  size={50}
+                  color="#10B981"
+                  style={{ marginBottom: "15px" }}
+                />
+                <h3
                   style={{
+                    fontSize: "1.25rem",
                     fontWeight: "800",
-                    fontSize: "1.1rem",
                     color: "#1e1f33",
-                    marginBottom: "10px",
+                    marginBottom: "8px",
+                    textTransform: "uppercase",
                   }}
                 >
-                  🎁 Tu PDF GRATIS
-                </h4>
-                <p
-                  style={{
-                    fontSize: "0.85rem",
-                    color: "#555",
-                    marginBottom: "15px",
-                  }}
-                >
-                  Descarga <strong>GRATIS</strong> nuestra guía "Common Law vs Civil Law" del
-                  Dr. Ambrose. ¡Sin costo alguno!
+                  ¡Registro Completado, Colega!
+                </h3>
+                <p style={{ color: "#555", fontSize: "0.85rem", marginBottom: "15px", lineHeight: "1.4" }}>
+                  Hemos registrado tus datos correctamente. Haz clic en el botón de abajo para descargar tu ensayo de inmediato.
                 </p>
-                <a
-                  href="/Common Law vs Civil Law - Dr. Marcus Ambrose - es.pdf"
-                  download
+
+                <div
+                  style={{
+                    padding: "15px",
+                    background: "#f8f9fa",
+                    borderRadius: "12px",
+                    marginBottom: "15px",
+                    border: "1px solid #eee",
+                  }}
+                >
+                  <h4
+                    style={{
+                      fontWeight: "800",
+                      fontSize: "0.95rem",
+                      color: "#1e1f33",
+                      marginBottom: "6px",
+                    }}
+                  >
+                    🎁 Tu PDF GRATIS
+                  </h4>
+                  <p
+                    style={{
+                      fontSize: "0.8rem",
+                      color: "#555",
+                      marginBottom: "12px",
+                    }}
+                  >
+                    Descarga <strong>GRATIS</strong> nuestra guía "Common Law vs Civil Law" del
+                    Dr. Ambrose. ¡Sin costo alguno!
+                  </p>
+                  <a
+                    href="/Common Law vs Civil Law - Dr. Marcus Ambrose - es.pdf"
+                    download
+                    className="ma-btn-black"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      padding: "10px 20px",
+                      fontSize: "0.85rem",
+                      fontWeight: "800",
+                      borderRadius: "8px",
+                      backgroundColor: "var(--latam-maroon)",
+                      color: "white",
+                      textDecoration: "none",
+                      transition: "all 0.2s ease",
+                      boxShadow: "0 4px 12px rgba(142, 61, 74, 0.2)",
+                    }}
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    DESCARGAR PDF GRATIS
+                  </a>
+                </div>
+
+                <button
+                  onClick={() => {
+                    onClose();
+                    setStatus("idle");
+                    setFormData({
+                      email: "",
+                      name: "",
+                      last_name: "",
+                      phone: "",
+                      city: "",
+                      especialidad: "",
+                      pagina_web: "",
+                    });
+                  }}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    color: "#666",
+                    textDecoration: "underline",
+                    cursor: "pointer",
+                    fontWeight: "600",
+                    fontSize: "0.85rem",
+                  }}
+                >
+                  Cerrar ventana
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="booking-form" style={{ display: "grid", gap: "10px" }}>
+                <div className="form-group">
+                  <label style={{ fontSize: "0.7rem", fontWeight: "800", color: "#1e1f33" }}>
+                    CORREO ELECTRÓNICO <span style={{ color: "var(--latam-maroon)" }}>*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="fields[email]"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="ejemplo@correo.com"
+                    required
+                    style={{
+                      width: "100%",
+                      padding: "8px 12px",
+                      borderRadius: "8px",
+                      border: "1.5px solid #eee",
+                      fontSize: "0.8rem",
+                      outline: "none",
+                    }}
+                  />
+                </div>
+
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
+                  <div className="form-group">
+                    <label style={{ fontSize: "0.7rem", fontWeight: "800", color: "#1e1f33" }}>
+                      NOMBRE <span style={{ color: "var(--latam-maroon)" }}>*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="fields[name]"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="Juan"
+                      required
+                      style={{
+                        width: "100%",
+                        padding: "8px 12px",
+                        borderRadius: "8px",
+                        border: "1.5px solid #eee",
+                        fontSize: "0.8rem",
+                        outline: "none",
+                      }}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label style={{ fontSize: "0.7rem", fontWeight: "800", color: "#1e1f33" }}>
+                      APELLIDO <span style={{ color: "var(--latam-maroon)" }}>*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="fields[last_name]"
+                      value={formData.last_name}
+                      onChange={handleInputChange}
+                      placeholder="Pérez"
+                      required
+                      style={{
+                        width: "100%",
+                        padding: "8px 12px",
+                        borderRadius: "8px",
+                        border: "1.5px solid #eee",
+                        fontSize: "0.8rem",
+                        outline: "none",
+                      }}
+                    />
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label style={{ fontSize: "0.7rem", fontWeight: "800", color: "#1e1f33" }}>
+                    NÚMERO DE TELÉFONO <span style={{ color: "var(--latam-maroon)" }}>*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    name="fields[phone]"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder="+52 1..."
+                    required
+                    style={{
+                      width: "100%",
+                      padding: "8px 12px",
+                      borderRadius: "8px",
+                      border: "1.5px solid #eee",
+                      fontSize: "0.8rem",
+                      outline: "none",
+                    }}
+                  />
+                </div>
+
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
+                  <div className="form-group">
+                    <label style={{ fontSize: "0.7rem", fontWeight: "800", color: "#1e1f33" }}>
+                      ESPECIALIDAD
+                    </label>
+                    <input
+                      type="text"
+                      name="fields[especialidad]"
+                      value={formData.especialidad}
+                      onChange={handleInputChange}
+                      placeholder="Ej. Corporativo"
+                      style={{
+                        width: "100%",
+                        padding: "8px 12px",
+                        borderRadius: "8px",
+                        border: "1.5px solid #eee",
+                        fontSize: "0.8rem",
+                        outline: "none",
+                      }}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label style={{ fontSize: "0.7rem", fontWeight: "800", color: "#1e1f33" }}>
+                      CIUDAD
+                    </label>
+                    <input
+                      type="text"
+                      name="fields[city]"
+                      value={formData.city}
+                      onChange={handleInputChange}
+                      placeholder="Ej. Bogotá"
+                      style={{
+                        width: "100%",
+                        padding: "8px 12px",
+                        borderRadius: "8px",
+                        border: "1.5px solid #eee",
+                        fontSize: "0.8rem",
+                        outline: "none",
+                      }}
+                    />
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label style={{ fontSize: "0.7rem", fontWeight: "800", color: "#1e1f33" }}>
+                    PÁGINA WEB / LINKEDIN
+                  </label>
+                  <input
+                    type="text"
+                    name="fields[pagina_web]"
+                    value={formData.pagina_web}
+                    onChange={handleInputChange}
+                    placeholder="https://..."
+                    style={{
+                      width: "100%",
+                      padding: "8px 12px",
+                      borderRadius: "8px",
+                      border: "1.5px solid #eee",
+                      fontSize: "0.8rem",
+                      outline: "none",
+                    }}
+                  />
+                </div>
+
+                {status === "error" && (
+                  <p
+                    style={{
+                      color: "red",
+                      fontSize: "0.7rem",
+                      textAlign: "center",
+                      marginTop: "3px",
+                    }}
+                  >
+                    Ocurrió un error. Por favor intenta de nuevo.
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={status === "loading"}
                   className="ma-btn-black"
                   style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    padding: "12px 24px",
-                    fontSize: "0.9rem",
+                    width: "100%",
+                    padding: "10px",
+                    fontSize: "0.85rem",
                     fontWeight: "800",
-                    borderRadius: "8px",
+                    cursor: status === "loading" ? "not-allowed" : "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "8px",
+                    marginTop: "5px",
+                    borderRadius: "10px",
                     backgroundColor: "var(--latam-maroon)",
                     color: "white",
-                    textDecoration: "none",
+                    border: "none",
                     transition: "all 0.2s ease",
-                    boxShadow: "0 4px 12px rgba(142, 61, 74, 0.2)",
+                    boxShadow: "0 4px 12px rgba(142, 61, 74, 0.25)",
+                    opacity: status === "loading" ? 0.7 : 1,
                   }}
                 >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                  </svg>
-                  DESCARGAR PDF GRATIS
-                </a>
-              </div>
+                  {status === "loading" ? "PROCESANDO..." : "DESCARGAR PDF GRATIS"}
+                </button>
 
-              <button
-                onClick={() => {
-                  onClose();
-                  setStatus("idle");
-                  setFormData({
-                    email: "",
-                    name: "",
-                    last_name: "",
-                    phone: "",
-                    city: "",
-                    especialidad: "",
-                    pagina_web: "",
-                  });
-                }}
-                style={{
-                  background: "none",
-                  border: "none",
-                  color: "#666",
-                  textDecoration: "underline",
-                  cursor: "pointer",
-                  fontWeight: "600",
-                }}
-              >
-                Cerrar ventana
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="booking-form" style={{ display: "grid", gap: "12px" }}>
-              <div className="form-group">
-                <label style={{ fontSize: "0.75rem", fontWeight: "800", color: "#1e1f33" }}>
-                  CORREO ELECTRÓNICO <span style={{ color: "var(--latam-maroon)" }}>*</span>
-                </label>
-                <input
-                  type="email"
-                  name="fields[email]"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  placeholder="ejemplo@correo.com"
-                  required
-                  style={{
-                    width: "100%",
-                    padding: "10px 14px",
-                    borderRadius: "10px",
-                    border: "1.5px solid #eee",
-                    fontSize: "0.85rem",
-                    outline: "none",
-                  }}
-                />
-              </div>
-
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
-                <div className="form-group">
-                  <label style={{ fontSize: "0.75rem", fontWeight: "800", color: "#1e1f33" }}>
-                    NOMBRE <span style={{ color: "var(--latam-maroon)" }}>*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="fields[name]"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    placeholder="Juan"
-                    required
-                    style={{
-                      width: "100%",
-                      padding: "10px 14px",
-                      borderRadius: "10px",
-                      border: "1.5px solid #eee",
-                      fontSize: "0.85rem",
-                      outline: "none",
-                    }}
-                  />
-                </div>
-                <div className="form-group">
-                  <label style={{ fontSize: "0.75rem", fontWeight: "800", color: "#1e1f33" }}>
-                    APELLIDO <span style={{ color: "var(--latam-maroon)" }}>*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="fields[last_name]"
-                    value={formData.last_name}
-                    onChange={handleInputChange}
-                    placeholder="Pérez"
-                    required
-                    style={{
-                      width: "100%",
-                      padding: "10px 14px",
-                      borderRadius: "10px",
-                      border: "1.5px solid #eee",
-                      fontSize: "0.85rem",
-                      outline: "none",
-                    }}
-                  />
-                </div>
-              </div>
-
-              <div className="form-group">
-                <label style={{ fontSize: "0.75rem", fontWeight: "800", color: "#1e1f33" }}>
-                  NÚMERO DE TELÉFONO <span style={{ color: "var(--latam-maroon)" }}>*</span>
-                </label>
-                <input
-                  type="tel"
-                  name="fields[phone]"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  placeholder="+52 1..."
-                  required
-                  style={{
-                    width: "100%",
-                    padding: "10px 14px",
-                    borderRadius: "10px",
-                    border: "1.5px solid #eee",
-                    fontSize: "0.85rem",
-                    outline: "none",
-                  }}
-                />
-              </div>
-
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
-                <div className="form-group">
-                  <label style={{ fontSize: "0.75rem", fontWeight: "800", color: "#1e1f33" }}>
-                    ESPECIALIDAD
-                  </label>
-                  <input
-                    type="text"
-                    name="fields[especialidad]"
-                    value={formData.especialidad}
-                    onChange={handleInputChange}
-                    placeholder="Ej. Corporativo"
-                    style={{
-                      width: "100%",
-                      padding: "10px 14px",
-                      borderRadius: "10px",
-                      border: "1.5px solid #eee",
-                      fontSize: "0.85rem",
-                      outline: "none",
-                    }}
-                  />
-                </div>
-                <div className="form-group">
-                  <label style={{ fontSize: "0.75rem", fontWeight: "800", color: "#1e1f33" }}>
-                    CIUDAD
-                  </label>
-                  <input
-                    type="text"
-                    name="fields[city]"
-                    value={formData.city}
-                    onChange={handleInputChange}
-                    placeholder="Ej. Bogotá"
-                    style={{
-                      width: "100%",
-                      padding: "10px 14px",
-                      borderRadius: "10px",
-                      border: "1.5px solid #eee",
-                      fontSize: "0.85rem",
-                      outline: "none",
-                    }}
-                  />
-                </div>
-              </div>
-
-              <div className="form-group">
-                <label style={{ fontSize: "0.75rem", fontWeight: "800", color: "#1e1f33" }}>
-                  PÁGINA WEB / LINKEDIN
-                </label>
-                <input
-                  type="text"
-                  name="fields[pagina_web]"
-                  value={formData.pagina_web}
-                  onChange={handleInputChange}
-                  placeholder="https://..."
-                  style={{
-                    width: "100%",
-                    padding: "10px 14px",
-                    borderRadius: "10px",
-                    border: "1.5px solid #eee",
-                    fontSize: "0.85rem",
-                    outline: "none",
-                  }}
-                />
-              </div>
-
-              {status === "error" && (
                 <p
                   style={{
-                    color: "red",
-                    fontSize: "0.75rem",
+                    fontSize: "0.7rem",
+                    color: "#777",
                     textAlign: "center",
                     marginTop: "5px",
+                    marginBottom: "0px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "4px",
+                    fontWeight: "500",
                   }}
                 >
-                  Ocurrió un error. Por favor intenta de nuevo.
+                  <span>🔒</span> Jamás compartiremos sus datos
                 </p>
-              )}
-
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="ma-btn-black"
-                style={{
-                  width: "100%",
-                  padding: "12px",
-                  fontSize: "0.9rem",
-                  fontWeight: "800",
-                  cursor: status === "loading" ? "not-allowed" : "pointer",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: "10px",
-                  marginTop: "10px",
-                  borderRadius: "12px",
-                  backgroundColor: "var(--latam-maroon)",
-                  color: "white",
-                  border: "none",
-                  transition: "all 0.2s ease",
-                  boxShadow: "0 4px 12px rgba(142, 61, 74, 0.25)",
-                  opacity: status === "loading" ? 0.7 : 1,
-                }}
-              >
-                {status === "loading" ? "PROCESANDO..." : "DESCARGAR PDF GRATIS"}
-              </button>
-
-              <p
-                style={{
-                  fontSize: "0.75rem",
-                  color: "#777",
-                  textAlign: "center",
-                  marginTop: "8px",
-                  marginBottom: "0px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: "5px",
-                  fontWeight: "500",
-                }}
-              >
-                <span>🔒</span> Jamás compartiremos sus datos
-              </p>
-            </form>
-          )}
+              </form>
+            )}
+          </div>
         </div>
       </div>
     </div>
   );
+
 };
 
 export default FreeMaterialModal;
