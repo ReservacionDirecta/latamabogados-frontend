@@ -68,6 +68,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
     mlParams.append("fields[country]", formData.country);
     mlParams.append("fields[especialidad]", formData.especialidad);
     mlParams.append("fields[pagina_web]", formData.pagina_web);
+    mlParams.append("fields[source]", "class_booking");
     mlParams.append("ajax", "1");
     mlParams.append("ml-submit", "1");
     mlParams.append("anticsrf", "true");
@@ -184,7 +185,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
                     marginBottom: "10px",
                   }}
                 >
-                  🎁 Tu Regalo Especial
+                  🎁 Tu PDF GRATIS
                 </h4>
                 <p
                   style={{
@@ -193,8 +194,8 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
                     marginBottom: "15px",
                   }}
                 >
-                  Como agradecimiento por tu interés, puedes descargar nuestra
-                  guía gratuita.
+                  Descarga <strong>GRATIS</strong> nuestra guía "Common Law vs Civil Law" del
+                  Dr. Ambrose. ¡Sin costo alguno!
                 </p>
                 <a
                   href="/Common Law vs Civil Law - Dr. Marcus Ambrose - es.pdf"
@@ -229,7 +230,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
                     <polyline points="7 10 12 15 17 10"></polyline>
                     <line x1="12" y1="15" x2="12" y2="3"></line>
                   </svg>
-                  DESCARGAR PDF
+                  DESCARGAR PDF GRATIS
                 </a>
               </div>
 
@@ -407,7 +408,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
                   }}
                 >
                   SOLICITE SU INSCRIPCIÓN AL PRÓXIMO CICLO Y OBTENGA SU PDF
-                  GRATIS (Common Law vs. Civil Law):
+                  100% GRATIS (Common Law vs. Civil Law):
                 </p>
 
                 <form onSubmit={handleSubmit} className="ma-mailchimp-form">

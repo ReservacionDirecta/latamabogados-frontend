@@ -57,7 +57,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOpenVideo }) => {
       <div className="hero-content">
         <div className="hero-brand animate-reveal-in">
           <span className="hero-brand-latam">Latam</span>
-          <span className="hero-brand-abogados"> Abogados</span>
+          <span className="hero-brand-abogados">Abogados</span>
         </div>
 
         <h2 className="hero-main-title animate-reveal-up delay-100">

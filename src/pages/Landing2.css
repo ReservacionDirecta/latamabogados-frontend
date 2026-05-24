@@ -48,13 +48,13 @@
 
 .landing2-page .hero-main-title {
   font-size: clamp(26px, 4.5vw, 70px) !important;
-  margin: 10px auto 40px !important;
+  margin: 10px auto 5px !important;
   max-width: 900px !important;
 }
 
 .landing2-page .hero-services-grid {
   gap: 30px !important;
-  margin-top: 30px !important;
+  margin-top: 5px !important;
   max-width: 1100px !important;
 }
 
@@ -100,7 +100,7 @@
 /* Ajustes para Tablets (iPad) */
 @media (max-width: 1024px) {
     .landing2-page .hero-content {
-        padding-top: 60px !important;
+        padding-top: 100px !important;
         gap: 10px !important;
     }
 
@@ -140,16 +140,17 @@
         padding-top: 10px !important;
         padding-bottom: 10px !important;
         height: auto;
-        justify-content: flex-start;
+        justify-content: center;
         gap: 15px !important;
     }
 
     .landing2-page .hero-brand {
-        flex-direction: row !important;
+        flex-direction: column !important;
         flex-wrap: nowrap !important;
-        gap: 8px !important;
+        gap: 0px !important;
         margin-bottom: 5px !important;
         justify-content: center;
+        align-items: center;
         width: 100%;
     }
 
@@ -161,7 +162,7 @@
 
     .landing2-page .hero-main-title {
         font-size: clamp(24px, 6vw, 32px) !important;
-        margin: 5px 10px 25px !important;
+        margin: 5px 10px 5px !important;
         line-height: 1.2 !important;
         max-width: 90% !important;
         text-align: center;
@@ -247,7 +248,7 @@
 /* Ajustes para pantallas con poca altura (Landscape de móviles o iPads antiguos) */
 @media (max-height: 700px) {
     .landing2-page .hero-main-title {
-        font-size: 28px !important;
+        font-size: 25px !important;
         margin: 5px 10px 25px auto !important;
     }
     .landing2-page .hero-authority-badge {
@@ -257,4 +258,19 @@
     .landing2-page .hero-service-text {
         font-size: 18px !important;
     }
+}
+
+/* Permitir scroll únicamente en versión horizontal (landscape) de dispositivos móviles/tablets */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .landing2-page {
+    overflow: auto !important;
+    height: auto !important;
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .landing2-main {
+    overflow: visible !important;
+    height: auto !important;
+  }
 }

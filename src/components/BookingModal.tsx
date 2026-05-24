@@ -22,6 +22,8 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
     time: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   if (!isOpen) return null;
 
@@ -32,44 +34,77 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError('');
     
-    trackEvent('booking_submit', { booking_type: type });
+    try {
+      trackEvent('booking_submit', { booking_type: type });
 
-    const phoneNumber = "5219671234787";
-    const introText = type === 'clase' 
-      ? "Hola Dr. Marcus, me gustaría agendar una clase de inglés profesional."
-      : "Hola Dr. Marcus, me gustaría agendar una consulta legal.";
-    
-    // Constructing the message with clear line breaks
-    let message = `${introText}\n\n` +
-      `*Mis datos:*\n` +
-      `• Nombre: ${formData.name}\n` +
-      `• Teléfono: ${formData.phone}\n` +
-      `• Correo: ${formData.email}\n` +
-      (formData.website ? `• Web: ${formData.website}\n` : '') +
-      `• Ciudad: ${formData.city}\n` +
-      `• País: ${formData.country}\n` +
-      (formData.specialty ? `• Especialidad: ${formData.specialty}\n` : '');
-    
-    const dateLabel = type === 'clase' ? "Fecha aprox. de comenzar" : "Fecha sugerida";
-    message += `• ${dateLabel}: ${formData.date}\n`;
-    
-    if (type === 'consulta' && formData.time) {
-      message += `• Horario sugerido: ${formData.time}`;
-    }
-    
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
-    
-    trackEvent('whatsapp_redirect', { type: type });
-    trackConversion(type === 'clase' ? 'booking_class_success' : 'booking_consultation_success');
+      // --- MailerLite: Save lead with source tag for list separation ---
+      const MAILERLITE_ACTION_URL =
+        "https://assets.mailerlite.com/jsonp/2310556/forms/186565633275594594/subscribe";
+      const mlSource = type === 'clase' ? 'individual_class' : 'legal_consultation';
+      const mlParams = new URLSearchParams();
+      mlParams.append("fields[email]", formData.email);
+      mlParams.append("fields[name]", formData.name);
+      mlParams.append("fields[phone]", formData.phone);
+      mlParams.append("fields[city]", formData.city);
+      mlParams.append("fields[country]", formData.country);
+      mlParams.append("fields[especialidad]", formData.specialty);
+      mlParams.append("fields[pagina_web]", formData.website);
+      mlParams.append("fields[source]", mlSource);
+      mlParams.append("ajax", "1");
+      mlParams.append("ml-submit", "1");
+      mlParams.append("anticsrf", "true");
 
-    window.open(whatsappUrl, '_blank');
-    
-    if (type === 'clase') {
-      setIsSubmitted(true);
-    } else {
-      onClose();
+      // Fire-and-forget — don't block the WhatsApp redirect
+      fetch(MAILERLITE_ACTION_URL, {
+        method: "POST",
+        body: mlParams,
+        mode: "no-cors",
+      }).catch((err) => console.warn("MailerLite submission failed:", err));
+
+      // --- WhatsApp message ---
+      const phoneNumber = "5219671234787";
+      const introText = type === 'clase' 
+        ? "Hola Dr. Marcus, me gustaría agendar una clase de inglés profesional."
+        : "Hola Dr. Marcus, me gustaría agendar una consulta legal.";
+      
+      let message = `${introText}\n\n` +
+        `*Mis datos:*\n` +
+        `• Nombre: ${formData.name}\n` +
+        `• Teléfono: ${formData.phone}\n` +
+        `• Correo: ${formData.email}\n` +
+        (formData.website ? `• Web: ${formData.website}\n` : '') +
+        `• Ciudad: ${formData.city}\n` +
+        `• País: ${formData.country}\n` +
+        (formData.specialty ? `• Especialidad: ${formData.specialty}\n` : '');
+      
+      const dateLabel = type === 'clase' ? "Fecha aprox. de comenzar" : "Fecha sugerida";
+      message += `• ${dateLabel}: ${formData.date}\n`;
+      
+      if (type === 'consulta' && formData.time) {
+        message += `• Horario sugerido: ${formData.time}`;
+      }
+      
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+      
+      trackEvent('whatsapp_redirect', { type: type });
+      trackConversion(type === 'clase' ? 'booking_class_success' : 'booking_consultation_success');
+
+      window.open(whatsappUrl, '_blank');
+      
+      if (type === 'clase') {
+        setIsSubmitted(true);
+      } else {
+        onClose();
+      }
+    } catch (error) {
+      console.error('Error submitting booking form:', error);
+      setSubmitError('Ocurrió un error al procesar tu solicitud. Por favor intenta de nuevo.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -94,8 +129,8 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
         {isSubmitted && type === 'clase' ? (
           <div style={{ padding: '20px 0', textAlign: 'center' }}>
             <div style={{ padding: '20px', background: '#f8f9fa', borderRadius: '12px', marginBottom: '25px', border: '1px solid #eee' }}>
-              <h4 style={{ fontWeight: '800', fontSize: '1.1rem', color: '#1e1f33', marginBottom: '10px' }}>🎁 Tu Regalo Especial</h4>
-              <p style={{ fontSize: '0.9rem', color: '#555', marginBottom: '15px' }}>Como agradecimiento por tu interés, puedes descargar nuestra guía gratuita.</p>
+              <h4 style={{ fontWeight: '800', fontSize: '1.1rem', color: '#1e1f33', marginBottom: '10px' }}>🎁 Tu PDF GRATIS</h4>
+              <p style={{ fontSize: '0.9rem', color: '#555', marginBottom: '15px' }}>Descarga <strong>GRATIS</strong> nuestra guía "Common Law vs Civil Law" del Dr. Ambrose. ¡Sin costo alguno!</p>
               <a 
                 href="/Common Law vs Civil Law - Dr. Marcus Ambrose - es.pdf" 
                 download
@@ -116,7 +151,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
                 }}
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                DESCARGAR PDF
+                DESCARGAR PDF GRATIS
               </a>
             </div>
 
@@ -256,8 +291,14 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
             <span className="label-required">Obligatorio</span> Campos obligatorios
           </p>
 
-          <button type="submit" className="modal-submit-btn">
-            <i className="fab fa-whatsapp"></i> Enviar por WhatsApp
+          {submitError && (
+            <p style={{ color: 'red', fontSize: '0.8rem', textAlign: 'center', marginBottom: '10px' }}>
+              {submitError}
+            </p>
+          )}
+
+          <button type="submit" className="modal-submit-btn" disabled={isSubmitting} style={{ opacity: isSubmitting ? 0.7 : 1 }}>
+            <i className="fab fa-whatsapp"></i> {isSubmitting ? 'Procesando...' : 'Enviar por WhatsApp'}
           </button>
 
           <p style={{ 

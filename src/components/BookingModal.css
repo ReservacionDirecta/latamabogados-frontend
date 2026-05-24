@@ -12,6 +12,7 @@
   z-index: 9999;
   padding: 40px 20px; /* Consistent padding */
   overflow-y: auto; /* Enable scroll on the overlay itself */
+  -webkit-overflow-scrolling: touch; /* Momentum scrolling for smooth iOS scroll (iPhone/iPad) */
 }
 
 .modal-content {
@@ -23,8 +24,13 @@
   position: relative;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  margin-top: auto; /* Center vertically if space allows */
-  margin-bottom: auto;
+  margin: 20px auto;
+}
+
+@media (min-width: 768px) {
+  .modal-content {
+    max-width: 660px; /* Incrementa un ~20% el tamaño del modal en escritorio */
+  }
 }
 
 .modal-close {
@@ -152,10 +158,17 @@
 }
 
 @media (max-width: 480px) {
-  .form-row {
-    grid-template-columns: 1fr;
+  .modal-overlay {
+    padding: 15px 10px; /* Reduce padding lateral y superior del fondo del modal */
   }
   .modal-content {
-    padding: 30px 20px;
+    padding: 25px 15px; /* Más compacto en teléfonos */
+    border-radius: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }

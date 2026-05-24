@@ -89,6 +89,21 @@ const AgendarClase: React.FC = () => {
                         <p>{t("agendar_clase.benefit3")}</p>
                       </li>
                     </ul>
+                    
+                    <div className="ma-essay-quote-box">
+                      <div className="ma-essay-quote-title">
+                        <span>🎁</span> ENSAYO GRATUITO INCLUIDO: "LA VERDADERA DIFERENCIA"
+                      </div>
+                      <p className="ma-essay-quote-text">
+                        "Mi objetivo con este ensayo no es darle una lección de historia. En mi opinión, la gran mayoría de los programas de Inglés Jurídico se enfocan en material irrelevante."
+                      </p>
+                      <p className="ma-essay-quote-text">
+                        "Mi intención es darle una explicación práctica que lo convierta en un mejor abogado."
+                      </p>
+                      <p className="ma-essay-quote-text">
+                        "Pero primero, para entender el sistema anglosajón, usted debe saber dónde encaja todo. Esta será la mejor y más breve explicación que jamás leerá."
+                      </p>
+                    </div>
                   </div>
                   <div className="ma-objectives-grid">
                     <div className="objective-item">

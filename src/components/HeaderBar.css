@@ -138,3 +138,37 @@
     transform-origin: right center;
   }
 }
+
+/* Mobile Landscape Optimization (25% smaller) */
+@media (max-width: 1024px) and (orientation: landscape), (max-height: 550px) and (orientation: landscape) {
+  .ct-header-main {
+    padding: 8px 0;
+  }
+
+  .ct-main-start {
+    gap: 15px;
+  }
+
+  .default-logo {
+    height: 22.5px;
+    max-width: 120px;
+  }
+
+  .header-lang-container {
+    transform: scale(0.6375);
+    transform-origin: left center;
+  }
+
+  .ct-social-text {
+    font-size: 16px;
+  }
+}
+
+/* Ensure right alignment of language toggle if social text gets hidden on small screens */
+@media (max-width: 900px) and (orientation: landscape) {
+  .header-lang-container {
+    transform-origin: right center;
+  }
+}
+
+

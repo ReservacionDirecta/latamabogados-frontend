@@ -740,21 +740,68 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     background-color: var(--latam-maroon);
     color: white;
     border-radius: 50%;
     font-weight: 800;
-    font-size: 25px;
+    font-size: 16px;
     box-shadow: 0 4px 10px rgba(142, 61, 74, 0.2);
 }
 
 .ma-benefits-list p {
     margin: 0;
-    font-size: 25px;
+    font-size: clamp(15px, 2vw, 17px);
     line-height: 1.5;
     color: var(--latam-black);
     font-weight: 600;
     text-align: left;
+}
+
+/* Essay Quote Card - Responsive design for both desktop and mobile */
+.ma-essay-quote-box {
+    margin-top: 25px;
+    padding: 24px;
+    background: rgba(142, 61, 74, 0.03);
+    border-left: 4px solid var(--latam-maroon);
+    border-top: 1px solid rgba(142, 61, 74, 0.08);
+    border-right: 1px solid rgba(142, 61, 74, 0.08);
+    border-bottom: 1px solid rgba(142, 61, 74, 0.08);
+    border-radius: 0 12px 12px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    text-align: left;
+}
+
+.ma-essay-quote-title {
+    font-size: clamp(0.75rem, 1.8vw, 0.85rem);
+    font-weight: 800;
+    color: var(--latam-maroon);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ma-essay-quote-text {
+    font-size: clamp(14px, 1.8vw, 15px);
+    line-height: 1.6;
+    color: #444;
+    font-style: italic;
+    margin: 0 0 12px 0;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.ma-essay-quote-text:last-of-type {
+    margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+    .ma-essay-quote-box {
+        padding: 16px;
+        margin-top: 20px;
+    }
 }

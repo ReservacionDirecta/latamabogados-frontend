@@ -188,7 +188,7 @@
   gap: 20px;
   border: 2px solid #8e3d4a;
   border-radius: 6px;
-  padding: 25 px;
+  padding: 25px;
   background-color: rgba(255, 255, 255, 0.05);
 }
 
@@ -439,12 +439,24 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero-content {
-    padding-top:25px;
+    padding-top: 25px;
     padding-bottom: 25px;
     min-height: auto;
     gap: 10px;
+  }
+
+  /* Permitir scroll únicamente en vista horizontal de móvil/tablet para ver todo el contenido */
+  @media (orientation: landscape) {
+    .hero-section {
+      height: auto !important;
+      overflow: visible !important;
+    }
+
+    .hero-content {
+      padding-bottom: 160px !important; /* Espacio para que el banner flotante no tape la tarjeta en móvil horizontal */
+    }
   }
   
   .hero-brand-latam,
