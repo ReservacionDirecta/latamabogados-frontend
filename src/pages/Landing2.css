@@ -184,6 +184,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between; /* Botón siempre abajo */
+        text-transform: uppercase;
     }
 
     .landing2-page .hero-service-text {
@@ -256,7 +257,7 @@
         margin-top: 25px !important;
     }
     .landing2-page .hero-service-text {
-        font-size: 18px !important;
+        font-size: 10px !important;
         text-transform: uppercase;
     }
 }
