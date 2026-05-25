@@ -60,9 +60,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOpenVideo }) => {
           <span className="hero-brand-abogados">Abogados</span>
         </div>
 
-        <h2 className="hero-main-title animate-reveal-up delay-100">
-          {t('hero.main_title')}
-        </h2>
+        <h2 
+          className="hero-main-title animate-reveal-up delay-100"
+          dangerouslySetInnerHTML={{ __html: t('hero.main_title') }}
+        />
 
         {/* ── Stack de Servicios ── */}
         <div className="hero-services-grid">

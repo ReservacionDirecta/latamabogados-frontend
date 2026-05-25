@@ -154,6 +154,10 @@
     margin: 20px auto;
     animation: fadeInUp 0.8s 0.2s ease-out forwards;
 }
+.hero-main-title br {
+  display: none;
+}
+
 
 /* ── Servicios Grid ── */
 .hero-services-grid {
@@ -209,6 +213,7 @@
 /* Second card text color - Red Maroon */
 .hero-service-card:last-child .hero-service-text {
   color: #1e1f33;
+  text-transform: uppercase;
 }
 
 /* ── Botones CTA (LEER MÁS) ── */
@@ -471,6 +476,9 @@
     line-height: 1.2;
     margin: 0 auto;
   }
+  .hero-main-title br {
+    display: inline;
+  }
 
   .hero-services-grid {
     grid-template-columns: 1fr;
@@ -491,7 +499,7 @@
   .hero-authority-badge {
     padding: 20px;
     margin: 20px;
-    width: 95%;
+    width: 50%;
   }
 
   .authority-main-content {

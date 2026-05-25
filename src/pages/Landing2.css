@@ -145,9 +145,9 @@
     }
 
     .landing2-page .hero-brand {
-        flex-direction: column !important;
+        flex-direction: row !important;
         flex-wrap: nowrap !important;
-        gap: 0px !important;
+        gap: 8px !important;
         margin-bottom: 5px !important;
         justify-content: center;
         align-items: center;
@@ -241,14 +241,14 @@
     }
     .landing2-page .hero-brand-latam,
     .landing2-page .hero-brand-abogados {
-        font-size: 42px !important;
+        font-size: 40px !important;
     }
 }
 
 /* Ajustes para pantallas con poca altura (Landscape de móviles o iPads antiguos) */
 @media (max-height: 700px) {
     .landing2-page .hero-main-title {
-        font-size: 42px !important;
+        font-size: 22px !important;
         margin: 18px 25px  !important;
     }
     .landing2-page .hero-authority-badge {
@@ -257,6 +257,7 @@
     }
     .landing2-page .hero-service-text {
         font-size: 18px !important;
+        text-transform: uppercase;
     }
 }
 
