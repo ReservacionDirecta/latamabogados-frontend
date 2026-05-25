@@ -3,17 +3,17 @@
    ══════════════════════════════════════════════ */
 
 .modal-content.free-modal-content {
-  max-width: 850px;
+  max-width: 700px;
   padding: 0;
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  min-height: 580px;
+  min-height: 480px;
 }
 
 .free-modal-left {
-  flex: 1.1;
-  background: #f8f9fa;
+  flex: 0.9;
+  background: #5c0d18; /* Matching dark wine background of the flyer */
   position: relative;
   display: flex;
   align-items: center;
@@ -24,13 +24,13 @@
 .free-modal-cover-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Preserve original aspect ratio without cropping */
   display: block;
 }
 
 .free-modal-right {
   flex: 1.2;
-  padding: 40px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,18 +41,19 @@
 @media (max-width: 768px) {
   .modal-content.free-modal-content {
     flex-direction: column;
-    max-width: 480px;
+    max-width: 400px;
     min-height: auto;
     margin: 10px auto;
   }
 
   .free-modal-left {
-    height: 280px;
+    height: 250px;
     flex: none;
+    background: #5c0d18;
   }
 
   .free-modal-right {
-    padding: 25px 20px;
+    padding: 20px 15px;
     flex: none;
   }
 }

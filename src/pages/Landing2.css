@@ -29,7 +29,7 @@
 }
 
 .landing2-page .hero-content {
-  padding-top: 30px !important;
+  padding-top: 80px !important;
   padding-bottom: 30px !important;
   gap: 0px !important; /* Mínima separación */
   max-width: 1300px;
@@ -248,11 +248,11 @@
 /* Ajustes para pantallas con poca altura (Landscape de móviles o iPads antiguos) */
 @media (max-height: 700px) {
     .landing2-page .hero-main-title {
-        font-size: 25px !important;
-        margin: 5px 10px 25px auto !important;
+        font-size: 42px !important;
+        margin: 18px 25px  !important;
     }
     .landing2-page .hero-authority-badge {
-        padding: 10px !important;
+        padding: 25px !important;
         margin-top: 10px !important;
     }
     .landing2-page .hero-service-text {

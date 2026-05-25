@@ -54,7 +54,7 @@ const FloatingBanner: React.FC = () => {
           {/* Contenedor de la imagen */}
           <div className="ma-banner-img-container">
             <img 
-              src="/mpabe9cg-y-CIVIL-LAW-2.png" 
+              src="/y CIVIL LAW.png" 
               alt="Common Law vs Civil Law" 
               className="ma-banner-img"
             />
@@ -156,7 +156,7 @@ const FloatingBanner: React.FC = () => {
             /* --- DESKTOP VIEW (Tarjetas verticales, imagen natural encima con hover animado) --- */
             @media (min-width: 768px) {
               .ma-floating-banner {
-                width: 380px; /* Aumenta un ~20% el tamaño del pop-up en escritorio */
+                width: 300px; /* Aumenta un ~20% el tamaño del pop-up en escritorio */
                 flex-direction: column;
                 align-items: stretch;
                 transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -169,43 +169,35 @@ const FloatingBanner: React.FC = () => {
 
               .ma-banner-img-container {
                 width: 100%;
+                height: 60%;
                 display: block;
                 background: #fff;
-                max-height: 0;
-                opacity: 0;
-                overflow: hidden;
-                transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-              }
-
-              .ma-floating-banner:hover .ma-banner-img-container {
-                max-height: 500px; /* Escalado a juego con el ancho mayor */
+                max-height: 400px;
                 opacity: 1;
+                overflow: hidden;
                 border-bottom: 1px solid #f0f0f0;
               }
 
               .ma-banner-img {
                 width: 100%;
-                height: auto;
-                max-height: 480px; /* Escalado a juego con el ancho mayor */
                 display: block;
-                object-fit: contain;
+                object-fit: cover;
                 object-position: center top;
                 border-top-left-radius: 15px;
                 border-top-right-radius: 15px;
-                transform: scale(0.96);
                 transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
               }
 
               .ma-floating-banner:hover .ma-banner-img {
-                transform: scale(1);
+                transform: scale(1.04);
               }
 
               .ma-banner-content {
-                padding: 24px;
+                padding: 20px 24px;
               }
             }
 
-            /* --- MOBILE VIEW (Compacto horizontal, miniatura natural al lado con hover animado) --- */
+            /* --- MOBILE VIEW (Compacto horizontal, miniatura siempre visible a la izquierda) --- */
             @media (max-width: 767px) {
               .ma-floating-banner {
                 left: 15px;
@@ -220,19 +212,12 @@ const FloatingBanner: React.FC = () => {
 
               .ma-banner-img-container {
                 flex-shrink: 0;
-                width: 0;
-                opacity: 0;
+                width: 85px;
+                opacity: 1;
                 overflow: hidden;
                 display: flex;
                 align-items: center;
-                padding: 15px 0;
-                transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, padding 0.4s ease;
-              }
-
-              .ma-floating-banner:hover .ma-banner-img-container {
-                width: 110px;
-                opacity: 1;
-                padding: 15px 0 15px 15px;
+                padding: 12px 0 12px 12px;
               }
 
               .ma-banner-img {
@@ -242,16 +227,15 @@ const FloatingBanner: React.FC = () => {
                 object-fit: contain;
                 border-radius: 6px;
                 box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-                transform: scale(0.9);
                 transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
               }
 
               .ma-floating-banner:hover .ma-banner-img {
-                transform: scale(1);
+                transform: scale(1.04);
               }
 
               .ma-banner-content {
-                padding: 15px 15px 15px 12px;
+                padding: 15px;
                 flex-grow: 1;
               }
 
