@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Globe, Mail, Phone, ArrowLeft, Download } from 'lucide-react';
 import SEO from '../components/SEO';
@@ -15,9 +16,9 @@ const Vcard: React.FC = () => {
       />
       <div className="vcard-container glass-panel">
         <div style={{ textAlign: 'left', marginBottom: '20px' }}>
-          <a href="/#inicio" className="back-link">
+          <Link to="/" className="back-link">
             <ArrowLeft size={16} /> {t('contact.back_to_start')}
-          </a>
+          </Link>
         </div>
 
         <img 
@@ -35,9 +36,9 @@ const Vcard: React.FC = () => {
         <p className="vcard-label">{t('contact.direct_info')}</p>
 
         <div className="vcard-actions">
-          <a href="https://www.latamabogados.com/" className="vcard-btn vcard-btn-primary">
+          <Link to="/" className="vcard-btn vcard-btn-primary">
             <Globe size={20} /> {t('nav.home')}
-          </a>
+          </Link>
           <a href="mailto:consulta@latamabogados.com" className="vcard-btn vcard-btn-primary">
             <Mail size={20} /> {t('contact.email_label')}
           </a>

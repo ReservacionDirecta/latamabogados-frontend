@@ -10,7 +10,9 @@ const languages = [
 const LanguageSwitcher: React.FC = () => {
   const { i18n } = useTranslation();
 
-  const activeIndex = languages.findIndex(l => l.code === i18n.language) ?? 0;
+  const currentLang = i18n.language ? i18n.language.split('-')[0] : 'es';
+  const activeIndex = languages.findIndex(l => l.code === currentLang);
+  const finalIndex = activeIndex === -1 ? 0 : activeIndex;
 
   const changeLanguage = (code: string) => {
     i18n.changeLanguage(code);
@@ -22,16 +24,16 @@ const LanguageSwitcher: React.FC = () => {
       {/* Sliding highlight */}
       <span
         className="ls-slider"
-        style={{ transform: `translateX(${activeIndex * 100}%)` }}
+        style={{ transform: `translateX(${finalIndex * 100}%)` }}
         aria-hidden="true"
       />
       {languages.map((lang) => (
         <button
           key={lang.code}
-          className={`ls-btn ${i18n.language === lang.code ? 'ls-active' : ''}`}
+          className={`ls-btn ${currentLang === lang.code ? 'ls-active' : ''}`}
           onClick={() => changeLanguage(lang.code)}
           title={lang.code === 'es' ? 'Español' : 'Português'}
-          aria-pressed={i18n.language === lang.code}
+          aria-pressed={currentLang === lang.code}
         >
           {lang.label}
         </button>

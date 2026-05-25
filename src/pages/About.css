@@ -680,3 +680,11 @@
     width: 80vw !important; 
   }
 }
+
+/* Ajuste responsive para la cuadrícula de contacto */
+@media (max-width: 768px) {
+  .contact-grid-mobile {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+}
