@@ -7,6 +7,7 @@ const FloatingBanner: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showGiftTrigger, setShowGiftTrigger] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -15,6 +16,7 @@ const FloatingBanner: React.FC = () => {
     const isDev = import.meta.env.DEV;
     if (dismissed && !isDev) {
       setIsDismissed(true);
+      setShowGiftTrigger(true);
       return;
     }
 
@@ -35,9 +37,19 @@ const FloatingBanner: React.FC = () => {
     setIsVisible(false);
     setIsDismissed(true);
     sessionStorage.setItem('bannerDismissed', 'true');
+    setShowGiftTrigger(true);
   };
 
-  if ((!isVisible || isDismissed) && !isModalOpen) return null;
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    setShowGiftTrigger(true);
+  };
+
+  const handleGiftClick = () => {
+    setIsModalOpen(true);
+  };
+
+  if ((!isVisible || isDismissed) && !isModalOpen && !showGiftTrigger) return null;
 
   return (
     <>
@@ -76,8 +88,10 @@ const FloatingBanner: React.FC = () => {
               DESCARGAR GRATIS
             </button>
           </div>
+        </div>
+      )}
 
-          <style>{`
+      <style>{`
             .ma-floating-banner {
               position: fixed;
               bottom: 20px;
@@ -272,13 +286,74 @@ const FloatingBanner: React.FC = () => {
                 opacity: 1;
               }
             }
+
+            .ma-floating-gift-btn {
+              position: fixed;
+              bottom: 20px;
+              right: 20px;
+              width: 44px;
+              height: 44px;
+              border-radius: 50%;
+              background: var(--latam-maroon, #8e3d4a);
+              border: none;
+              font-size: 20px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              z-index: 9999;
+              box-shadow: 0 4px 15px rgba(142, 61, 74, 0.4);
+              transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+              animation: pulseGift 2s infinite, slideInGift 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+
+            .ma-floating-gift-btn:hover {
+              transform: scale(1.1);
+              box-shadow: 0 6px 20px rgba(142, 61, 74, 0.6);
+              background: #a04957;
+            }
+
+            .ma-floating-gift-btn:active {
+              transform: scale(0.95);
+            }
+
+            @keyframes pulseGift {
+              0% {
+                box-shadow: 0 4px 15px rgba(142, 61, 74, 0.4);
+              }
+              50% {
+                box-shadow: 0 4px 25px rgba(142, 61, 74, 0.7);
+              }
+              100% {
+                box-shadow: 0 4px 15px rgba(142, 61, 74, 0.4);
+              }
+            }
+
+            @keyframes slideInGift {
+              from {
+                transform: scale(0) rotate(-180deg);
+                opacity: 0;
+              }
+              to {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+              }
+            }
           `}</style>
-        </div>
+
+      {showGiftTrigger && !isModalOpen && (
+        <button 
+          onClick={handleGiftClick}
+          className="ma-floating-gift-btn"
+          aria-label="Abrir material gratuito"
+        >
+          🎁
+        </button>
       )}
 
       <FreeMaterialModal 
         isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
+        onClose={handleModalClose} 
       />
     </>
   );

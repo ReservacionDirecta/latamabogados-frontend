@@ -10,7 +10,7 @@
   align-items: flex-start; /* Changed from center to allow scrolling from top */
   justify-content: center;
   z-index: 9999;
-  padding: 40px 20px; /* Consistent padding */
+  padding: 5px 5px; /* Consistent padding */
   overflow-y: auto; /* Enable scroll on the overlay itself */
   -webkit-overflow-scrolling: touch; /* Momentum scrolling for smooth iOS scroll (iPhone/iPad) */
 }
