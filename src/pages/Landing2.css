@@ -248,12 +248,12 @@
 /* Ajustes para pantallas con poca altura (Landscape de móviles o iPads antiguos) */
 @media (max-height: 700px) {
     .landing2-page .hero-main-title {
-        font-size: 22px !important;
-        margin: 18px 25px  !important;
+        font-size: 32px !important;
+        margin: 0px 0px 40px 0px  !important;
     }
     .landing2-page .hero-authority-badge {
         padding: 25px !important;
-        margin-top: 10px !important;
+        margin-top: 25px !important;
     }
     .landing2-page .hero-service-text {
         font-size: 18px !important;

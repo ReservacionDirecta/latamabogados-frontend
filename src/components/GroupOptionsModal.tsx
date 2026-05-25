@@ -198,7 +198,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
                   Dr. Ambrose. ¡Sin costo alguno!
                 </p>
                 <a
-                  href="/Common Law vs Civil Law - Dr. Marcus Ambrose - es.pdf"
+                  href="/guia-common-law-vs-civil-law.pdf"
                   download
                   className="ma-btn-black"
                   style={{
@@ -379,9 +379,9 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
                           textTransform: "uppercase",
                         }}
                       >
-                        NOTA: Para recibir promociones, contenido gratuito y la
-                        invitación al próximo ciclo antes de que inicie, debes
-                        inscribirte en la lista de espera. 🎁
+                        NOTA: Al inscribirte en la lista de espera, recibirás
+                        promociones, la invitación al próximo ciclo antes de que
+                        inicie y el contenido gratuito incluido. 🎁
                       </p>
                     </div>
                   </div>
@@ -407,8 +407,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
                     letterSpacing: "0.05em",
                   }}
                 >
-                  SOLICITE SU INSCRIPCIÓN AL PRÓXIMO CICLO Y OBTENGA SU PDF
-                  100% GRATIS (Common Law vs. Civil Law):
+                  SOLICITE SU INSCRIPCIÓN AL PRÓXIMO CICLO (INCLUYE EL PDF GRATUITO):
                 </p>
 
                 <form onSubmit={handleSubmit} className="ma-mailchimp-form">

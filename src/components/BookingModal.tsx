@@ -132,7 +132,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
               <h4 style={{ fontWeight: '800', fontSize: '1.1rem', color: '#1e1f33', marginBottom: '10px' }}>🎁 Tu PDF GRATIS</h4>
               <p style={{ fontSize: '0.9rem', color: '#555', marginBottom: '15px' }}>Descarga <strong>GRATIS</strong> nuestra guía "Common Law vs Civil Law" del Dr. Ambrose. ¡Sin costo alguno!</p>
               <a 
-                href="/Common Law vs Civil Law - Dr. Marcus Ambrose - es.pdf" 
+                href="/guia-common-law-vs-civil-law.pdf" 
                 download
                 className="ma-btn-black"
                 style={{ 

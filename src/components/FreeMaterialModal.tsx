@@ -208,7 +208,7 @@ const FreeMaterialModal: React.FC<FreeMaterialModalProps> = ({
                     Dr. Ambrose. ¡Sin costo alguno!
                   </p>
                   <a
-                    href="/Common Law vs Civil Law - Dr. Marcus Ambrose - es.pdf"
+                    href="/guia-common-law-vs-civil-law.pdf"
                     download
                     className="ma-btn-black"
                     style={{
