@@ -4,7 +4,7 @@ import { Send, MapPin, Phone, Mail } from 'lucide-react';
 import HeaderBar from '../components/HeaderBar';
 import FooterBar from '../components/FooterBar';
 import SEO from '../components/SEO';
-import { trackEvent, trackConversion } from '../utils/analytics';
+import { trackEvent, trackConversion, trackFormSubmit } from '../utils/analytics';
 import './AgendarClase.css'; 
 import './About.css';
 
@@ -25,8 +25,9 @@ const Contact: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const formElement = e.currentTarget;
     setIsSubmitting(true);
     
     trackEvent('form_start', { form_id: 'contact_form' });
@@ -37,7 +38,7 @@ const Contact: React.FC = () => {
       setSubmitSuccess(true);
       setFormData({ name: '', email: '', phone: '', message: '' });
       
-      trackEvent('form_submission', { form_id: 'contact_form' });
+      trackFormSubmit(formElement, 'contact_form');
       trackConversion('contact_success');
     }, 1500);
   };
@@ -111,7 +112,7 @@ const Contact: React.FC = () => {
                       <button className="ma-btn ma-btn-outline" style={{ marginTop: '15px' }} onClick={() => setSubmitSuccess(false)}>{t('contact.send_another')}</button>
                     </div>
                   ) : (
-                    <form className="ma-form" onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
+                    <form id="contact-form" className="ma-form" onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
                       <div style={{ marginBottom: '15px' }}>
                         <input 
                           type="text" 

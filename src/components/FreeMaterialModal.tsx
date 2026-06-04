@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { X, CheckCircle } from "lucide-react";
+import { trackFormSubmit, trackConversion } from "../utils/analytics";
 import "./BookingModal.css";
 import "./FreeMaterialModal.css";
 
@@ -49,8 +50,9 @@ const FreeMaterialModal: React.FC<FreeMaterialModalProps> = ({
     "EAASzhKZCH3lEBRcwPlDUOP9NHzQxBMU5MDcyzK0fZA0QvDQcvaMfjTZB4sxs9SClpXhd1yhzyJUonIZBxAGUuAHnasx5nsbgZCoIdsbsVWbzCEYEZCYJWZCWDuqmzNwfLdySqZCvITzUe7nLZBuK6IbATm13G1eURHyt4u4xPoPw7STizGsYutNldjMbVjJj2sv6jFwZDZD";
   const PIXEL_ID = "4357457554583645";
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const formElement = e.currentTarget;
     setStatus("loading");
 
     // 1. MailerLite Submission
@@ -114,6 +116,9 @@ const FreeMaterialModal: React.FC<FreeMaterialModalProps> = ({
       );
 
       await Promise.allSettled([mlRequest, capiRequest]);
+
+      trackFormSubmit(formElement, "free-material-form");
+      trackConversion("free_material_success");
 
       setStatus("success");
     } catch (error) {
@@ -272,7 +277,7 @@ const FreeMaterialModal: React.FC<FreeMaterialModalProps> = ({
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="booking-form" style={{ display: "grid", gap: "10px" }}>
+              <form id="free-material-form" onSubmit={handleSubmit} className="booking-form" style={{ display: "grid", gap: "10px" }}>
                 <div className="form-group">
                   <label style={{ fontSize: "0.7rem", fontWeight: "800", color: "#1e1f33" }}>
                     CORREO ELECTRÓNICO <span style={{ color: "var(--latam-maroon)" }}>*</span>
@@ -319,7 +324,7 @@ const FreeMaterialModal: React.FC<FreeMaterialModalProps> = ({
                   </div>
                   <div className="form-group">
                     <label style={{ fontSize: "0.7rem", fontWeight: "800", color: "#1e1f33" }}>
-                      APELLIDO <span style={{ color: "var(--latam-maroon)" }}>*</span>
+                      APELLIDO <span style={{ opacity: 0.6 }}>(OPCIONAL)</span>
                     </label>
                     <input
                       type="text"
@@ -327,7 +332,6 @@ const FreeMaterialModal: React.FC<FreeMaterialModalProps> = ({
                       value={formData.last_name}
                       onChange={handleInputChange}
                       placeholder="Pérez"
-                      required
                       style={{
                         width: "100%",
                         padding: "8px 12px",
@@ -342,7 +346,7 @@ const FreeMaterialModal: React.FC<FreeMaterialModalProps> = ({
 
                 <div className="form-group">
                   <label style={{ fontSize: "0.7rem", fontWeight: "800", color: "#1e1f33" }}>
-                    NÚMERO DE TELÉFONO <span style={{ color: "var(--latam-maroon)" }}>*</span>
+                    NÚMERO DE TELÉFONO <span style={{ opacity: 0.6 }}>(OPCIONAL)</span>
                   </label>
                   <input
                     type="tel"
@@ -350,7 +354,6 @@ const FreeMaterialModal: React.FC<FreeMaterialModalProps> = ({
                     value={formData.phone}
                     onChange={handleInputChange}
                     placeholder="+52 1..."
-                    required
                     style={{
                       width: "100%",
                       padding: "8px 12px",

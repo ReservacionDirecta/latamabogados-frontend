@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { X, Send, CheckCircle } from "lucide-react";
+import { trackFormSubmit, trackConversion } from "../utils/analytics";
 import "./BookingModal.css";
 
 declare global {
@@ -54,8 +55,9 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
     "EAASzhKZCH3lEBRcwPlDUOP9NHzQxBMU5MDcyzK0fZA0QvDQcvaMfjTZB4sxs9SClpXhd1yhzyJUonIZBxAGUuAHnasx5nsbgZCoIdsbsVWbzCEYEZCYJWZCWDuqmzNwfLdySqZCvITzUe7nLZBuK6IbATm13G1eURHyt4u4xPoPw7STizGsYutNldjMbVjJj2sv6jFwZDZD";
   const PIXEL_ID = "4357457554583645";
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const formElement = e.currentTarget;
     setStatus("loading");
 
     // 1. MailerLite Submission
@@ -120,6 +122,9 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
       );
 
       await Promise.allSettled([mlRequest, capiRequest]);
+
+      trackFormSubmit(formElement, "group-options-form");
+      trackConversion("group_options_success");
 
       setStatus("success");
     } catch (error) {
@@ -410,7 +415,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
                   SOLICITE SU INSCRIPCIÓN AL PRÓXIMO CICLO (INCLUYE EL PDF GRATUITO):
                 </p>
 
-                <form onSubmit={handleSubmit} className="ma-mailchimp-form">
+                <form id="group-options-form" onSubmit={handleSubmit} className="ma-mailchimp-form">
                   <div style={{ display: "grid", gap: "10px" }}>
                     <div className="form-group">
                       <label

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Calendar, Clock, Globe, User, Briefcase, Mail, ExternalLink } from 'lucide-react';
-import { trackEvent, trackConversion } from '../utils/analytics';
+import { trackEvent, trackConversion, trackFormSubmit } from '../utils/analytics';
 import './BookingModal.css';
 
 interface BookingModalProps {
@@ -32,12 +32,14 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const formElement = e.currentTarget;
     setIsSubmitting(true);
     setSubmitError('');
     
     try {
+      trackFormSubmit(formElement, type === 'clase' ? 'booking-class-form' : 'booking-consultation-form');
       trackEvent('booking_submit', { booking_type: type });
 
       // --- MailerLite: Save lead with source tag for list separation ---
@@ -76,12 +78,14 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
         `• Teléfono: ${formData.phone}\n` +
         `• Correo: ${formData.email}\n` +
         (formData.website ? `• Web: ${formData.website}\n` : '') +
-        `• Ciudad: ${formData.city}\n` +
-        `• País: ${formData.country}\n` +
+        (formData.city ? `• Ciudad: ${formData.city}\n` : '') +
+        (formData.country ? `• País: ${formData.country}\n` : '') +
         (formData.specialty ? `• Especialidad: ${formData.specialty}\n` : '');
       
       const dateLabel = type === 'clase' ? "Fecha aprox. de comenzar" : "Fecha sugerida";
-      message += `• ${dateLabel}: ${formData.date}\n`;
+      if (formData.date) {
+        message += `• ${dateLabel}: ${formData.date}\n`;
+      }
       
       if (type === 'consulta' && formData.time) {
         message += `• Horario sugerido: ${formData.time}`;
@@ -176,7 +180,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
             </button>
           </div>
         ) : (
-        <form onSubmit={handleSubmit} className="booking-form">
+        <form id={type === 'clase' ? 'booking-class-form' : 'booking-consultation-form'} onSubmit={handleSubmit} className="booking-form">
           <div className="form-row">
             <div className="form-group">
               <label><User size={18} /> Nombre Completo <span className="label-required">Obligatorio</span></label>
@@ -226,24 +230,22 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
             </div>
           </div>
 
-          <div className="form-row">
+           <div className="form-row">
             <div className="form-group">
-              <label><Globe size={18} /> Ciudad <span className="label-required">Obligatorio</span></label>
+              <label><Globe size={18} /> Ciudad (Opcional)</label>
               <input 
                 type="text" 
                 name="city" 
-                required 
                 placeholder="Ej. Bogotá"
                 value={formData.city}
                 onChange={handleChange}
               />
             </div>
             <div className="form-group">
-              <label><Globe size={18} /> País <span className="label-required">Obligatorio</span></label>
+              <label><Globe size={18} /> País (Opcional)</label>
               <input 
                 type="text" 
                 name="country" 
-                required 
                 placeholder="Ej. Colombia"
                 value={formData.country}
                 onChange={handleChange}
@@ -264,22 +266,20 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, type }) =>
 
           <div className={type === 'clase' ? 'form-group' : 'form-row'}>
             <div className="form-group">
-              <label><Calendar size={18} /> {type === 'clase' ? 'Fecha aproximada de comenzar' : 'Fecha sugerida'} <span className="label-required">Obligatorio</span></label>
+              <label><Calendar size={18} /> {type === 'clase' ? 'Fecha aprox. de comenzar' : 'Fecha sugerida'} (Opcional)</label>
               <input 
                 type="date" 
                 name="date" 
-                required 
                 value={formData.date}
                 onChange={handleChange}
               />
             </div>
             {type === 'consulta' && (
               <div className="form-group">
-                <label><Clock size={18} /> Horario sugerido <span className="label-required">Obligatorio</span></label>
+                <label><Clock size={18} /> Horario sugerido (Opcional)</label>
                 <input 
                   type="time" 
                   name="time" 
-                  required 
                   value={formData.time}
                   onChange={handleChange}
                 />
