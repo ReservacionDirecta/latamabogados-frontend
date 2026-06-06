@@ -73,5 +73,12 @@ export const trackFormSubmit = (formElement: HTMLFormElement, formId?: string) =
     form_id: resolvedId,
     form_class: formElement.className,
   });
+
+  // Google Ads conversion tracking for lead form submission
+  if (window.gtag) {
+    window.gtag('event', 'ads_conversion_SUBMIT_LEAD_FORM_1', {
+      form_id: resolvedId,
+    });
+  }
 };
 
