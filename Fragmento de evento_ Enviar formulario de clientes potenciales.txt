@@ -1,0 +1,4 @@
+<!-- Event snippet for Enviar formulario de clientes potenciales conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-18115076724/fQBNCLuqhrAcEPTE-L1D'});
+</script>
