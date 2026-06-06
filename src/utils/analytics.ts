@@ -79,6 +79,9 @@ export const trackFormSubmit = (formElement: HTMLFormElement, formId?: string) =
     window.gtag('event', 'ads_conversion_SUBMIT_LEAD_FORM_1', {
       form_id: resolvedId,
     });
+    window.gtag('event', 'conversion', {
+      send_to: 'AW-18115076724/fQBNCLuqhrAcEPTE-L1D',
+    });
   }
 };
 
