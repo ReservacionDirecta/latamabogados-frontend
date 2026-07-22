@@ -87,7 +87,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
       if (window.fbq) {
         window.fbq("track", "Lead", {
           content_name: "Inscripción Clases Grupales",
-          value: 25.0,
+          value: 20.0,
           currency: "USD",
         });
       }
@@ -113,7 +113,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
                 },
                 custom_data: {
                   currency: "USD",
-                  value: "25.00",
+                  value: "20.00",
                 },
               },
             ],
@@ -314,7 +314,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
                         <strong style={{ fontWeight: "800", color: "#1e1f33" }}>
                           CLASES CON SUS COLEGAS:
                         </strong>{" "}
-                        <span className="ma-price-tag">$25 USD</span> POR HORA A
+                        <span className="ma-price-tag">$20 USD</span> POR HORA A
                         CADA PARTICIPANTE. SESIONES DISEÑADAS PARA BUFETES O
                         GRUPOS CON INVERSIÓN COMPARTIDA.
                       </span>
@@ -372,7 +372,7 @@ const GroupOptionsModal: React.FC<GroupOptionsModalProps> = ({
                         <strong style={{ fontWeight: "800", color: "#1e1f33" }}>
                           CURSOS SABATINOS:
                         </strong>{" "}
-                        <span className="ma-price-tag">$25 USD</span> POR HORA.
+                        <span className="ma-price-tag">$20 USD</span> POR HORA.
                         PROGRAMAS EN LÍNEA. CUPOS LIMITADOS.
                       </span>
                       <p
