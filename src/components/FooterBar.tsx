@@ -35,6 +35,37 @@ const FooterBar: React.FC = () => {
         </div>
       </div>
 
+      {/* ── NAVIGATION ROW ── */}
+      <div className="ct-footer-nav">
+        <div className="ct-container">
+          <div className="ct-footer-nav-grid">
+            <div className="ct-footer-nav-col">
+              <h4>{t('nav.home')}</h4>
+              <ul>
+                <li><a href="/">{t('nav.home')}</a></li>
+                <li><a href="/acerca-de">{t('nav.about')}</a></li>
+                <li><a href="/contacto">{t('nav.contact')}</a></li>
+              </ul>
+            </div>
+            <div className="ct-footer-nav-col">
+              <h4>{t('nav.services')}</h4>
+              <ul>
+                <li><a href="/agendar-clase-de-inges-profesional">{t('nav.classes')}</a></li>
+                <li><a href="/agendar-consulta-legal">{t('nav.consultation')}</a></li>
+              </ul>
+            </div>
+            <div className="ct-footer-nav-col">
+              <h4>{t('articles.title')}</h4>
+              <ul>
+                <li><a href="/articulos-y-publicaciones">{t('articles.title')}</a></li>
+                <li><a href="/ejemplos-de-escritos-legales">{t('legal_writings_page.title')}</a></li>
+                <li><a href="/nuestra-conciencia-social">{t('social_conscience.humanitarian_title')}</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* ── BOTTOM ROW ── */}
       <div className="ct-footer-bottom">
         <div className="ct-container">
