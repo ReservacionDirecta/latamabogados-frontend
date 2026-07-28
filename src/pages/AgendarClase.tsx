@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useLocation } from "react-router-dom";
 import {
   BookOpen,
   FileText,
@@ -12,23 +11,12 @@ import {
 import HeaderBar from "../components/HeaderBar";
 import FooterBar from "../components/FooterBar";
 import BookingModal from "../components/BookingModal";
-import GroupOptionsModal from "../components/GroupOptionsModal";
 import SEO from "../components/SEO";
 import "./AgendarClase.css";
 
 const AgendarClase: React.FC = () => {
   const { t } = useTranslation();
-  const location = useLocation();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isGroupModalOpen, setIsGroupModalOpen] = useState(false);
-
-  useEffect(() => {
-    if (location.state && (location.state as any).openGroupModal) {
-      setIsGroupModalOpen(true);
-      // Clean up state so refreshing doesn't re-open it
-      window.history.replaceState({}, document.title);
-    }
-  }, [location]);
 
   return (
     <div className="agendar-page">
@@ -188,32 +176,7 @@ const AgendarClase: React.FC = () => {
                       dangerouslySetInnerHTML={{
                         __html: t("agendar_clase.price_promo"),
                       }}
-                    />{" "}
-                    <button
-                      onClick={() => setIsGroupModalOpen(true)}
-                      style={{
-                        background: "none",
-                        border: "none",
-                        color: "var(--latam-maroon)",
-                        fontWeight: "bold",
-                        textDecoration: "underline",
-                        cursor: "pointer",
-                        padding: 0,
-                        fontSize: "0.9em",
-                        marginLeft: "5px",
-                      }}
-                    >
-                      {t("agendar_clase.budget_cta")}
-                    </button>
-                    <span
-                      style={{
-                        fontWeight: "600",
-                        color: "var(--latam-maroon)",
-                        marginLeft: "4px",
-                      }}
-                    >
-                      {t("agendar_clase.budget_gift")}
-                    </span>
+                    />
                   </span>
                 </li>
 
@@ -275,11 +238,6 @@ const AgendarClase: React.FC = () => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         type="clase"
-      />
-
-      <GroupOptionsModal
-        isOpen={isGroupModalOpen}
-        onClose={() => setIsGroupModalOpen(false)}
       />
 
       <FooterBar />
