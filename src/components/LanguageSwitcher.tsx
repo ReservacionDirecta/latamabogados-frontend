@@ -4,6 +4,7 @@ import './LanguageSwitcher.css';
 
 const languages = [
   { code: 'es', label: 'Español' },
+  { code: 'en', label: 'English' },
   { code: 'pt', label: 'Português' },
 ];
 
@@ -32,7 +33,7 @@ const LanguageSwitcher: React.FC = () => {
           key={lang.code}
           className={`ls-btn ${currentLang === lang.code ? 'ls-active' : ''}`}
           onClick={() => changeLanguage(lang.code)}
-          title={lang.code === 'es' ? 'Español' : 'Português'}
+          title={lang.label}
           aria-pressed={currentLang === lang.code}
         >
           {lang.label}
